@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원가입</h1>
+	<h1>회원rr가입</h1>
 </body>
 </html>
