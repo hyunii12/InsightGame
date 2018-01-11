@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+    <div id="wrap">
+        <div id="navigation">
+            <jsp:include page="/navigation.jsp" />
+        </div>
+		<div>
+        	<h1>게임 검색</h1>
+        </div>
+    </div>
 </body>
 </html>

@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+    <div id="wrap">
+        <div id="navigation">
+            <jsp:include page="/navigation.jsp" />
+        </div>
+        <div>
+        	<a href="">로그인</a><br>
+        	<a href="join.do">회원가입</a>
+        </div>
+    </div>
 </body>
 </html>
