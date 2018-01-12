@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IBoardDao">
+	<resultMap type="board" id="boardMap">
+		<id column="b_id" property="bId"/>
+		<result column="b_game_header" property="header"/>
+		<result column="b_writer" property="writer"/>
+		<result column="b_reg_date" property="regDate"/>
+		<result column="b_content" property="content"/>
+		<result column="b_group_id" property="groupId"/>
+		<result column="b_group_seq" property="groupSeq"/>
+		<result column="b_group_lv" property="groupLevel"/>
+	</resultMap>
+	<insert id="insertBoard" parameterType="board" useGeneratedKeys="true" keyProperty="bId">
+		INSERT INTO board 
+		(b_id, b_game_header, b_writer, b_reg_date, b_content, b_group_id, b_group_seq, b_group_lv)
+		VALUES( 0, #{header}, #{writer}, #{regDate}, #{content}, #{groupId}, #{groupSeq}, #{groupLevel})
+	</insert>
+	<update id="updateBoard" parameterType="board">
+		UPDATE board SET 
+			b_game_header = #{header},
+			b_writer = #{writer},
+			b_reg_date = #{regDate},
+			b_content = #{content},
+			b_group_id = #{groupId},
+			b_group_seq = #{groupSeq},
+			b_group_lv = #{groupLevel}
+		WHERE b_id = #{bId}
+	</update>
+	<delete id="deleteBoard">
+		DELETE * FROM board WHERE b_id = #{bId}
+	</delete>
+	<select id="selectBoardByBId" parameterType="java.lang.Integer" resultMap="boardMap">
+		SELECT 	b_id,
+				b_game_header,
+				b_writer,
+				b_reg_date,
+				b_content,
+				b_group_id,
+				b_group_seq,
+				b_group_lv
+		FROM board WHERE b_id = #{bId}
+	</select>
+	<select id="selectBoardList" parameterType="java.lang.String" resultMap="boardMap">
+		SELECT 	b_id,
+				b_game_header,
+				b_writer,
+				b_reg_date,
+				b_content,
+				b_group_id,
+				b_group_seq,
+				b_group_lv
+		FROM board WHERE 1 
+			<if test="header != NULL">
+				AND b_game_header = #{header}
+			</if> 
+	</select>
+</mapper>
