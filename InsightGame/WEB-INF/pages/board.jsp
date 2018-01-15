@@ -11,12 +11,14 @@
         <div id="navigation">
             <jsp:include page="../navigation.jsp" />
         </div>
-        <div>
-        	<h1>게시판</h1>
+        <div style="margin-top: 12%">
+			<style>
+				#div_write{margin-left:20px;margin-right:20px}
+			</style>
         	<div id="div_write">
-				<textarea rows="3" cols="12" id="writeBoard"> </textarea>        	
+				<jsp:include page="../board/boradWrite.jsp" />    	
         	</div>
-        	<div id="div_boardList">
+        	<div id="div_boardList" style="text-align: center">
 	        	<jsp:include page="../board/boardList.jsp" />
         	</div>
         </div>

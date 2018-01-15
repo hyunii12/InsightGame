@@ -4,9 +4,32 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
-
+<script type="text/javascript">
+<!-- 글쓰기 ajax: 로그인상태 확인 -->
+$(document).ready(function(){
+	$.ajax({
+		url: 'searchBoard_ajax.do',
+		dataType : 'json',
+		data : 'searchKeyword='+searchKeyword+'&search='+search,
+		success : function(data) {
+			if (data) {
+				$('#boardTable tbody').empty();
+				listUpload(data);
+			}
+		},
+		error : function(xhr, status, error){alert('error')}
+		
+	})
+});
+</script>
+	<div class="input-group">
+	  <input id="writeContent" type="text" class="form-control" aria-label="...">
+	  <div class="input-group-btn">
+	    <!-- Buttons -->
+	    <button type="button" class="btn btn-default">등록</button>
+	  </div>
+	</div>
 </body>
 </html>
