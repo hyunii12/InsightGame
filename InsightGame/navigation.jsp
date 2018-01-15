@@ -26,53 +26,58 @@
 </head>
 <body>
 	<div>
-	
-	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 45px; z-index: 1;">
+
+		<nav
+			class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
+			id="mainNav" style="padding-bottom: 45px; z-index: 1;">
 		<div class="container">
-		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight Game</a>
-		<button
-			class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
-			type="button" data-toggle="collapse" data-target="#navbarResponsive"
-			aria-controls="navbarResponsive" aria-expanded="false"
-			aria-label="Toggle navigation">
-			Menu <i class="fa fa-bars"></i>
-		</button>
-		<div id="navbarResponsive" style="margin: 0 auto;">
-			<ul class="navbar-nav ml-auto">
-				<li>
-					<form class="form-inline" role="search" id="header_search"
-						method="get" action=SearchedRestaurantsServlet
-						style="margin: 0 auto;">
-						<input class="form-control mr-sm-2" type="text"
-							style="width: 250px;" placeholder="Search" name="m.mName">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
-					</form>
-				</li>
-			</ul>
-		</div>
-		<div id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mx-0 mx-lg-1"><a
-					class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-					href="login.do">로그인</a></li>
-			</ul>
-		</div>
+			<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
+				Game</a>
+			<div id="navbarResponsive" >
+				<ul class="navbar-nav ml-auto">
+					<li>
+						<form class="form-inline" role="search" id="header_search"
+							method="get" action="" style="margin: 0 auto;">
+							<select name="searchSelect" id="searchSelect" class="form-control mr-sm-2">
+								<option value="game" style="color: black;">게임</option>
+								<option value="streamer" style="color: black;">스트리머</option>
+							</select>
+							<input class="form-control mr-sm-2" type="text"
+								style="width: 250px; margin: 0 auto;" placeholder="Search"
+								name="Search">
+							<button class="btn btn-outline-success my-2 my-sm-0"
+								type="submit" style="margin-right: 55px;">검색</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+			<div id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item mx-0 mx-lg-1"><a href="login.do"><img
+							src="img/login.png"></a></li>
+
+				</ul>
+			</div>
 		</nav>
 	</div>
 	<div>
-		<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 15px; z-index: 2;">
-				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-					href="login.do">게임</a></div>
-			<div style="position: fixed; right: 46%; top: 100px; z-index: 3;">
-			<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-					href="login.do">스트리머</a></div>
-			<div style="position: fixed; left: 71%; top: 100px; z-index: 4;">
-			<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-					href="login.do">게시판</a></div>
+		<div class="bg-secondary"
+			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 15px; z-index: 2;">
+			<a class="navbar-brand js-scroll-trigger"
+				href="InsightGame.do" style="color: white; font-weight: bold;">게임</a>
+		</div>
+		<div style="position: fixed; right: 45%; top: 100px; z-index: 3;">
+			<a class="navbar-brand js-scroll-trigger"
+				href="InsightStreamer.do" style="color: white; font-weight: bold;">스트리머</a>
+		</div>
+		<div style="position: fixed; left: 73%; top: 100px; z-index: 4;">
+			<a class="navbar-brand js-scroll-trigger"
+				href="board.do" style="color: white; font-weight: bold;">게시판</a>
+		</div>
 
 	</div>
-	
- <!-- Navigation --> 
+
+	<!-- Navigation -->
 
 
 	<!-- 	<div class="navigation"> -->
