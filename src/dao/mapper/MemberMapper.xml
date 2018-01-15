@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="m_password" property="mPassword" />
 	</resultMap>
 
-	<select id="selectAllMember" resultMap="boardMap">
-		SELECT * FROM board
+	<select id="selectAllMember" resultMap="memberMap">
+		SELECT * FROM member
 	</select>
 
 	<insert id="insertMember" parameterType="member"
