@@ -25,11 +25,9 @@
 
 </head>
 <body>
-	<div>
-
 		<nav
 			class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-			id="mainNav" style="padding-bottom: 45px; z-index: 1;">
+			id="mainNav" style="padding-bottom: 1.5%; z-index: 2;">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 				Game</a>
@@ -62,20 +60,19 @@
 	</div>
 	<div>
 		<div class="bg-secondary"
-			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 15px; z-index: 2;">
+			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 3;">
 			<a class="navbar-brand js-scroll-trigger"
 				href="InsightGame.do" style="color: white; font-weight: bold;">게임</a>
 		</div>
-		<div style="position: fixed; right: 45%; top: 100px; z-index: 3;">
+		<div style="position: fixed; right: 45%; top: 100px; z-index: 4;">
 			<a class="navbar-brand js-scroll-trigger"
 				href="InsightStreamer.do" style="color: white; font-weight: bold;">스트리머</a>
 		</div>
-		<div style="position: fixed; left: 73%; top: 100px; z-index: 4;">
+		<div style="position: fixed; left: 73%; top: 100px; z-index: 5;">
 			<a class="navbar-brand js-scroll-trigger"
 				href="board.do" style="color: white; font-weight: bold;">게시판</a>
 		</div>
 
-	</div>
 
 	<!-- Navigation -->
 
