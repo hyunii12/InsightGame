@@ -10,9 +10,10 @@
 <!-- 글쓰기 ajax: 로그인상태 확인 -->
 $(document).ready(function(){
 	$.ajax({
-		url: 'searchBoard_ajax.do',
+		url: 'write.do',
 		dataType : 'json',
-		data : 'searchKeyword='+searchKeyword+'&search='+search,
+		type: 'post',
+		data : 'writeContent='+searchKeyword+'&search='+search,
 		success : function(data) {
 			if (data) {
 				$('#boardTable tbody').empty();

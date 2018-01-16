@@ -50,12 +50,14 @@ public class BoardController {
 		
 		return "pages/board";
 	}
+	
 	@RequestMapping("boardList.do")
 	public @ResponseBody HashMap<String, Object> getList(Model model, @RequestParam(name="page", defaultValue="1")int page) {
 		HashMap<String, Object> result = new HashMap<>();
 		
 		return result;
 	}
+	
 	@RequestMapping("write.do")
 	public @ResponseBody HashMap<String, Object> write(Model model, 
 			@RequestParam(name="header", defaultValue="-")String header,
@@ -74,6 +76,7 @@ public class BoardController {
 		}
 		return result;
 	}
+	
 //	@RequestMapping("board.do")
 //	public String main(Model model) {
 //		System.out.println("여기는 보드");
