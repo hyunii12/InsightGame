@@ -29,7 +29,7 @@
 
 		<nav
 			class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-			id="mainNav" style="padding-bottom: 45px; z-index: 1;">
+			id="mainNav" style="padding-bottom: 1.5%; z-index: 1;">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 				Game</a>
@@ -62,7 +62,7 @@
 	</div>
 	<div>
 		<div class="bg-secondary"
-			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 15px; z-index: 2;">
+			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 2;">
 			<a class="navbar-brand js-scroll-trigger"
 				href="InsightGame.do" style="color: white; font-weight: bold;">게임</a>
 		</div>

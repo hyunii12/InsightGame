@@ -4,7 +4,7 @@ public class Member {
 	
 	private int mId;
 	private String mEmail;
-	private String mPasword;
+	private String mPassword;
 	public int getmId() {
 		return mId;
 	}
@@ -18,15 +18,15 @@ public class Member {
 		this.mEmail = mEmail;
 	}
 	public String getmPasword() {
-		return mPasword;
+		return mPassword;
 	}
-	public void setmPasword(String mPasword) {
-		this.mPasword = mPasword;
+	public void setmPassword(String mPassword) {
+		this.mPassword = mPassword;
 	}
 	
 	@Override
 	public String toString() {
-		return "Member [mId=" + mId + ", mEmail=" + mEmail + ", mPasword=" + mPasword + "]";
+		return "Member [mId=" + mId + ", mEmail=" + mEmail + ", mPasword=" + mPassword + "]";
 	}
 	
 	
