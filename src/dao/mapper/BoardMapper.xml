@@ -41,7 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM board WHERE b_id = #{bId}
 	</select>
 	
-	<select id="selectBoardList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	<select id="selectBoardList" parameterType="java.util.HashMap" resultMap="boardMap">
 		SELECT 	b_id,
 				b_game_header,
 				b_writer,

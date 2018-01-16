@@ -24,7 +24,7 @@ public class MemberController {
 	
 	@RequestMapping("loginForm.do")
 	public String loginForm(Model model) {
-		return "loginForm";
+		return "member/login";
 	}
 	
 	@RequestMapping("login.do")
@@ -47,7 +47,7 @@ public class MemberController {
 	@RequestMapping("joinForm.do")
 	public String joinForm() {
 		
-		return "joinForm";
+		return "member/join";
 		
 	}
 	
@@ -55,7 +55,7 @@ public class MemberController {
 	@RequestMapping("join.do")
 	public String join(HttpSession session, String mEmail, String mPassword) {
 		
-		return "redirect:loginForm.do";
+		return "redirect:login.do";
 	}
 	
 	

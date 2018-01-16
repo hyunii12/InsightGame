@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<table>
+	<table class="table" align="center">
 		<thead>
 			<tr>
 				<th>번호</th><th>[게임]</th><th>내용</th><th>작성자</th><th>작성시간</th><th>-</th>
@@ -17,20 +17,20 @@
 		<tbody>
 			<c:forEach items="${boardList }" var="list">
 <%-- 				<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
-				<tr style="cursor: pointer" onclick="location.href='viewBoard.do?bId=${list.bId}'">
+				<tr style="cursor: pointer">
 					<td>${list.bId }</td>
 					<td>[${list.header }]</td>
 					<td>${list.content}</td>
 					<td>${list.writer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/></td>
 					<td>
-						<button>수정</button>
-						<button>삭제</button>
+						<button class="btn btn-info">수정</button>
+						<button class="btn btn-danger">삭제</button>
 					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
-		<tfoot> 여기는 바닥 </tfoot>
+<!-- 		<tfoot><tr><td colspan='7'>여기는 바닥</td></tr> </tfoot> -->
 	</table>
 </body>
 </html>

@@ -21,6 +21,8 @@ public class BoardServiceImpl implements IBoardService{
 //		dao.insertBoard(board);
 		if(parentId == 0) {
 			System.out.println(board);
+			board.setGroupLevel(0);
+			board.setGroupSeq(0);
 			dao.insertBoard(board);
 			board = dao.selectBoardByBId(board.getbId());
 			board.setGroupId(board.getbId());
@@ -31,7 +33,7 @@ public class BoardServiceImpl implements IBoardService{
 
 			HashMap<String, Object> params = new HashMap<>();
 			params.put("groupId", parent.getGroupId());
-			params.put("groupSeq", parent.getGroupSeq()+1);
+	 		params.put("groupSeq", parent.getGroupSeq()+1);
 			dao.updateGroupSeq(params);
 
 			board.setGroupId(parent.getGroupId());
@@ -79,7 +81,7 @@ public class BoardServiceImpl implements IBoardService{
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("skip", skip);
 		params.put("count", count);
-		List<HashMap<String, Object>> boardList = dao.selectBoardList(params);
+		List<Board> boardList = dao.selectBoardList(params);
 		results.put("start", start);
 		results.put("end", end);
 		results.put("first", first);
@@ -108,7 +110,7 @@ public class BoardServiceImpl implements IBoardService{
 		params.put("skip", skip);
 		params.put("count", count);
 		params.put("header", param.get("header"));
-		List<HashMap<String, Object>> boardList = dao.selectBoardList(params);
+		List<Board> boardList = dao.selectBoardList(params);
 		results.put("start", start);
 		results.put("end", end);
 		results.put("first", first);
