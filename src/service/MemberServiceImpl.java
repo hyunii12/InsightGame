@@ -13,25 +13,11 @@ public class MemberServiceImpl implements IMemberService{
 	
 	@Autowired
 	private IMemberDao memberDao;
-	
-	
 
 	@Override
 	public void join(Member member) {
 		// TODO Auto-generated method stub
 		memberDao.insertMember(member);
-	}
-
-
-	@Override
-	public boolean checkPassword(String mEmail, String mPassword) {
-		// TODO Auto-generated method stub
-		
-		Member member = memberDao.selectOneEmail(mEmail);
-		if(member.getmPasword().equals(mPassword))
-			return true;
-		else
-			return false;
 		
 	}
 
@@ -47,7 +33,6 @@ public class MemberServiceImpl implements IMemberService{
 		return memberDao.selectAllMember();
 	}
 
-
 	@Override
 	public int updateMember(Member member) {
 		// TODO Auto-generated method stub
@@ -60,6 +45,20 @@ public class MemberServiceImpl implements IMemberService{
 		return memberDao.deleteMember(mId);
 	}
 
+	@Override
+	public boolean login(String mEmail, String mPassword) {
+		// TODO Auto-generated method stub
+		
+		Member member = memberDao.selectOneEmail(mEmail);
+		if(member.getmPasword().equals(mPassword))
+			return true;
+		else
+			return false;
+	}
+	
+	
+
+	
 	
 	
 

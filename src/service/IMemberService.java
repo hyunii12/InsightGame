@@ -5,18 +5,20 @@ import java.util.List;
 import model.Member;
 
 public interface IMemberService {
+
+	// 회원가입
+	public void join(Member member);
+
+	// 회원한명 정보
+	public Member getMemeber(int mId);
 	
-	//ȸ������
-		public void join(Member member);
-		
-		//select one
-		public Member getMemeber(int mId);
-		
-		public List<Member> getMemberList();
-		public int updateMember(Member member);
-		public int deleteMember(int mId);
-		
-		//���üũ
-		public boolean checkPassword(String mEmail, String mPassword);
+	// 모든회원정보
+	public List<Member> getMemberList();
+
+	public int updateMember(Member member);
+
+	public int deleteMember(int mId);
+
+	public boolean login(String mEmail, String mPassword);
 
 }

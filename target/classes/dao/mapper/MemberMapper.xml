@@ -21,13 +21,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertMember" parameterType="member"
 		useGeneratedKeys="true" keyProperty="mId">
-		INSERT INTO member VALUES (0,
-		#{mEmail}, #{mPassword})
+		INSERT INTO member (m_id, m_email, m_password) VALUES (0, #{mEmail}, #{mPassword})
 	</insert>
 
 	<update id="updateMember" parameterType="member">
-		UPDATE Member SET mEmail
-		= #{mEmail}, mPassword = #{mPassword} WHERE m_id = #{mId}
+		UPDATE Member SET m_email= #{mEmail}, m_password = #{mPassword} WHERE m_id = #{mId}
 	</update>
 
 	<delete id="deleteMember" parameterType="int">
@@ -40,7 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 
-	<select id="selectEmail" resultMap="memberMap" parameterType="int">
+	<select id="selectOneEmail" resultMap="memberMap" parameterType="string">
 		SELECT * FROM member WHERE m_email = #{mEmail}
 	</select>
 
