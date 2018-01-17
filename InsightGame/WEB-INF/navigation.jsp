@@ -4,6 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Plugin jQuery&Bootstrap.js -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -29,7 +37,7 @@
 
 		<nav
 			class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-			id="mainNav" style="padding-bottom: 45px; z-index: 1;">
+			id="mainNav" style="padding-bottom: 1.5%; z-index: 1;">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 				Game</a>
@@ -62,7 +70,7 @@
 	</div>
 	<div>
 		<div class="bg-secondary"
-			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 15px; z-index: 2;">
+			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 2;">
 			<a class="navbar-brand js-scroll-trigger"
 				href="InsightGame.do" style="color: white; font-weight: bold;">게임</a>
 		</div>

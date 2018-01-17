@@ -37,9 +37,9 @@ public class BoardController {
 		List<Board> boardList = 
 			 	(List<Board>) boardListByPage.get("boardList");
 		
-		System.out.println("page: "+page);
-		for(Board b : boardList)
-			System.out.println(b);		
+//		System.out.println("page: "+page);
+//		for(Board b : boardList)
+//			System.out.println(b);		
 		
 		model.addAttribute("start", boardListByPage.get("start"));
 		model.addAttribute("end", boardListByPage.get("end"));
@@ -50,18 +50,29 @@ public class BoardController {
 		
 		return "pages/board";
 	}
-	@RequestMapping("boardList.do")
-	public @ResponseBody HashMap<String, Object> getList(Model model, @RequestParam(name="page", defaultValue="1")int page) {
+	
+	@RequestMapping("getList.do")
+	public @ResponseBody HashMap<String, Object> getList(@RequestParam(name="page", defaultValue="1")int page) {
 		HashMap<String, Object> result = new HashMap<>();
-		
+		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
+		List<Board> boardList = 
+			 	(List<Board>) boardListByPage.get("boardList");
+		result.put("start", boardListByPage.get("start"));
+		result.put("end", boardListByPage.get("end"));
+		result.put("first", boardListByPage.get("first"));
+		result.put("last", boardListByPage.get("last"));
+		result.put("current", boardListByPage.get("current"));
+		result.put("boardList", boardList);
 		return result;
 	}
+	
 	@RequestMapping("write.do")
 	public @ResponseBody HashMap<String, Object> write(Model model, 
 			@RequestParam(name="header", defaultValue="-")String header,
 			@RequestParam(name="content", required= true)String content) {
 		HashMap<String, Object> result = new HashMap<>();
-		// 작성자: 로그인 유저로 수정
+		// 작성자: 로그인 유저로 수정 해야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//		System.out.println(header+":::::::::"+content);
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
@@ -72,8 +83,12 @@ public class BoardController {
 			result.put("msg", true);
 			result.put("new", newBId);
 		}
+		else
+			result.put("msg", false);
 		return result;
+//		return "redirect:board.do";
 	}
+	
 //	@RequestMapping("board.do")
 //	public String main(Model model) {
 //		System.out.println("여기는 보드");

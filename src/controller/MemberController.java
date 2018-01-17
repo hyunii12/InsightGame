@@ -17,11 +17,6 @@ public class MemberController {
 	private IMemberService memberService;
 	
 	
-	@RequestMapping("main.do")
-	public String main(Model model) {
-		return "main";
-	}
-	
 	@RequestMapping("loginForm.do")
 	public String loginForm(Model model) {
 		return "member/login";
