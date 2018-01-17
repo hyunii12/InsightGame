@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class GameController {
+	
 	@RequestMapping("main.do")
 	public String main() {
 		return "main";
@@ -15,5 +16,11 @@ public class GameController {
 	public String game() {
 		return "redirect:main.do";
 
+	}
+	
+	@RequestMapping("gameDetail.do")
+	public String gameDetail(Model model) {
+	System.out.println("여기는 게임디테일");
+			return "pages/gameDetail";
 	}
 }

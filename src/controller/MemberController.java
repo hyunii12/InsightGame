@@ -62,12 +62,13 @@ public class MemberController {
 
 	@RequestMapping("loginForm.do")
 	public String loginForm(Model model) {
+		System.out.println("여기는 로그인폼 페이지");
 		return "member/login";
 	}
 	
 	@RequestMapping("login.do")
 	public String login(HttpSession session, String mEmail, String mPassword) {
-		
+		System.out.println("로그인하면 메인으로 리다이렉트");
 		return "redirect:main.do";
 //		return "redirect:loginForm.do";
 	}
@@ -85,6 +86,7 @@ public class MemberController {
 	@RequestMapping("joinForm.do")
 	public String joinForm() {
 		
+		System.out.println("회원가입폼 페이지");
 		return "member/join";
 		
 	}
@@ -93,7 +95,8 @@ public class MemberController {
 	@RequestMapping("join.do")
 	public String join(HttpSession session, String mEmail, String mPassword) {
 		
-		return "redirect:login.do";
+		System.out.println("회원가입버튼 누르면 로그인 페이지로");
+		return "redirect:loginForm.do";
 	}
 	
 	
