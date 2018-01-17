@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -66,13 +68,16 @@ public class BoardController {
 		return result;
 	}
 	
+	// 작성자: 로그인 유저로 수정 해야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	@RequestMapping("write.do")
-	public @ResponseBody HashMap<String, Object> write(Model model, 
+	public @ResponseBody HashMap<String, Object> write( 
 			@RequestParam(name="header", defaultValue="-")String header,
-			@RequestParam(name="content", required= true)String content) {
+			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
-		// 작성자: 로그인 유저로 수정 해야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //		System.out.println(header+":::::::::"+content);
+		header = URLDecoder.decode(header,"UTF-8");
+		content = URLDecoder.decode(content,"UTF-8");
+
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
@@ -86,16 +91,33 @@ public class BoardController {
 		else
 			result.put("msg", false);
 		return result;
-//		return "redirect:board.do";
+	}
+	@RequestMapping("modify.do")
+	public @ResponseBody HashMap<String, Object> modify( 
+			@RequestParam(name="bId", defaultValue="-")String bId,
+			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
+//		System.out.println(header+":::::::::"+content);
+		bId = URLDecoder.decode(bId,"UTF-8");
+		content = URLDecoder.decode(content,"UTF-8");
+		
+		Board board = boardService.getBoard(Integer.parseInt(bId));
+		board.setContent(content);
+		int result = boardService.modifyBoard(board);
+		HashMap<String, Object> results = new HashMap<>();
+		results.put("result", result);
+		return results; 
+	}
+	@RequestMapping("delete.do")
+	public @ResponseBody HashMap<String, Object> delete(@RequestParam(name="bId", required= true) String bId) throws UnsupportedEncodingException {
+		System.out.println("bbbb"+bId);
+		boardService.removeBoard(Integer.parseInt(bId));
+		HashMap<String, Object> results = new HashMap<>();
+		results.put("result", "result");
+		
+		return results;
 	}
 	
-//	@RequestMapping("board.do")
-//	public String main(Model model) {
-//		System.out.println("여기는 보드");
-//		
-//		model.addAttribute("msg", "BOARD RESPONSE");
-//		return "pages/board";
-//	}
+	
 
 	
 	

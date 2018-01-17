@@ -4,10 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- <script -->
-<!--   src="https://code.jquery.com/jquery-3.2.1.min.js" -->
-<!--   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" -->
-<!--   crossorigin="anonymous"></script> -->
 </head>
 <body>
 <script type="text/javascript">
@@ -28,8 +24,8 @@
 					"header" : header,
 					"content": content
 				}, 
+				contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 				success: function(data){
-// 		        	if('${result.msg}'==='true'){
 		        	if(data != null){
 			        	alert('sucess')
 			        	location.reload();
@@ -42,9 +38,8 @@
 		});
 	});
 </script>
-
 	<div class="input-group mb-3">
-	  	<div class="input-group-prepend">
+	  	<div class="input-group-prepend" id="headerDropbox">
 		    <button class="btn btn-outline-secondary dropdown-toggle" type="button" 
 		    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">말머리</button>
 		    <div id="headerSelect" class="dropdown-menu">
@@ -60,9 +55,9 @@
 	  	<input id="writeContent" type="text" class="form-control" aria-label="...">
 		<div class="input-group-btn">
 		    <!-- Buttons -->
-		   	<button type="button" id='writeBtn' class="btn btn-default">등록</button>
+		   	<button type="button" id="writeBtn" class="btn btn-default">등록</button>
 		</div>
 	</div>
-
+	
 </body>
 </html>
