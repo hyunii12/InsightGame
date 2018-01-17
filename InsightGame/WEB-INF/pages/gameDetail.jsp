@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <div id="wrap">
+    <div class="container" style="margin-top: 15%">
         <div id="navigation">
             <jsp:include page="../navigation.jsp" />
         </div>

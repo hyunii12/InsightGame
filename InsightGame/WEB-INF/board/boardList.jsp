@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+
 	<table id="boardTable" class="table" align="center">
 		<thead>
 			<tr>
@@ -32,5 +33,6 @@
 		</tbody>
 <!-- 		<tfoot><tr><td colspan='7'>여기는 바닥</td></tr> </tfoot> -->
 	</table>
+
 </body>
 </html>

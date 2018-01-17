@@ -42,6 +42,7 @@
 		});
 	});
 </script>
+
 	<div class="input-group mb-3">
 	  	<div class="input-group-prepend">
 		    <button class="btn btn-outline-secondary dropdown-toggle" type="button" 
@@ -62,6 +63,6 @@
 		   	<button type="button" id='writeBtn' class="btn btn-default">등록</button>
 		</div>
 	</div>
-	
+
 </body>
 </html>

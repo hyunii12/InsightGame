@@ -11,13 +11,6 @@ public class GameController {
 		return "main";
 	}
 
-	
-	@RequestMapping("InsightGame.do")
-	public String insightGame(Model model) {
-		System.out.println("여기는 게임페이지");
-		model.addAttribute("msg", "MAIN RESPONSE");
-		return "main";
-	}
 	@RequestMapping("InsightGame.do")
 	public String game() {
 		return "redirect:main.do";
