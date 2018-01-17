@@ -22,5 +22,7 @@ public class StreamerController {
 		return "pages/searchStreamer";
 	}
 	
-
 }
+
+
+
