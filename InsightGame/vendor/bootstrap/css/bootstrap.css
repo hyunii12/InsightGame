@@ -3170,7 +3170,7 @@ tbody.collapse.show {
 }
 
 .input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {
-  z-index: 3;
+/*   z-index: 3; */
 }
 
 .input-group-addon,
