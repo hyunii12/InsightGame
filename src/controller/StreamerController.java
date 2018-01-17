@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class StreamerController {
 	
+	
+	
 	@RequestMapping("InsightStreamer.do")
 	public String streamer(Model model) {
 		System.out.println("여기는 스트리머페이지");
