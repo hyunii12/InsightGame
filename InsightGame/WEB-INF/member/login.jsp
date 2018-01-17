@@ -11,7 +11,7 @@
         <div id="navigation">
             <jsp:include page="../navigation.jsp" />
         </div>
-        <div>
+        <div style="margin-top:15%;">
         	<a href="login.do">로그인</a><br>
         	<a href="joinForm.do">회원가입</a>
         </div>
