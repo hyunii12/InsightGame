@@ -12,6 +12,7 @@
             <jsp:include page="../navigation.jsp" />
         </div>
         <div>
+			<script src="js/board.js"></script>
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
 			</style>

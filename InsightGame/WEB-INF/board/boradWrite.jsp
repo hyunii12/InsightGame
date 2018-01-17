@@ -6,38 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-<script type="text/javascript">
-	var header = "";
-	var setHeader = function(val){
-		header = val;
-	}
-	<!-- 게시글 작성 ajax -->
-	$(document).ready(function(){
-		$('#writeBtn').on('click', function(){
-			var content = $('#writeContent').val();				
-// 			alert(header+"//"+content);
-			$.ajax({
-				url: "write.do", 
-				type: "post",
-				dataType: "json",
-				data:{	
-					"header" : header,
-					"content": content
-				}, 
-				contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
-				success: function(data){
-		        	if(data != null){
-			        	alert('sucess')
-			        	location.reload();
-		        	}
-		    	},
-		    	error: function(error){
-		    		alert('asdf')
-		    	}
-			});
-		});
-	});
-</script>
 	<div class="input-group mb-3">
 	  	<div class="input-group-prepend" id="headerDropbox">
 		    <button class="btn btn-outline-secondary dropdown-toggle" type="button" 
