@@ -59,7 +59,7 @@
 			</div>
 			<div id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a href="login.do"><img
+					<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
 							src="img/login.png"></a></li>
 
 				</ul>

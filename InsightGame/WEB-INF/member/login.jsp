@@ -12,8 +12,8 @@
             <jsp:include page="../navigation.jsp" />
         </div>
         <div>
-        	<a href="">로그인</a><br>
-        	<a href="join.do">회원가입</a>
+        	<a href="login.do">로그인</a><br>
+        	<a href="joinForm.do">회원가입</a>
         </div>
     </div>
 </body>
