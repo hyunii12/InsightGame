@@ -26,111 +26,121 @@
 <link href="css/freelancer.min.css" rel="stylesheet">
 
 </head>
-<body id="page-top">
+<body>
 	<div id="navigation">
 		<jsp:include page="navigation.jsp" />
 	</div>
 
-	<!-- Portfolio Grid Section -->
-	<section class="bg-primary text-white mb-0" id="about">
-	<div class="container" style="margin-top: 10%;">
-		<h2 class="text-center text-uppercase text-white">Game Issues
-			Rank</h2>
-		<hr class="star-light mb-5">
-		<div class="row">
-			<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
-			<!-- 			<div id="issues"> -->
-			<%-- 				<jsp:include page="gameIssues.do" /> --%>
-			<!-- 			</div> -->
-		</div>
-
-	</div>
-	</section>
-	
-	<!-- Portfolio Grid Section -->
-	<section class="portfolio" id="portfolio">
-	<div class="container">
-		<h2 class="text-center text-uppercase text-secondary mb-0">통계,
-			뉴스, 출시</h2>
-		<hr class="star-dark mb-5">
-		<div class="row">
-
-			<div class="col-md-6 col-lg-4">
-				<h3 class="text-center">gameInterest.jsp</h3>
-				<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameInterest.do" /> --%>
-					<!-- 			</div> -->
-			</div>
-
-			<div class="col-md-6 col-lg-4">
-				<h3 class="text-center">news.jsp</h3>
-				<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameNews.do" /> --%>
-					<!-- 			</div> -->
-			</div>
-
-			<div class="col-md-6 col-lg-4">
-				<h3 class="text-center">calendar.jsp</h3>
-				<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameCalendar.do" /> --%>
-					<!-- 			</div> -->
+	<div id="InsightGame" style="margin-top:10%; overflow:hidden;">
+		<!-- Portfolio Grid Section -->
+		<section class="bg-primary text-white mb-0" id="about">
+		<div class="container">
+			<h2 class="text-center text-uppercase text-white">Game Issues
+				Rank</h2>
+			<hr class="star-light mb-5">
+			<div class="row">
+				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
+				<!-- 			<div id="issues"> -->
+				<%-- 				<jsp:include page="gameIssues.do" /> --%>
+				<!-- 			</div> -->
 			</div>
 
 		</div>
-	</div>
-	</section>
-	
-	<!-- Portfolio Grid Section -->
-	<section class="bg-primary text-white mb-0" id="about">
-	<div class="container">
-		<h2 class="text-center text-uppercase text-white">게임 인기 변화</h2>
-		<hr class="star-light mb-5">
-		<div class="row">
-			<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
-			<!-- 			<div id="issues"> -->
-			<%-- 				<jsp:include page="gameInterest.do" /> --%>
-			<!-- 			</div> -->
-		</div>
-	</div>
-	</section>
+		</section>
 
-	<!-- Portfolio Grid Section -->
-	<section class="portfolio" id="portfolio">
-	<div class="container1">
-		<h2 class="text-center text-uppercase text-secondary mb-0">그래프 4개</h2>
-		<hr class="star-dark mb-5">
-		<div class="row">
+		<!-- Portfolio Grid Section -->
+		<section class="portfolio" id="portfolio">
+		<div class="container">
+			<h2 class="text-center text-uppercase text-secondary mb-0">통계,
+				뉴스, 출시</h2>
+			<hr class="star-dark mb-5">
+			<div class="row">
 
-			<div class="col-md-6">
-				<h3 class="text-center">게임 순위 - 스트리머별</h3>
-				
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameInterest.do" /> --%>
+				<div class="col-md-6 col-lg-4">
+					<h3 class="text-center">gameInterest.jsp</h3>
+					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
+					<!-- 			<div id="issues"> -->
+					<%-- 				<jsp:include page="gameInterest.do" /> --%>
 					<!-- 			</div> -->
-			</div>
+				</div>
 
-			<div class="col-md-6">
-				<h3 class="text-center">게임 순위 - 유형별</h3>
-				
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameNews.do" /> --%>
+				<div class="col-md-6 col-lg-4">
+					<h3 class="text-center">news.jsp</h3>
+					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
+					<!-- 			<div id="issues"> -->
+					<%-- 				<jsp:include page="gameNews.do" /> --%>
 					<!-- 			</div> -->
-			</div>
+				</div>
 
-			<div class="col-md-6">
-				<h3 class="text-center">게임 순위 - 장르별</h3>
-				
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameCalendar.do" /> --%>
+				<div class="col-md-6 col-lg-4">
+					<h3 class="text-center">calendar.jsp</h3>
+					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
+					<!-- 			<div id="issues"> -->
+					<%-- 				<jsp:include page="gameCalendar.do" /> --%>
 					<!-- 			</div> -->
-			</div>
+				</div>
 
-			<div class="col-md-6">
-				<h3 class="text-center">제작사 순위</h3>
-				
-					<!-- 			<div id="issues"> --> <%-- 				<jsp:include page="gameCalendar.do" /> --%>
-					<!-- 			</div> -->
 			</div>
 		</div>
+		</section>
+
+		<!-- Portfolio Grid Section -->
+		<section class="bg-primary text-white mb-0" id="about">
+		<div class="container">
+			<h2 class="text-center text-uppercase text-white">게임 인기 변화</h2>
+			<hr class="star-light mb-5">
+			<div class="row">
+				<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
+				<!-- 			<div id="issues"> -->
+				<%-- 				<jsp:include page="gameInterest.do" /> --%>
+				<!-- 			</div> -->
+			</div>
+		</div>
+		</section>
+
+		<!-- Portfolio Grid Section -->
+		<section class="portfolio" id="portfolio">
+		<div class="container1">
+			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
+				4개</h2>
+			<hr class="star-dark mb-5">
+			<div class="row">
+
+				<div class="col-md-6">
+					<h3 class="text-center">게임 순위 - 스트리머별</h3>
+
+					<!-- 			<div id="issues"> -->
+					<jsp:include page="gameInterest.do" />
+					<!-- 								</div> -->
+				</div>
+
+				<div class="col-md-6">
+					<h3 class="text-center">게임 순위 - 유형별</h3>
+
+					<!-- 			<div id="issues"> -->
+					<jsp:include page="gameNews.do" />
+					<!-- 								</div> -->
+				</div>
+
+				<div class="col-md-6">
+					<h3 class="text-center">게임 순위 - 장르별</h3>
+
+					<!-- 			<div id="issues"> -->
+					<jsp:include page="gameCalendar.do" />
+					<!-- 								</div> -->
+				</div>
+
+				<div class="col-md-6">
+					<h3 class="text-center">제작사 순위</h3>
+
+					<!-- 			<div id="issues"> -->
+					<jsp:include page="gameCalendar.do" />
+					<!-- 								</div> -->
+				</div>
+			</div>
+		</div>
+		</section>
 	</div>
-	</section>
 
 </body>
 </html>

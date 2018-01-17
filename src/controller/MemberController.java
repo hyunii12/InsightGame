@@ -17,6 +17,49 @@ public class MemberController {
 	private IMemberService memberService;
 	
 	
+//	@RequestMapping("main.do")
+//	public String main(Model model) {
+//		return "main";
+//	}
+//	
+//	@RequestMapping("loginForm.do")
+//	public String loginForm(Model model) {
+//		return "member/login";
+//	}
+//	
+//	@RequestMapping("login.do")
+//	public String login(HttpSession session, String mEmail, String mPassword) {
+//		
+//		return "redirect:main.do";
+////		return "redirect:loginForm.do";
+//	}
+//	
+//	
+//	@RequestMapping("logout.do")
+//	public String logout(HttpSession session) {
+//		
+//		session.removeAttribute("mEmail");
+//		session.removeAttribute("mPassword");
+//		return "redirect:main.do";
+//		
+//	}
+//	
+//	@RequestMapping("joinForm.do")
+//	public String joinForm() {
+//		
+//		return "member/join";
+//		
+//	}
+//	
+//	
+//	@RequestMapping("join.do")
+//	public String join(HttpSession session, String mEmail, String mPassword) {
+//		
+//		return "redirect:login.do";
+//	}
+//	
+//	
+
 	@RequestMapping("loginForm.do")
 	public String loginForm(Model model) {
 		return "member/login";
@@ -54,5 +97,4 @@ public class MemberController {
 	}
 	
 	
-
 }

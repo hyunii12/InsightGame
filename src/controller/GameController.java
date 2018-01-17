@@ -11,8 +11,16 @@ public class GameController {
 	public String main() {
 		return "main";
 	}
+
 	@RequestMapping("InsightGame.do")
 	public String game() {
 		return "redirect:main.do";
+
+	}
+	
+	@RequestMapping("gameDetail.do")
+	public String gameDetail(Model model) {
+	System.out.println("여기는 게임디테일");
+			return "pages/gameDetail";
 	}
 }

@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+    <div class="container" style="margin-top: 15%">
+        <div id="navigation">
+            <jsp:include page="../navigation.jsp" />
+        </div>
+		<div>
+        	<h1>게임 상세보기</h1>
+        </div>
+    </div>
 </body>
 </html>
