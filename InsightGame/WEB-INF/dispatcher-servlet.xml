@@ -11,5 +11,15 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	<context:component-scan base-package="controller"/>
+	
+	
+<!-- 	네이버 api로 로그인하기  -->
+   <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+      <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+      <property name="prefix" value="/WEB-INF/" />
+      <property name="suffix" value=".jsp" />
+   </bean>
+   <bean id="NaverLoginService" class="service.NaverLoginService" />
+   
 	<mvc:annotation-driven/>
 </beans>
