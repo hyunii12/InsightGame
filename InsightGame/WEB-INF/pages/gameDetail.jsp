@@ -13,13 +13,12 @@
 		<div id="navigation">
 			<jsp:include page="../navigation.jsp" />
 		</div>
-		<div>
-			<div style="float: left; width: 50%;">
-				<a href="#"><img src="img/gameimg1.jpg" style="width: 360px;"></a>
+		<div style="margin-left: 10%; margin-right: 10%;">
+			<div style="float: left; width: 40%;">
+				<a href="#"><img src="img/gameimg1.jpg" style="width: 240px;"></a>
 			</div>
-			<div style="float: left; width: 50%;">
+			<div style="float: left; width: 60%;">
 				<table id="boardTable" class="table" align="center">
-					<thead>
 						<tr>
 							<td>게임명</td>
 							<td>게임명 내용</td>
@@ -44,8 +43,6 @@
 							<td>출시년도</td>
 							<td>출시년도 내용</td>
 						</tr>
-
-					</thead>
 					<tbody>
 						<c:forEach items="" var="list">
 							<%-- 				<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
