@@ -4,64 +4,124 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+	rel="stylesheet" type="text/css">
+
+<!-- Plugin CSS -->
+<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"
+	type="text/css">
+
+<!-- Custom styles for this template -->
+<link href="css/freelancer.min.css" rel="stylesheet">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container" style="margin-top: 15%">
-		<div id="navigation">
-			<jsp:include page="../navigation.jsp" />
+
+	<div id="navigation">
+		<jsp:include page="../navigation.jsp" />
+	</div>
+
+	<div style="margin: 15%;">
+		<div style="float: left; width: 40%;">
+			<a href="#"><img src="img/gameimg1.jpg" style="width: 240px;"></a>
 		</div>
-		<div style="margin-left: 10%; margin-right: 10%;">
-			<div style="float: left; width: 40%;">
-				<a href="#"><img src="img/gameimg1.jpg" style="width: 240px;"></a>
-			</div>
-			<div style="float: left; width: 60%;">
-				<table id="boardTable" class="table" align="center">
-						<tr>
-							<td>게임명</td>
-							<td>게임명 내용</td>
-						</tr>
-						<tr>
-							<td>플랫폼</td>
-							<td>플랫폼 내용</td>
-						</tr>
-						<tr>
-							<td>장르</td>
-							<td>장르 내용</td>
-						</tr>
-						<tr>
-							<td>제작사</td>
-							<td>제작사 내용</td>
-						</tr>
-						<tr>
-							<td>이용등급</td>
-							<td>이용등급 내용</td>
-						</tr>
-						<tr>
-							<td>출시년도</td>
-							<td>출시년도 내용</td>
-						</tr>
-					<tbody>
-						<c:forEach items="" var="list">
-							<%-- 				<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
-							<tr style="cursor: pointer">
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
-								<td>4</td>
-								<td>5</td>
-								<td>
-									<button class="btn btn-info">수정</button>
-									<button class="btn btn-danger">삭제</button>
-								</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-					<!-- 		<tfoot><tr><td colspan='7'>여기는 바닥</td></tr> </tfoot> -->
-				</table>
-			</div>
+
+		<div style="float: left; width: 50%;">
+			<table id="boardTable" class="table" align="center">
+				<tr>
+					<td>게임명</td>
+					<td>게임명 내용</td>
+				</tr>
+				<tr>
+					<td>플랫폼</td>
+					<td>플랫폼 내용</td>
+				</tr>
+				<tr>
+					<td>장르</td>
+					<td>장르 내용</td>
+				</tr>
+				<tr>
+					<td>제작사</td>
+					<td>제작사 내용</td>
+				</tr>
+				<tr>
+					<td>이용등급</td>
+					<td>이용등급 내용</td>
+				</tr>
+				<tr>
+					<td>출시년도</td>
+					<td>출시년도 내용</td>
+				</tr>
+
+
+				<!-- 					<tbody> -->
+				<%-- 						<c:forEach items="" var="list"> --%>
+				<%-- 											<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
+				<!-- 							<tr style="cursor: pointer"> -->
+				<!-- 								<td>1</td> -->
+				<!-- 								<td>2</td> -->
+				<!-- 								<td>3</td> -->
+				<!-- 								<td>4</td> -->
+				<!-- 								<td>5</td> -->
+				<!-- 								<td> -->
+				<!-- 									<button class="btn btn-info">수정</button> -->
+				<!-- 									<button class="btn btn-danger">삭제</button> -->
+				<!-- 								</td> -->
+				<!-- 							</tr> -->
+				<%-- 						</c:forEach> --%>
+				<!-- 					</tbody> -->
+
+			</table>
+
 		</div>
+	</div>
+
+
+	<!-- Portfolio Grid Section -->
+
+
+	<div style="position: fixed; left: 0px; top: 550px; width: 50%;">
+		<h2 class="text-center text-uppercase">게임소개</h2>
+		<div class="row">
+			<h3 class="text-center" style="margin: 0 auto;">gameIntroduct.jsp</h3>
+			<!-- 			<div id="issues"> -->
+			<%-- 				<jsp:include page="gameIssues.do" /> --%>
+			<!-- 			</div> -->
+		</div>
+	</div>
+
+	<div style="position: fixed; left: 49%; top: 550px; width: 50%;">
+		<h2 class="text-center text-uppercase">시리즈</h2>
+		<div class="row">
+			<h3 class="text-center" style="margin: 0 auto;">issues.jsp</h3>
+			<!-- 			<div id="issues"> -->
+			<%-- 				<jsp:include page="gameIssues.do" /> --%>
+			<!-- 			</div> -->
+		</div>
+	</div>
+	
+	<table id="boardTable" class="table" align="center" style="position: fixed; left: 0px; top: 700px; width: 50%;">
+		<thead>
+			<tr>
+				<th>히스토리</th>
+				<th>뉴스기사</th>
+				<th>프리뷰/리뷰</th>
+				<th>스크린샷</th>
+				<th>동영상</th>
+				<th>공략</th>
+			</tr>
+		</thead>
+	</table>
 </body>
 </html>
