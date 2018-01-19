@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
 
         <div id="navigation">
             <jsp:include page="../navigation.jsp" />
@@ -17,21 +16,5 @@
         	<a href="joinForm.do">회원가입</a>
         </div>
 
-=======
-	<div id="wrap">
-		<div id="navigation">
-			<jsp:include page="../navigation.jsp" />
-		</div>
-		<div style="margin-top: 15%;">
-			<a href="login.do">로그인</a><br>
-			<!-- 네이버 로그인 화면으로 이동 시키는 URL -->
-			<!-- 네이버 로그인 화면에서 ID, PW를 올바르게 입력하면 callback 메소드 실행 요청 -->
-			<a href="${url}"><img width="223" src="${pageContext.request.contextPath}/img/naverlogin.PNG"/></a><br>
-			<a href="joinForm.do">회원가입</a>
-
-
-		</div>
-	</div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 </body>
 </html>
