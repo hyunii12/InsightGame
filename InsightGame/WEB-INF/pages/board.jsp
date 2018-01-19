@@ -8,11 +8,15 @@
 </head>
 <body>
     <div class="container" style="margin-top: 15%">
-        <div id="navigation">
+        <div id="navigation" style="z-index: 2;">
             <jsp:include page="../navigation.jsp" />
         </div>
+
+
+
         <div>
 			<script src="js/board.js"></script>
+
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
 			</style>
@@ -24,5 +28,6 @@
         	</div>
         </div>
     </div>
+
 </body>
 </html>
