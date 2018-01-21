@@ -10,6 +10,7 @@
 		<spring-version>4.3.12.RELEASE</spring-version>
 	</properties>
 	<build>
+	
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
@@ -30,6 +31,7 @@
 		</plugins>
 	</build>
 	<dependencies>
+			
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
 			<groupId>org.springframework</groupId>
