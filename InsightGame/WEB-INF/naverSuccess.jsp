@@ -28,6 +28,7 @@
 	rel="stylesheet" type="text/css">
 
 
+
 <!-- Plugin CSS -->
 <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"
 	type="text/css">
