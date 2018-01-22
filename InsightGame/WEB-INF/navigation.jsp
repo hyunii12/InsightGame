@@ -6,12 +6,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Plugin jQuery&Bootstrap.js -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
 <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+	integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+	crossorigin="anonymous"></script>
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,53 +38,53 @@
 
 </head>
 <body>
-		<nav
-			class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-			id="mainNav" style="padding-bottom: 1.5%; z-index: 4; position: fixed; ">
-		<div class="container" >
-			<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
-				Game</a>
-			<div id="navbarResponsive">
-				<ul class="navbar-nav ml-auto ">
-					<li>
-						<form class="form-inline" role="search" id="header_search"
-							method="get" action="" style="margin: 0 auto;">
-							<select name="searchSelect" id="searchSelect" class="form-control mr-sm-2">
-								<option value="game" style="color: black;">게임</option>
-								<option value="streamer" style="color: black;">스트리머</option>
-							</select>
-							<input class="form-control mr-sm-2" type="text"
-								style="width: 250px; border: 0; margin: 0 auto;" placeholder="Search"
-								name="Search">
-							<button class="btn btn-outline-success my-2 my-sm-0"
-								type="submit" style="margin-right: 55px;"><img src="img/search.png"></button>
-						</form>
-					</li>
-				</ul>
-			</div>
-			<div id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
-							src="img/login.png"></a></li>
+	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 1.5%; z-index: 4; position: fixed; overflow: hidden; ">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
+			Game</a>
+		<div id="navbarResponsive">
+			<ul class="navbar-nav ml-auto ">
+				<li>
+					<form class="form-inline" role="search" id="header_search"
+						method="get" action="" style="margin: 0 auto;">
+						<select name="searchSelect" id="searchSelect"
+							class="form-control mr-sm-2">
+							<option value="game" style="color: black;">게임</option>
+							<option value="streamer" style="color: black;">스트리머</option>
+						</select> <input class="form-control mr-sm-2" type="text"
+							style="width: 250px; border: 0; margin: 0 auto;"
+							placeholder="Search" name="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+							style="margin-right: 55px;">
+							<img src="img/search.png">
+						</button>
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
+						src="img/login.png"></a></li>
 
-				</ul>
-			</div>
-			</div>
-		</nav>
+			</ul>
+		</div>
+	</div>
+	</nav>
 
 	<div>
 		<div class="bg-secondary"
 			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 5;">
-			<a class="navbar-brand js-scroll-trigger"
-				href="InsightGame.do" style="color: white; font-weight: bold;">게임</a>
+			<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
+				style="color: white; font-weight: bold;">게임</a>
 		</div>
 		<div style="position: fixed; right: 45%; top: 100px; z-index: 6;">
-			<a class="navbar-brand js-scroll-trigger"
-				href="InsightStreamer.do" style="color: white; font-weight: bold;">스트리머</a>
+			<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
+				style="color: white; font-weight: bold;">스트리머</a>
 		</div>
 		<div style="position: fixed; left: 73%; top: 100px; z-index: 7;">
-			<a class="navbar-brand js-scroll-trigger"
-				href="board.do" style="color: white; font-weight: bold;">게시판</a>
+			<a class="navbar-brand js-scroll-trigger" href="board.do"
+				style="color: white; font-weight: bold;">게시판</a>
 		</div>
 	</div>
 
