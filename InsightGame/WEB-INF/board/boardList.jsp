@@ -16,7 +16,6 @@
 		</thead>
 		<tbody>
 			<c:forEach items="${boardList }" var="list">
-<%-- 				<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
 				<tr id="tr_${list.bId }" style="cursor: pointer">
 					<td>${list.bId }</td>
 					<td>[${list.header }]</td>
@@ -24,8 +23,11 @@
 					<td>${list.writer}</td>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/></td>
 					<td>
-						<button class="btn btn-info" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
-						<button class="btn btn-danger" name="deleteBtn" onclick="deleteBtn(${list.bId })">삭제</button>
+						<button class="btn btn-info" name="commentBtn" onclick="commentBtn(${list.bId })">댓글</button>
+						<c:if test="${loginState }">
+							<button class="btn btn-primary" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
+							<button class="btn btn-danger" name="deleteBtn" onclick="deleteBtn(${list.bId })">삭제</button>
+						</c:if>
 					</td>
 				</tr>
 			</c:forEach>
