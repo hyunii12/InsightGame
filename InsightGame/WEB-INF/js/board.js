@@ -40,8 +40,8 @@ function modifyBtn(bId){
 	var content = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(3)")
 		.replaceWith('<td><input id="re_content" type="text" class="form-control" aria-label="..."></td>')
 	var submit = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(6)")
-		.replaceWith('<button type="button" name="submitBtn" class="btn btn-info"'+
-				'onclick="submitBtn('+bId+')">등록</button>');
+		.replaceWith('<td><button type="button" name="submitBtn" class="btn btn-info"'+
+				'onclick="submitBtn('+bId+')">등록</button></td>');
 }
 function submitBtn(bId){
 	var content = $('#re_content').val()
