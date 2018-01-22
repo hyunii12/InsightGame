@@ -109,14 +109,14 @@ public class BoardController {
 		board.setContent(content);
 		board.setWriter("temp");
 		System.out.println(board);
-//		int newBId = boardService.writeBoard(board, parentId);
-//		if(newBId > 0) {
+		int newBId = boardService.writeBoard(board, parentId);
+		if(newBId > 0) {
 			// 작성 성공
 			result.put("msg", true);
-//			result.put("new", newBId);
-//		}
-//		else
-//			result.put("msg", false);
+			result.put("new", newBId);
+		}
+		else
+			result.put("msg", false);
 		return result;
 	}
 	@RequestMapping("modify.do")

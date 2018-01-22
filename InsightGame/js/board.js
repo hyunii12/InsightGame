@@ -34,7 +34,7 @@ $(document).ready(function(){
 });
 
 function modifyBtn(bId){
-	alert(bId);
+//	alert(bId);
 	var targetTr = $('#tr_'+bId);
 	
 	var content = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(3)")
