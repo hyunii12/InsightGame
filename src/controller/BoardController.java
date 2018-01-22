@@ -92,6 +92,33 @@ public class BoardController {
 			result.put("msg", false);
 		return result;
 	}
+	@RequestMapping("writeCmt.do")
+	public @ResponseBody HashMap<String, Object> writeCmt( 
+			@RequestParam(name="parentBId", required= true)String parentBId,
+			@RequestParam(name="header", defaultValue="-")String header,
+			@RequestParam(name="writer", defaultValue="-")String writer,
+			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
+		HashMap<String, Object> result = new HashMap<>();
+//		System.out.println(header+":::::::::"+content);
+		header = URLDecoder.decode(header,"UTF-8");
+		writer = URLDecoder.decode(writer,"UTF-8");
+		content = URLDecoder.decode(content,"UTF-8");
+		int parentId = Integer.parseInt(parentBId);
+		Board board = new Board();
+		board.setHeader(header);
+		board.setContent(content);
+		board.setWriter("temp");
+		System.out.println(board);
+//		int newBId = boardService.writeBoard(board, parentId);
+//		if(newBId > 0) {
+			// 작성 성공
+			result.put("msg", true);
+//			result.put("new", newBId);
+//		}
+//		else
+//			result.put("msg", false);
+		return result;
+	}
 	@RequestMapping("modify.do")
 	public @ResponseBody HashMap<String, Object> modify( 
 			@RequestParam(name="bId", defaultValue="-")String bId,
