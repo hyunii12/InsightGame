@@ -32,7 +32,8 @@
 
 
         <div>
-			<script src="js/board.js"></script>
+<!-- 			<script src="js/board.js"></script> -->
+			<script src="js/board.js?v=c298c7ef22dcd3s"></script>
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
 			</style>

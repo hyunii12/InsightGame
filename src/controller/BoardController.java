@@ -107,7 +107,7 @@ public class BoardController {
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
-		board.setWriter("temp");
+		board.setWriter(writer);
 		System.out.println(board);
 		int newBId = boardService.writeBoard(board, parentId);
 		if(newBId > 0) {

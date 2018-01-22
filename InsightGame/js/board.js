@@ -8,6 +8,12 @@ function setHeader(val){
 }
 //     게시글 작성 ajax
 $(document).ready(function(){
+	$('#boardTable tr').each(function(i){
+		if($(this).find('td[name="header"]'))
+			console.log('asdf')
+		else
+			$(this).css('background', 'lightgray')
+	})
 	$('#writeBtn').on('click', function(){
 		var content = $('#writeContent').val();				
 //		alert(header+"//"+content);
@@ -40,7 +46,12 @@ function modifyBtn(bId){
 	var content = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(3)")
 		.replaceWith('<td><input id="re_content" type="text" class="form-control" aria-label="..."></td>')
 	var submit = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(6)")
-		.replaceWith('<td><button type="button" name="submitBtn" class="btn btn-info" onclick="submitBtn('+bId+')">수정</button></td>');
+		.replaceWith(function(){
+			return '<td>'+
+			'<button type="button" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')">수정</button>'+
+			'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()">취소</button>'+
+			'</td>'
+			});
 }
 function submitBtn(bId){
 	var content = $('#re_content').val()
@@ -81,12 +92,34 @@ function deleteBtn(bId){
 		}
 	});
 }
-function writeBtn_comment(bId){
+function commentBtn(bId){
 	var targetTr = $('#tr_'+bId);
-	var header = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(2)").val();
-	var content = $('#writeContent').val();
-	var writer = 'temp2';
+	if(targetTr.next('tr').attr('id') == 'tr_cmt_'+bId){
+		targetTr.next('tr').remove()
+		targetTr.find('button[name=commentBtn]').text('댓글')
+		targetTr.css("background", "");
+	}
+	else{
+		targetTr.find('button[name=commentBtn]').text('취소');
+		targetTr.next('tr').addClass('product_thumb').css({
+			
+		});
+		targetTr.after(function(){
+			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
+			return '<tr id=tr_cmt_'+bId+'><td>ㄴ</td>'+
+				'<td colspan="3"><input id="writeComment" type="text" class="form-control" aria-label="..."></td>'+
+				'<td>작성자</td>'+
+				'<td><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
+		});
+	}
+}
+function writeBtn_comment(bId, header){
+	var targetTr = $('#tr_'+bId);
+	var header = targetTr.find('td[name=header]').attr('value')
+	var content = $('#writeComment').val();
+	var writer = 'temp222';
 	var parentBId = bId;
+//	alert("["+bId+"]"+header+".//."+content+writer)
 	$.ajax({
 		url: "writeCmt.do", 
 		type: "post",
@@ -100,31 +133,12 @@ function writeBtn_comment(bId){
 		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 		success: function(data){
 			alert(data.msg)
-	    	if(data != null){
-	        	location.reload();
-	    	}
+			if(data != null){
+				location.reload();
+			}
 		},
 		error:function(request,status,error){
-		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
-}
-function commentBtn(bId){
-	var targetTr = $('#tr_'+bId);
-	if(targetTr.next('tr').attr('id') == 'tr_cmt_'+bId){
-		targetTr.next('tr').remove()
-		targetTr.find('button[name=commentBtn]').text('댓글')
-		targetTr.css("background", "");
-	}
-	else{
-		targetTr.find('button[name=commentBtn]').text('취소')
-		targetTr.css('background', 'red');
-		targetTr.after(function(){
-			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
-			return '<tr id=tr_cmt_'+bId+'><td>ㄴ</td>'+
-				'<td colspan="3"><input id="writeComment" type="text" class="form-control" aria-label="..."></td>'+
-				'<td>작성자</td>'+
-				'<td><button type="button" id="writeBtn_comment" class="btn btn-default" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
-		});
-	}
 }
