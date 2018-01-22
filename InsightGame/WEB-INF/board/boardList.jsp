@@ -36,7 +36,7 @@
 	</table>
 <script type="text/javascript">
 function writeBtn_comment(bId){
-	
+	var targetTr = $('#tr_cmt_'+bId);
 }
 function commentBtn(bId){
 	var targetTr = $('#tr_'+bId);
@@ -53,7 +53,7 @@ function commentBtn(bId){
 			return '<tr id=tr_cmt_'+bId+'><td>ㄴ</td>'+
 				'<td colspan="3"><input id="writeComment" type="text" class="form-control" aria-label="..."></td>'+
 				'<td>작성자</td>'+
-				'<td><button type="button" id="writeBtn_comment" class="btn btn-default">등록</button></td></tr>';
+				'<td><button type="button" id="writeBtn_comment" class="btn btn-default" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
 		});
 	}
 }

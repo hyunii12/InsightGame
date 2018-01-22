@@ -32,31 +32,6 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$('#writeBtn_comment').on('click', function(){
-		var targetTr = $(this).parent('tr')
-		var content = $('#writeComment').val();	
-		var writer = 'cmt writer';
-		alert(targetTr.attr('id'))
-//		$.ajax({
-//			url: "writeCmt.do", 
-//			type: "post",
-//			dataType: "json",
-//			data:{	
-//				"parentBId": bId,
-//				"content": content
-//			}, 
-//			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
-//			success: function(data){
-//				if(data != null){
-////		        	alert('sucess')
-//					location.reload();
-//				}
-//			},
-//			error:function(request,status,error){
-//				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-//			}
-//		});
-	});
 });
 
 function modifyBtn(bId){
@@ -66,8 +41,7 @@ function modifyBtn(bId){
 	var content = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(3)")
 		.replaceWith('<td><input id="re_content" type="text" class="form-control" aria-label="..."></td>')
 	var submit = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(6)")
-		.replaceWith('<button type="button" name="submitBtn" class="btn btn-info"'+
-				'onclick="submitBtn('+bId+')">등록</button>');
+		.replaceWith('<td><button type="button" name="submitBtn" class="btn btn-info" onclick="submitBtn('+bId+')">수정</button></td>');
 }
 function submitBtn(bId){
 	var content = $('#re_content').val()
@@ -108,8 +82,31 @@ function deleteBtn(bId){
 		}
 	});
 }
-function commentBtn(bId){
-	alert('Here!')
+function writeBtn_comment(bId){
 	var targetTr = $('#tr_'+bId);
-	$('tr').appendTo(targetTr)
+	var header = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(2)").val();
+	var content = $('#writeContent').val();
+	var writer = 'temp2';
+	var parentBId = bId;
+	$.ajax({
+		url: "writeCmt.do", 
+		type: "post",
+		dataType: "json",
+		data:{	
+			"parentBId" : bId,
+			"header" : header,
+			"writer" : writer,
+			"content": content
+		}, 
+		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
+		success: function(data){
+			alert(data.msg)
+	    	if(data != null){
+	        	location.reload();
+	    	}
+		},
+		error:function(request,status,error){
+		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
 }
