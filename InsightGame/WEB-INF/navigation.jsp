@@ -35,8 +35,8 @@
 <body>
 		<nav
 			class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-			id="mainNav" style="padding-bottom: 1.5%; z-index: 4;">
-		<div class="container">
+			id="mainNav" style="padding-bottom: 1.5%; z-index: 4; position: fixed; ">
+		<div class="container" >
 			<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 				Game</a>
 			<div id="navbarResponsive">
@@ -49,10 +49,10 @@
 								<option value="streamer" style="color: black;">스트리머</option>
 							</select>
 							<input class="form-control mr-sm-2" type="text"
-								style="width: 250px; margin: 0 auto;" placeholder="Search"
+								style="width: 250px; border: 0; margin: 0 auto;" placeholder="Search"
 								name="Search">
 							<button class="btn btn-outline-success my-2 my-sm-0"
-								type="submit" style="margin-right: 55px;">검색</button>
+								type="submit" style="margin-right: 55px;"><img src="img/search.png"></button>
 						</form>
 					</li>
 				</ul>
