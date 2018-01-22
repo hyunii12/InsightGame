@@ -4,6 +4,8 @@
 var header = "";
 function setHeader(val){
 	header = val;
+	var target = $('#headerBtn').val();
+	target.html(val)
 }
 //     게시글 작성 ajax
 $(document).ready(function(){
@@ -80,4 +82,9 @@ function deleteBtn(bId){
 		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
+}
+function commentBtn(bId){
+	alert('Here!')
+//	var targetTr = $('#tr_'+bId);
+//	$('tr').appendTo(targetTr)
 }
