@@ -5,7 +5,7 @@ var header = "";
 function setHeader(val){
 	header = val;
 	var target = $('#headerBtn').val();
-	target.html(val)
+	target.text(val)
 }
 //     게시글 작성 ajax
 $(document).ready(function(){
@@ -31,6 +31,31 @@ $(document).ready(function(){
 			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			}
 		});
+	});
+	$('#writeBtn_comment').on('click', function(){
+		var targetTr = $(this).parent('tr')
+		var content = $('#writeComment').val();	
+		var writer = 'cmt writer';
+		alert(targetTr.attr('id'))
+//		$.ajax({
+//			url: "writeCmt.do", 
+//			type: "post",
+//			dataType: "json",
+//			data:{	
+//				"parentBId": bId,
+//				"content": content
+//			}, 
+//			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
+//			success: function(data){
+//				if(data != null){
+////		        	alert('sucess')
+//					location.reload();
+//				}
+//			},
+//			error:function(request,status,error){
+//				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+//			}
+//		});
 	});
 });
 
@@ -85,6 +110,6 @@ function deleteBtn(bId){
 }
 function commentBtn(bId){
 	alert('Here!')
-//	var targetTr = $('#tr_'+bId);
-//	$('tr').appendTo(targetTr)
+	var targetTr = $('#tr_'+bId);
+	$('tr').appendTo(targetTr)
 }
