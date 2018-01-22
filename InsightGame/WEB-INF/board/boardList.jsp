@@ -34,29 +34,5 @@
 		</tbody>
 <!-- 		<tfoot><tr><td colspan='7'>여기는 바닥</td></tr> </tfoot> -->
 	</table>
-<script type="text/javascript">
-function writeBtn_comment(bId){
-	var targetTr = $('#tr_cmt_'+bId);
-}
-function commentBtn(bId){
-	var targetTr = $('#tr_'+bId);
-	if(targetTr.next('tr').attr('id') == 'tr_cmt_'+bId){
-		targetTr.next('tr').remove()
-		targetTr.find('button[name=commentBtn]').text('댓글')
-		targetTr.css("background", "");
-	}
-	else{
-		targetTr.find('button[name=commentBtn]').text('취소')
-		targetTr.css('background', 'red');
-		targetTr.after(function(){
-			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
-			return '<tr id=tr_cmt_'+bId+'><td>ㄴ</td>'+
-				'<td colspan="3"><input id="writeComment" type="text" class="form-control" aria-label="..."></td>'+
-				'<td>작성자</td>'+
-				'<td><button type="button" id="writeBtn_comment" class="btn btn-default" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
-		});
-	}
-}
-</script>
 </body>
 </html>

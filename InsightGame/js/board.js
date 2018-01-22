@@ -4,8 +4,7 @@
 var header = "";
 function setHeader(val){
 	header = val;
-	var target = $('#headerBtn').val();
-	target.text(val)
+	var target = $('#headerBtn').text(val);
 }
 //     게시글 작성 ajax
 $(document).ready(function(){
@@ -109,4 +108,23 @@ function writeBtn_comment(bId){
 		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
+}
+function commentBtn(bId){
+	var targetTr = $('#tr_'+bId);
+	if(targetTr.next('tr').attr('id') == 'tr_cmt_'+bId){
+		targetTr.next('tr').remove()
+		targetTr.find('button[name=commentBtn]').text('댓글')
+		targetTr.css("background", "");
+	}
+	else{
+		targetTr.find('button[name=commentBtn]').text('취소')
+		targetTr.css('background', 'red');
+		targetTr.after(function(){
+			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
+			return '<tr id=tr_cmt_'+bId+'><td>ㄴ</td>'+
+				'<td colspan="3"><input id="writeComment" type="text" class="form-control" aria-label="..."></td>'+
+				'<td>작성자</td>'+
+				'<td><button type="button" id="writeBtn_comment" class="btn btn-default" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
+		});
+	}
 }
