@@ -14,55 +14,78 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
 import service.NaverLoginService;
+import service.TwitchLoginService;
 
 @Controller
 public class naverLoginTutorial {
-	
+
 	/* NaverLoginBO */
 	private NaverLoginService naverLoginservice;
+	private TwitchLoginService twitchLoginservice;
 	private String apiResult = null;
-
-
 
 	/* NaverLoginBO */
 	@Autowired
-	private void setNaverLoginService(NaverLoginService naverLoginservice){
+	private void setNaverLoginService(NaverLoginService naverLoginservice) {
 		this.naverLoginservice = naverLoginservice;
 	}
 	
-    
-	//로그인 첫 화면 요청 메소드
-		@RequestMapping(value = "loginForm.do", method = { RequestMethod.GET, RequestMethod.POST })
-		public String naverlogin(Model model, HttpSession session) {
-			
-			/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
-			String naverAuthUrl = naverLoginservice.getAuthorizationUrl(session);
-			
-			
-			System.out.println("네이버:" + naverAuthUrl);
-			
-			//네이버 
-			model.addAttribute("url", naverAuthUrl);
+	@Autowired
+	private void setTwitchLoginService(TwitchLoginService twitchLoginservice) {
+		this.twitchLoginservice = twitchLoginservice;
+	}
 
-			/* 생성한 인증 URL을 View로 전달 */
-			return "member/login";
-		}
+	// 로그인 첫 화면 요청 메소드
+	@RequestMapping(value = "loginForm.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String naverlogin(Model model, HttpSession session) {
 
-		//네이버 로그인 성공시 callback호출 메소드
-		@RequestMapping(value = "callback.do", method = { RequestMethod.GET, RequestMethod.POST })
-		public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
-				throws IOException {
-			System.out.println("여기는 callback");
-			OAuth2AccessToken oauthToken;
-	        oauthToken = naverLoginservice.getAccessToken(session, code, state);
-	        //로그인 사용자 정보를 읽어온다.
-//		    apiResult = naverLoginservice.getUserProfile(oauthToken);
-			model.addAttribute("result", apiResult);
+		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
+		String naverAuthUrl = naverLoginservice.getAuthorizationUrl(session);
+		String twitchAuthUrl = twitchLoginservice.getAuthorizationUrl(session);
 
-	        /* 네이버 로그인 성공 페이지 View 호출 */
-			return "naverSuccess";
-		}
+		System.out.println("네이버:" + naverAuthUrl);
+		System.out.println("트위치:" + twitchAuthUrl);
+
+		// 네이버
+		model.addAttribute("naverurl", naverAuthUrl);
+		model.addAttribute("twitchurl", twitchAuthUrl);
+
+		/* 생성한 인증 URL을 View로 전달 */
+		return "member/login";
+	}
+	
+
+	// 네이버 로그인 성공시 callback호출 메소드
+	@RequestMapping(value = "naverCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String naverCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+			throws IOException {
+		System.out.println("여기는 naverCallback");
+		OAuth2AccessToken oauthToken;
+		oauthToken = naverLoginservice.getAccessToken(session, code, state);
+
+		// 로그인 사용자 정보를 읽어온다.
+		// apiResult = naverLoginservice.getUserProfile(oauthToken);
+		model.addAttribute("result", apiResult);
+
+		/* 네이버 로그인 성공 페이지 View 호출 */
+		return "naverSuccess";
+	}
 
 
+	// 네이버 로그인 성공시 callback호출 메소드
+	@RequestMapping(value = "twitchCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String twitchCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+			throws IOException {
+		System.out.println("여기는 twitchCallback");
+		OAuth2AccessToken oauthToken;
+		oauthToken = twitchLoginservice.getAccessToken(session, code, state);
+
+		// 로그인 사용자 정보를 읽어온다.
+		// apiResult = naverLoginservice.getUserProfile(oauthToken);
+		model.addAttribute("result", apiResult);
+
+		/* 네이버 로그인 성공 페이지 View 호출 */
+		return "twitchSuccess";
+	}
 
 }
