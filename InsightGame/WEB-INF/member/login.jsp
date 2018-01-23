@@ -45,6 +45,8 @@
 				<!-- 				Connect With Twitch!</a><br> -->
 				<a href="${twitchurl}"><img width="126" height="75"
 					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
+				<a href="${googleurl}"><img width="126" height="75"
+					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
 			</div>
 		</div>
 	</div>

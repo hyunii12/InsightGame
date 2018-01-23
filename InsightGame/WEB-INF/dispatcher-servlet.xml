@@ -22,13 +22,15 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+
 	<bean id="NaverLoginService" class="service.NaverLoginService" />
-	
 	<bean id="TwitchLoginService" class="service.TwitchLoginService" />
-	
-	
+	<bean id="GoogleLoginService" class="service.GoogleLoginService" />
+
+
+
 	<mvc:annotation-driven />
-	
-	
+
+
 
 </beans>

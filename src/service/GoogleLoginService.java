@@ -15,15 +15,16 @@ import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
-import model.NaverLoginApi;
+import model.GoogleLoginApi;
 
-public class NaverLoginService {
+public class GoogleLoginService {
 	
-	private final static String CLIENT_ID = "awgAoMxjvMg28N00x8PQ";
-	private final static String CLIENT_SECRET = "Y9uB_t8lqt";
-	private final static String REDIRECT_URI = "http://localhost:8080/InsightGame/naverCallback.do";
+	private final static String CLIENT_ID = "1042051562560-7omovqc154p2cpb9g0fkoi2hkifndkna.apps.googleusercontent.com";
+	private final static String CLIENT_SECRET = "u05kpcHSnWKvcItLafWPjZyI&scope=";
+	private final static String REDIRECT_URI = "http://localhost:8080/InsightGame/googleCallback.do";
+	private final static String SCOPE = "openid";
 	private final static String SESSION_STATE = "oauth_state";
-//	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
+//	private final static String PROFILE_API_URL = "";
 	
 	/* 네아로 인증  URL 생성  Method */
 	public String getAuthorizationUrl(HttpSession session) {
@@ -40,7 +41,9 @@ public class NaverLoginService {
 				.apiSecret(CLIENT_SECRET)
 				.callback(REDIRECT_URI)
 				.state("RANDOM_STRING")
-				.build(NaverLoginApi.instance());
+				.scope(SCOPE)
+				.build(GoogleLoginApi.instance());
+				
 
 		return oauthService.getAuthorizationUrl();
 	}
@@ -57,7 +60,8 @@ public class NaverLoginService {
 					.apiSecret(CLIENT_SECRET)
 					.callback(REDIRECT_URI)
 					.state(state)
-					.build(NaverLoginApi.instance());
+					.scope(SCOPE)
+					.build(GoogleLoginApi.instance());
 					
 			/* Scribe에서 제공하는 AccessToken 획득 기능으로 네아로 Access Token을 획득 */
 			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
@@ -87,7 +91,7 @@ public class NaverLoginService {
 //		OAuth20Service oauthService =new ServiceBuilder()
 //    			.apiKey(CLIENT_ID)
 //    			.apiSecret(CLIENT_SECRET)
-//    			.callback(REDIRECT_URI).build(naverLoginApi.instance());
+//    			.callback(REDIRECT_URI).build(googleLoginApi.instance());
 //    	
 //    		OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL, oauthService);
 //		oauthService.signRequest(oauthToken, request);
