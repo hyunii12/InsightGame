@@ -36,7 +36,19 @@
 
 <!-- Custom styles for this template -->
 <link href="css/freelancer.min.css" rel="stylesheet">
+<script type="text/javascript">
+function setSearchHeader(data){
+	$('input[name="searchSelect"]').attr('value', data);
+	if(data === 'game')
+		$('#navSearchFrm').attr('action', 'searchGame.do')
+		$('#searchSelectBtn').html('게임&nbsp;');
+	if(data === 'streamer')
+		$('#navSearchFrm').attr('action', 'searchStreamer.do')
+		$('#searchSelectBtn').html('스트리머&nbsp;');
+	
+}
 
+</script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 1.5%; z-index: 4; position: fixed; overflow: hidden; ">
@@ -46,17 +58,27 @@
 		<div id="navbarResponsive">
 			<ul class="navbar-nav ml-auto ">
 				<li>
-					<form class="form-inline" role="search" id="header_search"
-						method="get" action="" style="margin: 0 auto;">
-						<select name="searchSelect" id="searchSelect"
-							class="form-control mr-sm-2">
-							<option value="game" style="color: black;">게임</option>
-							<option value="streamer" style="color: black;">스트리머</option>
-						</select>
-												
+					<form class="form-inline" role="search" id="navSearchFrm"
+						method="get" action="searchGame.do" style="margin: 0 auto;">
+<!-- 						<select name="searchSelect" id="searchSelect" -->
+<!-- 							class="form-control mr-sm-2"> -->
+<!-- 							<option value="game" style="color: black;">게임</option> -->
+<!-- 							<option value="streamer" style="color: black;">스트리머</option> -->
+<!-- 						</select> -->
+
+						<input type="hidden" name="searchSelect">
+						<div class="input-group-prepend" id="headerDropbox">
+						    <button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button" 
+						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">게임&nbsp;</button>
+						    <div class="dropdown-menu">
+						      <button class="dropdown-item" type="button" value="game" onclick='setSearchHeader($(this).val())'>게임</button>
+						      <button class="dropdown-item" type="button" value="streamer" onclick='setSearchHeader($(this).val())'>스트리머</button>
+						    </div>
+						</div>
+						
 						<input class="form-control mr-sm-2" type="text"
 							style="width: 250px; border: 0; margin: 0 auto;"
-							placeholder="Search" name="Search">
+							placeholder="Search" name="search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
 							style="margin-right: 55px;">
 							<img src="img/search.png">
