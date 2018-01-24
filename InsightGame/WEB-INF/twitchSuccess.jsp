@@ -5,7 +5,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<title>네이버로 로그인</title>
+<title>Insight Game</title>
 
 
 <script type="text/javascript"

@@ -25,13 +25,13 @@
 <link href="css/freelancer.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container" style="margin-top: 15%">
+
         <div id="navigation" style="z-index: 2;">
             <jsp:include page="../navigation.jsp" />
         </div>
 
 
-        <div>
+        <div class="container" style="margin-top: 15%; width:77%;">
 <!-- 			<script src="js/board.js"></script> -->
 			<script src="js/board.js?v=c298c7ef22dcd3s"></script>
 			<style>
@@ -44,7 +44,7 @@
 	        	<jsp:include page="../board/boardList.jsp" />
         	</div>
         </div>
-    </div>
+
 
 </body>
 </html>

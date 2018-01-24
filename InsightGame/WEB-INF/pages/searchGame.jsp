@@ -31,7 +31,7 @@
 		<jsp:include page="../navigation.jsp" />
 	</div>
 
-	<div id="InsightGame" style="margin-top:10%; overflow:hidden;">
+	<div id="InsightGame" style="margin-top:8.5%; overflow:hidden;">
 		<!-- Portfolio Grid Section -->
 		<section class="bg-primary text-white mb-0" id="about">
 		<div class="container">
