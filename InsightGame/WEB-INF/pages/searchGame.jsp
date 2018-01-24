@@ -36,6 +36,7 @@
 		<section class="bg-primary text-white mb-0" id="about">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">gameInformation.jsp</h2>
+			<h2 class="text-center text-uppercase text-secondary">검색키워드: ${what }</h2>
 			<hr class="star-light mb-5">
 			<div class="row">
 				<a href="gameDetail.jsp"><h3 class="text-center text-white" style="margin: 0 auto;">gameDetail.jsp</h3></a>

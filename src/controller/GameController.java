@@ -3,6 +3,7 @@ package controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GameController {
@@ -16,6 +17,14 @@ public class GameController {
 	public String game() {
 		return "redirect:main.do";
 
+	}
+
+	@RequestMapping("searchGame.do")
+	public String searchGame(Model model, @RequestParam(name="searchSelect", required=true)String searchSelect,
+			@RequestParam(name="search", defaultValue="") String search) {
+		System.out.println("여기는 서치게임");
+		model.addAttribute("what", search);
+		return "pages/searchGame";
 	}
 	
 	@RequestMapping("gameDetail.do")
