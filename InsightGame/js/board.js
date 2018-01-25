@@ -1,17 +1,56 @@
 /**
  *  board/*.jsp 
  */
+var page = 1;
 var header = "";
 function setHeader(val){
 	header = val;
 	var target = $('#headerBtn').text(val);
 }
+function openComments(bId){
+	var targetTr = $('#tr_'+bId);
+	if(targetTr.next('tr').attr('class').substr(0, 4) == 'cmts'){
+		console.log('Already exists....')
+		$('.cmts_'+bId).toggle();
+	}
+	else{
+		$.ajax({
+			url:"getCommentList.do",
+			type: "post",
+			dataType:"json",
+			data: {"groupId": bId},
+			success: function(data){
+				targetTr.after(function(){
+					var cmts = "";
+					var list = data.commentList;
+					$.each(list, function(index, item) {
+						var cmt_bId = item.bId;
+						var cmt_content = item.content;
+						var cmt_writer = item.writer;
+						var cmt_regDate = item.regDate;
+						var cmt_groupId = item.groupId;
+						cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'+
+							'<td></td>'+
+							'<td>ㄴ</td>'+
+							'<td>'+cmt_content+'</td>'+
+							'<td>'+cmt_writer+'</td>'+
+							'<td>'+cmt_regDate+'</td>'+
+							'<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>';
+					});
+					return cmts;
+				});
+			},
+			error : function(e){
+				if(e.status == 300)
+					console.log('Failed to load data....')
+			}
+		})
+	}
+}
 //     게시글 작성 ajax
 $(document).ready(function(){
 	$('#boardTable tr').each(function(i){
-		if($(this).find('td[name="header"]'))
-			console.log('asdf')
-		else
+		if(!$(this).find('td[name="header"]'))
 			$(this).css('background', 'lightgray')
 	})
 	$('#writeBtn').on('click', function(){

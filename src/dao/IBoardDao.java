@@ -15,7 +15,8 @@ public interface IBoardDao {
 	public int updateBoard(Board board);
 	public int deleteBoard(int bId);
 	public Board selectBoardByBId(int bId);
-	public List<Board> selectBoardList(HashMap<String, Object> params);
+	public List<HashMap<String, Object>> selectBoardList(HashMap<String, Object> params);
 	public int getBoardCount();
 	public int updateGroupSeq(HashMap<String, Object> params);
+	public List<Board> selectCommentListBygroupId(int groupId);
 }

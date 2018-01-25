@@ -81,7 +81,7 @@ public class BoardServiceImpl implements IBoardService{
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("skip", skip);
 		params.put("count", count);
-		List<Board> boardList = dao.selectBoardList(params);
+		List<HashMap<String, Object>> boardList = dao.selectBoardList(params);
 		results.put("start", start);
 		results.put("end", end);
 		results.put("first", first);
@@ -110,7 +110,7 @@ public class BoardServiceImpl implements IBoardService{
 		params.put("skip", skip);
 		params.put("count", count);
 		params.put("header", param.get("header"));
-		List<Board> boardList = dao.selectBoardList(params);
+		List<HashMap<String, Object>> boardList = dao.selectBoardList(params);
 		results.put("start", start);
 		results.put("end", end);
 		results.put("first", first);
@@ -118,6 +118,15 @@ public class BoardServiceImpl implements IBoardService{
 		results.put("current", page);
 		results.put("header", param.get("header"));
 		results.put("boardList", boardList);
+		return results;
+	}
+
+	@Override
+	public HashMap<String, Object> getCommentList(int groupId) {
+		System.out.println("댓글 조회[그룹아이디: "+groupId+"]");
+		HashMap<String, Object> results = new HashMap<>();
+		List<Board> commentList = dao.selectCommentListBygroupId(groupId);
+		results.put("commentList", commentList);
 		return results;
 	}
 }

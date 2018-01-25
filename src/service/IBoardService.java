@@ -15,4 +15,6 @@ public interface IBoardService {
 	public Board getBoard(int bId);	
 	public HashMap<String, Object> getBoardList(int page);	
 	public HashMap<String, Object> getBoardList(int page, HashMap<String, Object> param);
+	public HashMap<String, Object> getCommentList(int groupId);	
+	
 }

@@ -16,34 +16,25 @@
 		</thead>
 		<tbody>
 			<c:forEach items="${boardList }" var="list">
-				<tr id="tr_${list.bId }" style="cursor: pointer">
-					<c:choose>
-						<c:when test="${list.groupLevel eq 0 }">
-							<td name="bId" value="${list.bId }">${list.bId }</td>
-							<td name="header" value="${list.header }">[${list.header }]</td>
-						</c:when>
-						<c:otherwise>
-							<td></td>
-							<td>ㄴ</td>	
-						</c:otherwise>
-					</c:choose>
-					<td name="content" value="${list.content }">${list.content}</td>
-					<td name="writer" value="${list.writer }">${list.writer}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/></td>
-					<td>
-						<c:if test="${list.groupLevel eq 0 }">
-							
+				<c:if test="${list.groupLevel eq 0 }">
+					<tr id="tr_${list.bId }" class="boards_tr" style="cursor: pointer" 
+					onclick="<c:if test="${list.cmts != 0}">openComments(${list.bId})</c:if>">
+						<td name="bId" value="${list.bId }">${list.bId }</td>
+						<td name="header" value="${list.header }">[${list.header }]</td>
+						<td name="content" value="${list.content }">${list.content}<c:if test="${list.cmts != 0}">[${list.cmts }]</c:if></td>
+						<td name="writer" value="${list.writer }">${list.writer}</td>
+						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/></td>
+						<td>
 							<button class="btn btn-secondary btn-sm" name="commentBtn" onclick="commentBtn(${list.bId })">댓글</button>
-						</c:if>
-<%-- 						<c:if test="${loginState }"> --%>
-							<button class="btn btn-secondary btn-sm" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
-							<button class="btn btn-secondary btn-sm" name="deleteBtn" onclick="deleteBtn(${list.bId })">삭제</button>
-<%-- 						</c:if> --%>
-					</td>
-				</tr>
+				<%-- 		<c:if test="${loginState }"> --%>
+								<button class="btn btn-secondary btn-sm" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
+								<button class="btn btn-secondary btn-sm" name="deleteBtn" onclick="deleteBtn(${list.bId })">삭제</button>
+				<%-- 		</c:if> --%>
+						</td>
+					</tr>
+				</c:if>
 			</c:forEach>
 		</tbody>
-<!-- 		<tfoot><tr><td colspan='7'>여기는 바닥</td></tr> </tfoot> -->
 	</table>
 </body>
 </html>

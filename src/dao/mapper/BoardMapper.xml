@@ -41,22 +41,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM board WHERE b_id = #{bId}
 	</select>
 	
-	<select id="selectBoardList" parameterType="java.util.HashMap" resultMap="boardMap">
-		SELECT 	b_id,
-				b_game_header,
-				b_writer,
-				b_reg_date,
-				b_content,
-				b_group_id,
-				b_group_seq,
-				b_group_lv
-		FROM board WHERE 1=1
-			<if test="header != NULL">
-				AND b_game_header = #{header}
-			</if> 
-		ORDER BY b_group_id DESC, b_group_seq ASC
-		LIMIT #{skip}, #{count}
+	<select id="selectBoardList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT
+			b1.b_id as bId,
+			b1.b_game_header as header,
+			b1.b_content as content,
+			b1.b_writer as writer,
+			b1.b_reg_date as regDate,
+			b1.b_group_id as groupId,
+			b1.b_group_seq as groupSeq,
+			b1.b_group_lv as groupLevel,
+			COUNT(b2.b_group_id)-1 AS cmts
+		FROM board b1
+		LEFT JOIN board b2 ON b1.b_id = b2.b_group_id
+		GROUP BY b1.b_id
+		Having b1.b_group_lv = 0 <if test="header != NULL">AND b_game_header = #{header}</if> 
+		ORDER BY b1.b_group_id DESC, b1.b_group_seq ASC
+		LIMIT #{skip}, #{count};
 	</select>
+<!-- 		SELECT 	b_id, -->
+<!-- 				b_game_header, -->
+<!-- 				b_writer, -->
+<!-- 				b_reg_date, -->
+<!-- 				b_content, -->
+<!-- 				b_group_id, -->
+<!-- 				b_group_seq, -->
+<!-- 				b_group_lv -->
+<!-- 		FROM board WHERE 1=1 -->
+<!-- 			<if test="header != NULL"> -->
+<!-- 				AND b_game_header = #{header} -->
+<!-- 			</if>  -->
+<!-- 		ORDER BY b_group_id DESC, b_group_seq ASC -->
+<!-- 		LIMIT #{skip}, #{count} -->
 	
 	<select id="getBoardCount" resultType="java.lang.Integer">
 		SELECT count(*) FROM board 
@@ -66,5 +82,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE board SET b_group_seq = b_group_seq + 1
 		WHERE b_group_id = #{groupId} AND b_group_seq >= #{groupSeq}; 
 	</update>
-	
+	<select id="selectCommentListBygroupId" parameterType="java.lang.Integer" resultMap="boardMap">
+		SELECT 	b_id,
+				b_game_header,
+				b_writer,
+				b_reg_date,
+				b_content,
+				b_group_id,
+				b_group_seq,
+				b_group_lv
+		FROM board 
+		WHERE b_group_lv != 0 AND b_group_id = #{groupId}
+		ORDER BY b_group_id DESC, b_group_seq ASC;
+	</select>
 </mapper>

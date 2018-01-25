@@ -68,6 +68,16 @@ public class BoardController {
 		return result;
 	}
 	
+	@RequestMapping("getCommentList.do")
+	public @ResponseBody HashMap<String, Object> getCommentList(@RequestParam(name="groupId", required=true)int groupId) {
+		HashMap<String, Object> result = new HashMap<>();
+		HashMap<String, Object> boardListByPage = boardService.getCommentList(groupId);
+		List<Board> commentList = 
+			 	(List<Board>) boardListByPage.get("commentList");
+		result.put("commentList", commentList);
+		return result;
+	}
+	
 	// 작성자: 로그인 유저로 수정 해야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	@RequestMapping("write.do")
 	public @ResponseBody HashMap<String, Object> write( 

@@ -39,19 +39,21 @@
 <script type="text/javascript">
 function setSearchHeader(data){
 	$('input[name="searchSelect"]').attr('value', data);
-	if(data === 'game')
+	if(data === 'game'){
 		$('#navSearchFrm').attr('action', 'searchGame.do')
 		$('#searchSelectBtn').html('게임&nbsp;');
-	if(data === 'streamer')
+	}
+	if(data === 'streamer'){
 		$('#navSearchFrm').attr('action', 'searchStreamer.do')
 		$('#searchSelectBtn').html('스트리머&nbsp;');
+	}
 	
 }
 
 </script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 1.5%; z-index: 4; position: fixed; overflow: hidden; ">
+	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 1.5%; ">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 			Game</a>
