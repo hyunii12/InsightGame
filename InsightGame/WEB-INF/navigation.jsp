@@ -57,7 +57,7 @@ function setSearchHeader(data){
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 			Game</a>
-		<div id="navbarResponsive">
+		<div id="navbarResponsive" style="margin-right:18.3%">
 			<ul class="navbar-nav ml-auto ">
 				<li>
 					<form class="form-inline" role="search" id="navSearchFrm"
@@ -72,17 +72,16 @@ function setSearchHeader(data){
 						<div class="input-group-prepend" id="headerDropbox">
 						    <button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button" 
 						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:115px;">게임&nbsp;</button>
-						    <div class="dropdown-menu" style="position:fixed; top: 9%; left: 37.1%;">
+						    <div class="dropdown-menu" style="position:fixed; top: 9%; left: 32.4%;">
 						      <button class="dropdown-item" type="button" value="game" onclick='setSearchHeader($(this).val())'>게임</button>
 						      <button class="dropdown-item" type="button" value="streamer" onclick='setSearchHeader($(this).val())'>스트리머</button>
 						    </div>
 						</div>
 						
 						<input class="form-control mr-sm-2" type="text"
-							style="width: 250px; border: 0; margin: 0 auto;"
+							style="width: 250px; border: 0;"
 							placeholder="Search" name="search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-							style="margin-right: 85px;">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 							<img src="img/search.png">
 						</button>
 					</form>

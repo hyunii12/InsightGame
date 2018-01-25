@@ -19,7 +19,7 @@
 				<c:if test="${list.groupLevel eq 0 }">
 					<tr id="tr_${list.bId }" class="boards_tr" style="cursor: pointer" 
 					onclick="<c:if test="${list.cmts != 0}">openComments(${list.bId})</c:if>">
-						<td name="bId" value="${list.bId }">${list.bId }</td>
+						<td name="bId" value="${list.bId }" >${list.bId }</td>
 						<td name="header" value="${list.header }">[${list.header }]</td>
 						<td name="content" value="${list.content }">${list.content}<c:if test="${list.cmts != 0}">[${list.cmts }]</c:if></td>
 						<td name="writer" value="${list.writer }">${list.writer}</td>

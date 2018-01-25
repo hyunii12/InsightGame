@@ -129,7 +129,7 @@
 	font-weight: normal;
 }
 </style>
-				<div class="container">
+
 					<div class="row">
 						<div class="col-md-12 col-md-offset-3" style="margin-left: auto; margin-right: auto;">
 							<!-- Nav tabs category -->
@@ -142,9 +142,8 @@
 									role="tab" data-toggle="tab">출시일정</a></li>
 							</ul>
 							<!-- Tab panes -->
-							<div class="tab-content faq-cat-content"
-								style="padding-top: 30px">
-								<div class="tab-pane active in fade" id="faq-cat-1">
+							<div class="tab-content faq-cat-content" style="padding-top: 30px">
+								<div class="tab-pane fade in active" id="faq-cat-1">
 									<div class="panel-group" id="accordion-cat-1">
 										<div class="panel panel-default panel-faq">
 											<div class="panel-heading">
@@ -244,6 +243,7 @@
 										</div>
 									</div>
 								</div>
+								
 								<div class="tab-pane fade" id="faq-cat-2">
 									<div class="panel-group" id="accordion-cat-2">
 										<div class="panel panel-default panel-faq">
@@ -278,7 +278,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+
 				</div>
 			</div>
 			<!-- 			<h2 class="text-center text-uppercase text-secondary mb-0">통계, -->
