@@ -14,7 +14,7 @@
 				<th>번호</th><th>[게임]</th><th>내용</th><th>작성자</th><th>작성시간</th><th>-</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="bodyBoardTable">
 			<c:forEach items="${boardList }" var="list">
 				<c:if test="${list.groupLevel eq 0 }">
 					<tr id="tr_${list.bId }" class="boards_tr" style="cursor: pointer" 
@@ -23,7 +23,7 @@
 						<td name="header" value="${list.header }">[${list.header }]</td>
 						<td name="content" value="${list.content }">${list.content}<c:if test="${list.cmts != 0}">[${list.cmts }]</c:if></td>
 						<td name="writer" value="${list.writer }">${list.writer}</td>
-						<td><fmt:formatDate pattern="yyyy-MM-dd" value="${list.regDate }"/></td>
+						<td><fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)" value="${list.regDate }"/></td>
 						<td>
 							<button class="btn btn-secondary btn-sm" name="commentBtn" onclick="commentBtn(${list.bId })">댓글</button>
 				<%-- 		<c:if test="${loginState }"> --%>
@@ -35,6 +35,9 @@
 				</c:if>
 			</c:forEach>
 		</tbody>
+		<tfoot>
+			<tr><td colspan='6'><button id="getListBtn" class="btn btn-outline-secondary btn-lg btn-block">더보기</button></tr>
+		</tfoot>
 	</table>
 </body>
 </html>
