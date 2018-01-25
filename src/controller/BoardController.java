@@ -30,7 +30,7 @@ public class BoardController {
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
 	}
 	@RequestMapping("board.do")
@@ -55,6 +55,7 @@ public class BoardController {
 	
 	@RequestMapping("getList.do")
 	public @ResponseBody HashMap<String, Object> getList(@RequestParam(name="page", defaultValue="1")int page) {
+		System.out.println(page);
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
 		List<Board> boardList = 

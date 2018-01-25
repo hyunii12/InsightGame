@@ -81,6 +81,7 @@ public class BoardServiceImpl implements IBoardService{
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("skip", skip);
 		params.put("count", count);
+		System.out.println("보드서비스: skip= "+skip+", count= "+count);
 		List<HashMap<String, Object>> boardList = dao.selectBoardList(params);
 		results.put("start", start);
 		results.put("end", end);
