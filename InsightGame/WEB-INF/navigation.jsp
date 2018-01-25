@@ -71,8 +71,8 @@ function setSearchHeader(data){
 						<input type="hidden" name="searchSelect">
 						<div class="input-group-prepend" id="headerDropbox">
 						    <button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button" 
-						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">게임&nbsp;</button>
-						    <div class="dropdown-menu">
+						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:115px;">게임&nbsp;</button>
+						    <div class="dropdown-menu" style="position:fixed; top: 9%; left: 37.1%;">
 						      <button class="dropdown-item" type="button" value="game" onclick='setSearchHeader($(this).val())'>게임</button>
 						      <button class="dropdown-item" type="button" value="streamer" onclick='setSearchHeader($(this).val())'>스트리머</button>
 						    </div>
@@ -82,7 +82,7 @@ function setSearchHeader(data){
 							style="width: 250px; border: 0; margin: 0 auto;"
 							placeholder="Search" name="search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-							style="margin-right: 55px;">
+							style="margin-right: 85px;">
 							<img src="img/search.png">
 						</button>
 					</form>
