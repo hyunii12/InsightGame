@@ -70,13 +70,13 @@ public class BoardServiceImpl implements IBoardService{
 //		System.out.println("ddddd"+page);
 		HashMap<String, Object> results = new HashMap<>();
 		int getCount = dao.getBoardCount();
-		int start = (page-1)/10*10+1;
-		int end = ((page-1)/10+1)*10;
+		int start = (page-1)/15*15+1;
+		int end = ((page-1)/15+1)*15;
 		int first = 1;
-		int last = (getCount-1)/10+1;
+		int last = (getCount-1)/15+1;
 		end = last < end? last: end;
-		int skip = (page-1)*10;
-		int count=10;
+		int skip = (page-1)*15;
+		int count=15;
 		
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("skip", skip);
