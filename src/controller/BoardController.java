@@ -82,7 +82,7 @@ public class BoardController {
 	// 작성자: 로그인 유저로 수정 해야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	@RequestMapping("write.do")
 	public @ResponseBody HashMap<String, Object> write( 
-			@RequestParam(name="header", defaultValue="-")String header,
+			@RequestParam(name="header", defaultValue="잡담")String header,
 			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
 //		System.out.println(header+":::::::::"+content);
