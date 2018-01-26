@@ -1,103 +1,117 @@
 package controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import service.IMemberService;
+import com.github.scribejava.core.model.OAuth2AccessToken;
+
+import service.GoogleLoginService;
+import service.NaverLoginService;
+import service.TwitchLoginService;
 
 @Controller
 public class MemberController {
+
+	private NaverLoginService naverLoginservice;
+	private TwitchLoginService twitchLoginservice;
+	private GoogleLoginService googleLoginservice;
+	private String apiResult = null;
+	private OAuth2AccessToken oauthToken;
 	
+	/* NaverLoginBO */
+	@Autowired
+	private void setNaverLoginService(NaverLoginService naverLoginservice) {
+		this.naverLoginservice = naverLoginservice;
+	}
 	
 	@Autowired
-	private IMemberService memberService;
+	private void setTwitchLoginService(TwitchLoginService twitchLoginservice) {
+		this.twitchLoginservice = twitchLoginservice;
+	}
+	
+	@Autowired
+	private void setGoogleLoginService(GoogleLoginService googleLoginservice) {
+		this.googleLoginservice = googleLoginservice;
+	}
 	
 	
-//	@RequestMapping("main.do")
-//	public String main(Model model) {
-//		return "main";
-//	}
-//	
-//	@RequestMapping("loginForm.do")
-//	public String loginForm(Model model) {
-//		return "member/login";
-//	}
-//	
-//	@RequestMapping("login.do")
-//	public String login(HttpSession session, String mEmail, String mPassword) {
-//		
-//		return "redirect:main.do";
-////		return "redirect:loginForm.do";
-//	}
-//	
-//	
-//	@RequestMapping("logout.do")
-//	public String logout(HttpSession session) {
-//		
-//		session.removeAttribute("mEmail");
-//		session.removeAttribute("mPassword");
-//		return "redirect:main.do";
-//		
-//	}
-//	
-//	@RequestMapping("joinForm.do")
-//	public String joinForm() {
-//		
-//		return "member/join";
-//		
-//	}
-//	
-//	
-//	@RequestMapping("join.do")
-//	public String join(HttpSession session, String mEmail, String mPassword) {
-//		
-//		return "redirect:login.do";
-//	}
-//	
-//	
+	// 로그인 첫 화면 요청 메소드
+	@RequestMapping(value = "loginForm.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String naverlogin(Model model, HttpSession session) {
 
-	@RequestMapping("loginForm.do")
-	public String loginForm(Model model) {
-		System.out.println("여기는 로그인폼 페이지");
+		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
+		String naverAuthUrl = naverLoginservice.getAuthorizationUrl(session);
+		String twitchAuthUrl = twitchLoginservice.getAuthorizationUrl(session);
+		String googleAuthUrl = googleLoginservice.getAuthorizationUrl(session);
+
+		
+		System.out.println("네이버:" + naverAuthUrl);
+		System.out.println("트위치:" + twitchAuthUrl);
+		System.out.println("구글:" + googleAuthUrl);
+		
+		
+		// 네이버
+		model.addAttribute("naverurl", naverAuthUrl);
+		model.addAttribute("twitchurl", twitchAuthUrl);
+		model.addAttribute("googleurl", googleAuthUrl);		
+		
+		/* 생성한 인증 URL을 View로 전달 */
 		return "member/login";
 	}
 	
-	@RequestMapping("login.do")
-	public String login(HttpSession session, String mEmail, String mPassword) {
-		System.out.println("로그인하면 메인으로 리다이렉트");
-		return "redirect:main.do";
-//		return "redirect:loginForm.do";
+
+	// 네이버 로그인 성공시 callback호출 메소드
+	@RequestMapping(value = "naverCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String naverCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+			throws IOException {
+		System.out.println("여기는 naverCallback");
+		oauthToken = naverLoginservice.getAccessToken(session, code, state);
+
+		// 로그인 사용자 정보를 읽어온다.
+		// apiResult = naverLoginservice.getUserProfile(oauthToken);
+		model.addAttribute("result", apiResult);
+
+		/* 네이버 로그인 성공 페이지 View 호출 */
+		return "naverSuccess";
+	}
+
+
+	// 네이버 로그인 성공시 callback호출 메소드
+	@RequestMapping(value = "twitchCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String twitchCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+			throws IOException {
+		System.out.println("여기는 twitchCallback");
+		oauthToken = twitchLoginservice.getAccessToken(session, code, state);
+
+		// 로그인 사용자 정보를 읽어온다.
+		// apiResult = naverLoginservice.getUserProfile(oauthToken);
+		model.addAttribute("result", apiResult);
+
+		/* 네이버 로그인 성공 페이지 View 호출 */
+		return "twitchSuccess";
 	}
 	
-	
-	@RequestMapping("logout.do")
-	public String logout(HttpSession session) {
-		
-		session.removeAttribute("mEmail");
-		session.removeAttribute("mPassword");
-		return "redirect:main.do";
-		
+	@RequestMapping(value = "googleCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String googleCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+			throws IOException {
+		System.out.println("여기는 googleCallback");
+		oauthToken = googleLoginservice.getAccessToken(session, code, state);
+
+		// 로그인 사용자 정보를 읽어온다.
+		// apiResult = naverLoginservice.getUserProfile(oauthToken);
+		model.addAttribute("result", apiResult);
+
+		/* 네이버 로그인 성공 페이지 View 호출 */
+		return "googleSuccess";
 	}
-	
-	@RequestMapping("joinForm.do")
-	public String joinForm() {
-		
-		System.out.println("회원가입폼 페이지");
-		return "member/join";
-		
-	}
-	
-	
-	@RequestMapping("join.do")
-	public String join(HttpSession session, String mEmail, String mPassword) {
-		
-		System.out.println("회원가입버튼 누르면 로그인 페이지로");
-		return "redirect:loginForm.do";
-	}
-	
-	
+
+
 }
