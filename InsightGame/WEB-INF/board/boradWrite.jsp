@@ -11,13 +11,12 @@
 		    <button id="headerBtn" class="btn btn-outline-secondary dropdown-toggle" type="button" 
 		    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">말머리</button>
 		    <div id="headerSelect" class="dropdown-menu">
-		      <h6 class="dropdown-header" >게임헤더</h6>
+		      <button class="dropdown-item" type="button" value="잡담" onclick='setHeader($(this).val())'>잡담</button>
 		      <div role="separator" class="dropdown-divider"></div>
+		      <h6 class="dropdown-header" >게임헤더</h6>
 		      <button class="dropdown-item" type="button" value="HEADER1" onclick='setHeader($(this).val())'>게임1</button>
 		      <button class="dropdown-item" type="button" value="HEADER2" onclick='setHeader($(this).val())'>게임2</button>
 		      <button class="dropdown-item" type="button" value="HEADER3" onclick='setHeader($(this).val())'>게임3</button>
-		      <button class="dropdown-item" type="button" value="HEADER4" onclick='setHeader($(this).val())'>게임4</button>
-		      <button class="dropdown-item" type="button" value="HEADER5" onclick='setHeader($(this).val())'>게임5</button>
 		    </div>
 		</div>
 	  	<input id="writeContent" type="text" class="form-control" aria-label="댓글을 입력해 주세요">

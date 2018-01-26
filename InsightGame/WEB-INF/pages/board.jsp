@@ -33,13 +33,14 @@
 
         <div class="container" style="margin-top: 15%; width:77%;">
 <!-- 			<script src="js/board.js"></script> -->
-			<script src="js/board.js?v=asdf6a31s12j"></script>
+			<script src="js/board.js?v=asdf11a31s12j"></script>
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
 			</style>
         	<div id="div_write">
 				<jsp:include page="../board/boradWrite.jsp" />    	
         	</div>
+        	<button class="btn btn-outline-secondary my-2 my-sm-0" onclick="location.reload()"><img style="size: 0.5em" src="img/refresh-arrow.png"></button>
         	<div id="div_boardList" style="text-align: center; margin-top: 3%;">
 	        	<jsp:include page="../board/boardList.jsp" />
         	</div>

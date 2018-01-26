@@ -118,43 +118,51 @@ function setHeader(val){
 
 function openComments(bId){
 	var targetTr = $('#tr_'+bId);
-	if(targetTr.next('tr').attr('class').substr(0, 4) == 'cmts'){
-		console.log('Already exists....')
-		$('.cmts_'+bId).toggle();
+	if(targetTr.is(":last-child")){
+		getCommentList(targetTr, bId);
 	}
-	else{
-		$.ajax({
-			url:"getCommentList.do",
-			type: "post",
-			dataType:"json",
-			data: {"groupId": bId},
-			success: function(data){
-				targetTr.after(function(){
-					var cmts = "";
-					var list = data.commentList;
-					$.each(list, function(index, item) {
-						var cmt_bId = item.bId;
-						var cmt_content = item.content;
-						var cmt_writer = item.writer;
-						var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
-						var cmt_groupId = item.groupId;
-						cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'+
-							'<td></td>'+
-							'<td>ㄴ</td>'+
-							'<td>'+cmt_content+'</td>'+
-							'<td>'+cmt_writer+'</td>'+
-							'<td>'+cmt_regDate+'</td>'+
-							'<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>';
-					});
-					return cmts;
+	else {
+		if(targetTr.next('tr').attr('class').substr(0, 4).toString() == 'cmts'){
+			console.log('Already exists....')
+			$('.cmts_'+bId).toggle();
+		}
+		else{
+			getCommentList(targetTr, bId);
+		}
+	}
+}
+function getCommentList(targetTr, bId){
+	$.ajax({
+		url:"getCommentList.do",
+		type: "post",
+		dataType:"json",
+		data: {"groupId": bId},
+		success: function(data){
+			targetTr.after(function(){
+				var cmts = "";
+				var list = data.commentList;
+				$.each(list, function(index, item) {
+					var cmt_bId = item.bId;
+					var cmt_content = item.content;
+					var cmt_writer = item.writer;
+					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
+					var cmt_groupId = item.groupId;
+					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'+
+						'<td></td>'+
+						'<td>ㄴ</td>'+
+						'<td>'+cmt_content+'</td>'+
+						'<td>'+cmt_writer+'</td>'+
+						'<td>'+cmt_regDate+'</td>'+
+						'<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>';
 				});
-			},
-			error : function(e){
-				if(e.status == 300)
-					console.log('Failed to load data....')
-			}
-		})
-	}
+				return cmts;
+			});
+		},
+		error : function(e){
+			if(e.status == 300)
+				console.log('Failed to load data....')
+		}
+	})
 }
 function modifyBtn(bId){
 	var targetTr = $('#tr_'+bId);
