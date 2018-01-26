@@ -28,7 +28,7 @@ public class CalendarController {
 private Logger logger = LoggerFactory.getLogger(CalendarController.class);
     
     // 캘린더리스트
-    @RequestMapping(value="calendarList.do", method=RequestMethod.GET)
+    @RequestMapping(value="coding.do", method=RequestMethod.GET)
     public String coding(Model model) {
         logger.info("calendarList");
         try {
@@ -56,7 +56,7 @@ private Logger logger = LoggerFactory.getLogger(CalendarController.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "redirect:calendarList.do";
+        return "redirect:coding.do";
     }
     
     // 캘린더 삭제 처리
@@ -73,7 +73,7 @@ private Logger logger = LoggerFactory.getLogger(CalendarController.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "redirect:/calendarList.do";
+        return "redirect:/coding.do";
     }    
     
     // 캘린더 수정 처리
@@ -89,11 +89,11 @@ private Logger logger = LoggerFactory.getLogger(CalendarController.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "redirect:/calendarList.do";
+        return "redirect:/coding.do";
     }    
     
     // 캘린더 이동처리
-    @RequestMapping(value="schedule.do", method=RequestMethod.GET)
+    @RequestMapping(value="schdule.do", method=RequestMethod.GET)
     public String schdule(Model model, String calendarId, String title) {
         logger.info("schdule");
         model.addAttribute("calendarId", calendarId);
