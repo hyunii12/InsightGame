@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -87,13 +88,43 @@ function setSearchHeader(data){
 				</li>
 			</ul>
 		</div>
-		<div id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
-						src="img/login.png"></a></li>
+		
+		
+<!-- <div id="navbarResponsive"> -->
+<!-- 			<ul class="navbar-nav ml-auto"> -->
+<!-- 				<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img -->
+<!-- 						src="img/login.png"></a></li> -->
 
-			</ul>
-		</div>
+<!-- 			</ul> -->
+<!-- 		</div> -->
+		
+		
+		<div id="navbarResponsive">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item mx-0 mx-lg-1">
+<c:choose>
+<c:when test="${session.naverurl ne null}">
+<a href="logout.do">
+<img src="img/logout.png">
+</a>
+</c:when>
+<c:when test="${twitchurl ne null}">
+<a href="logout.do">
+<img src="img/logout.png">
+</a>
+</c:when>
+<c:when test="${googleurl ne null}">
+<a href="logout.do">
+<img src="img/logout.png">
+</a>
+</c:when>
+<c:otherwise>
+<a href="loginForm.do">
+<img src="img/login.png">
+</a>
+</c:otherwise>
+</c:choose>
+</li></ul></div>
 	</div>
 	</nav>
 

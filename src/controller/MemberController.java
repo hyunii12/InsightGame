@@ -112,6 +112,18 @@ public class MemberController {
 		/* 네이버 로그인 성공 페이지 View 호출 */
 		return "googleSuccess";
 	}
+	
+	
+	@RequestMapping("logout.do")
+	public String logout(HttpSession session){
+		
+		session.removeAttribute("naverurl");
+		session.removeAttribute("twitchurl");
+		session.removeAttribute("googleurl");
+
+		return "redirect:main.do";
+	}
+
 
 
 }

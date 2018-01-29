@@ -20,8 +20,8 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.CalendarScopes;
 
 
-//import com.google.api.services.calendar.model.CalendarList;
-//import com.google.api.services.calendar.model.CalendarListEntry;
+import com.google.api.services.calendar.model.CalendarList;
+import com.google.api.services.calendar.model.CalendarListEntry;
 
 
 
@@ -77,21 +77,21 @@ public class GoogleCalendarService {
                 .setApplicationName(APPLICATION_NAME).build();
     }
     
-//  public static void main(String[] args) throws IOException {
-//  com.google.api.services.calendar.Calendar service = getCalendarService();
-//  // 캘린더 조회
-//  String pageToken = null;
-//  do {
-//    CalendarList calendarList = service.calendarList().list().setPageToken(pageToken).execute();
-//    List<CalendarListEntry> items1 = calendarList.getItems();
-//
-//    for (CalendarListEntry calendarListEntry : items1) {
-//      System.out.println(calendarListEntry.getSummary());
-//      System.out.println(calendarListEntry.getId());
-//    }
-//    pageToken = calendarList.getNextPageToken();
-//  } while (pageToken != null);
-//}
+  public static void main(String[] args) throws IOException {
+  com.google.api.services.calendar.Calendar service = getCalendarService();
+  // 캘린더 조회
+  String pageToken = null;
+  do {
+    CalendarList calendarList = service.calendarList().list().setPageToken(pageToken).execute();
+    List<CalendarListEntry> items1 = calendarList.getItems();
+
+    for (CalendarListEntry calendarListEntry : items1) {
+      System.out.println(calendarListEntry.getSummary());
+      System.out.println(calendarListEntry.getId());
+    }
+    pageToken = calendarList.getNextPageToken();
+  } while (pageToken != null);
+}
 
 
 
