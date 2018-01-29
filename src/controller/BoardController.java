@@ -28,6 +28,7 @@ public class BoardController {
 //	@Autowired
 //	IMemberService memberService;
 	
+	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
