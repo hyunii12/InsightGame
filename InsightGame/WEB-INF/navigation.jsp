@@ -41,11 +41,11 @@ function setSearchHeader(data){
 	$('input[name="searchSelect"]').attr('value', data);
 	if(data === 'game'){
 		$('#navSearchFrm').attr('action', 'searchGame.do')
-		$('#searchSelectBtn').html('게임&nbsp;');
+		$('#searchSelectBtn').html('게임　 　');
 	}
 	if(data === 'streamer'){
 		$('#navSearchFrm').attr('action', 'searchStreamer.do')
-		$('#searchSelectBtn').html('스트리머&nbsp;');
+		$('#searchSelectBtn').html('스트리머 ');
 	}
 	
 }
@@ -71,7 +71,7 @@ function setSearchHeader(data){
 						<input type="hidden" name="searchSelect">
 						<div class="input-group-prepend" id="headerDropbox" style="position:relative;">
 						    <button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button" 
-						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:115px;">게임&nbsp;</button>
+						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:118px;">게임　 　</button>
 						    <div class="dropdown-menu">
 						      <button class="dropdown-item" type="button" value="game" onclick='setSearchHeader($(this).val())'>게임</button>
 						      <button class="dropdown-item" type="button" value="streamer" onclick='setSearchHeader($(this).val())'>스트리머</button>
@@ -79,8 +79,7 @@ function setSearchHeader(data){
 						</div>
 						
 						<input class="form-control mr-sm-2" type="text"
-							style="width: 250px; border: 0;"
-							placeholder="Search" name="search">
+							style="width: 247px; border: 0; margin-left: 3px" placeholder="Search" name="search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 							<img src="img/search.png">
 						</button>
@@ -98,7 +97,7 @@ function setSearchHeader(data){
 	</div>
 	</nav>
 
-	<div>
+
 		<div class="bg-secondary"
 			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 5;">
 			<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
@@ -112,7 +111,7 @@ function setSearchHeader(data){
 			<a class="navbar-brand js-scroll-trigger" href="board.do"
 				style="color: white; font-weight: bold;">게시판</a>
 		</div>
-	</div>
+
 
 	<!-- Navigation -->
 
