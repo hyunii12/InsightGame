@@ -69,10 +69,10 @@ function setSearchHeader(data){
 <!-- 						</select> -->
 
 						<input type="hidden" name="searchSelect">
-						<div class="input-group-prepend" id="headerDropbox">
+						<div class="input-group-prepend" id="headerDropbox" style="position:relative;">
 						    <button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button" 
 						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:115px;">게임&nbsp;</button>
-						    <div class="dropdown-menu" style="position:fixed; top: 9%; left: 32.4%;">
+						    <div class="dropdown-menu">
 						      <button class="dropdown-item" type="button" value="game" onclick='setSearchHeader($(this).val())'>게임</button>
 						      <button class="dropdown-item" type="button" value="streamer" onclick='setSearchHeader($(this).val())'>스트리머</button>
 						    </div>
