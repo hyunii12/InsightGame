@@ -3600,7 +3600,7 @@ tbody.collapse.show {
 }
 
 .navbar {
-  position: absolute;
+  position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
