@@ -143,7 +143,7 @@
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content faq-cat-content" style="padding-top: 30px">
-								<div class="tab-pane fade in active" id="faq-cat-1">
+								<div class="tab-pane active container" id="faq-cat-1">
 									<div class="panel-group" id="accordion-cat-1">
 										<div class="panel panel-default panel-faq">
 											<div class="panel-heading">
@@ -244,7 +244,7 @@
 									</div>
 								</div>
 								
-								<div class="tab-pane fade" id="faq-cat-2">
+								<div class="tab-pane container" id="faq-cat-2">
 									<div class="panel-group" id="accordion-cat-2">
 										<div class="panel panel-default panel-faq">
 											<div class="panel-heading">
