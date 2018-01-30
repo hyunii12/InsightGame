@@ -32,4 +32,12 @@ public class GameController {
 	System.out.println("여기는 게임디테일");
 			return "pages/gameDetail";
 	}
+	
+	@RequestMapping("gameInterest.do")
+	public String gameInterest(Model model) {
+		System.out.println("여기는 게임인터레스트");
+		return "contents/gameInterest";
+	}
+	
+	
 }

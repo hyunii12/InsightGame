@@ -103,7 +103,7 @@ function setSearchHeader(data){
 <ul class="navbar-nav ml-auto">
 <li class="nav-item mx-0 mx-lg-1">
 <c:choose>
-<c:when test="${session.naverurl ne null}">
+<c:when test="${sessionScope.naverurl ne null}">
 <a href="logout.do">
 <img src="img/logout.png">
 </a>
