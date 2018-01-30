@@ -321,9 +321,9 @@
 			<hr class="star-light mb-5">
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameInterest.do" /> --%>
-				<!-- 			</div> -->
+							<div id="issues">
+								<jsp:include page="gameInterest.do" />
+							</div>
 			</div>
 		</div>
 		</section>
@@ -340,7 +340,7 @@
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
 
 					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameInterest.do" />
+<%-- 					<jsp:include page="gameInterest.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 
