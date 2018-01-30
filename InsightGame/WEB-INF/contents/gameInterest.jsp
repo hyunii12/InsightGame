@@ -18,20 +18,58 @@
 		
 		var chart = bb.generate({
 			  data: {
+			    x: "x",
 			    columns: [
-				["game1", 30, 20, 50, 40, 60, 50],
-				["game2", 200, 130, 90, 240, 130, 220],
-				["game3", 300, 200, 160, 400, 250, 250]
+				["x", "2017-09-01", "2017-10-01", "2017-11-01", "2017-12-01", "2018-01-01", "2018-02-01"],
+				["game1", 30, 200, 100, 400, 150, 250],
+				["game2", 50, 20, 10, 40, 15, 25],
+				["game3", 130, 220, 140, 200, 250, 450],
+				["game4", 250, 320, 210, 240, 215, 225],
+				["game5", 430, 500, 400, 280, 290, 350],
+				["game6", 100, 120, 310, 340, 415, 225]
 			    ]
 			  },
-			  bindto: "#ColumnOrientedData"
+			  color: {
+				    pattern: [
+				      "#1f77b4",
+				      "#aec7e8",
+				      "#ff7f0e",
+				      "#ffbb78",
+				      "#2ca02c",
+				      "#98df8a",
+				      "#d62728",
+				      "#ff9896",
+				      "#9467bd",
+				      "#c5b0d5",
+				      "#8c564b",
+				      "#c49c94",
+				      "#e377c2",
+				      "#f7b6d2",
+				      "#7f7f7f",
+				      "#c7c7c7",
+				      "#bcbd22",
+				      "#dbdb8d",
+				      "#17becf",
+				      "#9edae5"
+				    ]
+				  },
+			  axis: {
+			    x: {
+			      type: "timeseries",
+			      tick: {
+			        format: "%Y-%m-%d"
+			      }
+			    }
+			  },
+			  bindto: "#TimeseriesChart"
 			});
+
 		
 	}
 </script>
 <link rel="stylesheet" href="css/billboard.css">
 </head>
 <body>
-	<div id="ColumnOrientedData"></div>
+	<div id="TimeseriesChart"></div>
 </body>
 </html>
