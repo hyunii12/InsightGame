@@ -99,7 +99,13 @@ private Logger logger = LoggerFactory.getLogger(CalendarController.class);
         model.addAttribute("calendarId", calendarId);
         model.addAttribute("title", title);
         return "contents/calendar";
-    }    
+    }
+    
+    @RequestMapping("calendar.do")
+    public String calendar(Model model) {
+       System.out.println("여기는 풀캘린더");
+       return "contents/fullcalendar";
+    }
 
 
 
