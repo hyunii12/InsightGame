@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.IGameDao">
 	<resultMap type="game" id="gameMap">
-		<id column="gi_id" property="giID"/>
+		<id column="gi_id" property="giId"/>
 		<result column="gi_title" property="title"/>
 		<result column="gi_platform" property="platform"/>
 		<result column="gi_genre" property="genre"/>
@@ -47,7 +47,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteGameInfo" parameterType="java.lang.Integer">
 		DELETE * FROM g_info WHERE gi_id = #{giId}
 	</delete>
-	<select id="selectGameInfoByGiId" parameterType="java.lang.Integer"	resultMap="gameMap">
+	<select id="selectGameInfo" parameterType="java.util.HashMap"	resultMap="gameMap">
 		SELECT 
 			giId,
 			title,
@@ -59,7 +59,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			picture,
 			siteUrl,
 			score
-		FROM g_info WHERE gi_id = #{giId}
+		FROM g_info 
+		WHERE 1=1 
+			<if test="giID != null"> AND gi_id = #{giId} </if>
+			<if test="title != null"> AND gi_title = #{title} </if>
 	</select>
 	<select id="selectGameInfoList" resultType="java.lang.Integer">
 		SELECT 
