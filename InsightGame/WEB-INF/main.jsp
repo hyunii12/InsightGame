@@ -41,9 +41,9 @@
 			<hr class="star-light mb-5">
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
-							<div id="issues">
-								<jsp:include page="gameIssues.do" />
-							</div>
+				<div id="issues">
+					<jsp:include page="gameIssues.do" />
+				</div>
 			</div>
 
 		</div>
@@ -95,7 +95,7 @@
 		<div class="container">
 			<div
 				style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
-<style>
+				<style>
 .faq-cat-content {
 	margin-top: 25px;
 }
@@ -130,154 +130,163 @@
 }
 </style>
 
-					<div class="row">
-						<div class="col-md-12 col-md-offset-3" style="margin-left: auto; margin-right: auto;">
-							<!-- Nav tabs category -->
-							<ul class="nav nav-tabs faq-cat-tabs nav-pills">
-								<li class="nav-item"><a class="nav-link active"
-									href="#faq-cat-1" role="tab" data-toggle="tab">통계</a></li>
-								<li class="nav-item"><a href="#faq-cat-2" class="nav-link"
-									role="tab" data-toggle="tab">뉴스</a></li>
-								<li class="nav-item"><a href="#faq-cat-2" class="nav-link"
-									role="tab" data-toggle="tab">출시일정</a></li>
-							</ul>
-							<!-- Tab panes -->
-							<div class="tab-content faq-cat-content" style="padding-top: 30px">
-								<div class="tab-pane active container" id="faq-cat-1">
-									<div class="panel-group" id="accordion-cat-1">
-										<div class="panel panel-default panel-faq">
-											<div class="panel-heading">
-												<a data-toggle="collapse" data-parent="#accordion-cat-1"
-													href="#faq-cat-1-sub-1">
-													<h4 class="panel-title">
-														주요정보 <span class="pull-right"><i
-															class="glyphicon glyphicon-plus"></i></span>
-													</h4>
-												</a>
-											</div>
-											<div id="faq-cat-1-sub-1" class="panel-collapse collapse">
-												<div class="panel-body">
-													<div class="row form-group">
-														<div class="col-sm-2">Fever</div>
-														<div class=" col-sm-3 btn-group" data-toggle="buttons">
-															<label class="btn btn-primary btn-sm  active"> <input
-																type="checkbox" autocomplete="off" checked>Yes
-															</label> <label class="btn btn-primary btn-sm"> <input
-																type="checkbox" autocomplete="off">No
-															</label>
-														</div>
-													</div>
-
-													<div class="row form-group">
-														<div class="col-sm-2">Fever</div>
-														<div class=" col-sm-3 btn-group" data-toggle="buttons">
-															<label class="btn btn-primary btn-sm  active"> <input
-																type="checkbox" autocomplete="off" checked>Yes
-															</label> <label class="btn btn-primary btn-sm"> <input
-																type="checkbox" autocomplete="off">No
-															</label>
-														</div>
-													</div>
-
-
-													<div class="row form-group">
-														<div class="col-sm-2">Fever</div>
-														<div class=" col-sm-3 btn-group" data-toggle="buttons">
-															<label class="btn btn-primary btn-sm  active"> <input
-																type="checkbox" autocomplete="off" checked>Yes
-															</label> <label class="btn btn-primary btn-sm"> <input
-																type="checkbox" autocomplete="off">No
-															</label>
-														</div>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-3"
+						style="margin-left: auto; margin-right: auto;">
+						<!-- Nav tabs category -->
+						<ul class="nav nav-tabs faq-cat-tabs nav-pills">
+							<li class="nav-item"><a class="nav-link active"
+								href="#faq-cat-1" role="tab" data-toggle="tab">통계</a></li>
+							<li class="nav-item"><a href="#faq-cat-2" class="nav-link"
+								role="tab" data-toggle="tab">뉴스</a></li>
+							<li class="nav-item"><a href="#faq-cat-3" class="nav-link"
+								role="tab" data-toggle="tab">출시일정</a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content faq-cat-content" style="padding-top: 30px">
+							<div class="tab-pane active container" id="faq-cat-1">
+								<div class="panel-group" id="accordion-cat-1">
+									<div class="panel panel-default panel-faq">
+										<div class="panel-heading">
+											<a data-toggle="collapse" data-parent="#accordion-cat-1"
+												href="#faq-cat-1-sub-1">
+												<h4 class="panel-title">
+													주요정보 <span class="pull-right"><i
+														class="glyphicon glyphicon-plus"></i></span>
+												</h4>
+											</a>
+										</div>
+										<div id="faq-cat-1-sub-1" class="panel-collapse collapse">
+											<div class="panel-body">
+												<div class="row form-group">
+													<div class="col-sm-2">Fever</div>
+													<div class=" col-sm-3 btn-group" data-toggle="buttons">
+														<label class="btn btn-primary btn-sm  active"> <input
+															type="checkbox" autocomplete="off" checked>Yes
+														</label> <label class="btn btn-primary btn-sm"> <input
+															type="checkbox" autocomplete="off">No
+														</label>
 													</div>
 												</div>
-											</div>
-										</div>
 
-										<div class="panel panel-default panel-faq">
-											<div class="panel-heading">
-												<a data-toggle="collapse" data-parent="#accordion-cat-1"
-													href="#faq-cat-1-sub-2">
-													<h4 class="panel-title">
-														히스토리<span class="pull-right"><i
-															class="glyphicon glyphicon-plus"></i></span>
-													</h4>
-												</a>
-											</div>
-											<div id="faq-cat-1-sub-2" class="panel-collapse collapse">
-												<div class="panel-body">
-													<div class="row form-group">
-														<div class="col-sm-2">Fever</div>
-														<div class=" col-sm-3 btn-group" data-toggle="buttons">
-															<label class="btn btn-primary btn-sm  active"> <input
-																type="checkbox" autocomplete="off" checked>Yes
-															</label> <label class="btn btn-primary btn-sm"> <input
-																type="checkbox" autocomplete="off">No
-															</label>
-														</div>
+												<div class="row form-group">
+													<div class="col-sm-2">Fever</div>
+													<div class=" col-sm-3 btn-group" data-toggle="buttons">
+														<label class="btn btn-primary btn-sm  active"> <input
+															type="checkbox" autocomplete="off" checked>Yes
+														</label> <label class="btn btn-primary btn-sm"> <input
+															type="checkbox" autocomplete="off">No
+														</label>
 													</div>
+												</div>
 
-													<div class="row form-group">
-														<div class="col-sm-2">Fever</div>
-														<div class=" col-sm-3 btn-group" data-toggle="buttons">
-															<label class="btn btn-primary btn-sm  active"> <input
-																type="checkbox" autocomplete="off" checked>Yes
-															</label> <label class="btn btn-primary btn-sm"> <input
-																type="checkbox" autocomplete="off">No
-															</label>
-														</div>
-													</div>
 
-													<div class="row form-group">
-														<div class="col-sm-2">Fever</div>
-														<div class=" col-sm-3 btn-group" data-toggle="buttons">
-															<label class="btn btn-primary btn-sm  active"> <input
-																type="checkbox" autocomplete="off" checked>Yes
-															</label> <label class="btn btn-primary btn-sm"> <input
-																type="checkbox" autocomplete="off">No
-															</label>
-														</div>
+												<div class="row form-group">
+													<div class="col-sm-2">Fever</div>
+													<div class=" col-sm-3 btn-group" data-toggle="buttons">
+														<label class="btn btn-primary btn-sm  active"> <input
+															type="checkbox" autocomplete="off" checked>Yes
+														</label> <label class="btn btn-primary btn-sm"> <input
+															type="checkbox" autocomplete="off">No
+														</label>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								
-								<div class="tab-pane container" id="faq-cat-2">
-									<div class="panel-group" id="accordion-cat-2">
-										<div class="panel panel-default panel-faq">
-											<div class="panel-heading">
-												<a data-toggle="collapse" data-parent="#accordion-cat-2"
-													href="#faq-cat-2-sub-1">
-													<h4 class="panel-title">
-														Nested item #11 <span class="pull-right"><i
-															class="glyphicon glyphicon-plus"></i></span>
-													</h4>
-												</a>
-											</div>
-											<div id="faq-cat-2-sub-1" class="panel-collapse collapse">
-												<div class="panel-body"></div>
-											</div>
+
+									<div class="panel panel-default panel-faq">
+										<div class="panel-heading">
+											<a data-toggle="collapse" data-parent="#accordion-cat-1"
+												href="#faq-cat-1-sub-2">
+												<h4 class="panel-title">
+													히스토리<span class="pull-right"><i
+														class="glyphicon glyphicon-plus"></i></span>
+												</h4>
+											</a>
 										</div>
-										<div class="panel panel-default panel-faq">
-											<div class="panel-heading">
-												<a data-toggle="collapse" data-parent="#accordion-cat-2"
-													href="#faq-cat-2-sub-2">
-													<h4 class="panel-title">
-														Nested item #2 <span class="pull-right"><i
-															class="glyphicon glyphicon-plus"></i></span>
-													</h4>
-												</a>
-											</div>
-											<div id="faq-cat-2-sub-2" class="panel-collapse collapse">
-												<div class="panel-body"></div>
+										<div id="faq-cat-1-sub-2" class="panel-collapse collapse">
+											<div class="panel-body">
+												<div class="row form-group">
+													<div class="col-sm-2">Fever</div>
+													<div class=" col-sm-3 btn-group" data-toggle="buttons">
+														<label class="btn btn-primary btn-sm  active"> <input
+															type="checkbox" autocomplete="off" checked>Yes
+														</label> <label class="btn btn-primary btn-sm"> <input
+															type="checkbox" autocomplete="off">No
+														</label>
+													</div>
+												</div>
+
+												<div class="row form-group">
+													<div class="col-sm-2">Fever</div>
+													<div class=" col-sm-3 btn-group" data-toggle="buttons">
+														<label class="btn btn-primary btn-sm  active"> <input
+															type="checkbox" autocomplete="off" checked>Yes
+														</label> <label class="btn btn-primary btn-sm"> <input
+															type="checkbox" autocomplete="off">No
+														</label>
+													</div>
+												</div>
+
+												<div class="row form-group">
+													<div class="col-sm-2">Fever</div>
+													<div class=" col-sm-3 btn-group" data-toggle="buttons">
+														<label class="btn btn-primary btn-sm  active"> <input
+															type="checkbox" autocomplete="off" checked>Yes
+														</label> <label class="btn btn-primary btn-sm"> <input
+															type="checkbox" autocomplete="off">No
+														</label>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
+							<div class="tab-pane container" id="faq-cat-2">
+								<div class="panel-group" id="accordion-cat-2">
+									<div class="panel panel-default panel-faq">
+										<div class="panel-heading">
+											<a data-toggle="collapse" data-parent="#accordion-cat-2"
+												href="#faq-cat-2-sub-1">
+												<h4 class="panel-title">
+													Nested item #11 <span class="pull-right"><i
+														class="glyphicon glyphicon-plus"></i></span>
+												</h4>
+											</a>
+										</div>
+										<div id="faq-cat-2-sub-1" class="panel-collapse collapse">
+											<div class="panel-body"></div>
+										</div>
+									</div>
+									<div class="panel panel-default panel-faq">
+										<div class="panel-heading">
+											<a data-toggle="collapse" data-parent="#accordion-cat-2"
+												href="#faq-cat-2-sub-2">
+												<h4 class="panel-title">
+													Nested item #2 <span class="pull-right"><i
+														class="glyphicon glyphicon-plus"></i></span>
+												</h4>
+											</a>
+										</div>
+										<div id="faq-cat-2-sub-2" class="panel-collapse collapse">
+											<div class="panel-body">하아아이</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="tab-pane container" id="faq-cat-3">
+								<div class="panel-heading">
+
+									<jsp:include page="contents/gameCalendar.jsp" />
+
+								</div>
+							</div>
 						</div>
+					</div>
 
 				</div>
 			</div>
@@ -321,9 +330,9 @@
 			<hr class="star-light mb-5">
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
-							<div id="issues">
-								<jsp:include page="gameInterest.do" />
-							</div>
+				<div id="issues">
+					<jsp:include page="gameInterest.do" />
+				</div>
 			</div>
 		</div>
 		</section>
@@ -340,7 +349,7 @@
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
 
 					<!-- 			<div id="issues"> -->
-<%-- 					<jsp:include page="gameInterest.do" /> --%>
+					<%-- 					<jsp:include page="gameInterest.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 

@@ -20,9 +20,9 @@ var dataset = [
 
     $('#calendar').fullCalendar({
       header: {
-        left: 'prev,next today',
+        left: 'prev,next',
         center: 'title',
-        right: 'month,basicWeek,basicDay'
+        right: 'today'
       },
       defaultDate: new Date(),
       navLinks: true, // can click day/week names to navigate views
@@ -34,20 +34,9 @@ var dataset = [
   });
 
 </script>
-<style>
-body {
-	margin: 40px 10px;
-	padding: 0;
-	font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
-	font-size: 14px;
-}
 
-#calendar {
-	max-width: 900px;
-	margin: 0 auto;
-}
-</style>
 <title>게임 캘린더</title>
+
 </head>
 <body>
 	<div id='calendar'></div>

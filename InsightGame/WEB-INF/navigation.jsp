@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -38,49 +38,50 @@
 <!-- Custom styles for this template -->
 <link href="css/freelancer.min.css" rel="stylesheet">
 <script type="text/javascript">
-function setSearchHeader(data){
-	$('input[name="searchSelect"]').attr('value', data);
-	if(data === 'game'){
-		$('#navSearchFrm').attr('action', 'searchGame.do')
-		$('#searchSelectBtn').html('게임　 　');
-	}
-	if(data === 'streamer'){
-		$('#navSearchFrm').attr('action', 'searchStreamer.do')
-		$('#searchSelectBtn').html('스트리머 ');
-	}
-	
-}
+	function setSearchHeader(data) {
+		$('input[name="searchSelect"]').attr('value', data);
+		if (data === 'game') {
+			$('#navSearchFrm').attr('action', 'searchGame.do')
+			$('#searchSelectBtn').html('게임　 　');
+		}
+		if (data === 'streamer') {
+			$('#navSearchFrm').attr('action', 'searchStreamer.do')
+			$('#searchSelectBtn').html('스트리머 ');
+		}
 
+	}
 </script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="padding-bottom: 1.5%; ">
+	<nav
+		class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
+		id="mainNav" style="padding-bottom: 1.5%; ">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 			Game</a>
-		<div id="navbarResponsive" style="margin-right:18.3%">
+		<div id="navbarResponsive" style="margin-right: 18.3%">
 			<ul class="navbar-nav ml-auto ">
 				<li>
 					<form class="form-inline" role="search" id="navSearchFrm"
 						method="get" action="searchGame.do" style="margin: 0 auto;">
-<!-- 						<select name="searchSelect" id="searchSelect" -->
-<!-- 							class="form-control mr-sm-2"> -->
-<!-- 							<option value="game" style="color: black;">게임</option> -->
-<!-- 							<option value="streamer" style="color: black;">스트리머</option> -->
-<!-- 						</select> -->
-
 						<input type="hidden" name="searchSelect">
-						<div class="input-group-prepend" id="headerDropbox" style="position:relative;">
-						    <button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button" 
-						    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:118px;">게임　 　</button>
-						    <div class="dropdown-menu">
-						      <button class="dropdown-item" type="button" value="game" onclick='setSearchHeader($(this).val())'>게임</button>
-						      <button class="dropdown-item" type="button" value="streamer" onclick='setSearchHeader($(this).val())'>스트리머</button>
-						    </div>
+						<div class="input-group-prepend" id="headerDropbox"
+							style="position: relative;">
+							<button id="searchSelectBtn"
+								class="btn btn-secondary dropdown-toggle" type="button"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false" style="width: 118px;">게임</button>
+							<div class="dropdown-menu">
+								<button class="dropdown-item" type="button" value="game"
+									onclick='setSearchHeader($(this).val())'>게임</button>
+								<button class="dropdown-item" type="button" value="streamer"
+									onclick='setSearchHeader($(this).val())'>스트리머</button>
+							</div>
 						</div>
-						
+
 						<input class="form-control mr-sm-2" type="text"
-							style="width: 247px; border: 0; margin-left: 3px" placeholder="Search" name="search">
+							style="width: 247px; border: 0; margin-left: 3px"
+							placeholder="Search" name="search">
 						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
 							<img src="img/search.png">
 						</button>
@@ -88,13 +89,17 @@ function setSearchHeader(data){
 				</li>
 			</ul>
 		</div>
+<<<<<<< HEAD
 		
 		
 <div id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
 						src="img/login.png"></a></li>
+=======
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 
+<<<<<<< HEAD
 			</ul>
 		</div>
 		
@@ -126,54 +131,47 @@ function setSearchHeader(data){
 <%-- </c:otherwise> --%>
 <%-- </c:choose> --%>
 <!-- </li></ul></div> -->
+=======
+		<div id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1"><c:choose>
+						<c:when test="${sessionScope.naverurl ne null}">
+							<a href="logout.do"> <img src="img/logout.png">
+							</a>
+						</c:when>
+						<c:when test="${twitchurl ne null}">
+							<a href="logout.do"> <img src="img/logout.png">
+							</a>
+						</c:when>
+						<c:when test="${googleurl ne null}">
+							<a href="logout.do"> <img src="img/logout.png">
+							</a>
+						</c:when>
+						<c:otherwise>
+							<a href="loginForm.do"> <img src="img/login.png">
+							</a>
+						</c:otherwise>
+					</c:choose></li>
+			</ul>
+		</div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 	</div>
 	</nav>
 
 
-		<div class="bg-secondary"
-			style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 5;">
-			<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
-				style="color: white; font-weight: bold;">게임</a>
-		</div>
-		<div style="position: fixed; right: 45%; top: 100px; z-index: 6;">
-			<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
-				style="color: white; font-weight: bold;">스트리머</a>
-		</div>
-		<div style="position: fixed; left: 73%; top: 100px; z-index: 7;">
-			<a class="navbar-brand js-scroll-trigger" href="board.do"
-				style="color: white; font-weight: bold;">게시판</a>
-		</div>
+	<div class="bg-secondary"
+		style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 5;">
+		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
+			style="color: white; font-weight: bold;">게임</a>
+	</div>
+	<div style="position: fixed; right: 45%; top: 100px; z-index: 6;">
+		<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
+			style="color: white; font-weight: bold;">스트리머</a>
+	</div>
+	<div style="position: fixed; left: 73%; top: 100px; z-index: 7;">
+		<a class="navbar-brand js-scroll-trigger" href="board.do"
+			style="color: white; font-weight: bold;">게시판</a>
+	</div>
 
-
-	<!-- Navigation -->
-
-
-	<!-- 	<div class="navigation"> -->
-	<!-- 		<table> -->
-	<!-- 			<tr> -->
-	<!-- 				<td width="400px" height="50px" align="center" bgcolor="grey"> -->
-	<!-- 					<a href="main.do">main.jsp</a> -->
-	<!-- 				</td> -->
-	<!-- 				<td width="400px" height="50px" align="center" bgcolor="grey"> -->
-	<!-- 					<a href="searchGame.do">searchGame</a><br> <a -->
-	<!-- 					href="searchStreamer.do">searchStreamer</a> -->
-	<!-- 				</td> -->
-	<!-- 				<td width="400px" height="50px" align="center" bgcolor="grey"> -->
-	<!-- 					<a href="login.do">login.jsp</a> -->
-	<!-- 				</td> -->
-	<!-- 			</tr> -->
-	<!-- 			<tr> -->
-	<!-- 				<td width="400px" height="50px" align="center" bgcolor="grey"> -->
-	<!-- 					<a href="InsightGame.do">game.jsp</a> -->
-	<!-- 				</td> -->
-	<!-- 				<td width="400px" height="50px" align="center" bgcolor="grey"> -->
-	<!-- 					<a href="InsightStreamer.do">streamer.jsp</a> -->
-	<!-- 				</td> -->
-	<!-- 				<td width="400px" height="50px" align="center" bgcolor="grey"> -->
-	<!-- 					<a href="board.do">board.jsp</a> -->
-	<!-- 				</td> -->
-	<!-- 			</tr> -->
-	<!-- 		</table> -->
-	<!-- 	</div> -->
 </body>
 </html>
