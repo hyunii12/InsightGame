@@ -42,7 +42,7 @@
         {
           id: 999,
           title: 'Repeating Event',
-          start: '2018-02-16T16:00:00'
+          start: '2018-02-16'
         },
         {
           title: 'Conference',
