@@ -219,7 +219,7 @@ function deleteBtn(bId){
 	});
 }
 function commentBtn(bId){
-	var targetTr = $('#tr_'+bId);
+	var targetTr = $('#tr_'+bId); 
 	if(targetTr.next('tr').attr('class') == 'writeComment'){
 		targetTr.next('tr').remove()
 		targetTr.find('button[name=commentBtn]').text('댓글')
