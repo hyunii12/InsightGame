@@ -19,7 +19,7 @@
 		      <button class="dropdown-item" type="button" value="HEADER3" onclick='setHeader($(this).val())'>게임3</button>
 		    </div>
 		</div>
-	  	<input id="writeContent" type="text" class="form-control" aria-label="댓글을 입력해 주세요">
+	  	<input id="writeContent" type="text" class="form-control" placeholder="댓글을 입력해 주세요">
 		<div class="input-group-btn">
 		    <!-- Buttons -->
 		   	<button type="button" id="writeBtn" class="btn btn-default">등록</button>

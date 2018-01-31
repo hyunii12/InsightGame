@@ -13,7 +13,7 @@ public interface IGameDao {
 	public int insertGameInfo(Game game);
 	public int updateGameInfo(Game game);
 	public int deleteGameInfo(int giId);
-	public HashMap<String, Object> selectGameInfoByGiId(int giId);
+	public HashMap<String, Object> selectGameInfo(HashMap<String, Object> param);
 	public List<HashMap<String, Object>> selectGameInfoList();
 	
 }

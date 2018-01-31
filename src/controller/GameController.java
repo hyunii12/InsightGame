@@ -40,4 +40,11 @@ public class GameController {
 	}
 	
 	
+	@RequestMapping("gameIssues.do")
+	public String gameIssues(Model model) {
+		System.out.println("여기는 게임이슈스");
+		return "contents/issues";
+	}
+	
+	
 }
