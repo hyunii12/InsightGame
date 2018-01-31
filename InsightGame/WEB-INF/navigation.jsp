@@ -89,18 +89,13 @@
 				</li>
 			</ul>
 		</div>
-<<<<<<< HEAD
-		
+
 		
 <div id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
 						src="img/login.png"></a></li>
-=======
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
-
-<<<<<<< HEAD
-			</ul>
+</ul>
 		</div>
 		
 		
@@ -131,30 +126,7 @@
 <%-- </c:otherwise> --%>
 <%-- </c:choose> --%>
 <!-- </li></ul></div> -->
-=======
-		<div id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mx-0 mx-lg-1"><c:choose>
-						<c:when test="${sessionScope.naverurl ne null}">
-							<a href="logout.do"> <img src="img/logout.png">
-							</a>
-						</c:when>
-						<c:when test="${twitchurl ne null}">
-							<a href="logout.do"> <img src="img/logout.png">
-							</a>
-						</c:when>
-						<c:when test="${googleurl ne null}">
-							<a href="logout.do"> <img src="img/logout.png">
-							</a>
-						</c:when>
-						<c:otherwise>
-							<a href="loginForm.do"> <img src="img/login.png">
-							</a>
-						</c:otherwise>
-					</c:choose></li>
-			</ul>
-		</div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+
 	</div>
 	</nav>
 
