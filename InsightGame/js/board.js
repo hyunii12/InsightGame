@@ -89,7 +89,7 @@ $(document).ready(function(){
 					else
 						var td3 = $('<td>').attr('name','content').val(content).text(content).appendTo(tr);
 					var td4 = $('<td>').attr('name','writer').val(writer).text(writer).appendTo(tr);
-					var td5 = $('<td>').attr('name','regDate').val(regDate).appendTo(tr);
+					var td5 = $('<td>').attr('name','regDate').val(regDate).text(regDate).appendTo(tr);
 					var cmtBtn = $('<button>').addClass('btn btn-secondary btn-sm')
 						.attr({'onclick':'commentBtn('+bId+')', 'name': 'commentBtn'})
 						.text('댓글');
