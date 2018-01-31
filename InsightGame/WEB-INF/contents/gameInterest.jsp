@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous"></script>
-	
+
 <!-- Load D3.js -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
 

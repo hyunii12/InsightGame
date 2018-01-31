@@ -12,92 +12,31 @@
 <script src='js/fullcalendar.min.js'></script>
 <script>
 
+var dataset = [
+	
+]
+
   $(document).ready(function() {
 
     $('#calendar').fullCalendar({
       header: {
-        left: 'prev,next today',
+        left: 'prev,next',
         center: 'title',
-        right: 'month,basicWeek,basicDay'
+        right: 'today'
       },
-      defaultDate: '2017-12-12',
+      defaultDate: new Date(),
       navLinks: true, // can click day/week names to navigate views
-      editable: true,
+      editable: false,
       eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2017-12-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2017-12-07',
-          end: '2017-12-10'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2017-12-09T16:00:00'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2017-12-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2017-12-11',
-          end: '2017-12-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2017-12-12T10:30:00',
-          end: '2017-12-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2017-12-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2017-12-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2017-12-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2017-12-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2017-12-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2017-12-28'
-        }
-      ]
+      events: dataset
     });
 
   });
 
 </script>
-<style>
-body {
-	margin: 40px 10px;
-	padding: 0;
-	font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
-	font-size: 14px;
-}
 
-#calendar {
-	max-width: 900px;
-	margin: 0 auto;
-}
-</style>
+<title>게임 캘린더</title>
+
 </head>
 <body>
 	<div id='calendar'></div>
