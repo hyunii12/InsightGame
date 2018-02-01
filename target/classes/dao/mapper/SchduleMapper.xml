@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.ISchduleDao">
+	<resultMap type="schdule" id="schduleMap">
+		<id column="sc_id" property="scId" />
+		<result column="sc_title" property="scTitle" />
+		<result column="sc_start_date" property="scStartDate" />
+		<result column="sc_end_date" property="scEndDate" />
+	</resultMap>
+
+	
+<select id="selectAllSchdule" resultMap="schduleMap">
+select * from schdule
+</select>
+
+<insert id="insertSchdule" parameterType="schdule"
+		useGeneratedKeys="true" keyProperty="scId">
+		INSERT INTO schdule (sc_id, sc_title, sc_date) VALUES (0, #{scTitle}, #{scDate})
+	</insert>
+
+
+<update id="updateSchdule" parameterType="schdule">
+		UPDATE Schdule SET sc_title= #{scTitle}, sc_start_date = #{scStartDate}, sc_end_date = #{scEndDate} WHERE sc_id = #{scId}
+	</update>
+	
+	
+<delete id="deleteSchdule" parameterType="string">
+		DELETE FROM schdule WHERE
+		sc_id = #{scId}
+	</delete>
+
+	<select id="selectOneSchdule" resultMap="schduleMap" parameterType="string">
+		SELECT * FROM schdule WHERE sc_id = #{scId}
+	</select>
+	
+
+</mapper>

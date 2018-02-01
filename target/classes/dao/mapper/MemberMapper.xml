@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IMemberDao">
+	<resultMap type="member" id="memberMap">
+		<id column="m_id" property="mId" />
+		<result column="m_email" property="mEmail" />
+		<result column="m_password" property="mPassword" />
+	</resultMap>
+
+<!-- 	<select id="selectAllMember" resultMap="boardMap"> -->
+<!-- 		SELECT * FROM board -->
+<!-- 	</select> -->
+
+	<select id="selectAllMember" resultMap="memberMap">
+		SELECT * FROM member
+	</select>
+
+
+	<insert id="insertMember" parameterType="member"
+		useGeneratedKeys="true" keyProperty="mId">
+		INSERT INTO member (m_id, m_email, m_password) VALUES (0, #{mEmail}, #{mPassword})
+	</insert>
+
+	<update id="updateMember" parameterType="member">
+		UPDATE Member SET m_email= #{mEmail}, m_password = #{mPassword} WHERE m_id = #{mId}
+	</update>
+
+	<delete id="deleteMember" parameterType="int">
+		DELETE FROM member WHERE
+		m_id = #{mId}
+	</delete>
+
+	<select id="selectOneMember" resultMap="memberMap" parameterType="int">
+		SELECT * FROM member WHERE m_id = #{mId}
+	</select>
+
+
+	<select id="selectOneEmail" resultMap="memberMap" parameterType="string">
+		SELECT * FROM member WHERE m_email = #{mEmail}
+	</select>
+
+</mapper>

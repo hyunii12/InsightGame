@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+=======
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\Streamer.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\BoardController.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\IStreamerService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\BoardServiceImpl.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\TwitchLoginApi.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\IBoardService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\dao\IGameDao.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\GameController.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\dao\IMemberDao.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\CalendarDto.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\IGameService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\Board.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\NaverLoginService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\CalendarController.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\GoogleCalendarService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\dao\IStreamerDao.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\dao\IBoardDao.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\MemberController.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\StreamerController.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\GoogleLoginService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\Game.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\MemberServiceImpl.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\GoogleLoginApi.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\test\Test.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\StreamerServiceImpl.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\CalendarAjaxController.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\NaverLoginApi.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\TwitchLoginService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\Member.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\IMemberService.java
+C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\GameServiceImpl.java
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
