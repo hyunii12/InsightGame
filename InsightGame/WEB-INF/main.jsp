@@ -42,7 +42,7 @@
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
 				<div id="issues">
-					<jsp:include page="gameIssues.do" />
+					<jsp:include page="contents/issues.jsp" />
 				</div>
 			</div>
 
@@ -323,17 +323,13 @@
 		</div>
 		</section>
 
+
+
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0">
+		<section class="bg-primary text-white ">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">게임 인기 변화</h2>
-			<hr class="star-light mb-5">
-			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
-				<div id="issues">
-					<jsp:include page="gameInterest.do" />
-				</div>
-			</div>
+<%-- 					<jsp:include page="contents/gameInterest.jsp" /> --%>
 		</div>
 		</section>
 

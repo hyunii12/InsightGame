@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>게임이슈랭크</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -21,22 +22,21 @@ window.onload = function() {
 		  data: {
 		    type: "bar",
 		    columns: [
-			["요인1", 120, 200, 300, 100, 150, 250],
-			["요인2", 50, 29, 17, 40, 15, 25],
-			["요인3", 30, 50, 20, 10, 70, 45],
-			["요인4", 100, 200, 310, 440, 515, 125],
-			["요인5", 50, 90, 200, 10, 80, 120],
-			["요인6", 90, 600, 200, 300]
+			["key1", 80, 120, 150, 50 ],
+			["key2", 50, 30, 200, 70],
+			["key3", 100, 100, 200, 70],
+			["key4", 100, 200, 310, 200, 100, 125],
+			["key5", 50, 90, 200, 10, 80, 120],
+			["key6", 90, 100, 200, 300]
 		    ],
 		    groups: [
 		      [
-		    	  "요인1",
-		    	  "요인2",
-		    	  "요인3",
-		    	  "요인4",
-		    	  "요인5",
-		    	  "요인6"
-		    	  
+		    	  "key1",
+		    	  "key2",
+		    	  "key3",
+		    	  "key4",
+		    	  "key5",
+		    	  "key6"
 		    	  
 		      ]
 		    ],
