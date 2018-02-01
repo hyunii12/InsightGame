@@ -10,5 +10,6 @@ object GameData {
     val gnameMap = gnameRdd.map(x => (x.toString, 1));
     val gnameMap_result = gnameMap.map{ case (k, v) => Array(k, v).mkString(",")};
     gnameMap_result.coalesce(1).saveAsTextFile("/result_spark/"+args(1));
+    //test
   }
 }
