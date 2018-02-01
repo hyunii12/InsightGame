@@ -33,12 +33,12 @@
 
         <div class="container" style="margin-top: 15%; width:77%;">
 <!-- 			<script src="js/board.js"></script> -->
-<<<<<<< HEAD
+
 			<script src="js/board.js?v=1111asd22JF12j"></script>
-=======
+
 
 			<script src="js/board.js?v=asdf11231s12j"></script>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
 			</style>
