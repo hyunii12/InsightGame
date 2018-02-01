@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\Streamer.java
 C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\controller\BoardController.java
 C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\IStreamerService.java
@@ -29,3 +31,4 @@ C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\TwitchLoginServi
 C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\model\Member.java
 C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\IMemberService.java
 C:\Users\student\Desktop\javaWorkspace4\InsightGame\src\service\GameServiceImpl.java
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
