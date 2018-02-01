@@ -329,7 +329,7 @@
 		<section class="bg-primary text-white ">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">게임 인기 변화</h2>
-					<jsp:include page="contents/gameInterest.jsp" />
+<%-- 					<jsp:include page="contents/gameInterest.jsp" /> --%>
 		</div>
 		</section>
 

@@ -12,6 +12,7 @@
 <script src='js/fullcalendar.min.js'></script>
 <script>
 
+
   $(document).ready(function() {
 
     $('#calendar').fullCalendar({
