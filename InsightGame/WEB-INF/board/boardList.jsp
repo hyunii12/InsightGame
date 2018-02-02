@@ -8,12 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<table id="boardTable" class="table" align="center" style="border: 1px solid white;">
+	<table id="boardTable" class="table" align="center">
 		<tbody>
 			<c:forEach items="${boardList }" var="list">
 				<c:if test="${list.groupLevel eq 0 }">
 
-					<td name="bId" value="${list.bId }" style="text-align:left;  padding-top: 15px; padding-bottom:1px;" >${list.writer}</td>
+					<td name="bId" value="${list.bId }" style="text-align:left;  padding-top: 15px; padding-bottom:1px; padding-left:1px;" >${list.writer}</td>
 					<td style="text-align:right;  padding-top: 15px; padding-bottom:1px;">
 						<button class="btn btn-secondary btn-sm" name="modifyBtn"
 							onclick="modifyBtn(${list.bId })">수정</button>
@@ -22,12 +22,12 @@
 					</td>
 
 					<tr>
-						<td colspan="2" name="header" value="${list.header }" style="text-align:left;">[${list.header }] ${list.content}<c:if
+						<td colspan="2" name="header" value="${list.header }" style="text-align:left; padding:0px 1px;">[${list.header }] ${list.content}<c:if
 								test="${list.cmts != 0}">[${list.cmts }]</c:if></td>
 					</tr>
 
 					<tr>
-						<td colspan="2" style="text-align:left;"><fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)"
+						<td colspan="2" style="text-align:left; padding:0px 1px;"><fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)"
 								value="${list.regDate }" /></td>
 					</tr>
 
