@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,6 +43,10 @@
 				<jsp:include page="../board/boradWrite.jsp" />    	
         	</div>
         	<button class="btn btn-outline-secondary my-2 my-sm-0" onclick="location.reload()"><img style="size: 0.5em" src="img/refresh-arrow.png"></button>
+        	<span>
+        		<jsp:useBean id="date" class="java.util.Date" />
+				<fmt:formatDate value="${date}" pattern="yyyy-MM-dd(HH:mm:ss)" var="currentDateTime" />
+			</span>
         	<div id="div_boardList" style="text-align: center; margin-top: 3%;">
 	        	<jsp:include page="../board/boardList.jsp" />
         	</div>

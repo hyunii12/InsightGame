@@ -83,6 +83,11 @@ $(document).ready(function(){
 					var groupLvl = item.groupLevel;
 					var cmts = item.cmts;
 					console.log(regDate+"//////"+item.regDate);
+					// tr1 : td1: bId 			, td2: 수정삭제 버튼
+					// tr2 : td3(colspan=2) : [+header+], contents
+					// tr3 : td4(colspan=2) : 작성일자
+					// tr4 : td5(colspan=2) : 댓글 버튼
+					
 					var tr = $('<tr>').attr({'id': 'tr_'+bId, 'style': 'cursor:pointer'}).addClass('boards_tr').appendTo('#bodyBoardTable');
 					var td1 = $('<td>').attr('name','bId').val(bId).text(bId).appendTo(tr);
 					var td2 = $('<td>').attr('name','header').val(header).text("["+header+"]").appendTo(tr);
@@ -154,7 +159,7 @@ function getCommentList(targetTr, bId){
 					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
 					var cmt_groupId = item.groupId;
 					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'
-					+ '<td>ㄴ'+cmt_writer+'</td>'
+					+ '<td>&#9492;'+cmt_writer+'</td>'
 					+ '<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>'
 					+ '<tr><td colspan="2">' + cmt_content + '<br>' +cmt_regDate + '</td></tr>';
 				});

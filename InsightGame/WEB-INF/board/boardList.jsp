@@ -13,7 +13,7 @@
 			<c:forEach items="${boardList }" var="list">
 				<c:if test="${list.groupLevel eq 0 }">
 
-					<td name="bId" value="${list.bId }" style="text-align:left;  padding-top: 15px; padding-bottom:1px; padding-left:1px;" >${list.writer}</td>
+					<td name="bId" value="${list.bId }" style="text-align:left;  padding-top: 15px; padding-bottom:1px; padding-left:1px;" ><b>${list.writer}</b></td>
 					<td style="text-align:right;  padding-top: 15px; padding-bottom:1px;">
 						<button class="btn btn-secondary btn-sm" name="modifyBtn"
 							onclick="modifyBtn(${list.bId })">수정</button>
@@ -22,8 +22,7 @@
 					</td>
 
 					<tr>
-						<td colspan="2" name="header" value="${list.header }" style="text-align:left; padding:0px 1px;">[${list.header }] ${list.content}<c:if
-								test="${list.cmts != 0}">[${list.cmts }]</c:if></td>
+						<td colspan="2" name="header" value="${list.header }" style="text-align:left; padding:0px 1px;"><span style="color: gray">[${list.header }]</span> ${list.content}</td>
 					</tr>
 
 					<tr>
@@ -35,10 +34,9 @@
 						onclick="<c:if test="${list.cmts != 0}">openComments(${list.bId})</c:if>">
 						<td colspan="2" style="text-align:left;">
 							<button class="btn btn-secondary btn-sm" name="commentBtn"
-								onclick="commentBtn(${list.bId })">댓글</button>
-							<%-- 		<c:if test="${loginState }"> --%>
-
-							<%-- 		</c:if> --%>
+								onclick="commentBtn(${list.bId })">댓글
+								<c:if test="${list.cmts != 0}">&nbsp;${list.cmts } </c:if>
+								</button>
 						</td>
 					</tr>
 
