@@ -31,20 +31,10 @@
         </div>
 
 
-        <div class="container" style="margin-top: 15%; width:77%;">
+        <div class="container" style="margin-top: 15%; width:60%;">
 <!-- 			<script src="js/board.js"></script> -->
-<<<<<<< HEAD
-=======
 
-			<script src="js/board.js?v=1111asd22JF12j"></script>
-
-
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
-			<script src="js/board.js?v=asdf11231s12j"></script>
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+			<script src="js/board.js?v=asd1123s12j"></script>
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
 			</style>

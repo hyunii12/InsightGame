@@ -1854,7 +1854,7 @@ pre code {
 }
 
 .form-control {
-  display: block;
+/*   display: block; */
   width: 100%;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;

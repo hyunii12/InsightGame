@@ -154,13 +154,10 @@ function getCommentList(targetTr, bId){
 					var cmt_writer = item.writer;
 					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
 					var cmt_groupId = item.groupId;
-					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'+
-						'<td></td>'+
-						'<td>ㄴ</td>'+
-						'<td>'+cmt_content+'</td>'+
-						'<td>'+cmt_writer+'</td>'+
-						'<td>'+cmt_regDate+'</td>'+
-						'<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>';
+					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'
+					+ '<td>ㄴ'+cmt_writer+'</td>'
+					+ '<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>'
+					+ '<tr><td colspan="2">' + cmt_content + '<br>' +cmt_regDate + '</td></tr>';
 				});
 				return cmts;
 			});
@@ -231,10 +228,9 @@ function commentBtn(bId){
 		targetTr.find('button[name=commentBtn]').text('취소');
 		targetTr.after(function(){
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
-			return '<tr class="writeComment" id=tr_cmt_'+bId+'><td>ㄴ</td>'+
-				'<td colspan="3"><input id="inputComment" type="text" class="form-control" aria-label="..."></td>'+
-				'<td>작성자</td>'+
-				'<td><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
+			return '<tr class="writeComment" id=tr_cmt_'+bId+'>'+
+				'<td>ㄴ <input id="inputComment" type="text" class="form-control" style="width: 80%;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')">등록</button></td>'
+				+ '</tr>';
 		});
 	}
 }
