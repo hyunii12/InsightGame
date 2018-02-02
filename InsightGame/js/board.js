@@ -228,7 +228,7 @@ function commentBtn(bId){
 		targetTr.after(function(){
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
 			return '<tr class="writeComment" id=tr_cmt_'+bId+'>'+
-				'<td>ㄴ <input id="inputComment" type="text" class="form-control" style="width: 80%;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')">등록</button></td>'
+				'<td colspan="2">└ <input id="inputComment" type="text" class="form-control" style="width: 80%; display: inline; margin-left: 15px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
 				+ '</tr>';
 		});
 	}
