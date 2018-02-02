@@ -89,7 +89,7 @@ $(document).ready(function(){
 					if(cmts > 0){
 						var td3 = $('<td>').attr('name','content').val(content)
 						.text(content+"["+cmts+"]").appendTo(tr);
-						tr.attr('onclick', 'openComments('+bId+')')
+						tr.attr('onclick', 'event.cancelBubble = true; openComments('+bId+')')
 					}
 					else
 						var td3 = $('<td>').attr('name','content').val(content).text(content).appendTo(tr);
@@ -106,9 +106,8 @@ $(document).ready(function(){
 					var deltBtn = $('<button>').addClass('btn btn-secondary btn-sm')
 					.attr({'onclick':'deleteBtn('+bId+')', 'name': 'deleteBtn'})
 					.text('삭제');
-					var td6 = $('<td>').attr('name', 'btn_groups')
+					var td6 = $('<td>').attr('name', 'btn_groups').attr('onclick', 'event.cancelBubble = true;')
 						.append(cmtBtn).append(mdfyBtn).append(deltBtn).appendTo(tr);
-					
 				})
 	    	},
 	    	error:function(request,status,error){
@@ -130,7 +129,7 @@ function openComments(bId){
 	}
 	else {
 		if(targetTr.next('tr').attr('class').substr(0, 4).toString() == 'cmts'){
-			console.log('Already exists....')
+//			console.log('Already exists....')
 			$('.cmts_'+bId).toggle();
 		}
 		else{
@@ -219,10 +218,10 @@ function deleteBtn(bId){
 }
 function commentBtn(bId){
 	var targetTr = $('#tr_'+bId);
-	if(targetTr.next('tr').attr('class') == 'writeComment'){
-		targetTr.next('tr').remove() 
+	if(targetTr.find('button[name=commentBtn]').text() == '취소'){
+		$('.writeComment').find('#tr_cmt_'+bId).remove();
+//		$('.writeComment').remove();
 		targetTr.find('button[name=commentBtn]').text('댓글')
-		targetTr.css("background", "");
 	}
 	else{
 		targetTr.find('button[name=commentBtn]').text('취소');

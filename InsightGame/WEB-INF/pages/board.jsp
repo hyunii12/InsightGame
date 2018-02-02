@@ -33,7 +33,6 @@
 
         <div class="container" style="margin-top: 15%; width:60%;">
 <!-- 			<script src="js/board.js"></script> -->
-
 			<script src="js/board.js?v=asd1123s12j"></script>
 			<style>
 				#div_write{margin-left:20px;margin-right:20px}
