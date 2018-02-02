@@ -24,7 +24,7 @@
 						<td name="content" value="${list.content }">${list.content}<c:if test="${list.cmts != 0}">[${list.cmts }]</c:if></td>
 						<td name="writer" value="${list.writer }">${list.writer}</td>
 						<td><fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)" value="${list.regDate }"/></td>
-						<td onclick="event.cancelBubble = true;">
+						<td>
 							<button class="btn btn-secondary btn-sm" name="commentBtn" onclick="commentBtn(${list.bId })">댓글</button>
 				<%-- 		<c:if test="${loginState }"> --%>
 								<button class="btn btn-secondary btn-sm" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
