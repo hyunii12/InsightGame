@@ -70,7 +70,7 @@
 							<button id="searchSelectBtn"
 								class="btn btn-secondary dropdown-toggle" type="button"
 								data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false" style="width: 118px;">게임</button>
+								aria-expanded="false" style="width: 118px;">게임　 　</button>
 							<div class="dropdown-menu">
 								<button class="dropdown-item" type="button" value="game"
 									onclick='setSearchHeader($(this).val())'>게임</button>
