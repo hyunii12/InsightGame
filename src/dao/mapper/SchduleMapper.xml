@@ -11,30 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="sc_end_date" property="scEndDate" />
 	</resultMap>
 
-	
-<select id="selectAllSchdule" resultMap="schduleMap">
-select * from schdule
-</select>
 
-<insert id="insertSchdule" parameterType="schdule"
-		useGeneratedKeys="true" keyProperty="scId">
-		INSERT INTO schdule (sc_id, sc_title, sc_date) VALUES (0, #{scTitle}, #{scDate})
-	</insert>
-
-
-<update id="updateSchdule" parameterType="schdule">
-		UPDATE Schdule SET sc_title= #{scTitle}, sc_start_date = #{scStartDate}, sc_end_date = #{scEndDate} WHERE sc_id = #{scId}
-	</update>
-	
-	
-<delete id="deleteSchdule" parameterType="string">
-		DELETE FROM schdule WHERE
-		sc_id = #{scId}
-	</delete>
-
-	<select id="selectOneSchdule" resultMap="schduleMap" parameterType="string">
-		SELECT * FROM schdule WHERE sc_id = #{scId}
+	<select id="selectAllSchedule" resultMap="schduleMap">
+		select * from schedule
 	</select>
-	
+
+
 
 </mapper>

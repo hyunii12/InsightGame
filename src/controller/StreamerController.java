@@ -37,6 +37,13 @@ public class StreamerController {
 		return "contents/streamerRadarChart";
 	}
 	
+	
+	@RequestMapping("streamerRank.do")
+	public String streamerRank(Model model) {
+		System.out.println("시간,팔로우,IRL/방송시간 기준으로 스트리머 랭크");
+		return "contents/streamerRank";
+	}
+	
 }
 
 
