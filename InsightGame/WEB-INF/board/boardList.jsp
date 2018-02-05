@@ -12,7 +12,7 @@
 		<tbody>
 			<c:forEach items="${boardList }" var="list">
 				<c:if test="${list.groupLevel eq 0 }">
-					<tr>
+					<tr class="tr_boardList">
 						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px;">${list.writer}</td>
 						<td	style="text-align: right; padding-bottom: 1px;">
 							<!-- Default dropright button -->
@@ -30,13 +30,12 @@
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align: left; padding: 0px 1px;">
-							<fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)" value="${list.regDate }" />
+							<fmt:formatDate pattern="yyyy-MM-dd (HH:mm:ss)" value="${list.regDate }" />
 						</td>
 					</tr>
 					<tr id="tr_${list.bId }">
 						<td colspan="2" style="text-align: left; padding: 3px 5px;">
-							<button class="btn btn-secondary btn-sm" name="commentBtn"
-<%-- 								onclick="<c:if test="${list.cmts != 0}">openComments(${list.bId});</c:if>commentBtn(${list.bId })">댓글 --%>
+							<button class="btn btn-secondary btn-sm" name="commentBtn" value="${list.cmts }"
 								onclick="commentBtn(${list.bId })">댓글
 								<c:if test="${list.cmts != 0}">&nbsp;${list.cmts } </c:if>
 							</button>
