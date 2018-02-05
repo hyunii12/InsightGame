@@ -19,8 +19,8 @@
 							<div class="btn-group dropright">
 								<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false"><img src="img/dotdot.png"></a>
 								<div class="dropdown-menu" style="margin-left:4px;">
-									<button class="dropdown-item" name="modifyBtn" style=" width:70%;"onclick="modifyBtn(${list.bId })">수정</button>
-									<button class="dropdown-item" name="deleteBtn" style=" width:70%;"onclick="deleteBtn(${list.bId })">삭제</button>
+									<button class="dropdown-item" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
+									<button class="dropdown-item" name="deleteBtn" onclick="deleteBtn(${list.bId })">삭제</button>
 								</div>
 							</div>
 						</td>
