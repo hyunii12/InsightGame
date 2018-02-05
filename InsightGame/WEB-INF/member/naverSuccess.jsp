@@ -43,7 +43,7 @@
 <body>
 
 <div id="navigation">
-		<jsp:include page="navigation.jsp" />
+		<jsp:include page="../navigation.jsp" />
 	</div>
 	
 	<div style="margin-top: 15%;">
