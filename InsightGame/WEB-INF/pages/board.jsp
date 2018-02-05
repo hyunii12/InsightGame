@@ -35,9 +35,13 @@
 
         <div class="container" style="margin-top: 15%; width:60%;">
 <!-- 			<script src="js/board.js"></script> -->
-			<script src="js/board.js?v=asd1123s12j"></script>
+<<<<<<< HEAD
+			<script src="js/board.js?v=assd123s12j"></script>
+=======
+			<script src="js/board.js?v=asd112s12j"></script>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 			<style>
-				#div_write{margin-left:20px;margin-right:20px}
+				#div_write{margin-left:10px;margin-right:10px}
 			</style>
         	<div id="div_write">
 				<jsp:include page="../board/boradWrite.jsp" />    	

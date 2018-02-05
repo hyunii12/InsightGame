@@ -65,6 +65,7 @@ $(document).ready(function(){
 			}
 		});
 	});
+	// 더보기 버튼 
 	$('#getListBtn').on('click', function(){
 		page += 1;
 		$.ajax({
@@ -78,41 +79,29 @@ $(document).ready(function(){
 					var header = item.header;
 					var content = item.content;
 					var writer = item.writer;
-					var regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
+					var regDate = new Date(item.regDate).format("yyyy-MM-dd (HH:mm:ss)")
 					var groupId = item.groupId;
 					var groupLvl = item.groupLevel;
 					var cmts = item.cmts;
+					if(cmts != 0 ) cmts=" "+cmts
+					else cmts = "";
 					console.log(regDate+"//////"+item.regDate);
-					// tr1 : td1: bId 			, td2: 수정삭제 버튼
+					// tr1 : td1: 작성자 			, td2: 수정/삭제 버튼
 					// tr2 : td3(colspan=2) : [+header+], contents
 					// tr3 : td4(colspan=2) : 작성일자
 					// tr4 : td5(colspan=2) : 댓글 버튼
-					
-					var tr = $('<tr>').attr({'id': 'tr_'+bId, 'style': 'cursor:pointer'}).addClass('boards_tr').appendTo('#bodyBoardTable');
-					var td1 = $('<td>').attr('name','bId').val(bId).text(bId).appendTo(tr);
-					var td2 = $('<td>').attr('name','header').val(header).text("["+header+"]").appendTo(tr);
-					if(cmts > 0){
-						var td3 = $('<td>').attr('name','content').val(content)
-						.text(content+"["+cmts+"]").appendTo(tr);
-						tr.attr('onclick', 'event.cancelBubble = true; openComments('+bId+')')
-					}
-					else
-						var td3 = $('<td>').attr('name','content').val(content).text(content).appendTo(tr);
-					var td4 = $('<td>').attr('name','writer').val(writer).text(writer).appendTo(tr);
-
-					var td5 = $('<td>').attr('name','regDate').val(regDate).text(regDate).appendTo(tr);
-
+					var tr1 = $('<td>').attr({'name':'writer', 'value': bId, 
+							'style': "text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold"
+						}).text(writer).appendTo('<tr>').appendTo('#boardTable tbody');
+					var tr2 = $('<tr>').attr({'name':'header', 'colspan':2, 'style': 'text-align:left; padding:0px 1px; border-top:0px'})
+						.html('<span style="color: gray">['+header+']</span>'+content).appendTo('#boardTable tbody');
+					var tr3 = $('<tr>').attr({'name':'regDate', 'colspan':"2", 'style':"text-align: left; padding: 0px 1px; border-top:0px;"})
+						.text(regDate).insertAfter(tr2);
+					var tr4 = $('<td>').attr({'colspan':"2", 'style':"text-align: left; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 14px; border-top:0px;"})
+						.appendTo('#boardTable tbody');
 					var cmtBtn = $('<button>').addClass('btn btn-secondary btn-sm')
 						.attr({'onclick':'commentBtn('+bId+')', 'name': 'commentBtn'})
-						.text('댓글');
-					var mdfyBtn = $('<button>').addClass('btn btn-secondary btn-sm')
-					.attr({'onclick':'modifyBtn('+bId+')', 'name': 'modifyBtn'})
-					.text('수정');
-					var deltBtn = $('<button>').addClass('btn btn-secondary btn-sm')
-					.attr({'onclick':'deleteBtn('+bId+')', 'name': 'deleteBtn'})
-					.text('삭제');
-					var td6 = $('<td>').attr('name', 'btn_groups').attr('onclick', 'event.cancelBubble = true;')
-						.append(cmtBtn).append(mdfyBtn).append(deltBtn).appendTo(tr);
+						.text('댓글'+cmts).appendTo(tr4);
 				})
 	    	},
 	    	error:function(request,status,error){
@@ -127,43 +116,30 @@ function setHeader(val){
 	var target = $('#headerBtn').text(val);
 }
 
-function openComments(bId){
-	var targetTr = $('#tr_'+bId);
-	if(targetTr.is(":last-child")){
-		getCommentList(targetTr, bId);
-	}
-	else {
-		if(targetTr.next('tr').attr('class').substr(0, 4).toString() == 'cmts'){
-//			console.log('Already exists....')
-			$('.cmts_'+bId).toggle();
-		}
-		else{
-			getCommentList(targetTr, bId);
-		}
-	}
-}
-function getCommentList(targetTr, bId){
+function getCommentList(bId, targetTr){
 	$.ajax({
 		url:"getCommentList.do",
 		type: "post",
 		dataType:"json",
 		data: {"groupId": bId},
 		success: function(data){
-			targetTr.after(function(){
-				var cmts = "";
-				var list = data.commentList;
+			var list = data.commentList;
 				$.each(list, function(index, item) {
 					var cmt_bId = item.bId;
 					var cmt_content = item.content;
 					var cmt_writer = item.writer;
-					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
+					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd&nbsp;(HH:mm:ss)")
 					var cmt_groupId = item.groupId;
-					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'
-					+ '<td>&#9492;'+cmt_writer+'</td>'
-					+ '<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>'
-					+ '<tr><td colspan="2">' + cmt_content + '<br>' +cmt_regDate + '</td></tr>';
-				});
-				return cmts;
+					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
+					var td1 = $('<td>')
+						.attr('bId', cmt_bId)
+						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px' })
+						.html('<b>└　'+cmt_writer+'</b>').appendTo(tr)
+					var td2 = $('<td>').css({'text-align':'left', 'padding-left':'2px'})
+						.attr({'colspan': '2', 'name': "content"})
+						.html(cmt_content+
+							'&nbsp;&nbsp;<span style="color: gray; font-size: 12px; font-style: italic;">'+cmt_regDate+'</span>'
+						).appendTo(tr)
 			});
 		},
 		error : function(e){
@@ -174,7 +150,6 @@ function getCommentList(targetTr, bId){
 }
 function modifyBtn(bId){
 	var targetTr = $('#tr_'+bId);
-	
 	var content = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(3)")
 		.replaceWith('<td><input id="re_content" type="text" class="form-control" aria-label="..."></td>')
 	var submit = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(6)")
@@ -221,27 +196,71 @@ function deleteBtn(bId){
 		}
 	});
 }
+function getCommentList(bId, targetTr){
+	$.ajax({
+		url:"getCommentList.do",
+		type: "post",
+		dataType:"json",
+		data: {"groupId": bId},
+		success: function(data){
+			var list = data.commentList;
+				$.each(list, function(index, item) {
+					var cmt_bId = item.bId;
+					var cmt_content = item.content;
+					var cmt_writer = item.writer;
+					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd&nbsp;(HH:mm:ss)")
+					var cmt_groupId = item.groupId;
+					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
+					var td1 = $('<td>')
+						.attr('bId', cmt_bId)
+						.css({"text-align": 'right', 'padding-bottom': '1px', 'padding-left': "1px"})
+						.html('<b>'+cmt_writer+'</b>').appendTo(tr)
+					var td2 = $('<td>').css({'text-align':'left'})
+						.attr({'colspan': '2', 'name': "content"})
+						.html(cmt_content+
+							'&nbsp;&nbsp;<span style="color: gray; font-size: 12px; font-style: italic;">'+cmt_regDate+'</span>&nbsp;&nbsp;'
+						).appendTo(tr)
+//					var deltBtn = $('<button>').addClass('btn btn-outline-secondary my-2 my-sm-0')
+//						.attr({'onclick':'deleteBtn('+cmt_bId+')', 'name': 'deleteBtn', 'style' : "padding: .3rem .4rem;"})
+//						.html('<img style="width:15px; height:15px;" src="img/letter-x.png">').appendTo(td2+'&nbsp;&nbsp;');
+					var delCmtBtn = $('<img>').attr({'onclick':'deleteBtn('+cmt_bId+')', 
+						'name': 'deleteBtn', 
+						'style' : "width:15px; height:15px;", 
+						'src':"img/letter-x.png"})
+					.appendTo(td2);
+			});
+		},
+		error : function(e){
+			if(e.status == 300)
+				console.log('Failed to load data....')
+		}
+	})
+}
 function commentBtn(bId){
 	var targetTr = $('#tr_'+bId);
 	if(targetTr.find('button[name=commentBtn]').text() == '취소'){
-		$('.writeComment').find('#tr_cmt_'+bId).remove();
-//		$('.writeComment').remove();
-		targetTr.find('button[name=commentBtn]').text('댓글')
+		$('.tr_cmts_'+bId).remove();
+		var no_cmts = targetTr.find('button[name=commentBtn]').attr('value');
+		if(no_cmts == 0) no_cmts="";
+		else no_cmts="&nbsp;"+no_cmts;
+		targetTr.find('button[name=commentBtn]').html('댓글'+no_cmts)
 	}
 	else{
 		targetTr.find('button[name=commentBtn]').text('취소');
 		targetTr.after(function(){
+			getCommentList(bId, targetTr);
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
-			return '<tr class="writeComment" id=tr_cmt_'+bId+'>'+
-				'<td colspan="2">└ <input id="inputComment" type="text" class="form-control" style="width: 80%; display: inline; margin-left: 15px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
+			return '<tr class="tr_cmts_'+bId+' writeComment" id=tr_cmt_'+bId+'>'+
+				'<td colspan="2" style="text-align: left;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
 				+ '</tr>';
 		});
 	}
 }
+
 function writeBtn_comment(bId, header){
 	var targetTr = $('#tr_'+bId);
 	var header = targetTr.find('td[name=header]').attr('value')
-	var content = $('#inputComment').val();
+	var content = $('.tr_cmts_'+bId+'.writeComment').find('input[type="text"]').val();
 	var writer = 'temp222';
 	var parentBId = bId;
 	$.ajax({
@@ -256,9 +275,9 @@ function writeBtn_comment(bId, header){
 		}, 
 		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 		success: function(data){
-			alert(data.msg)
 			if(data != null){
-				location.reload();
+				commentBtn(bId);
+				commentBtn(bId);
 			}
 		},
 		error:function(request,status,error){

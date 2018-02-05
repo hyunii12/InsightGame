@@ -19,8 +19,8 @@
 							<div class="btn-group dropright">
 								<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false"><img src="img/dotdot.png"></a>
 								<div class="dropdown-menu" style="margin-left:4px;">
-									<button class="dropdown-item" name="modifyBtn" style=" width:70%;"onclick="modifyBtn(${list.bId })">수정</button>
-									<button class="dropdown-item" name="deleteBtn" style=" width:70%;"onclick="deleteBtn(${list.bId })">삭제</button>
+									<button class="dropdown-item" name="modifyBtn" onclick="modifyBtn(${list.bId })">수정</button>
+									<button class="dropdown-item" name="deleteBtn" onclick="deleteBtn(${list.bId })">삭제</button>
 								</div>
 							</div>
 						</td>
@@ -29,15 +29,12 @@
 						<td colspan="2" name="header" value="${list.header }" style="text-align:left; padding:0px 1px; border-top:0px;"><span style="color: gray">[${list.header }]</span> ${list.content}</td>
 					</tr>
 					<tr>
-
-						<td colspan="2" style="text-align: left; padding: 0px 1px; border-top:0px;"><fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)" value="${list.regDate }" /></td>
-
+						<td colspan="2" style="text-align: left; padding: 0px 1px; border-top:0px;"><fmt:formatDate pattern="yyyy-MM-dd (HH:mm:ss)" value="${list.regDate }" /></td>
 					</tr>
 					<tr id="tr_${list.bId }">
 						<td colspan="2" style="text-align: left; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 14px; border-top:0px;">
-							<button class="btn btn-secondary btn-sm" name="commentBtn"
-<%-- 								onclick="<c:if test="${list.cmts != 0}">openComments(${list.bId});</c:if>commentBtn(${list.bId })">댓글 --%>
-								onclick="commentBtn(${list.bId })">댓글
+							<button class="btn btn-secondary btn-sm" name="commentBtn" value=${list.cmts }
+								onclick="commentBtn(${list.bId })" style='cursor:pointer'>댓글
 								<c:if test="${list.cmts != 0}">&nbsp;${list.cmts } </c:if>
 							</button>
 						</td>
