@@ -83,13 +83,18 @@ $(document).ready(function(){
 					var groupLvl = item.groupLevel;
 					var cmts = item.cmts;
 					console.log(regDate+"//////"+item.regDate);
+					// tr1 : td1: bId 			, td2: 수정삭제 버튼
+					// tr2 : td3(colspan=2) : [+header+], contents
+					// tr3 : td4(colspan=2) : 작성일자
+					// tr4 : td5(colspan=2) : 댓글 버튼
+					
 					var tr = $('<tr>').attr({'id': 'tr_'+bId, 'style': 'cursor:pointer'}).addClass('boards_tr').appendTo('#bodyBoardTable');
 					var td1 = $('<td>').attr('name','bId').val(bId).text(bId).appendTo(tr);
 					var td2 = $('<td>').attr('name','header').val(header).text("["+header+"]").appendTo(tr);
 					if(cmts > 0){
 						var td3 = $('<td>').attr('name','content').val(content)
 						.text(content+"["+cmts+"]").appendTo(tr);
-						tr.attr('onclick', 'openComments('+bId+')')
+						tr.attr('onclick', 'event.cancelBubble = true; openComments('+bId+')')
 					}
 					else
 						var td3 = $('<td>').attr('name','content').val(content).text(content).appendTo(tr);
@@ -106,9 +111,8 @@ $(document).ready(function(){
 					var deltBtn = $('<button>').addClass('btn btn-secondary btn-sm')
 					.attr({'onclick':'deleteBtn('+bId+')', 'name': 'deleteBtn'})
 					.text('삭제');
-					var td6 = $('<td>').attr('name', 'btn_groups')
+					var td6 = $('<td>').attr('name', 'btn_groups').attr('onclick', 'event.cancelBubble = true;')
 						.append(cmtBtn).append(mdfyBtn).append(deltBtn).appendTo(tr);
-					
 				})
 	    	},
 	    	error:function(request,status,error){
@@ -130,7 +134,7 @@ function openComments(bId){
 	}
 	else {
 		if(targetTr.next('tr').attr('class').substr(0, 4).toString() == 'cmts'){
-			console.log('Already exists....')
+//			console.log('Already exists....')
 			$('.cmts_'+bId).toggle();
 		}
 		else{
@@ -154,13 +158,10 @@ function getCommentList(targetTr, bId){
 					var cmt_writer = item.writer;
 					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd(HH:mm:ss)")
 					var cmt_groupId = item.groupId;
-					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'+
-						'<td></td>'+
-						'<td>ㄴ</td>'+
-						'<td>'+cmt_content+'</td>'+
-						'<td>'+cmt_writer+'</td>'+
-						'<td>'+cmt_regDate+'</td>'+
-						'<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>';
+					cmts += '<tr class="cmts_'+cmt_groupId+'" id=tr_cmt_'+bId+'>'
+					+ '<td>&#9492;'+cmt_writer+'</td>'
+					+ '<td><button type="button" class="writeBtn_comment btn btn-secondary btn-sm" onclick="deleteBtn('+cmt_bId+')">삭제</button></td></tr>'
+					+ '<tr><td colspan="2">' + cmt_content + '<br>' +cmt_regDate + '</td></tr>';
 				});
 				return cmts;
 			});
@@ -222,19 +223,18 @@ function deleteBtn(bId){
 }
 function commentBtn(bId){
 	var targetTr = $('#tr_'+bId);
-	if(targetTr.next('tr').attr('class') == 'writeComment'){
-		targetTr.next('tr').remove() 
+	if(targetTr.find('button[name=commentBtn]').text() == '취소'){
+		$('.writeComment').find('#tr_cmt_'+bId).remove();
+//		$('.writeComment').remove();
 		targetTr.find('button[name=commentBtn]').text('댓글')
-		targetTr.css("background", "");
 	}
 	else{
 		targetTr.find('button[name=commentBtn]').text('취소');
 		targetTr.after(function(){
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
-			return '<tr class="writeComment" id=tr_cmt_'+bId+'><td>ㄴ</td>'+
-				'<td colspan="3"><input id="inputComment" type="text" class="form-control" aria-label="..."></td>'+
-				'<td>작성자</td>'+
-				'<td><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')">등록</button></td></tr>';
+			return '<tr class="writeComment" id=tr_cmt_'+bId+'>'+
+				'<td colspan="2">└ <input id="inputComment" type="text" class="form-control" style="width: 80%; display: inline; margin-left: 15px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
+				+ '</tr>';
 		});
 	}
 }

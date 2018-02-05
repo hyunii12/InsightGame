@@ -32,45 +32,22 @@
 		<jsp:include page="../navigation.jsp" />
 	</div>
 
-	<script type="text/javascript">
-		$(document)
-				.ready(
+		<script type="text/javascript">
+			$(document).ready(
+				function() {
+					$('.collapse').on('show.bs.collapse',
 						function() {
-							$('.collapse')
-									.on(
-											'show.bs.collapse',
-											function() {
-												var id = $(this).attr('id');
-												$('a[href="#' + id + '"]')
-														.closest(
-																'.panel-heading')
-														.addClass('active-faq');
-												$(
-														'a[href="#'
-																+ id
-																+ '"] .panel-title span')
-														.html(
-																'<i class="glyphicon glyphicon-minus"></i>');
-											});
-							$('.collapse')
-									.on(
-											'hide.bs.collapse',
-											function() {
-												var id = $(this).attr('id');
-												$('a[href="#' + id + '"]')
-														.closest(
-																'.panel-heading')
-														.removeClass(
-																'active-faq');
-												$(
-														'a[href="#'
-																+ id
-																+ '"] .panel-title span')
-														.html(
-																'<i class="glyphicon glyphicon-plus"></i>');
-											});
+							var id = $(this).attr('id');
+							$('a[href="#' + id + '"]').closest('.panel-heading').addClass('active-faq');
+							$('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-minus"></i>');
 						});
-	</script>
+					$('.collapse').on('hide.bs.collapse', function() {
+						var id = $(this).attr('id');
+						$('a[href="#' + id + '"]').closest('.panel-heading').removeClass('active-faq');
+						$('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
+					});
+				});
+		</script>
 	
 		<div style="margin: 15%;">
 			<div style="float: left; width: 40%;">
