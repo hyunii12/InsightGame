@@ -237,7 +237,7 @@ function commentBtn(bId){
 				+ '</tr>';
 		});
 	}
-}
+} 
 function writeBtn_comment(bId, header){
 	var targetTr = $('#tr_'+bId);
 	var header = targetTr.find('td[name=header]').attr('value')
