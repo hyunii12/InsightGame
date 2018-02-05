@@ -34,7 +34,7 @@
 					<tr id="tr_${list.bId }">
 						<td colspan="2" style="text-align: left; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 14px; border-top:0px;">
 							<button class="btn btn-secondary btn-sm" name="commentBtn" value=${list.cmts }
-								onclick="commentBtn(${list.bId })">댓글
+								onclick="commentBtn(${list.bId })" style='cursor:pointer'>댓글
 								<c:if test="${list.cmts != 0}">&nbsp;${list.cmts } </c:if>
 							</button>
 						</td>
