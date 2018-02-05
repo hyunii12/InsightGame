@@ -41,9 +41,9 @@
 			<hr class="star-light mb-5">
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="StreamerIssues.do" /> --%>
-				<!-- 			</div> -->
+<!-- 							<div id="issues"> -->
+<%-- 								<jsp:include page="contents/streamerRadarChart.jsp" /> --%>
+<!-- 							</div> -->
 			</div>
 
 		</div>
