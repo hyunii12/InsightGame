@@ -34,7 +34,7 @@ public class StreamerController {
 	@RequestMapping("streamerRadar.do")
 	public String streamerRadar(Model model) {
 		System.out.println("스트리머 레이더차트");
-		return "pages/streamerRadarChart";
+		return "contents/streamerRadarChart";
 	}
 	
 }
