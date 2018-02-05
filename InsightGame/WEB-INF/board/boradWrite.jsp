@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<div class="input-group mb-3">
+	<div class="input-group" style="margin-bottom: 0;">
 	  	<div class="input-group-prepend" id="headerDropbox">
 		    <button id="headerBtn" class="btn btn-outline-secondary dropdown-toggle" type="button" 
 		    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">말머리</button>
