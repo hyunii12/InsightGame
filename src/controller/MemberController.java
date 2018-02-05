@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.expr.Instanceof;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,10 +54,7 @@ public class MemberController {
 		String googleAuthUrl = googleLoginservice.getAuthorizationUrl(session);
 
 		
-		System.out.println("네이버:" + naverAuthUrl);
-		System.out.println("트위치:" + twitchAuthUrl);
-		System.out.println("구글:" + googleAuthUrl);
-		
+		System.out.println(session);
 		
 		// 네이버
 		model.addAttribute("naverurl", naverAuthUrl);
@@ -73,11 +71,15 @@ public class MemberController {
 	public String naverCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
 			throws IOException {
 		System.out.println("여기는 naverCallback");
-		oauthToken = naverLoginservice.getAccessToken(session, code, state);
+
+		OAuth2AccessToken oauthToken = naverLoginservice.getAccessToken(session, code, state);
+		System.out.println(oauthToken);
 
 		// 로그인 사용자 정보를 읽어온다.
-		// apiResult = naverLoginservice.getUserProfile(oauthToken);
-		model.addAttribute("result", apiResult);
+		apiResult = naverLoginservice.getUserProfile(oauthToken);
+		model.addAttribute("apiResult", apiResult);
+		System.out.println(apiResult);
+		
 
 		/* 네이버 로그인 성공 페이지 View 호출 */
 		return "naverSuccess";
@@ -117,9 +119,10 @@ public class MemberController {
 	@RequestMapping("logout.do")
 	public String logout(HttpSession session){
 		
-		session.removeAttribute("naverurl");
-		session.removeAttribute("twitchurl");
-		session.removeAttribute("googleurl");
+		session.invalidate();
+//		session.removeAttribute("naverurl");
+//		session.removeAttribute("twitchurl");
+//		session.removeAttribute("googleurl");
 
 		return "redirect:main.do";
 	}

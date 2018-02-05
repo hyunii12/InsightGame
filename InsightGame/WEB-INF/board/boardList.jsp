@@ -29,7 +29,7 @@
 						<td colspan="2" name="header" value="${list.header }" style="text-align:left; padding:0px 1px; border-top:0px;"><span style="color: gray">[${list.header }]</span> ${list.content}</td>
 					</tr>
 					<tr>
-						<td colspan="2" style="text-align: left; padding: 0px 1px; border-top:0px;"><fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)" value="${list.regDate }" /></td>
+						<td colspan="2" style="text-align: left; padding: 0px 1px; border-top:0px;"><fmt:formatDate pattern="yyyy-MM-dd (HH:mm:ss)" value="${list.regDate }" /></td>
 					</tr>
 					<tr id="tr_${list.bId }">
 						<td colspan="2" style="text-align: left; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 14px; border-top:0px;">
