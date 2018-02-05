@@ -159,9 +159,9 @@ function getCommentList(bId, targetTr){
 					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
 					var td1 = $('<td>')
 						.attr('bId', cmt_bId)
-						.css({"text-align": 'right', 'padding-bottom': '1px', 'padding-left': "1px"})
-						.html('<b>'+cmt_writer+'</b>').appendTo(tr)
-					var td2 = $('<td>').css({'text-align':'left'})
+						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px' })
+						.html('<b>└　'+cmt_writer+'</b>').appendTo(tr)
+					var td2 = $('<td>').css({'text-align':'left', 'padding-left':'2px'})
 						.attr({'colspan': '2', 'name': "content"})
 						.html(cmt_content+
 							'&nbsp;&nbsp;<span style="color: gray; font-size: 12px; font-style: italic;">'+cmt_regDate+'</span>'
@@ -238,7 +238,7 @@ function commentBtn(bId){
 			getCommentList(bId, targetTr);
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
 			return '<tr class="tr_cmts_'+bId+' writeComment" id=tr_cmt_'+bId+'>'+
-				'<td colspan="2">└ <input id="inputComment" type="text" class="form-control" style="width: 80%; display: inline; margin-left: 15px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
+				'<td colspan="2" style="text-align: left;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
 				+ '</tr>';
 		});
 	}
