@@ -13,7 +13,7 @@
 			<c:forEach items="${boardList }" var="list">
 				<c:if test="${list.groupLevel eq 0 }">
 					<tr>
-						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px;">${list.writer}</td>
+						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">${list.writer}</td>
 						<td	style="text-align: right; padding-bottom: 1px; vertical-align: middle;">
 							<!-- Default dropright button -->
 							<div class="btn-group dropright">
