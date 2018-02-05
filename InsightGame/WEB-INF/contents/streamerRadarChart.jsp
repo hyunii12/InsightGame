@@ -40,7 +40,7 @@
 
 <body>
 <div>
-<canvas id="canvas"></canvas>
+<canvas id="canvas" width="400" height="400"></canvas>
 <!-- </div> <button id="randomizeData">Randomize Data</button> -->
 <!--     <button id="addDataset">Add Dataset</button> -->
 <!--     <button id="removeDataset">Remove Dataset</button> -->
@@ -55,7 +55,7 @@
     var config = {
         type: 'radar',
         data: {
-            labels: [["Eating", "Dinner"], ["Drinking", "Water"], "Sleeping", ["Designing", "Graphics"], "Coding", "Cycling", "Running"],
+            labels: ["Most Wathcher", "Most Followers", "Fast Growing", "Highest Peak Viewership", "Most Popular", "Keyword", "Trending", "기타3"],
             datasets: [{
                 label: "My First dataset",
                 backgroundColor: color(window.chartColors.red).alpha(0.2).rgbString(),
