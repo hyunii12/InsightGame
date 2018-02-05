@@ -6,26 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insight Game</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom fonts for this template -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
-
-
-<!-- Plugin CSS -->
-<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"
-	type="text/css">
-
-<!-- Custom styles for this template -->
-<link href="css/freelancer.min.css" rel="stylesheet">
-
 </head>
 <body>
 	<div id="navigation">
@@ -41,12 +21,13 @@
 			<hr class="star-light mb-5">
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
-				<div id="issues">
-					<jsp:include page="contents/issues.jsp" />
-				</div>
 			</div>
-
+			<div style="margin: 0 auto; width:80%">
+				<jsp:include page="contents/issues.jsp" />
+				
+			</div>
 		</div>
+
 		</section>
 
 		<script type="text/javascript">
@@ -69,9 +50,8 @@
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
 		<div class="container">
-			<div
-				style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
-				<style>
+			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
+<style>
 .faq-cat-content {
 	margin-top: 25px;
 }
@@ -302,11 +282,14 @@
 
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white ">
+		<section class="bg-primary text-white">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">게임 인기 변화</h2>
-<%-- 					<jsp:include page="contents/gameInterest.jsp" /> --%>
+			<div style="margin: 0 auto; width: 80%;">
+				<jsp:include page="contents/gameInterest.jsp" />
+			</div>
 		</div>
+
 		</section>
 
 		<!-- Portfolio Grid Section -->
