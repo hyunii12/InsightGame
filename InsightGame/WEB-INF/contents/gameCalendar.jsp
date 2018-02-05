@@ -3,13 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset='utf-8' />
-<link href='css/fullcalendar.min.css' rel='stylesheet' />
-<link href='css/fullcalendar.print.min.css' rel='stylesheet'
-	media='print' />
-<script src='js/moment.min.js'></script>
-<script src='js/jquery.min.js'></script>
-<script src='js/fullcalendar.min.js'></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <script>
 
 
@@ -36,7 +31,7 @@ var dataset = [
 
 </script>
 
-<title>게임 캘린더</title>
+<title></title>
 
 </head>
 <body>
