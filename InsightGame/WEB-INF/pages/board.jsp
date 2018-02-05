@@ -37,7 +37,7 @@
 <!-- 			<script src="js/board.js"></script> -->
 			<script src="js/board.js?v=asd1123s12j"></script>
 			<style>
-				#div_write{margin-left:20px;margin-right:20px}
+				#div_write{margin-left:10px;margin-right:10px}
 			</style>
         	<div id="div_write">
 				<jsp:include page="../board/boradWrite.jsp" />    	
