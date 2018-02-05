@@ -28,7 +28,7 @@
 					<tr>
 						<td colspan="2" name="header" value="${list.header }" style="text-align:left; padding:0px 1px;"><span style="color: gray">[${list.header }]</span> ${list.content}</td>
 					</tr>
-					<tr>
+					<tr> 
 						<td colspan="2" style="text-align: left; padding: 0px 1px;">
 							<fmt:formatDate pattern="yyyy-MM-dd(HH:mm:ss)" value="${list.regDate }" />
 						</td>
