@@ -10,6 +10,7 @@
 <body>
 	<div id="navigation">
 		<jsp:include page="navigation.jsp" />
+		<script type="text/javascript" src="js/main.js"></script>
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
@@ -236,8 +237,8 @@
 
 							<div class="tab-pane container" id="faq-cat-3">
 								<div class="panel-heading">
-
-									<jsp:include page="contents/gameCalendar.jsp" />
+								
+									<jsp:include page="contents/calendar.jsp" />
 
 								</div>
 							</div>

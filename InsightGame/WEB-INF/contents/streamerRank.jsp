@@ -10,6 +10,7 @@
 <script src='js/utils.js'></script>
 </head>
 <body>
+
   <div>
         <canvas id="rank" width="400" height="400"></canvas>
     </div>
