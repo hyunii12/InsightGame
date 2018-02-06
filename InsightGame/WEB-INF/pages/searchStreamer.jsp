@@ -249,6 +249,11 @@
 
 							<div class="tab-pane container" id="faq-cat-3">
 								<div class="panel-heading">
+								<script type="text/javascript">
+								$(function(){
+									inputSchedule(result);					
+								});
+								</script>
 									<jsp:include page="../contents/calendar.jsp" />
 								</div>
 							</div>
