@@ -12,20 +12,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import dao.ISchduleDao;
-import model.Schdule;
+import dao.IScheduleDao;
+import model.Schedule;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/test/applicationContext.xml" })
 public class test {
  @Autowired
- public ISchduleDao schduleDao;
+ public IScheduleDao schduleDao;
 
  @org.junit.Test
  public void test2() {
-  List<Schdule> list = new ArrayList<Schdule>(); 
+  List<Schedule> list = new ArrayList<Schedule>(); 
   list=schduleDao.selectAllSchedule();
-  for(Schdule s: list) {
+  for(Schedule s: list) {
    System.out.println(s.toString());
   }
  }

@@ -1,6 +1,6 @@
 package model;
 
-public class Schdule {
+public class Schedule {
 	
 	private int scId;
 	private String scTitle;
@@ -34,7 +34,7 @@ public class Schdule {
 
 	@Override
 	public String toString() {
-		return "Schdule [scId=" + scId + ", scTitle=" + scTitle + ", scStartDate=" + scStartDate
+		return "Schedule [scId=" + scId + ", scTitle=" + scTitle + ", scStartDate=" + scStartDate
 				+ ", scEndDate=" + scEndDate + "]";
 	}
 	

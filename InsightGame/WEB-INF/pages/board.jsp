@@ -45,11 +45,12 @@
 				<jsp:include page="../board/boradWrite.jsp" />    	
         	</div>
         	<div style="position:relative; top: 12px; left: 94%; height: auto; width: 35px;">
-        	<button class="btn btn-outline-secondary my-2 my-sm-0" onclick="location.reload()" style="padding: .3rem .4rem;"><img style="width:15px; height:15px;" src="img/refresh-arrow.png"></button>
+        	<button class="btn btn-outline-secondary my-2 my-sm-0" onclick="location.reload()" style="padding: .3rem .4rem;">
+        	<img style="width:15px; height:15px;" src="img/refresh-arrow.png"></button>
         	</div>
         	<span>
         		<jsp:useBean id="date" class="java.util.Date" />
-				<fmt:formatDate value="${date}" pattern="yyyy-MM-dd(HH:mm:ss)" var="currentDateTime" />
+				<fmt:formatDate value="${date}" pattern="yyyy-MM-dd (HH:mm:ss)" var="currentDateTime" />
 			</span>
         	<div id="div_boardList" style="text-align: center; margin-top: 3%;">
 	        	<jsp:include page="../board/boardList.jsp" />

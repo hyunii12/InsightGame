@@ -236,7 +236,7 @@
 
 							<div class="tab-pane container" id="faq-cat-3">
 								<div class="panel-heading">
-
+							
 									<jsp:include page="contents/gameCalendar.jsp" />
 
 								</div>
