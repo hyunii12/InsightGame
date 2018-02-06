@@ -10,8 +10,8 @@
 <script src='js/utils.js'></script>
 </head>
 <body>
-  <div style="width: 75%">
-        <canvas id="canvas"></canvas>
+  <div>
+        <canvas id="rank" width="400" height="400"></canvas>
     </div>
    
     <script>
@@ -57,7 +57,10 @@
 
         };
         window.onload = function() {
-            var ctx = document.getElementById("canvas").getContext("2d");
+        	
+        	window.myRadar = new Chart(document.getElementById("radar"), config);
+        	
+            var ctx = document.getElementById("rank").getContext("2d");
             window.myBar = new Chart(ctx, {
                 type: 'bar',
                 data: barChartData,

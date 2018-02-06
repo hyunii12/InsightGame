@@ -284,7 +284,7 @@
 		<!-- Portfolio Grid Section -->
 		<section class="bg-primary text-white">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">게임 인기 변화</h2>
+			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view 수)</h2>
 			<div style="margin: 0 auto; width: 80%;">
 				<jsp:include page="contents/gameInterest.jsp" />
 			</div>
