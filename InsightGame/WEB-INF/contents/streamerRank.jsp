@@ -12,7 +12,7 @@
 <body>
 
   <div>
-        <canvas id="rank" width="400" height="400"></canvas>
+        <canvas id="rank" width="800" height="400"></canvas>
     </div>
    
     <script>
