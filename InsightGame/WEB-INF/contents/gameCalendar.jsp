@@ -19,23 +19,24 @@
   $(document).ready(function() {
 	
 	  var result = new Array(); 
-	  
 	  $.ajax({
 			url:"gameCalendar.do",
 			type: "post",
 			dataType:"json",
 			success: function(data){
-				var scheduleList = data.scheduleList;
-					$.each(scheduleList, function(index, item) {
-// 						var scTitle = item.scTitle;
-// 						var scStartDate = item.scStartDate;
-// 						var scEndDate = item.scEndDate;
-				  	 	var json = new Object();
-				  	 	json.title = item.scTitle;
-				  	 	json.start = item.scStartDate;
-				  	 	json.end = item.scEndDate;
-				  	 	result.push(json);	
-				});
+				alert(data.msg)
+// 				var scheduleList = data.scheduleList;
+// 				$.each(scheduleList, function(index, item) {
+// 				 	var json = new Object();
+// 				 	json.title = item.scTitle;
+// 				 	json.start = item.scStartDate;
+// 				 	json.end = item.scEndDate;
+// // 				 	console.log(json);
+// // 				 	result.push(json);	
+// 				});
+			},
+			error: function(xhar, status, error){
+				alert(error);
 			}
 		})
 		
