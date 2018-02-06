@@ -21,11 +21,24 @@
 		<property name="prefix" value="/WEB-INF/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+
+	<!-- google Class Bean설정 추가 -->
+	<!-- 클라이언트ID와 보안비밀 세팅 -->
+	<bean id="googleConnectionFactory"
+		class="org.springframework.social.google.connect.GoogleConnectionFactory">
+		<constructor-arg value="299401267432-1i6sikb733bsvevra0gj1nopheduo895.apps.googleusercontent.com" />
+		<constructor-arg value="FIonPQYmJ81-vcJQ7WegfS5J" />
+	</bean>
+	<!-- 승인된 자바스크립트 원본과 승인된 리디렉션 URI -->
+	<bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
+		<property name="scope" value="https://www.googleapis.com/auth/plus.login" />
+		<property name="redirectUri" value="http://localhost:8080/InsightGame/googleCallback.do" />
+	</bean>
 
 
 	<bean id="NaverLoginService" class="service.NaverLoginService" />
 	<bean id="TwitchLoginService" class="service.TwitchLoginService" />
-	<bean id="GoogleLoginService" class="service.GoogleLoginService" />
 
 
 
