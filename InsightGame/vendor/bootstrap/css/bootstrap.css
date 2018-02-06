@@ -2895,7 +2895,7 @@ tbody.collapse.show {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 1050;
   display: none;
   float: left;
   padding: 0.5rem 0;

@@ -2,15 +2,15 @@ package model;
 
 public class Schdule {
 	
-	private String scId;
+	private int scId;
 	private String scTitle;
 	private String scStartDate;
 	private String scEndDate;
 	
-	public String getScId() {
+	public int getScId() {
 		return scId;
 	}
-	public void setScId(String scId) {
+	public void setScId(int scId) {
 		this.scId = scId;
 	}
 	public String getScTitle() {
@@ -31,12 +31,14 @@ public class Schdule {
 	public void setScEndDate(String scEndDate) {
 		this.scEndDate = scEndDate;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Schdule [scId=" + scId + ", scTitle=" + scTitle + ", scStartDate=" + scStartDate + ", scEndDate="
-				+ scEndDate + "]";
+		return "Schdule [scId=" + scId + ", scTitle=" + scTitle + ", scStartDate=" + scStartDate
+				+ ", scEndDate=" + scEndDate + "]";
 	}
+	
+	
 	
 	
 	
