@@ -24,11 +24,9 @@ public class ScheduleController {
        System.out.println("여기는 게임캘린더더더더");
 //       
        HashMap<String, Object> result = new HashMap<>();
-//       List<Schedule> scheduleList = scheduleService.getScheduleList();
-//       model.addAttribute("scheduleList", scheduleList);
-//       result.put("scheduleList", scheduleList);
-       result.put("msg", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-//       return "contents/gameCalendar";
+       List<Schedule> scheduleList = scheduleService.getScheduleList();
+       result.put("scheduleList", scheduleList);
+//       result.put("msg", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
        return result;
     }
     
