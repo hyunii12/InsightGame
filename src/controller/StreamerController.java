@@ -1,17 +1,21 @@
 package controller;
 
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.google.inject.servlet.RequestParameters;
-
+import model.Clip;
+import service.IClipService;
 
 @Controller
 public class StreamerController {
-	
+	@Autowired
+	IClipService clipService;
 	
 	
 	
@@ -44,6 +48,21 @@ public class StreamerController {
 		return "contents/streamerRank";
 	}
 	
+	@RequestMapping("hotClip.do")
+	public String hotClip(Model model) {
+		System.out.println("여기는 핫클립");
+		 List<Clip> list = clipService.getcliplist();
+//		 int random= (int)(Math.random()*4)+1;
+//		 System.out.println(random);
+		 
+//       for(Clip c: list) {
+//    	   System.out.println(c.toString());
+//       }
+//	   model.addAttribute("random",random);
+//
+       model.addAttribute("cliplist",list);
+       return "contents/hotclips";
+	}
 	
 	@RequestMapping("streamerBoardNumAsTime.do")
 	public String streamerBoardNumAsTime(Model model) {
@@ -52,13 +71,7 @@ public class StreamerController {
 		
 	}
 	
-	
-	@RequestMapping("hotclips.do")
-	public String hotclips(Model model) {
-		System.out.println("스트리머 핫클립");
-		return "contents/hotclips";
-	}
-	
+
 }
 
 
