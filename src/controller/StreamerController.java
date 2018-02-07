@@ -44,6 +44,21 @@ public class StreamerController {
 		return "contents/streamerRank";
 	}
 	
+	
+	@RequestMapping("streamerBoardNumAsTime.do")
+	public String streamerBoardNumAsTime(Model model) {
+		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");
+		return "contents/streamerBoardNumAsTime";
+		
+	}
+	
+	
+	@RequestMapping("hotclips.do")
+	public String hotclips(Model model) {
+		System.out.println("스트리머 핫클립");
+		return "contents/hotclips";
+	}
+	
 }
 
 
