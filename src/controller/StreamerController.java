@@ -48,7 +48,6 @@ public class StreamerController {
 		return "contents/streamerRank";
 	}
 	
-<<<<<<< HEAD
 	@RequestMapping("hotClip.do")
 	public String hotClip(Model model) {
 		System.out.println("여기는 핫클립");
@@ -61,8 +60,8 @@ public class StreamerController {
 //       }
 //	   model.addAttribute("random",random);
        model.addAttribute("cliplist",list);
-=======
-	
+       return "contents/hotclips";
+	}
 	@RequestMapping("streamerBoardNumAsTime.do")
 	public String streamerBoardNumAsTime(Model model) {
 		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");
@@ -70,14 +69,7 @@ public class StreamerController {
 		
 	}
 	
-	
-	@RequestMapping("hotclips.do")
-	public String hotclips(Model model) {
-		System.out.println("스트리머 핫클립");
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
-		return "contents/hotclips";
-	}
-	
+
 }
 
 
