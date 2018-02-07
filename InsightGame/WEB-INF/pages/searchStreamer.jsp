@@ -60,20 +60,9 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="bg-primary mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">스트리머 게임 정보</h2>
-			<hr class="star-light mb-5">
-			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
-				<h3 class="text-center text-white" style="margin: 0 auto;">feeds.jsp</h3>
-				<h3 class="text-center text-white" style="margin: 0 auto;">calender.jsp</h3>
-				<h3 class="text-center text-white" style="margin: 0 auto;">gameRecommend.jsp</h3>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameInterest.do" /> --%>
-				<!-- 			</div> -->
-				
-			</div>
+			<h2 class="text-center text-uppercase">스트리머 게임 정보</h2>
 			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
 <style>
 .faq-cat-content {

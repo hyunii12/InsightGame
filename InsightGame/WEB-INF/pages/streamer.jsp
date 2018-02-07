@@ -55,32 +55,33 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer Rank</h2>
 			<hr class="star-dark mb-5">
 			<div class="row">
+			<div style="margin: 0 auto">
+								<jsp:include page="../contents/streamerRank.jsp" />
+							</div>
 
-				<div class="col-md-6 col-lg-4">
-					<h3 class="text-center">옵션1. 시간</h3>
-					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
-					<!-- 			<div id="issues"> -->
-					<%-- 				<jsp:include page="gameInterest.do" /> --%>
-					<!-- 			</div> -->
+<!-- 				<div class="col-md-6 col-lg-4"> -->
+<!-- 					<h3 class="text-center">옵션1. 시간</h3> -->
+<!-- 					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a> -->
+<!-- 								<div id="issues"> -->
+<%-- 									<jsp:include page="gameInterest.do" /> --%>
+<!-- 								</div> -->
+<!-- 				</div> -->
+
+<!-- 				<div class="col-md-6 col-lg-4"> -->
+<!-- 					<h3 class="text-center">옵션2. 팔로우</h3> -->
+<!-- 					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a> -->
+<!-- 								<div id="issues"> -->
+<%-- 									<jsp:include page="gameNews.do" /> --%>
+<!-- 								</div> -->
+<!-- 				</div> -->
+
+<!-- 				<div class="col-md-6 col-lg-4"> -->
+<!-- 					<h3 class="text-center">옵션3. IRL/방송 시간</h3> -->
+<!-- 					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a> -->
+<!-- 								<div id="issues"> -->
+<%-- 									<jsp:include page="gameCalendar.do" /> --%>
+<!-- 								</div> -->
 				</div>
-
-				<div class="col-md-6 col-lg-4">
-					<h3 class="text-center">옵션2. 팔로우</h3>
-					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
-					<!-- 			<div id="issues"> -->
-					<%-- 				<jsp:include page="gameNews.do" /> --%>
-					<!-- 			</div> -->
-				</div>
-
-				<div class="col-md-6 col-lg-4">
-					<h3 class="text-center">옵션3. IRL/방송 시간</h3>
-					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a>
-					<!-- 			<div id="issues"> -->
-					<%-- 				<jsp:include page="gameCalendar.do" /> --%>
-					<!-- 			</div> -->
-				</div>
-
-			</div>
 		</div>
 		</section>
 
@@ -117,9 +118,9 @@
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameNews.do" />
-					<!-- 								</div> -->
+								<div id="issues">
+					<jsp:include page="../contents/streamerBoardNumAsTime.jsp" />
+													</div>
 				</div>
 
 				<div class="col-md-6">
@@ -147,10 +148,10 @@
 			<h2 class="text-center text-uppercase text-white">핫 클립</h2>
 			<hr class="star-light mb-5">
 			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameInterest.do" /> --%>
-				<!-- 			</div> -->
+<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3> -->
+							<div style="margin: 0 auto">
+								<jsp:include page="../contents/hotclips.jsp" />
+							</div>
 			</div>
 		</div>
 		</section>

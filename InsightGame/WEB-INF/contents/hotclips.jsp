@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>핫클립 재생</title>
 </head>
 <body>
+
+<button type="button" onclick="location.href='https://clips.twitch.tv/SuccessfulUnsightlyRedpandaSSSsss' ">클릭</button>      
 
 </body>
 </html>
