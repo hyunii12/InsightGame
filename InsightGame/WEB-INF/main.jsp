@@ -236,7 +236,7 @@
 							</div>
 
 							<div class="tab-pane container" id="faq-cat-3">
-								<div class="panel-heading">
+								<div class="panel-heading" style="box-sizing: border-box;">
 								
 									<jsp:include page="contents/calendar.jsp" />
 

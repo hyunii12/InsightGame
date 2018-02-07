@@ -65,6 +65,7 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
 	// 더보기 버튼 
 	$('#getListBtn').on('click', function(){
 		page += 1;
@@ -83,25 +84,34 @@ $(document).ready(function(){
 					var groupId = item.groupId;
 					var groupLvl = item.groupLevel;
 					var cmts = item.cmts;
-					if(cmts != 0 ) cmts=" "+cmts
+					if(cmts != 0 ) cmts = cmts
 					else cmts = "";
 					console.log(regDate+"//////"+item.regDate);
 					// tr1 : td1: 작성자 			, td2: 수정/삭제 버튼
 					// tr2 : td3(colspan=2) : [+header+], contents
 					// tr3 : td4(colspan=2) : 작성일자
 					// tr4 : td5(colspan=2) : 댓글 버튼
-					var tr1 = $('<td>').attr({'name':'writer', 'value': bId, 
-							'style': "text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold"
-						}).text(writer).appendTo('<tr>').appendTo('#boardTable tbody');
-					var tr2 = $('<tr>').attr({'name':'header', 'colspan':2, 'style': 'text-align:left; padding:0px 1px; border-top:0px'})
-						.html('<span style="color: gray">['+header+']</span>'+content).appendTo('#boardTable tbody');
+					var tr1 = $('<tr>').html('<td name="writer" value="7" style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">'+writer+'</td>'
+							+'<td style="text-align: right; padding-bottom: 1px; vertical-align: middle;">'
+								+'<div class="btn-group dropright">'
+								+'<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">'
+								+'<img src="img/dotdot.png"></a>'
+									+'<div class="dropdown-menu" style="margin-left:4px;">'
+										+'<button class="dropdown-item" name="modifyBtn" onclick="modifyBtn('+bId+')">수정</button>'
+										+'<button class="dropdown-item" name="deleteBtn" onclick="deleteBtn('+bId+')">삭제</button>'
+									+'</div>'
+								+'</div>'
+							+'</td>').appendTo('#boardTable tbody');
+					var tr2 = $('<tr>').html('<td colspan="2" name="header" value="'+header+'" style="text-align:left; padding:0px 1px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
 					var tr3 = $('<tr>').attr({'name':'regDate', 'colspan':"2", 'style':"text-align: left; padding: 0px 1px; border-top:0px;"})
 						.text(regDate).insertAfter(tr2);
-					var tr4 = $('<td>').attr({'colspan':"2", 'style':"text-align: left; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 14px; border-top:0px;"})
+					var tr4 = $('<tr>').attr({'id':'tr_'+bId})
+						.html('<td colspan="2" style="text-align: left; padding-right: 5px; padding-left: 5px; padding-top: 5px; padding-bottom: 14px; border-top:0px;">'
+								+'<button class="btn btn-secondary btn-sm" name="commentBtn" value="'+cmts+'" onclick="commentBtn('+bId+ ')" style="cursor:pointer">댓글'
+								+'<c:if test="${list.cmts != 0}"> '+cmts+'</c:if>'
+							+'</button>'
+						+'</td>')
 						.appendTo('#boardTable tbody');
-					var cmtBtn = $('<button>').addClass('btn btn-secondary btn-sm')
-						.attr({'onclick':'commentBtn('+bId+')', 'name': 'commentBtn'})
-						.text('댓글'+cmts).appendTo(tr4);
 				})
 	    	},
 	    	error:function(request,status,error){
@@ -181,6 +191,7 @@ function submitBtn(bId){
 }
 
 function deleteBtn(bId){
+	alert("ddddddddd")
 	$.ajax({
 		url: "delete.do", 
 		type: "post",
@@ -213,9 +224,9 @@ function getCommentList(bId, targetTr){
 					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
 					var td1 = $('<td>')
 						.attr('bId', cmt_bId)
-						.css({"text-align": 'right', 'padding-bottom': '1px', 'padding-left': "1px"})
-						.html('<b>'+cmt_writer+'</b>').appendTo(tr)
-					var td2 = $('<td>').css({'text-align':'left'})
+						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px' })
+						.html('<b>└　'+cmt_writer+'</b>').appendTo(tr)
+						var td2 = $('<td>').css({'text-align':'left', 'padding-left':'2px'})
 						.attr({'colspan': '2', 'name': "content"})
 						.html(cmt_content+
 							'&nbsp;&nbsp;<span style="color: gray; font-size: 12px; font-style: italic;">'+cmt_regDate+'</span>&nbsp;&nbsp;'
@@ -223,11 +234,16 @@ function getCommentList(bId, targetTr){
 //					var deltBtn = $('<button>').addClass('btn btn-outline-secondary my-2 my-sm-0')
 //						.attr({'onclick':'deleteBtn('+cmt_bId+')', 'name': 'deleteBtn', 'style' : "padding: .3rem .4rem;"})
 //						.html('<img style="width:15px; height:15px;" src="img/letter-x.png">').appendTo(td2+'&nbsp;&nbsp;');
-					var delCmtBtn = $('<img>').attr({'onclick':'deleteBtn('+cmt_bId+')', 
-						'name': 'deleteBtn', 
-						'style' : "width:15px; height:15px;", 
-						'src':"img/letter-x.png"})
-					.appendTo(td2);
+					var a = $('<a>').attr('href', '#').appendTo(td2);
+						
+					var delCmtBtn = $('<img>').attr({'onclick':'deleteBtn('+cmt_bId+')',
+						'alt' : " ",
+						'style' : "width:10px; height:10px;", 
+						'src':"img/letter-x.png", 
+						'border': "0" }
+						).appendTo(a);
+					
+					
 			});
 		},
 		error : function(e){

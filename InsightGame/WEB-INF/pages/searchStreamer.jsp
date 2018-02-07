@@ -60,9 +60,9 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0">
+		<section class="bg-primary mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">스트리머 게임 정보</h2>
+			<h2 class="text-center text-uppercase">스트리머 게임 정보</h2>
 			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
 <style>
 .faq-cat-content {
