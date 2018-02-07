@@ -52,7 +52,7 @@
 
 	}
 </script>
-s
+
 <!-- Load D3.js -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
@@ -60,6 +60,13 @@ s
 <script src="js/billboard.js" charset="UTF-8"></script>
 
 <link rel="stylesheet" href="css/billboard.css">
+
+<link href='css/fullcalendar.min.css' rel='stylesheet' />
+<link href='css/fullcalendar.print.min.css' rel='stylesheet'
+	media='print' />
+<script src='js/moment.min.js'></script>
+<script src='js/jquery.min.js'></script>
+<script src='js/fullcalendar.min.js'></script>
 
 </head>
 <body>
@@ -141,16 +148,15 @@ s
 	</nav>
 
 
-	<div class="bg-secondary"
-		style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 7;">
+	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 1028;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
 			style="color: white; font-weight: bold;">게임</a>
 	</div>
-	<div style="position: fixed; right: 45%; top: 100px; z-index: 8;">
+	<div style="position: fixed; right: 45%; top: 100px; z-index: 1039;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
 			style="color: white; font-weight: bold;">스트리머</a>
 	</div>
-	<div style="position: fixed; left: 73%; top: 100px; z-index: 9;">
+	<div style="position: fixed; left: 73%; top: 100px; z-index: 1030;">
 		<a class="navbar-brand js-scroll-trigger" href="board.do"
 			style="color: white; font-weight: bold;">게시판</a>
 	</div>

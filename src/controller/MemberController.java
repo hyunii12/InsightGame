@@ -4,8 +4,17 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.javassist.expr.Instanceof;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.social.connect.Connection;
+import org.springframework.social.google.api.Google;
+import org.springframework.social.google.api.impl.GoogleTemplate;
+import org.springframework.social.google.api.plus.Person;
+import org.springframework.social.google.api.plus.PlusOperations;
+import org.springframework.social.google.connect.GoogleConnectionFactory;
+import org.springframework.social.oauth2.AccessGrant;
+import org.springframework.social.oauth2.GrantType;
+import org.springframework.social.oauth2.OAuth2Operations;
+import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
-import service.GoogleLoginService;
 import service.NaverLoginService;
 import service.TwitchLoginService;
 
@@ -23,27 +31,27 @@ public class MemberController {
 
 	private NaverLoginService naverLoginservice;
 	private TwitchLoginService twitchLoginservice;
-	private GoogleLoginService googleLoginservice;
 	private String apiResult = null;
 	private OAuth2AccessToken oauthToken;
-	
-	/* NaverLoginBO */
+
+	/* NaverLoginService */
 	@Autowired
 	private void setNaverLoginService(NaverLoginService naverLoginservice) {
 		this.naverLoginservice = naverLoginservice;
 	}
-	
+
 	@Autowired
 	private void setTwitchLoginService(TwitchLoginService twitchLoginservice) {
 		this.twitchLoginservice = twitchLoginservice;
 	}
-	
+
+	// 구글 로긴
 	@Autowired
-	private void setGoogleLoginService(GoogleLoginService googleLoginservice) {
-		this.googleLoginservice = googleLoginservice;
-	}
-	
-	
+	private OAuth2Parameters googleOAuth2Parameters;
+
+	@Autowired
+	private GoogleConnectionFactory googleConnectionFactory;
+
 	// 로그인 첫 화면 요청 메소드
 	@RequestMapping(value = "loginForm.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String naverlogin(Model model, HttpSession session) {
@@ -51,20 +59,20 @@ public class MemberController {
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginservice.getAuthorizationUrl(session);
 		String twitchAuthUrl = twitchLoginservice.getAuthorizationUrl(session);
-		String googleAuthUrl = googleLoginservice.getAuthorizationUrl(session);
 
-		
-		System.out.println(session);
-		
 		// 네이버
 		model.addAttribute("naverurl", naverAuthUrl);
 		model.addAttribute("twitchurl", twitchAuthUrl);
-		model.addAttribute("googleurl", googleAuthUrl);		
 		
+		//구글
+		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations();
+		String googleAuthUrl = oauthOperations.buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, googleOAuth2Parameters);
+		
+		model.addAttribute("googleurl", googleAuthUrl);
+
 		/* 생성한 인증 URL을 View로 전달 */
 		return "member/login";
 	}
-	
 
 	// 네이버 로그인 성공시 callback호출 메소드
 	@RequestMapping(value = "naverCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
@@ -79,17 +87,15 @@ public class MemberController {
 		apiResult = naverLoginservice.getUserProfile(oauthToken);
 		model.addAttribute("apiResult", apiResult);
 		System.out.println(apiResult);
-		
 
 		/* 네이버 로그인 성공 페이지 View 호출 */
 		return "naverSuccess";
 	}
 
-
 	// 네이버 로그인 성공시 callback호출 메소드
 	@RequestMapping(value = "twitchCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String twitchCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
-			throws IOException {
+	public String twitchCallback(Model model, @RequestParam String code, @RequestParam String state,
+			HttpSession session) throws IOException {
 		System.out.println("여기는 twitchCallback");
 		oauthToken = twitchLoginservice.getAccessToken(session, code, state);
 
@@ -100,33 +106,43 @@ public class MemberController {
 		/* 네이버 로그인 성공 페이지 View 호출 */
 		return "twitchSuccess";
 	}
-	
+
 	@RequestMapping(value = "googleCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String googleCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+	public String googleCallback(Model model, @RequestParam String code, HttpSession session)
 			throws IOException {
-		System.out.println("여기는 googleCallback");
-		oauthToken = googleLoginservice.getAccessToken(session, code, state);
-
-		// 로그인 사용자 정보를 읽어온다.
-		// apiResult = naverLoginservice.getUserProfile(oauthToken);
-		model.addAttribute("result", apiResult);
-
-		/* 네이버 로그인 성공 페이지 View 호출 */
-		return "googleSuccess";
-	}
-	
-	
-	@RequestMapping("logout.do")
-	public String logout(HttpSession session){
 		
+		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations(); 
+		AccessGrant accessGrant = oauthOperations.exchangeForAccess(code, googleOAuth2Parameters.getRedirectUri(), null); 
+		
+		String accessToken = accessGrant.getAccessToken(); 
+		Long expireTime = accessGrant.getExpireTime(); 
+		
+		if (expireTime != null && expireTime < System.currentTimeMillis()) {
+			accessToken = accessGrant.getRefreshToken();
+			System.out.printf("accessToken is expired. refresh token = {}", accessToken);
+		}
+
+		Connection<Google>connection = googleConnectionFactory.createConnection(accessGrant); 
+		Google google = connection == null ? new GoogleTemplate(accessToken) : connection.getApi(); 
+		
+		PlusOperations plusOperations = google.plusOperations();
+		Person person = plusOperations.getGoogleProfile();
+		model.addAttribute("apiResult", person);
+
+		System.out.println(person.getDisplayName());
+
+		return "member/googleSuccess";
+	}
+
+	@RequestMapping("logout.do")
+	public String logout(HttpSession session) {
+
 		session.invalidate();
-//		session.removeAttribute("naverurl");
-//		session.removeAttribute("twitchurl");
-//		session.removeAttribute("googleurl");
+		// session.removeAttribute("naverurl");
+		// session.removeAttribute("twitchurl");
+		// session.removeAttribute("googleurl");
 
 		return "redirect:main.do";
 	}
-
-
 
 }

@@ -15,7 +15,6 @@
 					<tr>
 						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">${list.writer}</td>
 						<td	style="text-align: right; padding-bottom: 1px; vertical-align: middle;">
-							<!-- Default dropright button -->
 							<div class="btn-group dropright">
 								<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false"><img src="img/dotdot.png"></a>
 								<div class="dropdown-menu" style="margin-left:4px;">

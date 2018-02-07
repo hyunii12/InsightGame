@@ -9,9 +9,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>핫클립 재생</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<%-- step="${random}" --%>
 	
 	<c:forEach items="${cliplist}" var="list" begin="0" end="4"	varStatus="status">	
@@ -20,6 +21,11 @@
 			<td><a href="${list.cp_url}" style="padding-left: 50px">${list.cp_display}</td></a> &nbsp;<td>조회수 : ${list.cp_view}</td><br>
 			<td><a href="${list.cp_url}" style="padding-left: 50px">${list.cp_game}</a></td><br>
 	</c:forEach>
+=======
+
+<button type="button" onclick="location.href='https://clips.twitch.tv/SuccessfulUnsightlyRedpandaSSSsss' ">클릭</button>      
+
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 </body>
 </html>
 
