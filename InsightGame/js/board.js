@@ -102,7 +102,7 @@ $(document).ready(function(){
 									+'</div>'
 								+'</div>'
 							+'</td>').appendTo('#boardTable tbody');
-					var tr2 = $('<tr>').html('<td colspan="2" name="header" value="'+header+'" style="text-align:left; padding:0px 1px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
+					var tr2 = $('<tr>').attr({'id':'trr_'+bId}).html('<td colspan="2" name="header" value="'+header+'" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
 					var tr3 = $('<tr>').attr({'name':'regDate', 'colspan':"2", 'style':"text-align: left; padding: 0px 1px; border-top:0px;"})
 						.text(regDate).insertAfter(tr2);
 					var tr4 = $('<tr>').attr({'id':'tr_'+bId})
@@ -143,7 +143,7 @@ function getCommentList(bId, targetTr){
 					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
 					var td1 = $('<td>')
 						.attr('bId', cmt_bId)
-						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px' })
+						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px', 'style': 'table-layout:fixed;' })
 						.html('<b>└　'+cmt_writer+'</b>').appendTo(tr)
 					var td2 = $('<td>').css({'text-align':'left', 'padding-left':'2px'})
 						.attr({'colspan': '2', 'name': "content"})
@@ -160,15 +160,21 @@ function getCommentList(bId, targetTr){
 }
 function modifyBtn(bId){
 	var targetTr = $('#tr_'+bId);
-	var content = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(3)")
-		.replaceWith('<td><input id="re_content" type="text" class="form-control" aria-label="..."></td>')
-	var submit = $("#boardTable tr[id=tr_"+bId+"] td:nth-of-type(6)")
-		.replaceWith(function(){
-			return '<td>'+
-			'<button type="button" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')">수정</button>'+
-			'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()">취소</button>'+
-			'</td>'
-			});
+	var header = $('#trr_'+bId+' td').attr('header');
+	var content = $('#trr_'+bId+' td').attr('content');
+	var modContent = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(1)")
+		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;"><span style="color: gray">['+header+']</span><input id="re_content" type="text" class="form-control" value="'+content+'" style="width:76%; margin-left:4px; margin-right:6px;">'
+					+'<button type="button" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px; margin-bottom:3.5px;">수정</button>'
+					+'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()" style="margin-bottom:3.5px;">취소</button>'
+					+'</td>');
+
+//	var submit = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(2)")
+//		.replaceWith(function(){
+//			return '<td width=117px style="text-align:left; padding:0px 1px; border-top:0px; vertical-align: middle; word-break:break-all">'+
+//			'<button type="button" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px;">수정</button>'+
+//			'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()">취소</button>'+
+//			'</td>'
+//			});
 }
 function submitBtn(bId){
 	var content = $('#re_content').val()
@@ -191,7 +197,6 @@ function submitBtn(bId){
 }
 
 function deleteBtn(bId){
-	alert("ddddddddd")
 	$.ajax({
 		url: "delete.do", 
 		type: "post",
@@ -224,7 +229,7 @@ function getCommentList(bId, targetTr){
 					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
 					var td1 = $('<td>')
 						.attr('bId', cmt_bId)
-						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px' })
+						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px', 'style': 'table-layout:fixed;' })
 						.html('<b>└　'+cmt_writer+'</b>').appendTo(tr)
 						var td2 = $('<td>').css({'text-align':'left', 'padding-left':'2px'})
 						.attr({'colspan': '2', 'name': "content"})
@@ -267,7 +272,7 @@ function commentBtn(bId){
 			getCommentList(bId, targetTr);
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
 			return '<tr class="tr_cmts_'+bId+' writeComment" id=tr_cmt_'+bId+'>'+
-				'<td colspan="2" style="text-align: left;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="height:38px; border: 1px solid transparent; margin-bottom: 3.933px;">등록</button></td>'
+				'<td colspan="2" style="text-align: left; vertical-align: middle;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="border: 1px solid transparent; margin-bottom:3.5px;">등록</button></td>'
 				+ '</tr>';
 		});
 	}
@@ -293,7 +298,7 @@ function writeBtn_comment(bId, header){
 		success: function(data){
 			if(data != null){
 				var cmts = targetTr.find('button[name=commentBtn]').attr('value');
-				targetTr.find('button[name=commentBtn]').attr('value', cmts+1);
+				targetTr.find('button[name=commentBtn]').attr('value', parseInt(cmts)+1);
 				commentBtn(bId);
 				commentBtn(bId);
 			}
