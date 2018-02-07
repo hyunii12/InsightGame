@@ -59,6 +59,7 @@ public class StreamerController {
 //    	   System.out.println(c.toString());
 //       }
 //	   model.addAttribute("random",random);
+//
        model.addAttribute("cliplist",list);
        return "contents/hotclips";
 	}

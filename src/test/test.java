@@ -13,6 +13,7 @@ import model.Schedule;
 import dao.IScheduleDao;
 import model.Clip;
 
+//
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/test/applicationContext.xml" })
 public class test {
