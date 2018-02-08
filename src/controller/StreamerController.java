@@ -71,6 +71,12 @@ public class StreamerController {
 		
 	}
 	
+	@RequestMapping("streamerInterest.do")
+	public String streamerInterest(Model model) {
+		System.out.println("스트리머별 인기게임");
+		return "contents/streamerInterest";
+	}
+	
 
 }
 
