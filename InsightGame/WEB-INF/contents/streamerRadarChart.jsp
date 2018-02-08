@@ -12,7 +12,7 @@
 
 <body>
 	<div style="margin: 0 auto;">
-		<canvas id="canvas" width="400" height="400"></canvas></div>
+		<canvas id="radar" width="400" height="400"></canvas></div>
 		<script>
 			var randomScalingFactor = function() {
 				return Math.round(Math.random() * 100);
@@ -85,9 +85,9 @@
 				}
 			};
 		
-			window.onload = function() {
-				window.myRadar = new Chart(document.getElementById("canvas"), config);
-			};
+// 			window.onload = function() {
+// 				window.myRadar = new Chart(document.getElementById("radar"), config);
+// 			};
 		</script>
 </body>
 </html>
