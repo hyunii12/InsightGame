@@ -21,25 +21,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.github.scribejava.core.builder.api.DefaultApi20;
 import com.github.scribejava.core.model.OAuth2AccessToken;
+import com.github.scribejava.core.model.OAuthConfig;
 
 import service.NaverLoginService;
 import service.TwitchLoginService;
 
 @Controller
-public class MemberController {
+public class MemberController{
 
 	private NaverLoginService naverLoginservice;
-	private TwitchLoginService twitchLoginservice;
 	private String apiResult = null;
 	private OAuth2AccessToken oauthToken;
+	private TwitchLoginService twitchLoginservice;
 
 	/* NaverLoginService */
 	@Autowired
 	private void setNaverLoginService(NaverLoginService naverLoginservice) {
 		this.naverLoginservice = naverLoginservice;
 	}
-
+	
 	@Autowired
 	private void setTwitchLoginService(TwitchLoginService twitchLoginservice) {
 		this.twitchLoginservice = twitchLoginservice;
@@ -58,10 +60,10 @@ public class MemberController {
 
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginservice.getAuthorizationUrl(session);
-		String twitchAuthUrl = twitchLoginservice.getAuthorizationUrl(session);
-
-		// 네이버
 		model.addAttribute("naverurl", naverAuthUrl);
+		
+		// 트위치
+		String twitchAuthUrl = twitchLoginservice.getAuthorizationUrl(session);
 		model.addAttribute("twitchurl", twitchAuthUrl);
 		
 		//구글
@@ -78,34 +80,37 @@ public class MemberController {
 	@RequestMapping(value = "naverCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String naverCallback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
 			throws IOException {
-		System.out.println("여기는 naverCallback");
 
 		OAuth2AccessToken oauthToken = naverLoginservice.getAccessToken(session, code, state);
-		System.out.println(oauthToken);
+		//String sessionState = (String)session.getAttribute("state");
+		//System.out.println(sessionState);
 
 		// 로그인 사용자 정보를 읽어온다.
 		apiResult = naverLoginservice.getUserProfile(oauthToken);
 		model.addAttribute("apiResult", apiResult);
-		System.out.println(apiResult);
+		//System.out.println(apiResult);
 
 		/* 네이버 로그인 성공 페이지 View 호출 */
-		return "naverSuccess";
+		return "member/naverSuccess";
 	}
 
-	// 네이버 로그인 성공시 callback호출 메소드
-	@RequestMapping(value = "twitchCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String twitchCallback(Model model, @RequestParam String code, @RequestParam String state,
-			HttpSession session) throws IOException {
-		System.out.println("여기는 twitchCallback");
-		oauthToken = twitchLoginservice.getAccessToken(session, code, state);
+	// 트위치 로그인 성공시 callback호출 메소드
+		@RequestMapping(value = "twitchCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
+		public String twitchCallback(Model model,@RequestParam String scope, @RequestParam String code, @RequestParam String state, HttpSession session)
+				throws IOException {
 
-		// 로그인 사용자 정보를 읽어온다.
-		// apiResult = naverLoginservice.getUserProfile(oauthToken);
-		model.addAttribute("result", apiResult);
+			oauthToken = twitchLoginservice.getAccessToken(session, code, state);
+			//System.out.println(scope);
+			//System.out.println(oauthToken);
+			
+			//System.out.println(oauthToken.getAccessToken());
+			apiResult = twitchLoginservice.getUserProfile(oauthToken);
+			System.out.println(apiResult);
 
-		/* 네이버 로그인 성공 페이지 View 호출 */
-		return "member/twitchSuccess";
-	}
+
+			/* 트위치 로그인 성공 페이지 View 호출 */
+			return "member/twitchSuccess";
+		}
 
 	@RequestMapping(value = "googleCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String googleCallback(Model model, @RequestParam String code, HttpSession session)
@@ -138,11 +143,10 @@ public class MemberController {
 	public String logout(HttpSession session) {
 
 		session.invalidate();
-		// session.removeAttribute("naverurl");
-		// session.removeAttribute("twitchurl");
-		// session.removeAttribute("googleurl");
 
 		return "redirect:main.do";
 	}
+	
+
 
 }

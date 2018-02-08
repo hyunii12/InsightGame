@@ -20,7 +20,7 @@ public class TwitchLoginApi extends DefaultApi20{
 	@Override
 	public String getAccessTokenEndpoint() {
 		// TODO Auto-generated method stub
-		return "https://api.twitch.tv/kraken/oauth2/token?grant_type=authorization_code\n";
+		return "https://api.twitch.tv/kraken/oauth2/token?grant_type=authorization_code";
 	}
 
 

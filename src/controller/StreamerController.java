@@ -68,6 +68,7 @@ public class StreamerController {
 		return "pages/streamer";
 	}
 
+
 	@RequestMapping("streamerBoardNumAsTime.do")//기존 버전
 	public String streamerBoardNumAsTime(Model model) {
 		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");
@@ -100,9 +101,6 @@ public class StreamerController {
 
 		String d=month4+" "+fourteen;
 		
-//		System.out.println(d);
-	
-
 		model.addAttribute("d", d);
 		model.addAttribute("tdglist", list);
 
@@ -110,12 +108,13 @@ public class StreamerController {
 		return "contents/streamerBoardNumAsTime";
 
 	}
-	
+
 	@RequestMapping("streamerInterest.do")
 	public String streamerInterest(Model model) {
 		System.out.println("스트리머별 인기게임");
 		return "contents/streamerInterest";
 	}
 	
+
 
 }
