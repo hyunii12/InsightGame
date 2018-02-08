@@ -3,6 +3,7 @@ package controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.Clip;
+import model.Schedule;
 import service.IClipService;
 import service.ITgdService;
 
@@ -61,14 +64,11 @@ public class StreamerController {
 		// model.addAttribute("random",random);
 		//
 		model.addAttribute("cliplist", list);
-		return "contents/hotclips";
+//		return "contents/hotclips";
+		return "pages/streamer";
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
-	@RequestMapping("streamerBoardNumAsTime.do")
+	@RequestMapping("streamerBoardNumAsTime.do")//기존 버전
 	public String streamerBoardNumAsTime(Model model) {
 		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");
 
@@ -102,7 +102,7 @@ public class StreamerController {
 		
 //		System.out.println(d);
 	
-<<<<<<< HEAD
+
 		model.addAttribute("d", d);
 		model.addAttribute("tdglist", list);
 
@@ -110,13 +110,12 @@ public class StreamerController {
 		return "contents/streamerBoardNumAsTime";
 
 	}
-=======
+	
 	@RequestMapping("streamerInterest.do")
 	public String streamerInterest(Model model) {
 		System.out.println("스트리머별 인기게임");
 		return "contents/streamerInterest";
 	}
 	
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 
 }

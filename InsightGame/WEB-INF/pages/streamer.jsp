@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -119,9 +121,7 @@
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
 
-					<div id="issues">
-						<jsp:include page="../contents/streamerBoardNumAsTime.jsp" />
-					</div>
+					<div id="issues"></div>
 				</div>
 
 				<div class="col-md-6">
@@ -151,7 +151,10 @@
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3> -->
 				<div style="margin: 0 auto">
-					<jsp:include page="../contents/hotclips.jsp" />
+					<jsp:include page="../contents/hotclips.jsp" >
+						<jsp:param value="${cliplist}" name="name"/>
+					
+					</jsp:include>
 				</div>
 			</div>
 		</div>
