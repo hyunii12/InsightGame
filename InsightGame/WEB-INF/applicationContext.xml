@@ -34,6 +34,11 @@
 		<property name="mapperInterface" value="dao.IClipDao"/>
 	</bean>
 	
+		<bean id="gameInterestDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		<property name="mapperInterface" value="dao.IGameInterestDao"/>
+	</bean>
+	
 	
 	<context:component-scan base-package="service"/>
 
