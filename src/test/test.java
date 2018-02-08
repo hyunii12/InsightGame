@@ -9,11 +9,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import dao.IClipDao;
-import model.Schedule;
 import dao.IScheduleDao;
-import model.Clip;
+import dao.ITgdDao;
+import dao.ITwgameDao;
+import model.Tgd;
+import model.twgame;
 
-//
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/test/applicationContext.xml" })
 public class test {
@@ -21,32 +23,54 @@ public class test {
  public IClipDao clipDao;
  @Autowired
  public IScheduleDao schduleDao;
+ @Autowired
+ public ITgdDao tgdDao;
+ @Autowired
+ public ITwgameDao twgameDao;
 
 // @org.junit.Test
 // public void test2() {
-//  List<Schdule> list = new ArrayList<Schdule>(); 
+//  List<Schedule> list = new ArrayList<Schedule>(); 
 //  list=schduleDao.selectAllSchedule();
-//  for(Schdule s: list) {
+//  for(Schedule s: list) {
 //   System.out.println(s.toString());
 //  }
 // }
  
  
+// @org.junit.Test
+// public void test3() {
+//  List<Clip> list = new ArrayList<Clip>(); 
+//  list=clipDao.selectcliplist("2018-02-05");
+//  for(Clip c: list) {
+//   System.out.println(c.toString());
+//  }
+// }
+
+// @org.junit.Test
+// public void test4() {
+//  List<Tgd> list = new ArrayList<Tgd>(); 
+//  list=tgdDao.selecttgdlist("2018-02-05");
+//  int cnt=0;
+//  for(Tgd t: list) {
+//	  cnt++;
+//  }
+//  System.out.println(cnt);
+// }
+// 
  @org.junit.Test
- public void test3() {
-  List<Clip> list = new ArrayList<Clip>(); 
-  list=clipDao.selectcliplist("2018-02-02");
-  for(Clip c: list) {
-   System.out.println(c.toString());
+ public void test5() {
+  List<twgame> list = new ArrayList<twgame>(); 
+  list=twgameDao.selectAllgame();
+  int cnt=0;
+  for(twgame tw: list) {
+	  System.out.println(tw.toString());
   }
  }
- public void test2() {
-  List<Schedule> list = new ArrayList<Schedule>(); 
-  list=schduleDao.selectAllSchedule();
-  for(Schedule s: list) {
-   System.out.println(s.toString());
-  }
- }
+ 
+ 
+ 
+ 
  
 
 }
