@@ -306,13 +306,13 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
-<<<<<<< HEAD
+
 <div id="f"></div>
 							
-=======
+
 
 					<div id="issues"></div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+
 				</div>
 
 <!-- 				<div class="col-md-6"> -->
@@ -326,13 +326,12 @@
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 </h3>
 
-<<<<<<< HEAD
 					<div id="kkk"></div>
-=======
+
 					<div id="issues">
 						<jsp:include page="contents/gameRank.jsp" />
 					</div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+
 				</div>
 
 <!-- 				<div class="col-md-6"> -->
