@@ -58,12 +58,22 @@ public class test {
 //  System.out.println(cnt);
 // }
 // 
+// @org.junit.Test
+// public void test5() {
+//  List<twgame> list = new ArrayList<twgame>(); 
+//  list=twgameDao.selectAllgame();
+//  int cnt=0;
+//  for(twgame tw: list) {
+//	  System.out.println(tw.toString());
+//  }
+// }
+ 
  @org.junit.Test
- public void test5() {
-  List<twgame> list = new ArrayList<twgame>(); 
-  list=twgameDao.selectAllgame();
-  int cnt=0;
-  for(twgame tw: list) {
+ public void test6() {
+  List<Integer> list = new ArrayList<Integer>(); 
+  list=twgameDao.gametoview("Overwatch");
+
+  for(Integer tw: list) {
 	  System.out.println(tw.toString());
   }
  }

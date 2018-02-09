@@ -113,17 +113,21 @@
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 키워드별</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameInterest.do" />
+<!-- 							
+<%-- 					<jsp:include page="gameInterest.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
 
+<<<<<<< HEAD
+<!-- 					<div id="issues"></div> -->
+=======
 					<div id="streamerBoardNumAsTime">
 					<div class="streamerBoardNumAsTime"></div>
 					</div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 				</div>
 
 				<div class="col-md-6">

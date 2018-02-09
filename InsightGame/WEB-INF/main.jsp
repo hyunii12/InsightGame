@@ -289,7 +289,7 @@
 			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view
 				수)</h2>
 			<div style="margin: 0 auto; width: 80%;">
-				<jsp:include page="contents/gameInterest.jsp" />
+<%-- 				<jsp:include page="contents/gameInterest.jsp" /> --%>
 			</div>
 		</div>
 
@@ -306,8 +306,13 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
+<<<<<<< HEAD
+<div id="f"></div>
+							
+=======
 
 					<div id="issues"></div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 				</div>
 
 <!-- 				<div class="col-md-6"> -->
@@ -321,9 +326,13 @@
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 </h3>
 
+<<<<<<< HEAD
+					<div id="kkk"></div>
+=======
 					<div id="issues">
 						<jsp:include page="contents/gameRank.jsp" />
 					</div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 				</div>
 
 <!-- 				<div class="col-md-6"> -->
