@@ -9,14 +9,14 @@
 $(document).ready(function() {
     $('#writeContent').on('keyup', function() {
         if($(this).val().length > 294) {
-        	$('#counter').css('background', 'rgba(255,0,0,0.5)');
+        	$('#counter').css({'background': 'rgb(255, 127, 127)', 'color': 'white'});
         	
             if($(this).val().length > 300) {
                 $(this).val($(this).val().substring(0, 300));
             }
 		}
         else
-        	$('#counter').css('background', 'white');
+        	$('#counter').css({'background': 'white', 'color': 'black'});
     });
 });
 
