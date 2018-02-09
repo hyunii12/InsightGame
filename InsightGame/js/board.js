@@ -39,6 +39,13 @@ $(document).ready(function(){
         	$('#writeBtn').click();
         }
     });
+	
+	$("#re_content").keydown(function (key) {
+        if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+        	$('#submitBtn1').click();
+        }
+    });
+	
 	$('#boardTable tr').each(function(i){
 		if(!$(this).find('td[name="header"]'))
 			$(this).css('background', 'lightgray')
@@ -61,7 +68,8 @@ $(document).ready(function(){
 	        	}
 	    	},
 	    	error:function(request,status,error){
-			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+//			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		alert("300자 이내로 작성해주세요");
 			}
 		});
 	});
@@ -92,7 +100,7 @@ $(document).ready(function(){
 					// tr3 : td4(colspan=2) : 작성일자
 					// tr4 : td5(colspan=2) : 댓글 버튼
 					var tr1 = $('<tr>').html('<td name="writer" value="7" style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">'+writer+'</td>'
-							+'<td style="text-align: right; padding-bottom: 1px; vertical-align: middle;">'
+							+'<td style="text-align: right; padding-bottom: 1px; padding-right: 2px; vertical-align: middle;">'
 								+'<div class="btn-group dropright">'
 								+'<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">'
 								+'<img src="img/dotdot.png"></a>'
@@ -163,9 +171,10 @@ function modifyBtn(bId){
 	var header = $('#trr_'+bId+' td').attr('header');
 	var content = $('#trr_'+bId+' td').attr('content');
 	var modContent = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(1)")
-		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;"><span style="color: gray">['+header+']</span><input id="re_content" type="text" class="form-control" value="'+content+'" style="width:76%; margin-left:4px; margin-right:6px;">'
-					+'<button type="button" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px; margin-bottom:3.5px;">수정</button>'
-					+'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()" style="margin-bottom:3.5px;">취소</button>'
+		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;">'
+					+'<span style="color: gray; margin: 0 auto;">['+header+']</span><textarea id="re_content" class="form-control" rows="2" style="width:98%; margin-left:6px; margin-right:6px;" onkeydown="JavaScript:Enter_Check2();">'+content+'</textarea>'
+					+'<button type="button" id="submitBtn1" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px; margin-top: 4px; margin-left: 84.5%;">수정</button>'
+					+'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()" style="margin-top: 4px;">취소</button>'
 					+'</td>');
 
 //	var submit = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(2)")
@@ -272,7 +281,7 @@ function commentBtn(bId){
 			getCommentList(bId, targetTr);
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
 			return '<tr class="tr_cmts_'+bId+' writeComment" id=tr_cmt_'+bId+'>'+
-				'<td colspan="2" style="text-align: left; vertical-align: middle;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;"><button type="button" id="writeBtn_comment" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="border: 1px solid transparent; margin-bottom:3.5px;">등록</button></td>'
+				'<td colspan="2" style="text-align: left; vertical-align: middle;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;" onkeydown="JavaScript:Enter_Check1();"><button type="button" id="writeBtn_comment1" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="border: 1px solid transparent; margin-bottom:3.5px;">등록</button></td>'
 				+ '</tr>';
 		});
 	}
@@ -308,3 +317,28 @@ function writeBtn_comment(bId, header){
 		}
 	});
 }
+
+//대댓글 작성 엔터키 이벤트
+function Enter_Check1(){
+	// 엔터키의 코드는 13입니다.
+	if(event.keyCode == 13){
+    	$('#writeBtn_comment1').click();  // 실행할 이벤트
+	}
+}
+
+//댓글 수정 엔터키 이벤트
+function Enter_Check2(){
+	// 엔터키의 코드는 13입니다.
+	if(event.keyCode == 13){
+    	$('#submitBtn1').click();  // 실행할 이벤트
+	}
+}
+
+$(function() {
+    $('#writeContent').keyup(function (e){
+        var content = $(this).val();
+        $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
+        $('#counter').html(content.length + '/300');
+    });
+    $('#content').keyup();
+});

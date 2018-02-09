@@ -87,9 +87,10 @@ public class BoardController {
 			@RequestParam(name="header", defaultValue="잡담")String header,
 			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
+
 //		System.out.println(header+":::::::::"+content);
-		header = URLDecoder.decode(header,"UTF-8");
-		content = URLDecoder.decode(content,"UTF-8");
+//		header = URLDecoder.decode(header,"UTF-8");
+//		content = URLDecoder.decode(content,"UTF-8");
 
 		Board board = new Board();
 		board.setHeader(header);

@@ -104,7 +104,7 @@ public class MemberController {
 		model.addAttribute("result", apiResult);
 
 		/* 네이버 로그인 성공 페이지 View 호출 */
-		return "twitchSuccess";
+		return "member/twitchSuccess";
 	}
 
 	@RequestMapping(value = "googleCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
