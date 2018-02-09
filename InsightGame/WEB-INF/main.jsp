@@ -23,9 +23,9 @@
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
 			</div>
-			<div style="margin: 0 auto; width:80%">
+			<div style="margin: 0 auto; width: 80%">
 				<jsp:include page="contents/issues.jsp" />
-				
+
 			</div>
 		</div>
 
@@ -51,8 +51,9 @@
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
 		<div class="container">
-			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
-<style>
+			<div
+				style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
+				<style>
 .faq-cat-content {
 	margin-top: 25px;
 }
@@ -237,7 +238,7 @@
 
 							<div class="tab-pane container" id="faq-cat-3">
 								<div class="panel-heading" style="box-sizing: border-box;">
-								
+
 									<jsp:include page="contents/calendar.jsp" />
 
 								</div>
@@ -285,14 +286,15 @@
 		<!-- Portfolio Grid Section -->
 		<section class="bg-primary text-white">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view 수)</h2>
+			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view
+				수)</h2>
 			<div style="margin: 0 auto; width: 80%;">
 				<jsp:include page="contents/gameInterest.jsp" />
 			</div>
 		</div>
 
 		</section>
-		
+
 
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
@@ -305,31 +307,31 @@
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
 
-								<div id="issues"></div>
+					<div id="issues"></div>
 				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 유형별</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameNews.do" />
-					<!-- 								</div> -->
+					<div id="issues">
+						<jsp:include page="contents/gameRankAsType.jsp" />
+					</div>
 				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 장르별</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameCalendar.do" />
-					<!-- 								</div> -->
+					<div id="issues">
+						<jsp:include page="contents/gameRankAsGenre.jsp" />
+					</div>
 				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">제작사 순위</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameCalendar.do" />
-					<!-- 								</div> -->
+					<div id="issues">
+						<jsp:include page="contents/gameRankAsCompany.jsp" />
+					</div>
 				</div>
 			</div>
 		</div>

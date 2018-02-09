@@ -65,7 +65,7 @@ public class StreamerController {
 		//
 		model.addAttribute("cliplist", list);
 //		return "contents/hotclips";
-		return "pages/streamer";
+		return "contents/hotclips";
 	}
 
 

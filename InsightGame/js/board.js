@@ -6,7 +6,7 @@ var header = "";
 
 Date.prototype.format = function(f) {
     if (!this.valueOf()) return " ";
-
+ 
     var weekName = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
     var d = this;
      
@@ -30,17 +30,7 @@ Date.prototype.format = function(f) {
 String.prototype.string = function(len){var s = '', i = 0; while (i++ < len) { s += this; } return s;};
 String.prototype.zf = function(len){return "0".string(len - this.length) + this;};
 Number.prototype.zf = function(len){return this.toString().zf(len);};
-//		<script language="javascript">
-//		function LimitText(ref,iLength) {
-//		  if(ref.value.length > iLength) {
-//			alert("Text length cannot be greater than " + iLength + " characters\
-//		Current length is: " + ref.value.length);
-//			ref.focus();
-//		  }
-//		}
-//		</script>
-//		
-//		<textarea name="myTextArea" OnBlur="LimitText(this,160)">
+
 // event script
 $(document).ready(function(){
 	page = 1;
@@ -73,15 +63,13 @@ $(document).ready(function(){
 			}, 
 			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 			success: function(data){
-				alert(data.msg)
 	        	if(data != null){
 		        	location.reload();
 	        	}
 	    	},
 	    	error:function(request,status,error){
 //			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	    		alert(data.msg)
-//	    		alert("300자 이내로 작성해주세요");
+	    		alert("300자 이내로 작성해주세요");
 			}
 		});
 	});
