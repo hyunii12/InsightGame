@@ -310,29 +310,29 @@
 					<div id="issues"></div>
 				</div>
 
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center">게임 순위 - 유형별</h3> -->
+
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsType.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
+
 				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 유형별</h3>
+					<h3 class="text-center">게임 순위 </h3>
 
 					<div id="issues">
-						<jsp:include page="contents/gameRankAsType.jsp" />
+						<jsp:include page="contents/gameRank.jsp" />
 					</div>
 				</div>
 
-				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 장르별</h3>
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center">제작사 순위</h3> -->
 
-					<div id="issues">
-						<jsp:include page="contents/gameRankAsGenre.jsp" />
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<h3 class="text-center">제작사 순위</h3>
-
-					<div id="issues">
-						<jsp:include page="contents/gameRankAsCompany.jsp" />
-					</div>
-				</div>
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsCompany.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
 			</div>
 		</div>
 		</section>

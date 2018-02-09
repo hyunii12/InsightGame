@@ -45,24 +45,11 @@ public class GameController {
 		System.out.println("여기는 게임이슈스");
 		return "contents/issues";
 	}
+
 	
-	
-	@RequestMapping("gameRankAsCompany.do")
-	public String gameRankAsCompany(Model model) {
-		System.out.println("제작사 순위");
-		return "contents/gameRankAsCompany";
-	}
-	
-	@RequestMapping("gameRankAsGenre.do")
-	public String gameRankAsGenre(Model model) {
-		System.out.println("장르별 게임순위");
-		return "contents/gameRankAsGenre";
-	}
-	
-	
-	@RequestMapping("gameRankAsType.do")
-	public String gameRankAsType(Model model) {
-		System.out.println("유형별 게임 순위");
-		return "contents/gameRankAsType";
+	@RequestMapping("gameRank.do")
+	public String gameRank(Model model) {
+		System.out.println("게임 순위");
+		return "contents/gameRank";
 	}
 }
