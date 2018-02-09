@@ -36,7 +36,7 @@ $(document).ready(function(){
 	page = 1;
 	$("#writeContent").keydown(function (key) {
         if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
-        	$('#writeBtn').click();
+        	$('#writeBtn').click();   	
         }
     });
 	
@@ -110,7 +110,7 @@ $(document).ready(function(){
 									+'</div>'
 								+'</div>'
 							+'</td>').appendTo('#boardTable tbody');
-					var tr2 = $('<tr>').attr({'id':'trr_'+bId}).html('<td colspan="2" name="header" value="'+header+'" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
+					var tr2 = $('<tr>').attr({'id':'trr_'+bId}).html('<td colspan="2" name="header" header="'+header+'" content="'+content+'" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
 					var tr3 = $('<tr>').attr({'name':'regDate', 'colspan':"2", 'style':"text-align: left; padding: 0px 1px; border-top:0px;"})
 						.text(regDate).insertAfter(tr2);
 					var tr4 = $('<tr>').attr({'id':'tr_'+bId})
@@ -126,6 +126,15 @@ $(document).ready(function(){
 			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			}
 		});
+	});
+	
+	$(function() {
+	    $('#writeContent').keyup(function (e){
+	        var content = $(this).val();
+	        $(this).height(((content.split('\n').length + 1) * 2) + 'em');
+	        $('#counter').html(content.length + '/300');
+	    });
+	    $('#writeContent').keyup();
 	});
 });
 
@@ -334,11 +343,3 @@ function Enter_Check2(){
 	}
 }
 
-$(function() {
-    $('#writeContent').keyup(function (e){
-        var content = $(this).val();
-        $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
-        $('#counter').html(content.length + '/300');
-    });
-    $('#content').keyup();
-});

@@ -9157,11 +9157,11 @@ var DateComponent = /** @class */ (function (_super) {
         attrs = attrs ? ' ' + util_1.attrsToStr(attrs) : ''; // will have a leading space
         innerHtml = innerHtml || '';
         if (!forceOff && this.opt('navLinks')) {
-            return innerHtml;
-//            '<a' + attrs +
-//                ' data-goto="' + util_1.htmlEscape(JSON.stringify(finalOptions)) + '">' +
-//                innerHtml +
-//                '</a>';
+            return
+            '<a' + attrs +
+                ' data-goto="' + util_1.htmlEscape(JSON.stringify(finalOptions)) + '">' +
+                innerHtml +
+                '</a>';
         }
         else {
             return '<span' + attrs + '>' +
