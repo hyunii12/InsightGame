@@ -292,6 +292,7 @@
 		</div>
 
 		</section>
+		
 
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
