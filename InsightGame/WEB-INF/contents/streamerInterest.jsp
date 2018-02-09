@@ -44,11 +44,12 @@ table td {
 table td:last-child {
   font-size: 0.95em;
   line-height: 1.4;
-  text-align: left;
+  text-align: center;
 }
 table th {
   background-color: #daeff1;
   font-weight: 300;
+  text-align: center;
 }
 table tr:nth-child(2n) {
   background-color: white;

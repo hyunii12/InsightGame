@@ -289,7 +289,7 @@
 			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view
 				수)</h2>
 			<div style="margin: 0 auto; width: 80%;">
-				<jsp:include page="contents/gameInterest.jsp" />
+<%-- 				<jsp:include page="contents/gameInterest.jsp" /> --%>
 			</div>
 		</div>
 
@@ -307,32 +307,40 @@
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
 
+<div id="f"></div>
+							
+
+
 					<div id="issues"></div>
+
 				</div>
+
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center">게임 순위 - 유형별</h3> -->
+
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsType.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
 
 				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 유형별</h3>
+					<h3 class="text-center">게임 순위 </h3>
+
+					<div id="kkk"></div>
 
 					<div id="issues">
-						<jsp:include page="contents/gameRankAsType.jsp" />
+						<jsp:include page="contents/gameRank.jsp" />
 					</div>
+
 				</div>
 
-				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 장르별</h3>
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center">제작사 순위</h3> -->
 
-					<div id="issues">
-						<jsp:include page="contents/gameRankAsGenre.jsp" />
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<h3 class="text-center">제작사 순위</h3>
-
-					<div id="issues">
-						<jsp:include page="contents/gameRankAsCompany.jsp" />
-					</div>
-				</div>
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsCompany.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
 			</div>
 		</div>
 		</section>

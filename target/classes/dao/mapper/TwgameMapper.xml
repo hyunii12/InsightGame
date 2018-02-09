@@ -8,7 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAllgame" resultType="twgame">
 		select * from game_popularity
 	</select>
-
+	<select id="gametoview" parameterType="String" resultType="Integer">
+		select Twgview from game_popularity where Twgname = #{Twgname}
+	</select>
 
 
 </mapper>
