@@ -23,12 +23,12 @@ $(document).ready(function() {
 		
   });
 
+
 	   $.ajax({
 			url:"streamerBoardNumAsTime.do",
 			type: "get",
 			dataType:"html",
 			success: function(data){
-//				alert(data)
 				$('#issues').append(data)
 			},
 			error: function(xhar, status, error){
