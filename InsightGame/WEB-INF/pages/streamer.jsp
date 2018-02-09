@@ -95,7 +95,7 @@
 <!-- 			<hr class="star-light mb-5"> -->
 			<div class="row">
 <!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">스트리머별</h3> -->
-				<div id="issues" align="center">
+				<div id="streamerInterest" align="center">
 					<jsp:include page="../contents/streamerInterest.jsp" />
 				</div>
 			</div>
@@ -121,7 +121,13 @@
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
 
+<<<<<<< HEAD
 <!-- 					<div id="issues"></div> -->
+=======
+					<div id="streamerBoardNumAsTime">
+					<div class="streamerBoardNumAsTime"></div>
+					</div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 				</div>
 
 				<div class="col-md-6">
@@ -149,7 +155,7 @@
 			<h2 class="text-center text-uppercase text-white">핫 클립</h2>
 			<hr class="star-light mb-5">
 			<div class="row">
-				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3> -->
+								<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3>
 				<div style="margin: 0 auto">
 					<jsp:include page="../contents/hotclips.jsp" >
 						<jsp:param value="${cliplist}" name="name"/>

@@ -16,6 +16,9 @@
     </div>
    
     <script>
+    var randomScalingFactor = function() {
+		return Math.round(Math.random() * 100);
+	};
         var barChartData = {
             labels: ["streamer1", "streamer2", "streamer3", "streamer4", "streamer5", "streamer6", "streamer7"],
             datasets: [{
