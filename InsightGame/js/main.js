@@ -19,6 +19,11 @@ $(document).ready(function() {
 				alert(error);
 			}
 		})
+<<<<<<< HEAD
+		
+		
+  });
+=======
 	   $.ajax({
 			url:"streamerBoardNumAsTime.do",
 			type: "get",
@@ -34,3 +39,4 @@ $(document).ready(function() {
 		
 		
   });
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
