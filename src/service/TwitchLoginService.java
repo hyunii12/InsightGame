@@ -105,29 +105,16 @@ public class TwitchLoginService {
 	        //get 요청
 	        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
 	        
-	        System.out.println("GET Response Status");
-	        System.out.println(httpResponse.getStatusLine().getStatusCode());
+	        //System.out.println("GET Response Status");
+	        //System.out.println(httpResponse.getStatusLine().getStatusCode());
 	        String json = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
 	        
-	        System.out.println(json);
+	        //System.out.println(json);
 	        
 	        httpClient.close();
 		
 		return json;
 
-//		OAuth20Service oauthService =new ServiceBuilder()
-//				.apiKey(CLIENT_ID)
-//				.apiSecret(CLIENT_SECRET)
-//				.build(TwitchLoginApi.instance());
-//		
-//		String url = "https://api.twitch.tv/kraken/user";
-//		
-//    	OAuthRequest request = new OAuthRequest(Verb.GET, url, oauthService);
-//    	oauthService.signRequest(oauthToken, request);
-//		Response response = request.send();
-//		return response.getBody();
-		
-		
 	}
 	
 }
