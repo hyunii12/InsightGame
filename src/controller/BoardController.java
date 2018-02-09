@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.sun.research.ws.wadl.Request;
 
 import model.Board;
 import service.IBoardService;
@@ -85,11 +90,14 @@ public class BoardController {
 	@RequestMapping("write.do")
 	public @ResponseBody HashMap<String, Object> write( 
 			@RequestParam(name="header", defaultValue="잡담")String header,
-			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
+			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
+
 //		System.out.println(header+":::::::::"+content);
-		header = URLDecoder.decode(header,"UTF-8");
-		content = URLDecoder.decode(content,"UTF-8");
+//		header = URLDecoder.decode(header,"UTF-8");
+//		content = URLDecoder.decode(content,"UTF-8");
+		HttpSession session = request.getSession();
+		System.out.println(session);
 
 		Board board = new Board();
 		board.setHeader(header);

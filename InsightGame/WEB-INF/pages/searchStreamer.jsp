@@ -251,6 +251,7 @@
 								<div class="panel-heading">
 								<script type="text/javascript">
 								$(function(){
+									
 									inputSchedule(result);					
 								});
 								</script>

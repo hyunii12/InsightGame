@@ -141,9 +141,9 @@ public class MemberController{
 			session.setAttribute("user_id", twitchEmail);
 			System.out.println(twitchName);
 
-			/* 트위치 로그인 성공 페이지 View 호출 */
-			return "member/twitchSuccess";
-		}
+		/* 네이버 로그인 성공 페이지 View 호출 */
+		return "member/twitchSuccess";
+	}
 
 	@RequestMapping(value = "googleCallback.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String googleCallback(Model model, @RequestParam String code, HttpSession session)
