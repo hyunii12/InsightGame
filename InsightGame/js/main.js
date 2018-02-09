@@ -19,24 +19,21 @@ $(document).ready(function() {
 				alert(error);
 			}
 		})
-<<<<<<< HEAD
 		
 		
   });
-=======
+
 	   $.ajax({
 			url:"streamerBoardNumAsTime.do",
 			type: "get",
 			dataType:"html",
 			success: function(data){
-				alert(data)
+//				alert(data)
 				$('#issues').append(data)
 			},
 			error: function(xhar, status, error){
 				alert(error);
 			}
-	   })
+	   });
 		
-		
-  });
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+	
