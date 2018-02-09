@@ -95,7 +95,7 @@
 <!-- 			<hr class="star-light mb-5"> -->
 			<div class="row">
 <!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">스트리머별</h3> -->
-				<div id="streamerInterest" align="center">
+				<div id="streamerInterest" align="center" style="margin: 0 auto;">
 					<jsp:include page="../contents/streamerInterest.jsp" />
 				</div>
 			</div>
@@ -113,21 +113,15 @@
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 키워드별</h3>
 
-<!-- 							
-<%-- 					<jsp:include page="gameInterest.do" /> --%>
+					<!-- 			<div id="issues"> -->
+					<jsp:include page="gameInterest.do" />
 					<!-- 								</div> -->
 				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
 
-<<<<<<< HEAD
-<!-- 					<div id="issues"></div> -->
-=======
-					<div id="streamerBoardNumAsTime">
-					<div class="streamerBoardNumAsTime"></div>
-					</div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+					<div id="issues"></div>
 				</div>
 
 				<div class="col-md-6">

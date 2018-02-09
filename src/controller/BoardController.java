@@ -43,8 +43,7 @@ public class BoardController {
 	@RequestMapping("board.do")
 	public String main(Model model, @RequestParam(name="page", defaultValue="1")int page) {
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
-		List<Board> boardList = 
-			 	(List<Board>) boardListByPage.get("boardList");
+		List<Board> boardList = (List<Board>) boardListByPage.get("boardList");
 		
 //		System.out.println("page: "+page);
 //		for(Board b : boardList)
@@ -65,8 +64,7 @@ public class BoardController {
 		System.out.println(page);
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
-		List<Board> boardList = 
-			 	(List<Board>) boardListByPage.get("boardList");
+		List<Board> boardList = (List<Board>) boardListByPage.get("boardList");
 		result.put("start", boardListByPage.get("start"));
 		result.put("end", boardListByPage.get("end"));
 		result.put("first", boardListByPage.get("first"));
@@ -80,8 +78,7 @@ public class BoardController {
 	public @ResponseBody HashMap<String, Object> getCommentList(@RequestParam(name="groupId", required=true)int groupId) {
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getCommentList(groupId);
-		List<Board> commentList = 
-			 	(List<Board>) boardListByPage.get("commentList");
+		List<Board> commentList = (List<Board>) boardListByPage.get("commentList");
 		result.put("commentList", commentList);
 		return result;
 	}

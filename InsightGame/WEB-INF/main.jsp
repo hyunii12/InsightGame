@@ -306,42 +306,41 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
-<<<<<<< HEAD
+
 <div id="f"></div>
 							
-=======
+
 
 					<div id="issues"></div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+
 				</div>
 
-				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 유형별</h3>
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center">게임 순위 - 유형별</h3> -->
 
-<<<<<<< HEAD
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsType.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+				<div class="col-md-6">
+					<h3 class="text-center">게임 순위 </h3>
+
 					<div id="kkk"></div>
-=======
-					<div id="issues">
-						<jsp:include page="contents/gameRankAsType.jsp" />
-					</div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
-				</div>
-
-				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 장르별</h3>
 
 					<div id="issues">
-						<jsp:include page="contents/gameRankAsGenre.jsp" />
+						<jsp:include page="contents/gameRank.jsp" />
 					</div>
+
 				</div>
 
-				<div class="col-md-6">
-					<h3 class="text-center">제작사 순위</h3>
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center">제작사 순위</h3> -->
 
-					<div id="issues">
-						<jsp:include page="contents/gameRankAsCompany.jsp" />
-					</div>
-				</div>
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsCompany.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
 			</div>
 		</div>
 		</section>
