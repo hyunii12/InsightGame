@@ -97,12 +97,15 @@ public class BoardController {
 //		header = URLDecoder.decode(header,"UTF-8");
 //		content = URLDecoder.decode(content,"UTF-8");
 		HttpSession session = request.getSession();
-		System.out.println(session);
+		String boardWriter = (String)session.getAttribute("user_id");
+		String[] writer = boardWriter.split("@");
+		System.out.println(writer[0]);
+		
 
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
-		board.setWriter("temp");
+		board.setWriter(writer[0]);
 		int newBId = boardService.writeBoard(board, 0);
 		if(newBId > 0) {
 			// 작성 성공
@@ -118,12 +121,15 @@ public class BoardController {
 			@RequestParam(name="parentBId", required= true)String parentBId,
 			@RequestParam(name="header", defaultValue="-")String header,
 			@RequestParam(name="writer", defaultValue="-")String writer,
-			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
+			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
 //		System.out.println(header+":::::::::"+content);
-		header = URLDecoder.decode(header,"UTF-8");
-		writer = URLDecoder.decode(writer,"UTF-8");
-		content = URLDecoder.decode(content,"UTF-8");
+		
+		HttpSession session = request.getSession();
+		String boardWriter = (String)session.getAttribute("user_id");
+		String[] test = boardWriter.split("@");
+		writer = test[0];
+		
 		int parentId = Integer.parseInt(parentBId);
 		Board board = new Board();
 		board.setHeader(header);
