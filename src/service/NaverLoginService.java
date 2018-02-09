@@ -22,7 +22,6 @@ public class NaverLoginService {
 	private final static String CLIENT_ID = "awgAoMxjvMg28N00x8PQ";
 	private final static String CLIENT_SECRET = "Y9uB_t8lqt";
 	private final static String REDIRECT_URI = "http://localhost:8080/InsightGame/naverCallback.do";
-	private final static String SESSION_STATE = "oauth_state";
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
 	
 	/* 세션 유효성 검증을 위한 난수 생성기 */
@@ -62,11 +61,6 @@ public class NaverLoginService {
 	/* 네아로 Callback 처리 및  AccessToken 획득 Method */
 	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state) throws IOException{
 		
-		/* Callback으로 전달받은 세선검증용 난수값과 세션에 저장되어있는 값이 일치하는지 확인 */
-		String sessionState = getSession(session);
-		
-		if(StringUtils.equals(sessionState, state)){
-		
 			OAuth20Service oauthService = new ServiceBuilder()
 					.apiKey(CLIENT_ID)
 					.apiSecret(CLIENT_SECRET)
@@ -76,11 +70,8 @@ public class NaverLoginService {
 					
 			/* Scribe에서 제공하는 AccessToken 획득 기능으로 네아로 Access Token을 획득 */
 			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
-			System.out.println(accessToken);
 			return accessToken;
-		}
 		
-		return null;
 	}
 	
 	/* Access Token을 이용하여 네이버 사용자 프로필 API를 호출 */
@@ -89,10 +80,10 @@ public class NaverLoginService {
 		OAuth20Service oauthService =new ServiceBuilder()
     			.apiKey(CLIENT_ID)
     			.apiSecret(CLIENT_SECRET)
-    			.callback(REDIRECT_URI).build(NaverLoginApi.instance());
+    			.callback(REDIRECT_URI)
+    			.build(NaverLoginApi.instance());
     	
     	OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL, oauthService);
-    	System.out.println(oauthToken);
 		oauthService.signRequest(oauthToken, request);
 		Response response = request.send();
 		return response.getBody();

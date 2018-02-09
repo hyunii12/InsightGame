@@ -43,10 +43,12 @@
 				<!-- 				<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code -->
 				<!-- 				&client_id=ghty8lutmj1064oembb9g8195fr9eg&redirect_uri=http://localhost:8080/InsightGame/callback.do&client_secret=nlquky5njenvf5snprt1zy88og7gvk"> -->
 				<!-- 				Connect With Twitch!</a><br> -->
-				<a href="${twitchurl}"><img width="126" height="75"
-					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
-				<a href="${googleurl}"><img width="126" height="75"
-					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
+				<a href="${twitchurl}">
+				<img width="126" height="75" src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
+				<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=4jsekeumop20mr3dgphok2axptw6j5&redirect_uri=http://localhost:8080/InsightGame/main.do&scope=user:edit+user:read:email"> 
+				트위치 테스트</a>
+				<a href="${googleurl}">
+				<img width="126" height="75" src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
 			</div>
 		</div>
 	</div>

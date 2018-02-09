@@ -5,7 +5,6 @@ $(document).ready(function() {
 			type: "post",
 			dataType:"json",
 			success: function(data){
-// 				alert(data.msg)
 				var scheduleList = data.scheduleList;
 				$.each(scheduleList, function(index, item) {
 				 	var json = new Object();
@@ -20,4 +19,21 @@ $(document).ready(function() {
 				alert(error);
 			}
 		})
+		
+		
   });
+
+
+	   $.ajax({
+			url:"streamerBoardNumAsTime.do",
+			type: "get",
+			dataType:"html",
+			success: function(data){
+				$('#issues').append(data)
+			},
+			error: function(xhar, status, error){
+				alert(error);
+			}
+	   });
+		
+	

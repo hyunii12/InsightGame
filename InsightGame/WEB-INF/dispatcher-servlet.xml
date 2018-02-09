@@ -40,8 +40,6 @@
 	<bean id="NaverLoginService" class="service.NaverLoginService" />
 	<bean id="TwitchLoginService" class="service.TwitchLoginService" />
 
-
-
 	<mvc:annotation-driven />
 
 

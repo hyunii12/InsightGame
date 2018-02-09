@@ -292,6 +292,7 @@
 		</div>
 
 		</section>
+		
 
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
@@ -304,9 +305,7 @@
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 - 스트리머별</h3>
 
-					<!-- 			<div id="issues"> -->
-					<%-- 					<jsp:include page="gameInterest.do" /> --%>
-					<!-- 								</div> -->
+								<div id="issues"></div>
 				</div>
 
 				<div class="col-md-6">
