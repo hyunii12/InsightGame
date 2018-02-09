@@ -14,7 +14,7 @@
 				<c:if test="${list.groupLevel eq 0 }">
 					<tr>
 						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">${list.writer}</td>
-						<td	style="text-align: right; padding-bottom: 1px; vertical-align: middle;">
+						<td	style="text-align: right; padding-bottom: 1px; padding-right: 2px; vertical-align: middle;">
 							<div class="btn-group dropright">
 								<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false"><img src="img/dotdot.png"></a>
 								<div class="dropdown-menu" style="margin-left:4px;">
@@ -25,7 +25,8 @@
 						</td>
 					</tr>
 					<tr id="trr_${list.bId }">
-						<td colspan="2" name="header" header="${list.header }" content="${list.content }" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px;"><span style="color: gray">[${list.header }]</span> ${list.content}</td>	
+						<td colspan="2" name="header" header="${list.header }" content="${list.content }" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px;">
+						<span style="color: gray">[${list.header }]</span> ${list.content}</td>	
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align: left; padding: 0px 1px; border-top:0px;"><fmt:formatDate pattern="yyyy-MM-dd (HH:mm:ss)" value="${list.regDate }" /></td>
