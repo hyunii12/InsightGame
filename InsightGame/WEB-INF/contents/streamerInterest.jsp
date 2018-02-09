@@ -7,14 +7,9 @@
 <title>Insert title here</title>
 </head>
 <style rel="stylesheet">
-body {
-  background-color: #91ced4;
-}
-body * {
-  box-sizing: border-box;
-}
 
-.header {
+
+div.streamerheader {
   background-color: #327a81;
   color: white;
   font-size: 1.5em;
@@ -23,13 +18,9 @@ body * {
   text-transform: uppercase;
 }
 
-img {
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-}
 
-.table-users {
+
+div.table-users {
   border: 1px solid #327a81;
   border-radius: 10px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
@@ -123,13 +114,6 @@ table tr:nth-child(2n+1) {
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   }
 
-  img {
-    border: 3px solid;
-    border-color: #daeff1;
-    height: 100px;
-    margin: 0.5rem 0;
-    width: 100px;
-  }
 
   td:first-child {
     background-color: #c8e7ea;
@@ -141,6 +125,7 @@ table tr:nth-child(2n+1) {
             transform: translateY(0);
     width: 100%;
   }
+  
   td:not(:first-child) {
     margin: 0;
     padding: 5px 1em;
@@ -175,9 +160,9 @@ table tr:nth-child(2n+1) {
 <body>
 
 	<div class="table-users">
-		<div class="header">스트리머별 인기게임</div>
+		<div class="streamerheader">스트리머별 인기게임</div>
 
-		<table>
+		<table class="streamerinterest">
 			<tr>
 				<th scope="row">스트리머</th>
 				<td>스트리머1</td>
