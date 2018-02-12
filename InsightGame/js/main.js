@@ -19,21 +19,26 @@ $(document).ready(function() {
 				alert(error);
 			}
 		})
-		
-		
+				
   });
-
 
 	   $.ajax({
 			url:"streamerBoardNumAsTime.do",
 			type: "get",
 			dataType:"html",
 			success: function(data){
-				$('#issues').append(data)
+				$('#kkk').append(data)
 			},
 			error: function(xhar, status, error){
 				alert(error);
 			}
 	   });
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 		
 	

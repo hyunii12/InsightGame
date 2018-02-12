@@ -7198,7 +7198,7 @@ var DayGrid = /** @class */ (function (_super) {
         var title = this.getCellDate(row, col).format(this.opt('dayPopoverFormat'));
         var content = $('<div class="fc-header ' + theme.getClass('popoverHeader') + '">' +
             '<span class="fc-close ' + theme.getIconClass('close') + '"></span>' +
-            '<span class="fc-title" style="color: white;">' +
+            '<span class="fc-title">' +
             util_1.htmlEscape(title) +
             '</span>' +
             '<div class="fc-clear"/>' +
@@ -9157,11 +9157,10 @@ var DateComponent = /** @class */ (function (_super) {
         attrs = attrs ? ' ' + util_1.attrsToStr(attrs) : ''; // will have a leading space
         innerHtml = innerHtml || '';
         if (!forceOff && this.opt('navLinks')) {
-            return innerHtml;
-//            '<a' + attrs +
-//                ' data-goto="' + util_1.htmlEscape(JSON.stringify(finalOptions)) + '">' +
-//                innerHtml +
-//                '</a>';
+            return '<a' + attrs +
+                ' data-goto="' + util_1.htmlEscape(JSON.stringify(finalOptions)) + '">' +
+                innerHtml +
+                '</a>';
         }
         else {
             return '<span' + attrs + '>' +
@@ -13804,7 +13803,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
                     '</div>' :
                 '') +
             (eventDef.title ?
-                '<div class="fc-title" style="color: white;">' +
+                '<div class="fc-title">' +
                     util_1.htmlEscape(eventDef.title) +
                     '</div>' :
                 '') +
@@ -14447,7 +14446,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
             }
         }
         titleHtml =
-            '<span class="fc-title" style="color: white;">' +
+            '<span class="fc-title">' +
                 (util_1.htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
                 '</span>';
         return '<a class="' + classes.join(' ') + '"' +

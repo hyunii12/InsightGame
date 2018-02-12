@@ -95,7 +95,6 @@
 									onclick='setSearchHeader($(this).val())'>스트리머</button>
 							</div>
 						</div>
-
 						<input class="form-control mr-sm-2" type="text"
 							style="width: 247px; border: 0; margin-left: 3px"
 							placeholder="Search" name="search">

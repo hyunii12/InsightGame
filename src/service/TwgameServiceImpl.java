@@ -22,6 +22,12 @@ public class TwgameServiceImpl implements ITwgameService {
 		return twgameDao.selectAllgame();
 	}
 	
+	@Override
+	public List<Integer> getgametoview(String d) {
+		// TODO Auto-generated method stub
+		return twgameDao.gametoview(d);
+	}
+	
 	
 
 }
