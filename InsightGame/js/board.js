@@ -50,9 +50,20 @@ $(document).ready(function(){
 		if(!$(this).find('td[name="header"]'))
 			$(this).css('background', 'lightgray')
 	})
+	
 	$('#writeBtn').on('click', function(){
-		var content = $('#writeContent').val();				
-//		alert(header+"//"+content);
+		var content = $('#writeContent').val();
+		
+		
+//		
+//		$(function(){
+//			if (content.length === 0){
+//				alert('글 써라')
+//			}else if(window.sessionStorage ==null){
+//				alert('로그인 해라')
+//			}
+//		})
+//		
 		$.ajax({
 			url: "write.do", 
 			type: "post",
@@ -63,13 +74,14 @@ $(document).ready(function(){
 			}, 
 			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 			success: function(data){
-	        	if(data != null){
+				//alert(data.msg)
+	        	if(data.msg == true){
 		        	location.reload();
 	        	}
 	    	},
 	    	error:function(request,status,error){
-//			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	    		alert("300자 이내로 작성해주세요");
+			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		//alert("300자 이내로 작성해주세요");
 			}
 		});
 	});
@@ -245,7 +257,13 @@ function submitBtn(bId){
 		}, 
 		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 		success: function(data){
-			location.reload()
+			if(data.result===1){
+				alert(data.msg)
+				location.reload()
+			}else{
+				alert(data.msg)
+				location.reload()
+			}
 		},
 		error:function(request,status,error){
 		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -262,7 +280,13 @@ function deleteBtn(bId){
 			"bId" : bId,
 		}, 
 		success: function(data){
-			location.reload()
+			if(data.result===1){
+				alert(data.msg)
+				location.reload()
+			}else{
+				alert(data.msg)
+				location.reload()
+			}
 		},
 		error:function(request,status,error){
 		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
