@@ -107,15 +107,24 @@
 			</ul>
 		</div>
 
-		
-<div id="navbarResponsive">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
-						src="img/login.png"></a></li>
-</ul>
-		</div>
-		
-		
+	<% String id= (String)session.getAttribute("user_id"); %>	
+	
+	<% if (id == null) { %>
+				<div id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item mx-0 mx-lg-1"><a href="loginForm.do"><img
+								src="img/login.png"></a></li>
+					</ul>
+				</div>
+	<% } else { %>
+				<div id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item mx-0 mx-lg-1"><a href="logout.do"><img
+								src="img/logout.png"></a></li>
+					</ul>
+				</div>
+	<%  } %>
+
 		
 <!-- 		<div id="navbarResponsive"> -->
 <!-- <ul class="navbar-nav ml-auto"> -->
