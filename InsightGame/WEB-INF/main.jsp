@@ -10,7 +10,7 @@
 <body>
 	<div id="navigation">
 		<jsp:include page="navigation.jsp" />
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
@@ -24,7 +24,7 @@
 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
 			</div>
 			<div style="margin: 0 auto; width: 80%">
-				<jsp:include page="contents/issues.jsp" />
+<%-- 				<jsp:include page="contents/issues.jsp" /> --%>
 
 			</div>
 		</div>

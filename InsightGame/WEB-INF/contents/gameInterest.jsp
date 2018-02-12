@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="js/billboard.js"></script>
-<link rel="stylesheet" href="css/billboard.css">
-<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title></title>//
+<title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script>
-	$(document).ready(
-			function() {
 
+<script>
+// 	$(document).ready(function() {
+
+<<<<<<< HEAD
+// 			});
+=======
 				var game = "${game}"
 				var OverwatchView = "${OverwatchView}"
 							
@@ -42,6 +42,7 @@
 					bindto : "#TimeseriesChart"
 				});
 			});
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame
 </script>
 
 </head>

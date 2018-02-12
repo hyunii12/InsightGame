@@ -19,9 +19,9 @@ var result = new Array();
 function inputSchedule(result){
     $('#calendar').fullCalendar({    	
       header: {
-        left: 'prev,next',
+        left: 'prev,next, today',
         center: 'title',
-        right: 'today'
+        right: 'month,basicWeek,basicDay'
       },
       defaultDate: new Date(),
       navLinks: true, // can click day/week names to navigate views
@@ -32,7 +32,6 @@ function inputSchedule(result){
 }
 </script>
 <title></title>
-
 </head>
 <body>
    <div id='calendar' style="background-color: white;"></div>
