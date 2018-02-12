@@ -93,19 +93,15 @@ public class BoardController {
 			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
 
-//		System.out.println(header+":::::::::"+content);
-//		header = URLDecoder.decode(header,"UTF-8");
-//		content = URLDecoder.decode(content,"UTF-8");
 		HttpSession session = request.getSession();
 		String boardWriter = (String)session.getAttribute("user_id");
 		String[] writer = boardWriter.split("@");
-		System.out.println(writer[0]);
-		
 
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
 		board.setWriter(writer[0]);
+		
 		int newBId = boardService.writeBoard(board, 0);
 		if(newBId > 0) {
 			// 작성 성공
@@ -149,12 +145,32 @@ public class BoardController {
 	@RequestMapping("modify.do")
 	public @ResponseBody HashMap<String, Object> modify( 
 			@RequestParam(name="bId", defaultValue="-")String bId,
-			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
+			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
 //		System.out.println(header+":::::::::"+content);
-		bId = URLDecoder.decode(bId,"UTF-8");
-		content = URLDecoder.decode(content,"UTF-8");
+		
 		
 		Board board = boardService.getBoard(Integer.parseInt(bId));
+		// writer하고 session 사람하고 다르면 수정 X
+		String writer = board.getWriter();
+		HttpSession session = request.getSession();
+		String boardWriter = (String)session.getAttribute("user_id");
+		String[] test = boardWriter.split("@");
+		boardWriter = test[0];
+		
+		System.out.println(writer);
+		System.out.println(boardWriter);
+		
+		// 수정 가능
+		if (writer == boardWriter) {
+			
+		}
+		
+		// 수정 불가능
+		else 
+		{
+			
+		}
+		
 		board.setContent(content);
 		int result = boardService.modifyBoard(board);
 		HashMap<String, Object> results = new HashMap<>();
