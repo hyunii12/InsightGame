@@ -93,11 +93,11 @@ public class BoardController {
 		HttpSession session = request.getSession();
 		String boardWriter = (String)session.getAttribute("user_id");
 		String[] writer = boardWriter.split("@");
-
+		
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
-		board.setWriter(writer[0]);
+		board.setWriter(boardWriter);
 		
 		int newBId = boardService.writeBoard(board, 0);
 		if(newBId > 0) {
@@ -127,7 +127,7 @@ public class BoardController {
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
-		board.setWriter(writer);
+		board.setWriter(boardWriter);
 		System.out.println(board);
 		int newBId = boardService.writeBoard(board, parentId);
 		if(newBId > 0) {

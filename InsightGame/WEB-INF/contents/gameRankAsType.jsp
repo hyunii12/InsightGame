@@ -92,7 +92,7 @@ table.gameRankAsType tr td:first-child{
 	border-left: 0;
 }
 table.gameRankAsType tr td {
-	padding:12px;
+	padding:8px;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid #e0e0e0;
 	border-left: 1px solid #e0e0e0;
@@ -132,7 +132,7 @@ table.gameRankAsType tr:hover td{
 <body>
 
 
-<table class="gameRankAsType" cellspacing='0'>
+<table class="gameRankAsType" cellspacing='0' style="width:850px">
 	<tr>
 		<th>순위</th>
 		<th>온라인(PC)</th>
@@ -146,13 +146,13 @@ table.gameRankAsType tr:hover td{
     
 	<tr>
 		<td>1</td>
-		<td>${pcbrank[0].name}</td>
-		<td>${mobilebrank[0].name}</td>
-		<td>${dsrank[0].name}</td>
-		<td>${ps4brank[0].name}</td>
-		<td>${xboxbrank[0].name}</td>
-		<td>${switchbrank[0].name}</td>
-		<td>${psvitabrank[0].name}</td>
+		<td style="width: 116px;">${pcbrank[0].name}</td>
+		<td style="width: 116px;">${mobilebrank[0].name}</td>
+		<td style="width: 116px;">${dsrank[0].name}</td>
+		<td style="width: 116px;">${ps4brank[0].name}</td>
+		<td style="width: 116px;">${xboxbrank[0].name}</td>
+		<td style="width: 116px;">${switchbrank[0].name}</td>
+		<td style="width: 116px;">${psvitabrank[0].name}</td>
 	</tr>
 	
 	<tr class='even'>
