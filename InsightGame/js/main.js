@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	var result = new Array();
 	$.ajax({
 		url : "gameCalendar.do",
