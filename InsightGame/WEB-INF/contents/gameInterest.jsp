@@ -52,7 +52,7 @@
 // 				today = yyyy + '-' + mm + '-' + dd
 				yesterday = yyyy + '-' + mm + '-' + minusdd
 				alert(yesterday)
-
+//
 				var chart = bb.generate({
 					data : {
 						x : "x",
