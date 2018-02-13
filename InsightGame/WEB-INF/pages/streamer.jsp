@@ -114,7 +114,7 @@
 					<h3 class="text-center">스트리머 게시글 - 키워드별</h3>
 
 					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameInterest.do" />
+<%-- 					<jsp:include page="gameInterest.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 
@@ -123,9 +123,9 @@
 
 
 
-					<div id="streamerBoardNumAsTime">
-					<div class="streamerBoardNumAsTime"></div>
-					</div>
+<!-- 					<div id="streamerBoardNumAsTime"> -->
+<!-- 					<div class="streamerBoardNumAsTime"></div> -->
+<!-- 					</div> -->
 
 
 					<div id="issues"></div>
@@ -136,7 +136,7 @@
 					<h3 class="text-center">전체 게시글 - 키워드별</h3>
 
 					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameCalendar.do" />
+<%-- 					<jsp:include page="gameCalendar.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 
@@ -144,7 +144,7 @@
 					<h3 class="text-center">전체 게시글 - 시간대별</h3>
 
 					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameCalendar.do" />
+<%-- 					<jsp:include page="gameCalendar.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 			</div>

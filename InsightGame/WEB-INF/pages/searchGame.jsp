@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,24 +31,74 @@
 		<jsp:include page="../navigation.jsp" />
 	</div>
 
-	<div id="InsightGame" style="margin-top:8.5%; overflow:hidden;">
+	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="bg-primary>
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">gameInformation.jsp</h2>
-			<h2 class="text-center text-uppercase text-secondary">검색키워드: ${what }</h2>
-			<h3 class="text-center text-uppercase text-secondary">게임 상세정보: ${giId }</h3>			
-			<hr class="star-light mb-5">
-			<div class="row">
-				<a href="gameDetail.jsp"><h3 class="text-center text-white" style="margin: 0 auto;">gameDetail.jsp</h3></a>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameIssues.do" /> --%>
-				<!-- 			</div> -->
+			<h2 class="text-center text-uppercase">gameInformation.jsp</h2>
+			<h2 class="text-center text-uppercase text-secondary">
+				검색키워드:${what }</h2>
+			<h3 class="text-center text-uppercase text-secondary">
+				게임 상세정보: ${giId }</h3>
+
+			<div style="display: flex">
+				<div style="margin-left: 15%;">
+					<a href="#"><img src="img/gameimg1.jpg" style="width: 240px;"></a>
+				</div>
+
+				<div style="width: 45%; margin-left: 30px;">
+					<table id="boardTable" class="table" align="center">
+						<tr>
+							<td>게임명</td>
+							<td>게임명 내용</td>
+						</tr>
+						<tr>
+							<td>플랫폼</td>
+							<td>플랫폼 내용</td>
+						</tr>
+						<tr>
+							<td>장르</td>
+							<td>장르 내용</td>
+						</tr>
+						<tr>
+							<td>제작사</td>
+							<td>제작사 내용</td>
+						</tr>
+						<tr>
+							<td>이용등급</td>
+							<td>이용등급 내용</td>
+						</tr>
+						<tr>
+							<td>출시년도</td>
+							<td>출시년도 내용</td>
+						</tr>
+
+
+						<!-- 					<tbody> -->
+						<%-- 						<c:forEach items="" var="list"> --%>
+						<%-- 											<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
+						<!-- 							<tr style="cursor: pointer"> -->
+						<!-- 								<td>1</td> -->
+						<!-- 								<td>2</td> -->
+						<!-- 								<td>3</td> -->
+						<!-- 								<td>4</td> -->
+						<!-- 								<td>5</td> -->
+						<!-- 								<td> -->
+						<!-- 									<button class="btn btn-info">수정</button> -->
+						<!-- 									<button class="btn btn-danger">삭제</button> -->
+						<!-- 								</td> -->
+						<!-- 							</tr> -->
+						<%-- 						</c:forEach> --%>
+						<!-- 					</tbody> -->
+
+					</table>
+
+				</div>
+
 			</div>
-
 		</div>
+		
 		</section>
-
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
 		<div class="container">
@@ -59,21 +109,19 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">검색 게임 정보</h2>
-			<hr class="star-light mb-5">
+			<h2 class="text-center text-uppercase">검색 게임 정보</h2>
+
 			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">gameInterest.jsp</h3>
-				<h3 class="text-center text-white" style="margin: 0 auto;">news.jsp</h3>
-				<h3 class="text-center text-white" style="margin: 0 auto;">gameWalkthrough.jsp</h3>
-				<h3 class="text-center text-white" style="margin: 0 auto;">gameRecommend.jsp</h3>
+				<h3 class="text-center" style="margin: 0 auto;">gameInterest.jsp</h3>
+				<h3 class="text-center" style="margin: 0 auto;">news.jsp</h3>
+				<h3 class="text-center" style="margin: 0 auto;">gameWalkthrough.jsp</h3>
+				<h3 class="text-center" style="margin: 0 auto;">gameRecommend.jsp</h3>
 				<!-- 			<div id="issues"> -->
 				<%-- 				<jsp:include page="gameInterest.do" /> --%>
 				<!-- 			</div> -->
 			</div>
 		</div>
-		</section>
 
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
