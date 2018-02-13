@@ -25,7 +25,7 @@
             var ctlist = "${ctlist}"
             var IRLlist = "${IRLlist}"
 
-            alert(IRLlist)
+         
 
             var overlist2 = JSON.parse(overlist);
             var Leaguelist2 = JSON.parse(Leaguelist);
@@ -38,6 +38,7 @@
             var ctlist2 = JSON.parse(ctlist);
             var IRLlist2 = JSON.parse(IRLlist);
 
+            
             var today = new Date();
             var dd = today.getDate();
             var mm = today.getMonth() + 01; //January is 0!
@@ -51,7 +52,7 @@
 
 //             today = yyyy + '-' + mm + '-' + dd
             yesterday = yyyy + '-' + mm + '-' + minusdd
-            alert(yesterday)
+          
 
             var chart = bb.generate({
                data : {

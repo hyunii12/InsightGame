@@ -30,37 +30,35 @@ import service.IMemberService;
 public class BoardController {
 	@Autowired
 	IBoardService boardService;
-//	@Autowired
-//	IMemberService memberService;
-	
-	
-	
+	// @Autowired
+	// IMemberService memberService;
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a");
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
 	}
+
 	@RequestMapping("board.do")
-	public String main(Model model, @RequestParam(name="page", defaultValue="1")int page) {
+	public String main(Model model, @RequestParam(name = "page", defaultValue = "1") int page) {
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
 		List<Board> boardList = (List<Board>) boardListByPage.get("boardList");
-		
-//		System.out.println("page: "+page);
-//		for(Board b : boardList)
-//			System.out.println(b);		
-		
+
+		// System.out.println("page: "+page);
+		// for(Board b : boardList)
+		// System.out.println(b);
+
 		model.addAttribute("start", boardListByPage.get("start"));
 		model.addAttribute("end", boardListByPage.get("end"));
 		model.addAttribute("first", boardListByPage.get("first"));
 		model.addAttribute("last", boardListByPage.get("last"));
 		model.addAttribute("current", boardListByPage.get("current"));
 		model.addAttribute("boardList", boardList);
-		
 		return "pages/board";
 	}
-	
+
 	@RequestMapping("getList.do")
-	public @ResponseBody HashMap<String, Object> getList(@RequestParam(name="page", defaultValue="1")int page) {
+	public @ResponseBody HashMap<String, Object> getList(@RequestParam(name = "page", defaultValue = "1") int page) {
 		System.out.println(page);
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
@@ -73,26 +71,30 @@ public class BoardController {
 		result.put("boardList", boardList);
 		return result;
 	}
-	
+
 	@RequestMapping("getCommentList.do")
-	public @ResponseBody HashMap<String, Object> getCommentList(@RequestParam(name="groupId", required=true)int groupId) {
+	public @ResponseBody HashMap<String, Object> getCommentList(
+			@RequestParam(name = "groupId", required = true) int groupId) {
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getCommentList(groupId);
 		List<Board> commentList = (List<Board>) boardListByPage.get("commentList");
 		result.put("commentList", commentList);
 		return result;
 	}
-	
+
 	// 작성자: 로그인 유저로 수정 해야함!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	@RequestMapping("write.do")
-	public @ResponseBody HashMap<String, Object> write( 
-			@RequestParam(name="header", defaultValue="잡담")String header,
-			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
-		HashMap<String, Object> result = new HashMap<>();
+	public @ResponseBody HashMap<String, Object> write(
+			@RequestParam(name = "header", defaultValue = "잡담") String header,
+			@RequestParam(name = "content", required = true) String content, HttpServletRequest request)
+			throws UnsupportedEncodingException {
+		HashMap<String, Object> results = new HashMap<>();
 
 		HttpSession session = request.getSession();
-		String boardWriter = (String)session.getAttribute("user_id");
-		String[] writer = boardWriter.split("@");
+		String boardWriter = (String) session.getAttribute("user_id");
+		// String[] writer = boardWriter.split("@");
+		System.out.println(boardWriter);
+		Board board = new Board();
 		
 		Board board = new Board();
 		board.setHeader(header);
@@ -105,24 +107,23 @@ public class BoardController {
 			result.put("msg", true);
 			result.put("new", newBId);
 		}
-		else
-			result.put("msg", false);
-		return result;
 	}
+
 	@RequestMapping("writeCmt.do")
-	public @ResponseBody HashMap<String, Object> writeCmt( 
-			@RequestParam(name="parentBId", required= true)String parentBId,
-			@RequestParam(name="header", defaultValue="-")String header,
-			@RequestParam(name="writer", defaultValue="-")String writer,
-			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
+	public @ResponseBody HashMap<String, Object> writeCmt(
+			@RequestParam(name = "parentBId", required = true) String parentBId,
+			@RequestParam(name = "header", defaultValue = "-") String header,
+			@RequestParam(name = "writer", defaultValue = "-") String writer,
+			@RequestParam(name = "content", required = true) String content, HttpServletRequest request)
+			throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
-//		System.out.println(header+":::::::::"+content);
-		
+		// System.out.println(header+":::::::::"+content);
+
 		HttpSession session = request.getSession();
-		String boardWriter = (String)session.getAttribute("user_id");
-		String[] test = boardWriter.split("@");
-		writer = test[0];
-		
+		String boardWriter = (String) session.getAttribute("user_id");
+		// String[] test = boardWriter.split("@");
+		// writer = test[0];
+
 		int parentId = Integer.parseInt(parentBId);
 		Board board = new Board();
 		board.setHeader(header);
@@ -130,84 +131,80 @@ public class BoardController {
 		board.setWriter(boardWriter);
 		System.out.println(board);
 		int newBId = boardService.writeBoard(board, parentId);
-		if(newBId > 0) {
+		if (newBId > 0) {
 			// 작성 성공
 			result.put("msg", true);
 			result.put("new", newBId);
-		}
-		else
+		} else
 			result.put("msg", false);
 		return result;
 	}
+
 	@RequestMapping("modify.do")
-	public @ResponseBody HashMap<String, Object> modify( 
-			@RequestParam(name="bId", defaultValue="-")String bId,
-			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
-//		System.out.println(header+":::::::::"+content);
-		
-		
+	public @ResponseBody HashMap<String, Object> modify(@RequestParam(name = "bId", defaultValue = "-") String bId,
+			@RequestParam(name = "content", required = true) String content, HttpServletRequest request)
+			throws UnsupportedEncodingException {
+		// System.out.println(header+":::::::::"+content);
+
 		Board board = boardService.getBoard(Integer.parseInt(bId));
 		// writer하고 session 사람하고 다르면 수정 X
 		String writer = board.getWriter();
 		HttpSession session = request.getSession();
-		String boardWriter = (String)session.getAttribute("user_id");
-		String[] test = boardWriter.split("@");
-		boardWriter = test[0];
-		
+		String boardWriter = (String) session.getAttribute("user_id");
+		// String[] test = boardWriter.split("@");
+		// boardWriter = test[0];
+		HashMap<String, Object> results = new HashMap<>();
 		System.out.println(boardWriter);
 		System.out.println(writer);
-		
-		if(writer.equals(boardWriter)) {
+
+		if (writer.equals(boardWriter)) {
 			board.setContent(content);
 			int result = boardService.modifyBoard(board);
 			String msg = "글 수정 완료.";
-			HashMap<String, Object> results = new HashMap<>();
 			results.put("result", result);
-			results.put("msg",msg);
-			return results; 
-		}else {
+			results.put("msg", msg);
+			return results;
+		} else {
 			int result = 0;
-			HashMap<String, Object> results = new HashMap<>();
 			String msg = "자신이 작성한 글만 수정 가능합니다";
 			results.put("result", result);
-			results.put("msg",msg);
-			return results; 
+			results.put("msg", msg);
+			return results;
 		}
-		
-		//System.out.println(writer);
-		//System.out.println(boardWriter);
-		
-		
+
+		// System.out.println(writer);
+		// System.out.println(boardWriter);
+
 	}
+
 	@RequestMapping("delete.do")
-	public @ResponseBody HashMap<String, Object> delete(@RequestParam(name="bId", required= true) String bId,
+	public @ResponseBody HashMap<String, Object> delete(@RequestParam(name = "bId", required = true) String bId,
 			HttpServletRequest request) throws UnsupportedEncodingException {
-		System.out.println("bbbb"+bId);
-		
+		System.out.println("bbbb" + bId);
+
 		Board board = boardService.getBoard(Integer.parseInt(bId));
 		String writer = board.getWriter();
 		HttpSession session = request.getSession();
-		String boardWriter = (String)session.getAttribute("user_id");
-		String[] test = boardWriter.split("@");
-		boardWriter = test[0];
-		
-		if(writer.equals(boardWriter)) {
+		String boardWriter = (String) session.getAttribute("user_id");
+		// String[] test = boardWriter.split("@");
+		// boardWriter = test[0];
+
+		if (writer.equals(boardWriter)) {
 			boardService.removeBoard(Integer.parseInt(bId));
 			int result = boardService.modifyBoard(board);
 			String msg = "글삭제 완료.";
 			HashMap<String, Object> results = new HashMap<>();
-			results.put("msg",msg);
+			results.put("msg", msg);
 			results.put("result", result);
-			return results; 
-		}else {
+			return results;
+		} else {
 			int result = 0;
 			String msg = "자신이 작성한 글만 삭제 가능합니다";
 			HashMap<String, Object> results = new HashMap<>();
 			results.put("result", result);
-			results.put("msg",msg);
-			return results; 
+			results.put("msg", msg);
+			return results;
 		}
 	}
-	
-}
 
+}
