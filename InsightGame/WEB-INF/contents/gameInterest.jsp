@@ -25,7 +25,7 @@
             var ctlist = "${ctlist}"
             var IRLlist = "${IRLlist}"
 
-            alert(IRLlist)
+         
 
             var overlist2 = JSON.parse(overlist);
             var Leaguelist2 = JSON.parse(Leaguelist);
@@ -51,7 +51,7 @@
 
 //             today = yyyy + '-' + mm + '-' + dd
             yesterday = yyyy + '-' + mm + '-' + minusdd
-            alert(yesterday)
+          
 
             var chart = bb.generate({
                data : {
