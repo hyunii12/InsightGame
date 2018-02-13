@@ -27,22 +27,22 @@ a:hover {
 }
 
 
-table.gameRankAsType a:link {
+table.gameRankAsGenre a:link {
 	color: #666;
 	font-weight: bold;
 	text-decoration:none;
 }
-table.gameRankAsType a:visited {
+table.gameRankAsGenre a:visited {
 	color: #999999;
 	font-weight:bold;
 	text-decoration:none;
 }
-table.gameRankAsType a:active,
-table.gameRankAsType a:hover {
+table.gameRankAsGenre a:active,
+table.gameRankAsGenre a:hover {
 	color: #bd5a35;
 	text-decoration:underline;
 }
-table.gameRankAsType {
+table.gameRankAsGenre {
 	font-family:Arial, Helvetica, sans-serif;
 	color:#666;
 	font-size:12px;
@@ -59,7 +59,7 @@ table.gameRankAsType {
 	-webkit-box-shadow: 0 1px 2px #d1d1d1;
 	box-shadow: 0 1px 2px #d1d1d1;
 }
-table.gameRankAsType th {
+table.gameRankAsGenre th {
 	padding:15px;
 	border-top:1px solid #fafafa;
 	border-bottom:1px solid #e0e0e0;
@@ -68,30 +68,30 @@ table.gameRankAsType th {
 	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
 	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
 }
-table.gameRankAsType th:first-child{
+table.gameRankAsGenre th:first-child{
 	text-align: left;
 	padding-left:20px;
 }
-table.gameRankAsType tr:first-child th:first-child{
+table.gameRankAsGenre tr:first-child th:first-child{
 	-moz-border-radius-topleft:3px;
 	-webkit-border-top-left-radius:3px;
 	border-top-left-radius:3px;
 }
-table.gameRankAsType tr:first-child th:last-child{
+table.gameRankAsGenre tr:first-child th:last-child{
 	-moz-border-radius-topright:3px;
 	-webkit-border-top-right-radius:3px;
 	border-top-right-radius:3px;
 }
-table.gameRankAsType tr{
+table.gameRankAsGenre tr{
 	text-align: center;
 	padding-left:20px;
 }
-table.gameRankAsType tr td:first-child{
+table.gameRankAsGenre tr td:first-child{
 	text-align: left;
 	padding-left:20px;
 	border-left: 0;
 }
-table.gameRankAsType tr td {
+table.gameRankAsGenre tr td {
 	padding:12px;
 	border-top: 1px solid #ffffff;
 	border-bottom:1px solid #e0e0e0;
@@ -101,25 +101,25 @@ table.gameRankAsType tr td {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
 	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
-table.gameRankAsType tr.even td{
+table.gameRankAsGenre tr.even td{
 	background: #f6f6f6;
 	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
 	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
 }
-table.gameRankAsType tr:last-child td{
+table.gameRankAsGenre tr:last-child td{
 	border-bottom:0;
 }
-table.gameRankAsType tr:last-child td:first-child{
+table.gameRankAsGenre tr:last-child td:first-child{
 	-moz-border-radius-bottomleft:3px;
 	-webkit-border-bottom-left-radius:3px;
 	border-bottom-left-radius:3px;
 }
-table.gameRankAsType tr:last-child td:last-child{
+table.gameRankAsGenre tr:last-child td:last-child{
 	-moz-border-radius-bottomright:3px;
 	-webkit-border-bottom-right-radius:3px;
 	border-bottom-right-radius:3px;
 }
-table.gameRankAsType tr:hover td{
+table.gameRankAsGenre tr:hover td{
 	background: #f2f2f2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
 	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
