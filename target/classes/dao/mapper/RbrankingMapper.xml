@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IRbrankingDao">
+
+	<select id="selectxboxRanking" resultType="rbranking" >
+		select *from xbox_ranking where day=#{day}
+	</select>
+	<select id="selectswitchRanking" resultType="rbranking" >
+		select *from switch_ranking where day=#{day}
+	</select>
+	<select id="selectps4Ranking" resultType="rbranking" >
+		select *from ps4_ranking where day=#{day}
+	</select>
+	<select id="selectpsvitaRanking" resultType="rbranking" >
+		select *from psvita_ranking where day=#{day}
+	</select>
+	<select id="selectpcRanking" resultType="rbranking" >
+		select *from pc_ranking where day=#{day}
+	</select>
+	<select id="selectmoblieRanking" resultType="rbranking" >
+		select *from mobile_ranking where day=#{day}
+	</select>
+	<select id="select3dsRanking" resultType="rbranking" >
+		select *from 3ds_ranking where day=#{day}
+	</select>
+
+</mapper>

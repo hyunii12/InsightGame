@@ -55,16 +55,9 @@ public class StreamerController {
 	public String hotClip(Model model) {
 		System.out.println("여기는 핫클립");
 		List<Clip> list = clipService.getcliplist();
-		// int random= (int)(Math.random()*4)+1;
-		// System.out.println(random);
-
-		// for(Clip c: list) {
-		// System.out.println(c.toString());
-		// }
-		// model.addAttribute("random",random);
-		//
+	
 		model.addAttribute("cliplist", list);
-//		return "contents/hotclips";
+
 		return "contents/hotclips";
 	}
 
@@ -74,10 +67,6 @@ public class StreamerController {
 		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");
 
 		List<Integer> list = tgdService.gettgdlist();
-
-		// for(Integer i :list) {
-		// System.out.println(i);
-		// }
 
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime end = now.minusDays(14);
@@ -111,7 +100,7 @@ public class StreamerController {
 
 	@RequestMapping("streamerInterest.do")
 	public String streamerInterest(Model model) {
-		System.out.println("스트리머별 인기게임");
+		System.out.println("스트리머별 인기게임");		
 		return "contents/streamerInterest";
 	}
 	

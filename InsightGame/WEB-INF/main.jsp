@@ -10,7 +10,11 @@
 <body>
 	<div id="navigation">
 		<jsp:include page="navigation.jsp" />
+
+		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
+
 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
+
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
@@ -32,20 +36,44 @@
 		</section>
 
 		<script type="text/javascript">
-			$(document).ready(
-				function() {
-					$('.collapse').on('show.bs.collapse',
-						function() {
-							var id = $(this).attr('id');
-							$('a[href="#' + id + '"]').closest('.panel-heading').addClass('active-faq');
-							$('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-minus"></i>');
-						});
-					$('.collapse').on('hide.bs.collapse', function() {
-						var id = $(this).attr('id');
-						$('a[href="#' + id + '"]').closest('.panel-heading').removeClass('active-faq');
-						$('a[href="#' + id + '"] .panel-title span').html('<i class="glyphicon glyphicon-plus"></i>');
-					});
-				});
+			$(document)
+					.ready(
+							function() {
+								$('.collapse')
+										.on(
+												'show.bs.collapse',
+												function() {
+													var id = $(this).attr('id');
+													$('a[href="#' + id + '"]')
+															.closest(
+																	'.panel-heading')
+															.addClass(
+																	'active-faq');
+													$(
+															'a[href="#'
+																	+ id
+																	+ '"] .panel-title span')
+															.html(
+																	'<i class="glyphicon glyphicon-minus"></i>');
+												});
+								$('.collapse')
+										.on(
+												'hide.bs.collapse',
+												function() {
+													var id = $(this).attr('id');
+													$('a[href="#' + id + '"]')
+															.closest(
+																	'.panel-heading')
+															.removeClass(
+																	'active-faq');
+													$(
+															'a[href="#'
+																	+ id
+																	+ '"] .panel-title span')
+															.html(
+																	'<i class="glyphicon glyphicon-plus"></i>');
+												});
+							});
 		</script>
 
 		<!-- Portfolio Grid Section -->
@@ -283,14 +311,16 @@
 
 
 
-		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white">
+		<!-- Portfolio Grid Section ---->
+		<section class="bg-primary text-black">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view
-				수)</h2>
-			<div style="margin: 0 auto; width: 80%;">
-<%-- 				<jsp:include page="contents/gameInterest.jsp" /> --%>
-			</div>
+			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view 수)</h2>
+				
+				<div id="GI"></div>
+				
+<!-- 			<div style="margin: 0 auto; width: 80%;"> -->
+<%-- 								<jsp:include page="contents/gameInterest.jsp" /> --%>
+<!-- 			</div> -->
 		</div>
 
 		</section>
@@ -299,40 +329,38 @@
 		<!-- Portfolio Grid Section -->
 		<section class="portfolio" id="portfolio">
 		<div class="container1">
-			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
-				4개</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0">그래프 2개</h2>
 			<hr class="star-dark mb-5">
 			<div class="row">
 
 				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 - 스트리머별</h3>
-
-<div id="f"></div>
-							
-
-
-					<div id="issues"></div>
+					<h3 class="text-center">게임 순위 - 장르별</h3>
+	
+					<div id="gameRanking"></div>
 
 				</div>
 
-<!-- 				<div class="col-md-6"> -->
-<!-- 					<h3 class="text-center">게임 순위 - 유형별</h3> -->
 
-<!-- 					<div id="issues"> -->
-<%-- 						<jsp:include page="contents/gameRankAsType.jsp" /> --%>
-<!-- 					</div> -->
-<!-- 				</div> -->
+
+
+				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 </h3>
 
-					<div id="kkk"></div>
+<!-- 					<div id="kkk"></div> -->
 
-					<div id="issues">
-						<jsp:include page="contents/gameRank.jsp" />
-					</div>
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRankAsGenre.jsp" /> --%>
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+<!-- 					<div id="issues"> -->
+<%-- 						<jsp:include page="contents/gameRank.jsp" /> --%>
+<!-- 					</div> -->
 
 				</div>
+
 
 <!-- 				<div class="col-md-6"> -->
 <!-- 					<h3 class="text-center">제작사 순위</h3> -->

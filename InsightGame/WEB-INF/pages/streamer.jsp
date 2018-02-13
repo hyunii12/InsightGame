@@ -121,7 +121,15 @@
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
 
+
+
+					<div id="streamerBoardNumAsTime">
+					<div class="streamerBoardNumAsTime"></div>
+					</div>
+
+
 					<div id="issues"></div>
+
 				</div>
 
 				<div class="col-md-6">
