@@ -5,12 +5,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.ITwgameDao">
 
-	<select id="selectAllgame" resultType="twgame">
-		select * from game_popularity
+<!-- 	<select id="selectAllgame" resultType="twgame"> -->
+<!-- 		select * from game_popularity -->
+<!-- 	</select> -->
+	<select id="gametoview" parameterType="hashmap" resultType="Integer">
+		select Twgview from game_popularity where Twgname = #{name} and Twgdate=#{day}
 	</select>
-	<select id="gametoview" parameterType="String" resultType="Integer">
-		select Twgview from game_popularity where Twgname = #{Twgname}
-	</select>
+<!-- 	<select id="selectgametoview" parameterType="String" resultType="java.util.HashMap"> -->
+<!-- 		select Twgname,Twgview from game_popularity where Twgdate = #{Twgdate} -->
+<!-- 	</select> -->
 
 
 </mapper>
