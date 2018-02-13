@@ -50,7 +50,6 @@ $(document).ready(function() {
 		type : "get",
 		dataType : "html",
 		success : function(data) {
-			alert("ttttttttttt")
 			$('#GI').html(data)
 		},
 		error : function(xhar, status, error) {
