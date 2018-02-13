@@ -19,16 +19,6 @@ $(document).ready(function() {
 				alert(error);
 			}
 		})
-				
-		$.ajax({
-			url:"streamerBoardNumAsTime.do",
-			type: "get",
-			dataType:"html",
-			success: function(data){
-				$('#kkk').html(data);
-			},
-			error: function(xhar, status, error){
-				alert(error);
 
 	var result = new Array();
 	$.ajax({
