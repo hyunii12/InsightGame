@@ -95,17 +95,21 @@ public class BoardController {
 		// String[] writer = boardWriter.split("@");
 		System.out.println(boardWriter);
 		Board board = new Board();
-		
-		Board board = new Board();
-		board.setHeader(header);
-		board.setContent(content);
-		board.setWriter(boardWriter);
-		
-		int newBId = boardService.writeBoard(board, 0);
-		if(newBId > 0) {
-			// 작성 성공
-			result.put("msg", true);
-			result.put("new", newBId);
+
+		if (boardWriter != null) {
+			board.setHeader(header);
+			board.setContent(content);
+			board.setWriter(boardWriter);
+			int result = boardService.writeBoard(board, 0);
+			String msg = "글 작성 완료.";
+			results.put("msg", msg);
+			results.put("result", result);
+			return results;
+		}else {
+			String msg = "로그인 하세요.";
+			results.put("msg",msg);
+			results.put("result",0);
+			return results;
 		}
 	}
 
@@ -129,7 +133,7 @@ public class BoardController {
 		board.setHeader(header);
 		board.setContent(content);
 		board.setWriter(boardWriter);
-		System.out.println(board);
+		// System.out.println(board);
 		int newBId = boardService.writeBoard(board, parentId);
 		if (newBId > 0) {
 			// 작성 성공
