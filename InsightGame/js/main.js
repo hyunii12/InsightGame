@@ -38,8 +38,20 @@ $(document).ready(function() {
 		type : "get",
 		dataType : "html",
 		success : function(data) {
-			alert('asdf')
 			$('#gameRanking').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
+//
+	$.ajax({
+		url : "gameInterest.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			alert("ttttttttttt")
+			$('#GI').html(data)
 		},
 		error : function(xhar, status, error) {
 			alert(error);
