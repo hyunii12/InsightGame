@@ -25,7 +25,6 @@
             var ctlist = "${ctlist}"
             var IRLlist = "${IRLlist}"
 
-         
 
             var overlist2 = JSON.parse(overlist);
             var Leaguelist2 = JSON.parse(Leaguelist);
