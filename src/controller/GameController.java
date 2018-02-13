@@ -128,7 +128,7 @@ public class GameController {
 		System.out.println("여기는 게임이슈스");
 		return "contents/issues";
 	}
-	
+
 	
 	@RequestMapping("gameRankAsCompany.do")
 	public String gameRankAsCompany(Model model) {
@@ -191,5 +191,11 @@ public class GameController {
 		model.addAttribute("xboxbrank",xboxbrank);
 				
 		return "contents/gameRankAsType";
+	}
+	@RequestMapping("gameRank.do")
+	public String gameRank(Model model) {
+		System.out.println("게임 순위");
+		return "contents/gameRank";
+
 	}
 }

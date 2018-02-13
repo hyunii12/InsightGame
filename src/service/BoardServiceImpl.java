@@ -124,7 +124,7 @@ public class BoardServiceImpl implements IBoardService{
 
 	@Override
 	public HashMap<String, Object> getCommentList(int groupId) {
-		System.out.println("댓글 조회[그룹아이디: "+groupId+"]");
+		//System.out.println("댓글 조회[그룹아이디: "+groupId+"]");
 		HashMap<String, Object> results = new HashMap<>();
 		List<Board> commentList = dao.selectCommentListBygroupId(groupId);
 		results.put("commentList", commentList);

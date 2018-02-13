@@ -43,8 +43,7 @@ public class BoardController {
 	@RequestMapping("board.do")
 	public String main(Model model, @RequestParam(name="page", defaultValue="1")int page) {
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
-		List<Board> boardList = 
-			 	(List<Board>) boardListByPage.get("boardList");
+		List<Board> boardList = (List<Board>) boardListByPage.get("boardList");
 		
 //		System.out.println("page: "+page);
 //		for(Board b : boardList)
@@ -65,8 +64,7 @@ public class BoardController {
 		System.out.println(page);
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getBoardList(page);
-		List<Board> boardList = 
-			 	(List<Board>) boardListByPage.get("boardList");
+		List<Board> boardList = (List<Board>) boardListByPage.get("boardList");
 		result.put("start", boardListByPage.get("start"));
 		result.put("end", boardListByPage.get("end"));
 		result.put("first", boardListByPage.get("first"));
@@ -80,8 +78,7 @@ public class BoardController {
 	public @ResponseBody HashMap<String, Object> getCommentList(@RequestParam(name="groupId", required=true)int groupId) {
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, Object> boardListByPage = boardService.getCommentList(groupId);
-		List<Board> commentList = 
-			 	(List<Board>) boardListByPage.get("commentList");
+		List<Board> commentList = (List<Board>) boardListByPage.get("commentList");
 		result.put("commentList", commentList);
 		return result;
 	}
@@ -93,19 +90,15 @@ public class BoardController {
 			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
 
-//		System.out.println(header+":::::::::"+content);
-//		header = URLDecoder.decode(header,"UTF-8");
-//		content = URLDecoder.decode(content,"UTF-8");
 		HttpSession session = request.getSession();
 		String boardWriter = (String)session.getAttribute("user_id");
 		String[] writer = boardWriter.split("@");
-		System.out.println(writer[0]);
-		
 
 		Board board = new Board();
 		board.setHeader(header);
 		board.setContent(content);
 		board.setWriter(writer[0]);
+		
 		int newBId = boardService.writeBoard(board, 0);
 		if(newBId > 0) {
 			// 작성 성공
@@ -149,30 +142,72 @@ public class BoardController {
 	@RequestMapping("modify.do")
 	public @ResponseBody HashMap<String, Object> modify( 
 			@RequestParam(name="bId", defaultValue="-")String bId,
-			@RequestParam(name="content", required= true)String content) throws UnsupportedEncodingException {
+			@RequestParam(name="content", required= true)String content, HttpServletRequest request) throws UnsupportedEncodingException {
 //		System.out.println(header+":::::::::"+content);
-		bId = URLDecoder.decode(bId,"UTF-8");
-		content = URLDecoder.decode(content,"UTF-8");
+		
 		
 		Board board = boardService.getBoard(Integer.parseInt(bId));
-		board.setContent(content);
-		int result = boardService.modifyBoard(board);
-		HashMap<String, Object> results = new HashMap<>();
-		results.put("result", result);
-		return results; 
+		// writer하고 session 사람하고 다르면 수정 X
+		String writer = board.getWriter();
+		HttpSession session = request.getSession();
+		String boardWriter = (String)session.getAttribute("user_id");
+		String[] test = boardWriter.split("@");
+		boardWriter = test[0];
+		
+		System.out.println(boardWriter);
+		System.out.println(writer);
+		
+		if(writer.equals(boardWriter)) {
+			board.setContent(content);
+			int result = boardService.modifyBoard(board);
+			String msg = "글 수정 완료.";
+			HashMap<String, Object> results = new HashMap<>();
+			results.put("result", result);
+			results.put("msg",msg);
+			return results; 
+		}else {
+			int result = 0;
+			HashMap<String, Object> results = new HashMap<>();
+			String msg = "자신이 작성한 글만 수정 가능합니다";
+			results.put("result", result);
+			results.put("msg",msg);
+			return results; 
+		}
+		
+		//System.out.println(writer);
+		//System.out.println(boardWriter);
+		
+		
 	}
 	@RequestMapping("delete.do")
-	public @ResponseBody HashMap<String, Object> delete(@RequestParam(name="bId", required= true) String bId) throws UnsupportedEncodingException {
+	public @ResponseBody HashMap<String, Object> delete(@RequestParam(name="bId", required= true) String bId,
+			HttpServletRequest request) throws UnsupportedEncodingException {
 		System.out.println("bbbb"+bId);
-		boardService.removeBoard(Integer.parseInt(bId));
-		HashMap<String, Object> results = new HashMap<>();
-		results.put("result", "result");
 		
-		return results;
+		Board board = boardService.getBoard(Integer.parseInt(bId));
+		String writer = board.getWriter();
+		HttpSession session = request.getSession();
+		String boardWriter = (String)session.getAttribute("user_id");
+		String[] test = boardWriter.split("@");
+		boardWriter = test[0];
+		
+		if(writer.equals(boardWriter)) {
+			boardService.removeBoard(Integer.parseInt(bId));
+			int result = boardService.modifyBoard(board);
+			String msg = "글삭제 완료.";
+			HashMap<String, Object> results = new HashMap<>();
+			results.put("msg",msg);
+			results.put("result", result);
+			return results; 
+		}else {
+			int result = 0;
+			String msg = "자신이 작성한 글만 삭제 가능합니다";
+			HashMap<String, Object> results = new HashMap<>();
+			results.put("result", result);
+			results.put("msg",msg);
+			return results; 
+		}
 	}
 	
-	
-
-	
-	
 }
+

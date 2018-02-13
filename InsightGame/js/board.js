@@ -36,7 +36,7 @@ $(document).ready(function(){
 	page = 1;
 	$("#writeContent").keydown(function (key) {
         if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
-        	$('#writeBtn').click();
+        	$('#writeBtn').click();   	
         }
     });
 	
@@ -50,9 +50,20 @@ $(document).ready(function(){
 		if(!$(this).find('td[name="header"]'))
 			$(this).css('background', 'lightgray')
 	})
+	
 	$('#writeBtn').on('click', function(){
-		var content = $('#writeContent').val();				
-//		alert(header+"//"+content);
+		var content = $('#writeContent').val();
+		
+		
+//		
+//		$(function(){
+//			if (content.length === 0){
+//				alert('글 써라')
+//			}else if(window.sessionStorage ==null){
+//				alert('로그인 해라')
+//			}
+//		})
+//		
 		$.ajax({
 			url: "write.do", 
 			type: "post",
@@ -63,13 +74,14 @@ $(document).ready(function(){
 			}, 
 			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 			success: function(data){
-	        	if(data != null){
+				//alert(data.msg)
+	        	if(data.msg == true){
 		        	location.reload();
 	        	}
 	    	},
 	    	error:function(request,status,error){
-//			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-	    		alert("300자 이내로 작성해주세요");
+			    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	    		//alert("300자 이내로 작성해주세요");
 			}
 		});
 	});
@@ -110,7 +122,7 @@ $(document).ready(function(){
 									+'</div>'
 								+'</div>'
 							+'</td>').appendTo('#boardTable tbody');
-					var tr2 = $('<tr>').attr({'id':'trr_'+bId}).html('<td colspan="2" name="header" value="'+header+'" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
+					var tr2 = $('<tr>').attr({'id':'trr_'+bId}).html('<td colspan="2" name="header" header="'+header+'" content="'+content+'" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px; border-top:0px;"><span style="color: gray">['+header+']</span> '+content).appendTo('#boardTable tbody');
 					var tr3 = $('<tr>').attr({'name':'regDate', 'colspan':"2", 'style':"text-align: left; padding: 0px 1px; border-top:0px;"})
 						.text(regDate).insertAfter(tr2);
 					var tr4 = $('<tr>').attr({'id':'tr_'+bId})
@@ -127,6 +139,28 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+	$(function() {
+	    $('.writeLimit').keyup(function (e){
+	        var content = $(this).val();
+	        $(this).height(((content.split('\n').length + 1) * 2) + 'em');
+	        $('.counter').html(content.length + '/300');
+	    });
+	    $('.writeLimit').keyup();
+	    
+	    $('.writeLimit').on('keyup', function() {
+	        if($(this).val().length > 294) {
+	        	$('.counter').css({'background': 'rgb(255, 127, 127)', 'color': 'white'});
+	        	
+	            if($(this).val().length > 300) {
+	                $(this).val($(this).val().substring(0, 300));
+	            }
+	    	}
+	        else
+	        	$('.counter').css({'background': 'white', 'color': 'black'});
+	    });
+	});
+	
 });
 
 function setHeader(val){
@@ -167,12 +201,38 @@ function getCommentList(bId, targetTr){
 	})
 }
 function modifyBtn(bId){
+	$(function() {
+	    $('.modifyLimit').keyup(function (e){
+	        var content = $(this).val();
+	        $(this).height(((content.split('\n').length + 1) * 2) + 'em');
+	        $('.modifyCounter').html(content.length + '/300');
+	    });
+	   
+	    $('.modifyLimit').keyup();
+	    
+	    $('.modifyLimit').on('keyup', function() {
+	        if($(this).val().length > 294) {
+	        	$('.modifyCounter').css({'background': 'rgb(255, 127, 127)', 'color': 'white'});
+	        	
+	            if($(this).val().length > 300) {
+	                $(this).val($(this).val().substring(0, 300));
+	            }
+			}
+	        else
+	        	$('.modifyCounter').css({'background': 'white', 'color': 'black'});
+	    });
+	});
+	
+
+	
 	var targetTr = $('#tr_'+bId);
 	var header = $('#trr_'+bId+' td').attr('header');
 	var content = $('#trr_'+bId+' td').attr('content');
 	var modContent = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(1)")
 		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;">'
-					+'<span style="color: gray; margin: 0 auto;">['+header+']</span><textarea id="re_content" class="form-control" rows="2" style="width:98%; margin-left:6px; margin-right:6px;" onkeydown="JavaScript:Enter_Check2();">'+content+'</textarea>'
+					+'<span style="color: gray; margin: 0 auto;">['+header+']</span>'
+					+'<span class="modifyCounter" style="position: absolute; border-radius: 0.5em; padding: 0 .5em 0 .5em; font-size: 0.75em; margin-left: 46.77%; margin-top:6.4%; z-index:960;">###</span>'
+					+'<textarea id="re_content" class="form-control modifyLimit" rows="3" style="width:98%; margin-left:6px; margin-right:6px;" onkeydown="JavaScript:Enter_Check2();">'+content+'</textarea>'
 					+'<button type="button" id="submitBtn1" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px; margin-top: 4px; margin-left: 84.5%;">수정</button>'
 					+'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()" style="margin-top: 4px;">취소</button>'
 					+'</td>');
@@ -197,7 +257,13 @@ function submitBtn(bId){
 		}, 
 		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 		success: function(data){
-			location.reload()
+			if(data.result===1){
+				alert(data.msg)
+				location.reload()
+			}else{
+				alert(data.msg)
+				location.reload()
+			}
 		},
 		error:function(request,status,error){
 		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -214,7 +280,13 @@ function deleteBtn(bId){
 			"bId" : bId,
 		}, 
 		success: function(data){
-			location.reload()
+			if(data.result===1){
+				alert(data.msg)
+				location.reload()
+			}else{
+				alert(data.msg)
+				location.reload()
+			}
 		},
 		error:function(request,status,error){
 		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -267,6 +339,29 @@ function getCommentList(bId, targetTr){
 	})
 }
 function commentBtn(bId){
+	$(function() {
+	    $('.commentLimit').keyup(function (e){
+	        var content = $(this).val();
+	        $(this).height(((content.split('\n').length + 1) * 2) + 'em');
+	        $('.commentCounter').html(content.length + '/300');
+	    });
+	   
+	    $('.commentLimit').keyup();
+	    
+	    $('.commentLimit').on('keyup', function() {
+	        if($(this).val().length > 294) {
+	        	$('.commentCounter').css({'background': 'rgb(255, 127, 127)', 'color': 'white'});
+	        	
+	            if($(this).val().length > 300) {
+	            	alert('300자 이내로 작성해주세요')
+	                $(this).val($(this).val().substring(0, 300));
+	            }
+			}
+	        else
+	        	$('.commentCounter').css({'background': 'white', 'color': 'black'});
+	    });
+	});
+	
 	var targetTr = $('#tr_'+bId);
 	if(targetTr.find('button[name=commentBtn]').text() == '취소'){
 		$('.tr_cmts_'+bId).remove();
@@ -281,7 +376,7 @@ function commentBtn(bId){
 			getCommentList(bId, targetTr);
 			// tr> td1('ㄴ') td2,3,4('input') td5(작성자) td6('button')
 			return '<tr class="tr_cmts_'+bId+' writeComment" id=tr_cmt_'+bId+'>'+
-				'<td colspan="2" style="text-align: left; vertical-align: middle;">└ <input id="inputComment" type="text" class="form-control" style="width: 86.8%; display: inline; margin-left: 11px; margin-right: 7px;" onkeydown="JavaScript:Enter_Check1();"><button type="button" id="writeBtn_comment1" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="border: 1px solid transparent; margin-bottom:3.5px;">등록</button></td>'
+				'<td colspan="2" style="text-align: left; vertical-align: middle;">└ <input id="inputComment" type="text" class="form-control commentLimit" style="width: 86.8%; height:38px; max-height:38px; margin-left: 11px; margin-right: 7px;" onkeydown="JavaScript:Enter_Check1();"><button type="button" id="writeBtn_comment1" class="btn btn-secondary btn-sm" onclick="writeBtn_comment('+bId+')" style="border: 1px solid transparent; margin-bottom:3.5px;">등록</button></td>'
 				+ '</tr>';
 		});
 	}
@@ -334,11 +429,3 @@ function Enter_Check2(){
 	}
 }
 
-$(function() {
-    $('#writeContent').keyup(function (e){
-        var content = $(this).val();
-        $(this).height(((content.split('\n').length + 1) * 1.5) + 'em');
-        $('#counter').html(content.length + '/300');
-    });
-    $('#content').keyup();
-});
