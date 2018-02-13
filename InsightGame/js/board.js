@@ -54,16 +54,6 @@ $(document).ready(function(){
 	$('#writeBtn').on('click', function(){
 		var content = $('#writeContent').val();
 		
-		
-//		
-//		$(function(){
-//			if (content.length === 0){
-//				alert('글 써라')
-//			}else if(window.sessionStorage ==null){
-//				alert('로그인 해라')
-//			}
-//		})
-//		
 		$.ajax({
 			url: "write.do", 
 			type: "post",
@@ -74,9 +64,12 @@ $(document).ready(function(){
 			}, 
 			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 			success: function(data){
-				//alert(data.msg)
-	        	if(data.msg == true){
-		        	location.reload();
+	        	if(data.result > 0){
+	        		alert(data.msg)
+		        	location.reload()
+	        	}else{
+	        		alert(data.msg)
+	        		location.reload()
 	        	}
 	    	},
 	    	error:function(request,status,error){
