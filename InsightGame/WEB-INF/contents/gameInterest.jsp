@@ -38,6 +38,7 @@
             var ctlist2 = JSON.parse(ctlist);
             var IRLlist2 = JSON.parse(IRLlist);
 
+            
             var today = new Date();
             var dd = today.getDate();
             var mm = today.getMonth() + 01; //January is 0!
