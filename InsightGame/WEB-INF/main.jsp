@@ -312,7 +312,7 @@
 
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white">
+		<section class="bg-primary text-black">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view 수)</h2>
 				
