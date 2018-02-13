@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -9,9 +10,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import dao.IClipDao;
+import dao.IRbrankingDao;
 import dao.IScheduleDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
+import model.Rbranking;
 import model.Tgd;
 import model.twgame;
 
@@ -27,6 +30,9 @@ public class test {
  public ITgdDao tgdDao;
  @Autowired
  public ITwgameDao twgameDao;
+ @Autowired
+ public IRbrankingDao rbrankingDao;
+ 
 
 // @org.junit.Test
 // public void test2() {
@@ -68,19 +74,38 @@ public class test {
 //  }
 // }
  
- @org.junit.Test
- public void test6() {
-  List<Integer> list = new ArrayList<Integer>(); 
-  list=twgameDao.gametoview("Overwatch");
+// @org.junit.Test
+// public void test6() {
+// 	Integer list = 0;
+//    HashMap<String, String> map = new HashMap<String, String>();
+//    
+//    map.put("name", "Overwatch");
+//    map.put("day", "2018-02-12");
+//
+//    list=twgameDao.gametoview(map);
+//
+// }
+ 
+//@org.junit.Test
+//public void test7() {
+//	List<HashMap<String, Object>> list= new ArrayList<HashMap<String, Object>>(); 
+//	list=twgameDao.selectgametoview("2018-02-08");
+//
+//for(HashMap<String, Object> tw: list) {
+//	  System.out.println(tw.toString());
+//}
+//}
+ 
+ 
+@org.junit.Test
+public void test8() {
+	List<Rbranking> list = new ArrayList<Rbranking>();
+	list=rbrankingDao.select3dsRanking("2018-02-12");
 
-  for(Integer tw: list) {
-	  System.out.println(tw.toString());
-  }
- }
- 
- 
- 
- 
- 
+	for(Rbranking rb: list) {
+		System.out.println(rb.toString());
+	}
+}
+  
 
 }

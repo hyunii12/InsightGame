@@ -20,25 +20,42 @@ $(document).ready(function() {
 			}
 		})
 				
-  });
-
-	   $.ajax({
+		$.ajax({
 			url:"streamerBoardNumAsTime.do",
 			type: "get",
 			dataType:"html",
 			success: function(data){
-				$('#kkk').append(data)
+				$('#kkk').html(data);
 			},
 			error: function(xhar, status, error){
 				alert(error);
 			}
-	   });
-	   
-	   
-	   
-	   
-	   
-	   
-	   
+		})
 		
-	
+		$.ajax({
+			url:"gameRankAsType.do",
+			type: "get",
+			dataType:"html",
+			success: function(data){
+				alert('asdf')
+				$('#gameRanking').html(data);
+			},
+			error: function(xhar, status, error){
+				alert(error);
+			}
+		})
+		$.ajax({
+			url:"gameInterest.do",
+			type: "get",
+			dataType:"html",
+			success: function(data){
+				
+				$('#GI').html(data)
+			},
+			error: function(xhar, status, error){
+				alert(error);
+			}
+		})
+});
+
+	  

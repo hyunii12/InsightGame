@@ -131,49 +131,75 @@ table.gameRankAsType tr:hover td{
 
 <body>
 
+
 <table class="gameRankAsType" cellspacing='0'>
 	<tr>
 		<th>순위</th>
 		<th>온라인(PC)</th>
-		<th>비디오</th>
 		<th>모바일</th>
+		<th>닌텐도(DS)</th>
+		<th>플레이스테이션(PS4)</th>
+		<th>xBox</th>
+		<th>닌텐도(Switch)</th>
+		<th>플레이스테이션(PSvita)</th>
 	</tr>
     
 	<tr>
 		<td>1</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>${pcbrank[0].name}</td>
+		<td>${mobilebrank[0].name}</td>
+		<td>${dsrank[0].name}</td>
+		<td>${ps4brank[0].name}</td>
+		<td>${xboxbrank[0].name}</td>
+		<td>${switchbrank[0].name}</td>
+		<td>${psvitabrank[0].name}</td>
 	</tr>
 	
 	<tr class='even'>
 		<td>2</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>${pcbrank[1].name}</td>
+		<td>${mobilebrank[1].name}</td>
+		<td>${dsrank[1].name}</td>
+		<td>${ps4brank[1].name}</td>
+		<td>${xboxbrank[1].name}</td>
+		<td>${switchbrank[1].name}</td>
+		<td>${psvitabrank[1].name}</td>
 	</tr>
 
 	<tr>
 		<td>3</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>${pcbrank[2].name}</td>
+		<td>${mobilebrank[2].name}</td>
+		<td>${dsrank[2].name}</td>
+		<td>${ps4brank[2].name}</td>
+		<td>${xboxbrank[2].name}</td>
+		<td>${switchbrank[2].name}</td>
+		<td>${psvitabrank[2].name}</td>
 	</tr>
 	<tr class='even'>
 		<td>4</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>${pcbrank[3].name}</td>
+		<td>${mobilebrank[3].name}</td>
+		<td>${dsrank[3].name}</td>
+		<td>${ps4brank[3].name}</td>
+		<td>${xboxbrank[3].name}</td>
+		<td>${switchbrank[3].name}</td>
+		<td>${psvitabrank[3].name}</td>
 	</tr>
 	
     <tr>
 		<td>5</td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>${pcbrank[4].name}</td>
+		<td>${mobilebrank[4].name}</td>
+		<td>${dsrank[4].name}</td>
+		<td>${ps4brank[4].name}</td>
+		<td>${xboxbrank[4].name}</td>
+		<td>${switchbrank[4].name}</td>
+		<td>${psvitabrank[4].name}</td>
 	</tr>
 
 </table>
+
 
 
 </body>
