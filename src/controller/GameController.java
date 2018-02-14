@@ -106,7 +106,7 @@ public class GameController {
 //		System.out.println(nalza);
 //		for(Integer i: IRLlist) {
 //			System.out.println(i);
-//		}
+//		}//
 		
 		model.addAttribute("overlist",overlist);
 		model.addAttribute("Leaguelist",Leaguelist);
