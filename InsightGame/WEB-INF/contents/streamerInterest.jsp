@@ -30,78 +30,67 @@ div.table-users {
   width: 800px;
 }
 
-table {
+table.streamerinterest {
   width: 100%;
 }
-table td, table th {
+table.streamerinterest td, table.streamerinterest th {
   color: #2b686e;
   padding: 10px;
 }
-table td {
+table.streamerinterest td {
   text-align: center;
   vertical-align: middle;
 }
-table td:last-child {
+table.streamerinterest td:last-child {
   font-size: 0.95em;
   line-height: 1.4;
   text-align: center;
 }
-table th {
+table.streamerinterest th {
   background-color: #daeff1;
   font-weight: 300;
   text-align: center;
 }
-table tr:nth-child(2n) {
+table.streamerinterest tr:nth-child(2n) {
   background-color: white;
 }
-table tr:nth-child(2n+1) {
+table.streamerinterest tr:nth-child(2n+1) {
   background-color: #edf7f8;
 }
 
 @media screen and (max-width: 700px) {
-  table, tr, td {
+  table.streamerinterest, tr, td {
     display: block;
   }
 
-  td:first-child {
+table.streamerinterest td:first-child {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     width: 100px;
   }
-  td:not(:first-child) {
+ table.streamerinterest td:not(:first-child) {
     clear: both;
     margin-left: 100px;
     padding: 4px 20px 4px 90px;
     position: relative;
     text-align: left;
   }
-  td:not(:first-child):before {
+ table.streamerinterest td:not(:first-child):before {
     color: #91ced4;
     content: '';
     display: block;
     left: 0;
     position: absolute;
   }
-  td:nth-child(2):before {
-    content: 'Name:';
-  }
-  td:nth-child(3):before {
-    content: 'Email:';
-  }
-  td:nth-child(4):before {
-    content: 'Phone:';
-  }
-  td:nth-child(5):before {
-    content: 'Comments:';
-  }
+ 
 
-  tr {
+ table.streamerinterest tr {
     padding: 10px 0;
     position: relative;
   }
-  tr:first-child {
+ table.streamerinterest tr:first-child {
     display: none;
   }
 }
@@ -116,7 +105,7 @@ table tr:nth-child(2n+1) {
   }
 
 
-  td:first-child {
+ table.streamerinterest td:first-child {
     background-color: #c8e7ea;
     border-bottom: 1px solid #91ced4;
     border-radius: 10px 10px 0 0;
@@ -127,21 +116,21 @@ table tr:nth-child(2n+1) {
     width: 100%;
   }
   
-  td:not(:first-child) {
+  table.streamerinterest td:not(:first-child) {
     margin: 0;
     padding: 5px 1em;
     width: 100%;
   }
-  td:not(:first-child):before {
+  table.streamerinterest td:not(:first-child):before {
     font-size: .8em;
     padding-top: 0.3em;
     position: relative;
   }
-  td:last-child {
+ table.streamerinterest td:last-child {
     padding-bottom: 1rem !important;
   }
 
-  tr {
+  table.streamerinterest tr {
     background-color: white !important;
     border: 1px solid #6cbec6;
     border-radius: 10px;
