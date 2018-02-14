@@ -60,10 +60,9 @@ public class StreamerController {
 			System.out.println(c.toString());
 		}
 		
-//		model.addAttribute("cliplist", list);
+		model.addAttribute("cliplist", list);
 
-		return null;
-//		return "contents/hotclips";
+		return "contents/hotclips";
 	}
 
 
