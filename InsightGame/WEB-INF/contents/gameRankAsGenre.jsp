@@ -5,197 +5,212 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>장르별게임순위</title>
-<style type="text/css">
-body{
-	font-family:Arial, Helvetica, sans-serif;
-	margin:0 auto;
-}
-a:link {
-	color: #666;
-	font-weight: bold;
-	text-decoration:none;
-}
-a:visited {
-	color: #666;
-	font-weight:bold;
-	text-decoration:none;
-}
-a:active,
-a:hover {
-	color: #bd5a35;
-	text-decoration:underline;
+<style rel="stylesheet">
+
+
+div.gameRankAsGenreheader {
+  background-color: #327a81;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 
-table.gameRankAsGenre a:link {
-	color: #666;
-	font-weight: bold;
-	text-decoration:none;
-}
-table.gameRankAsGenre a:visited {
-	color: #999999;
-	font-weight:bold;
-	text-decoration:none;
-}
-table.gameRankAsGenre a:active,
-table.gameRankAsGenre a:hover {
-	color: #bd5a35;
-	text-decoration:underline;
-}
-table.gameRankAsGenre {
-	font-family:Arial, Helvetica, sans-serif;
-	color:#666;
-	font-size:12px;
-	text-shadow: 1px 1px 0px #fff;
-	background:#eaebec;
-	margin:20px;
-	border:#ccc 1px solid;
 
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
+div.table-users {
+  border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+  width: 1000px;
+}
 
-	-moz-box-shadow: 0 1px 2px #d1d1d1;
-	-webkit-box-shadow: 0 1px 2px #d1d1d1;
-	box-shadow: 0 1px 2px #d1d1d1;
+table {
+  width: 100%;
 }
-table.gameRankAsGenre th {
-	padding:15px;
-	border-top:1px solid #fafafa;
-	border-bottom:1px solid #e0e0e0;
+table td, table th {
+  color: #2b686e;
+  padding: 10px;
+}
+table td {
+  text-align: center;
+  vertical-align: middle;
+}
+table td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: center;
+}
+table th {
+  background-color: #daeff1;
+  font-weight: 300;
+  text-align: center;
+}
+table tr:nth-child(2n) {
+  background-color: white;
+}
+table tr:nth-child(2n+1) {
+  background-color: #edf7f8;
+}
 
-	background: #ededed;
-	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
-	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+  }
+
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100px;
+  }
+  td:not(:first-child) {
+    clear: both;
+    margin-left: 100px;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: left;
+  }
+  td:not(:first-child):before {
+    color: #91ced4;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+ 
+
+  tr {
+    padding: 10px 0;
+    position: relative;
+  }
+  tr:first-child {
+    display: none;
+  }
 }
-table.gameRankAsGenre th:first-child{
-	text-align: left;
-	padding-left:20px;
-}
-table.gameRankAsGenre tr:first-child th:first-child{
-	-moz-border-radius-topleft:3px;
-	-webkit-border-top-left-radius:3px;
-	border-top-left-radius:3px;
-}
-table.gameRankAsGenre tr:first-child th:last-child{
-	-moz-border-radius-topright:3px;
-	-webkit-border-top-right-radius:3px;
-	border-top-right-radius:3px;
-}
-table.gameRankAsGenre tr{
-	text-align: center;
-	padding-left:20px;
-}
-table.gameRankAsGenre tr td:first-child{
-	text-align: left;
-	padding-left:20px;
-	border-left: 0;
-}
-table.gameRankAsGenre tr td {
-	padding:12px;
-	border-top: 1px solid #ffffff;
-	border-bottom:1px solid #e0e0e0;
-	border-left: 1px solid #e0e0e0;
-	
-	background: #fafafa;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
-	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
-}
-table.gameRankAsGenre tr.even td{
-	background: #f6f6f6;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
-	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
-}
-table.gameRankAsGenre tr:last-child td{
-	border-bottom:0;
-}
-table.gameRankAsGenre tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:3px;
-	-webkit-border-bottom-left-radius:3px;
-	border-bottom-left-radius:3px;
-}
-table.gameRankAsGenre tr:last-child td:last-child{
-	-moz-border-radius-bottomright:3px;
-	-webkit-border-bottom-right-radius:3px;
-	border-bottom-right-radius:3px;
-}
-table.gameRankAsGenre tr:hover td{
-	background: #f2f2f2;
-	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
-	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+@media screen and (max-width: 500px) {
+  .header {
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+
+  td:first-child {
+    background-color: #c8e7ea;
+    border-bottom: 1px solid #91ced4;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    width: 100%;
+  }
+  
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+  td:not(:first-child):before {
+    font-size: .8em;
+    padding-top: 0.3em;
+    position: relative;
+  }
+  td:last-child {
+    padding-bottom: 1rem !important;
+  }
+
+  tr {
+    background-color: white !important;
+    border: 1px solid #6cbec6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+  }
 }
 
 </style>
 </head>
 <body>
 
-<table class="gameRankAsGenre" cellspacing='0'>
+
+	<div class="table-users">
+		<div class="gameRankAsGenreheader">유형별 게임 순위</div>
+
+
+<table class="gameRankAsGenre" cellspacing='0' style="width:1000px">
 	<tr>
 		<th>순위</th>
-		<th>온라인(PC)</th>
-		<th>모바일</th>
-		<th>닌텐도(DS)</th>
-		<th>플레이스테이션(PS4)</th>
-		<th>xBox</th>
-		<th>닌텐도(Switch)</th>
-		<th>플레이스테이션(PSvita)</th>
+		<th>FPS</th>
+		<th>MMORPG</th>
+		<th>액션</th>
+		<th>board_puzzle_music</th>
+		<th>스포츠</th>
 	</tr>
-    
+	    
 	<tr>
 		<td>1</td>
-		<td>${pcbrank[0].name}</td>
-		<td>${mobilebrank[0].name}</td>
-		<td>${dsrank[0].name}</td>
-		<td>${ps4brank[0].name}</td>
-		<td>${xboxbrank[0].name}</td>
-		<td>${switchbrank[0].name}</td>
-		<td>${psvitabrank[0].name}</td>
+		<td>${fpsrank[0].name}</td>
+		<td>${mmorpgrank[0].name}</td>
+		<td>${actionrank[0].name}</td>
+		<td>${board_puzzle_musicrank[0].name}</td>
+		<td>${sportrank[0].name}</td>
 	</tr>
 	
 	<tr class='even'>
 		<td>2</td>
-		<td>${pcbrank[1].name}</td>
-		<td>${mobilebrank[1].name}</td>
-		<td>${dsrank[1].name}</td>
-		<td>${ps4brank[1].name}</td>
-		<td>${xboxbrank[1].name}</td>
-		<td>${switchbrank[1].name}</td>
-		<td>${psvitabrank[1].name}</td>
+		<td>${fpsrank[1].name}</td>
+		<td>${mmorpgrank[1].name}</td>
+		<td>${actionrank[1].name}</td>
+		<td>${board_puzzle_musicrank[1].name}</td>
+		<td>${sportrank[1].name}</td>
 	</tr>
 
 	<tr>
 		<td>3</td>
-		<td>${pcbrank[2].name}</td>
-		<td>${mobilebrank[2].name}</td>
-		<td>${dsrank[2].name}</td>
-		<td>${ps4brank[2].name}</td>
-		<td>${xboxbrank[2].name}</td>
-		<td>${switchbrank[2].name}</td>
-		<td>${psvitabrank[2].name}</td>
+		<td>${fpsrank[2].name}</td>
+		<td>${mmorpgrank[2].name}</td>
+		<td>${actionrank[2].name}</td>
+		<td>${board_puzzle_musicrank[2].name}</td>
+		<td>${sportrank[2].name}</td>
 	</tr>
 	<tr class='even'>
 		<td>4</td>
-		<td>${pcbrank[3].name}</td>
-		<td>${mobilebrank[3].name}</td>
-		<td>${dsrank[3].name}</td>
-		<td>${ps4brank[3].name}</td>
-		<td>${xboxbrank[3].name}</td>
-		<td>${switchbrank[3].name}</td>
-		<td>${psvitabrank[3].name}</td>
+		<td>${fpsrank[3].name}</td>
+		<td>${mmorpgrank[3].name}</td>
+		<td>${actionrank[3].name}</td>
+		<td>${board_puzzle_musicrank[3].name}</td>
+		<td>${sportrank[3].name}</td>
 	</tr>
 	
     <tr>
 		<td>5</td>
-		<td>${pcbrank[4].name}</td>
-		<td>${mobilebrank[4].name}</td>
-		<td>${dsrank[4].name}</td>
-		<td>${ps4brank[4].name}</td>
-		<td>${xboxbrank[4].name}</td>
-		<td>${switchbrank[4].name}</td>
-		<td>${psvitabrank[4].name}</td>
+		<td>${fpsrank[4].name}</td>
+		<td>${mmorpgrank[4].name}</td>
+		<td>${actionrank[4].name}</td>
+		<td>${board_puzzle_musicrank[4].name}</td>
+		<td>${sportrank[4].name}</td>
 	</tr>
 
 </table>
+
+</div>
 
 
 </body>
