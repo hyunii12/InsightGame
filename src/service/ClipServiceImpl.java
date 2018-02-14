@@ -26,6 +26,7 @@ public class ClipServiceImpl implements IClipService{
 		String formatDateTime = yesterday.format(formatter);
 		
 		return clipDao.selectcliplist(formatDateTime);
+		
 	}
 	
 }
