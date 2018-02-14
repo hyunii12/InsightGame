@@ -156,7 +156,8 @@ table tr:nth-child(2n+1) {
 
 <table class="gameRankAsGenre" cellspacing='0' style="width:1000px">
 	<tr>
-		<th>순위</th>
+		<tr>
+		<th scope="row">순위</th>
 		<th>FPS</th>
 		<th>MMORPG</th>
 		<th>액션</th>
@@ -165,7 +166,7 @@ table tr:nth-child(2n+1) {
 	</tr>
 	    
 	<tr>
-		<td>1</td>
+		<th scope="row">1</th>
 		<td>${fpsrank[0].name}</td>
 		<td>${mmorpgrank[0].name}</td>
 		<td>${actionrank[0].name}</td>
@@ -173,8 +174,8 @@ table tr:nth-child(2n+1) {
 		<td>${sportrank[0].name}</td>
 	</tr>
 	
-	<tr class='even'>
-		<td>2</td>
+	<tr>
+		<th scope="row">2</th>
 		<td>${fpsrank[1].name}</td>
 		<td>${mmorpgrank[1].name}</td>
 		<td>${actionrank[1].name}</td>
@@ -183,15 +184,15 @@ table tr:nth-child(2n+1) {
 	</tr>
 
 	<tr>
-		<td>3</td>
+		<th scope="row">3</th>
 		<td>${fpsrank[2].name}</td>
 		<td>${mmorpgrank[2].name}</td>
 		<td>${actionrank[2].name}</td>
 		<td>${board_puzzle_musicrank[2].name}</td>
 		<td>${sportrank[2].name}</td>
 	</tr>
-	<tr class='even'>
-		<td>4</td>
+	<tr>
+		<th scope="row">4</th>
 		<td>${fpsrank[3].name}</td>
 		<td>${mmorpgrank[3].name}</td>
 		<td>${actionrank[3].name}</td>
@@ -200,7 +201,7 @@ table tr:nth-child(2n+1) {
 	</tr>
 	
     <tr>
-		<td>5</td>
+		<th scope="row">5</th>
 		<td>${fpsrank[4].name}</td>
 		<td>${mmorpgrank[4].name}</td>
 		<td>${actionrank[4].name}</td>

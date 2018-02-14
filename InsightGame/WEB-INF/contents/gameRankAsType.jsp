@@ -155,7 +155,7 @@ table tr:nth-child(2n+1) {
 		<div class="gameRankAsTypeheader">유형별 게임 순위</div>
 
 
-<table class="gameRankAsType" cellspacing='0' style="width:970px">
+<table class="gameRankAsType" cellspacing='0' style="width:1000px">
 	<tr>
 		<th scope="row">순위</th>
 		<th>온라인(PC)</th>
@@ -169,13 +169,13 @@ table tr:nth-child(2n+1) {
     
 	<tr>
 		<th scope="row">1</th>
-		<td style="width: 116px;">${pcbrank[0].name}</td>
-		<td style="width: 116px;">${mobilebrank[0].name}</td>
-		<td style="width: 116px;">${dsrank[0].name}</td>
-		<td style="width: 116px;">${ps4brank[0].name}</td>
-		<td style="width: 116px;">${xboxbrank[0].name}</td>
-		<td style="width: 116px;">${switchbrank[0].name}</td>
-		<td style="width: 116px;">${psvitabrank[0].name}</td>
+		<td>${pcbrank[0].name}</td>
+		<td>${mobilebrank[0].name}</td>
+		<td>${dsrank[0].name}</td>
+		<td>${ps4brank[0].name}</td>
+		<td>${xboxbrank[0].name}</td>
+		<td>${switchbrank[0].name}</td>
+		<td>${psvitabrank[0].name}</td>
 	</tr>
 	
 	<tr>
