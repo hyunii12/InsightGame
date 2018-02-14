@@ -36,11 +36,9 @@
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">Streamer
-				Issues Rank</h2>
-			<hr class="star-light mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Streamer Issues Rank</h2>
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
 				<div style="margin: 0 auto">
@@ -51,12 +49,9 @@
 		</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer
-				Rank</h2>
 			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer Rank</h2>
 			<div class="row">
 				<div style="margin: 0 auto">
 					<jsp:include page="../contents/streamerRank.jsp" />
@@ -86,15 +81,13 @@
 				<!-- 								</div> -->
 			</div>
 		</div>
-		</section>
+		
 
-		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-<!-- 			<h2 class="text-center text-uppercase text-white">인기 게임</h2> -->
-<!-- 			<hr class="star-light mb-5"> -->
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">top games - streamer</h2>
 			<div class="row">
-<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">스트리머별</h3> -->
 				<div id="streamerInterest" align="center" style="margin: 0 auto;">
 					<jsp:include page="../contents/streamerInterest.jsp" />
 				</div>
@@ -102,12 +95,11 @@
 		</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
 		<div class="container1">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
-			<hr class="star-dark mb-5">
+			
 			<div class="row">
 
 				<div class="col-md-6">
@@ -149,15 +141,13 @@
 				</div>
 			</div>
 		</div>
-		</section>
 
-		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">핫 클립</h2>
-			<hr class="star-light mb-5">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">hot clip</h2>
 			<div class="row">
-								<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3>
+				<h3 class="text-center" style="margin: 0 auto;">전체 스트리머</h3>
 				<div style="margin: 0 auto">
 					<jsp:include page="../contents/hotclips.jsp" >
 						<jsp:param value="${cliplist}" name="name"/>

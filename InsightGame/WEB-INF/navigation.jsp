@@ -150,15 +150,15 @@
 
 	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 1028;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
-			style="color: white; font-weight: bold;">게임</a>
+			style="color: white; font-weight: bold;">GAME</a>
 	</div>
 	<div style="position: fixed; right: 45.5%; top: 100px; z-index: 1039;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
-			style="color: white; font-weight: bold;">스트리머</a>
+			style="color: white; font-weight: bold;">STREAMER</a>
 	</div>
 	<div style="position: fixed; left: 73%; top: 100px; z-index: 1030;">
 		<a class="navbar-brand js-scroll-trigger" href="board.do"
-			style="color: white; font-weight: bold;">게시판</a>
+			style="color: white; font-weight: bold;">BOARD</a>
 	</div>
 
 </body>

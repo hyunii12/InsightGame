@@ -161,8 +161,7 @@ table tr:nth-child(2n+1) {
 <body>
 
 	<div class="table-users">
-		<div class="streamerheader">스트리머별 인기게임</div>
-
+		
 		<table class="streamerinterest">
 			<tr>
 				<th scope="row">스트리머</th>

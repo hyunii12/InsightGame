@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import model.Game;
 import model.Rbranking;
 import model.twgame;
 import service.IRbrankingService;
@@ -49,7 +50,9 @@ public class GameController {
 	@RequestMapping("gameDetail.do")
 	public String gameDetail(Model model) {
 	System.out.println("여기는 게임디테일");
-			return "pages/gameDetail";
+		List<Game> gameInfo = new ArrayList<Game>();
+		model.addAttribute("gameInfo",gameInfo);
+		return "pages/gameDetail";
 	}
 	//
 	@RequestMapping("gameInterest.do")

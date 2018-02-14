@@ -12,7 +12,7 @@ div.gameRankAsTypeheader {
   background-color: #327a81;
   color: white;
   font-size: 1.5em;
-  padding: 1rem;
+  padding: 8px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -29,36 +29,36 @@ div.table-users {
   width: 1000px;
 }
 
-table {
+table.gameRankAsType {
   width: 100%;
 }
-table td, table th {
+table.gameRankAsType td, table.gameRankAsType th {
   color: #2b686e;
-  padding: 10px;
+  padding: 5px;
 }
-table td {
+table.gameRankAsType td {
   text-align: center;
   vertical-align: middle;
 }
-table td:last-child {
-  font-size: 0.95em;
+table.gameRankAsType td:last-child {
+  font-size: 1em;
   line-height: 1.4;
   text-align: center;
 }
-table th {
+table.gameRankAsType th {
   background-color: #daeff1;
   font-weight: 300;
   text-align: center;
 }
-table tr:nth-child(2n) {
+table.gameRankAsType tr:nth-child(2n) {
   background-color: white;
 }
-table tr:nth-child(2n+1) {
+table.gameRankAsType tr:nth-child(2n+1) {
   background-color: #edf7f8;
 }
 
 @media screen and (max-width: 700px) {
-  table, tr, td {
+  table.gameRankAsType, tr, td {
     display: block;
   }
 
@@ -97,7 +97,7 @@ table tr:nth-child(2n+1) {
   .header {
     background-color: transparent;
     color: white;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: 700;
     padding: 0;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
@@ -121,7 +121,7 @@ table tr:nth-child(2n+1) {
     width: 100%;
   }
   td:not(:first-child):before {
-    font-size: .8em;
+    font-size: 1em;
     padding-top: 0.3em;
     position: relative;
   }
@@ -151,31 +151,29 @@ table tr:nth-child(2n+1) {
 <body>
 
 
-	<div class="table-users">
-		<div class="gameRankAsTypeheader">유형별 게임 순위</div>
-
-
-<table class="gameRankAsType" cellspacing='0' style="width:970px">
+	<div class="table-users" style="width:940px">
+		
+<table class="gameRankAsType" cellspacing='0' style="font-size: 0.9rem">
 	<tr>
 		<th scope="row">순위</th>
-		<th>온라인(PC)</th>
+		<th>온라인<br>(PC)</th>
 		<th>모바일</th>
-		<th>닌텐도(DS)</th>
-		<th>플레이스테이션(PS4)</th>
+		<th>닌텐도<br>(DS)</th>
+		<th>플레이스테이션<br>(PS4)</th>
 		<th>xBox</th>
-		<th>닌텐도(Switch)</th>
-		<th>플레이스테이션(PSvita)</th>
+		<th>닌텐도<br>(Switch)</th>
+		<th>플레이스테이션<br>(PSvita)</th>
 	</tr>
     
 	<tr>
 		<th scope="row">1</th>
-		<td style="width: 116px;">${pcbrank[0].name}</td>
-		<td style="width: 116px;">${mobilebrank[0].name}</td>
-		<td style="width: 116px;">${dsrank[0].name}</td>
-		<td style="width: 116px;">${ps4brank[0].name}</td>
-		<td style="width: 116px;">${xboxbrank[0].name}</td>
-		<td style="width: 116px;">${switchbrank[0].name}</td>
-		<td style="width: 116px;">${psvitabrank[0].name}</td>
+		<td style="width: 128px;">${pcbrank[0].name}</td>
+		<td style="width: 128px;">${mobilebrank[0].name}</td>
+		<td style="width: 128px;">${dsrank[0].name}</td>
+		<td style="width: 128px;">${ps4brank[0].name}</td>
+		<td style="width: 128px;">${xboxbrank[0].name}</td>
+		<td style="width: 128px;">${switchbrank[0].name}</td>
+		<td style="width: 128px;">${psvitabrank[0].name}</td>
 	</tr>
 	
 	<tr>

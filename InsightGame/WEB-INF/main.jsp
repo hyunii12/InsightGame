@@ -18,14 +18,11 @@
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
-		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">Game Issues
-				Rank</h2>
-			<hr class="star-light mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Game Issues Rank</h2>
 			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3>
+				<h3 class="text-center" style="margin: 0 auto;">issues.jsp</h3>
 			</div>
 			<div style="margin: 0 auto; width: 80%">
 <%-- 				<jsp:include page="contents/issues.jsp" /> --%>
@@ -34,6 +31,7 @@
 		</div>
 
 		</section>
+	</div>
 
 		<script type="text/javascript">
 			$(document)
@@ -76,8 +74,6 @@
 							});
 		</script>
 
-		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
 		<div class="container">
 			<div
 				style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
@@ -307,66 +303,52 @@
 
 			<!-- 			</div> -->
 		</div>
-		</section>
 
-
-
-		<!-- Portfolio Grid Section ---->
-		<section class="bg-primary text-black">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">게임 인기 변화(view 수)</h2>
-				
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">change top games - view</h2>
 				<div id="GI"></div>
-				
-<!-- 			<div style="margin: 0 auto; width: 80%;"> -->
+			<!-- 			<div style="margin: 0 auto; width: 80%;"> -->
 <%-- 								<jsp:include page="contents/gameInterest.jsp" /> --%>
 <!-- 			</div> -->
 		</div>
 
 		</section>
 
-
-		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
 		<div class="container1">
-			<h2 class="text-center text-uppercase text-secondary mb-0">그래프 2개</h2>
 			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - platform</h2>
 			<div class="row">
-				<div class="col-md-6" style="margin: 0 auto;">
-					<h3 class="text-center">게임 순위 - 장르별</h3>
-				</div>
-					
 				<div id="gameRanking" style="margin: 0 auto;"></div>
 			</div>
+		</div>
+		
+		<section class="mb-0">
+			<div class="container">
+				<hr class="star-dark mb-5">
+				<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - </h2>
+		
+		</section>
 
-				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 </h3>
 
-<!-- 					<div id="kkk"></div> -->
+<!-- 				<div id="kkk"></div> -->
 
 <!-- 					<div id="issues"> -->
 <%-- 						<jsp:include page="contents/gameRankAsGenre.jsp" /> --%>
 <!-- 					</div> -->
 <!-- 				</div> -->
-
 <!-- 					<div id="issues"> -->
 <%-- 						<jsp:include page="contents/gameRank.jsp" /> --%>
 <!-- 					</div> -->
 
-				</div>
-
-
 <!-- 				<div class="col-md-6"> -->
 <!-- 					<h3 class="text-center">제작사 순위</h3> -->
-
 <!-- 					<div id="issues"> -->
 <%-- 						<jsp:include page="contents/gameRankAsCompany.jsp" /> --%>
 <!-- 					</div> -->
 <!-- 				</div> -->
-			</div>
-		</div>
-		</section>
-	</div>
-
+			
+		
 </body>
 </html>
