@@ -12,8 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import model.GenreRanking;
 import model.Rbranking;
 import model.twgame;
+import service.IGenrerankingService;
 import service.IRbrankingService;
 import service.ITgdService;
 import service.ITwgameService;
@@ -25,6 +27,8 @@ public class GameController {
 	ITwgameService twgameService;
 	@Autowired
 	IRbrankingService rbrankService;
+	@Autowired
+	IGenrerankingService genrerankService;
 	
 	
 	@RequestMapping("main.do")
@@ -130,15 +134,43 @@ public class GameController {
 	}
 
 	
-	@RequestMapping("gameRankAsCompany.do")
-	public String gameRankAsCompany(Model model) {
-		System.out.println("제작사 순위");
-		return "contents/gameRankAsCompany";
-	}
 	
 	@RequestMapping("gameRankAsGenre.do")
 	public String gameRankAsGenre(Model model) {//
+
 		System.out.println("장르별 게임순위");
+		System.out.println("//////////////////////////////////////////////////////////////");
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String today = now.format(formatter);
+		
+		
+		List<GenreRanking> fpsrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> mmorpgrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> actionrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> board_puzzle_musicrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> sportrank = new ArrayList<GenreRanking>();
+		
+		fpsrank=genrerankService.getfpsList(today);
+		mmorpgrank=genrerankService.getmmorpgList(today);
+		actionrank=genrerankService.getactionList(today);
+		board_puzzle_musicrank=genrerankService.getboard_puzzle_musicList(today);
+		sportrank=genrerankService.getsportList(today);
+		
+		System.out.println(fpsrank.size());
+		System.out.println(mmorpgrank.size());
+		System.out.println(actionrank.size());
+		System.out.println(board_puzzle_musicrank.size());
+		System.out.println(sportrank.size());
+		
+		
+		model.addAttribute("fpsrank",fpsrank);
+		model.addAttribute("mmorpgrank",mmorpgrank);
+		model.addAttribute("actionrank",actionrank);
+		model.addAttribute("board_puzzle_musicrank",board_puzzle_musicrank);
+		model.addAttribute("sportrank",sportrank);
+
+		
 		return "contents/gameRankAsGenre";
 	}
 	

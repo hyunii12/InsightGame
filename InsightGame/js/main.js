@@ -44,6 +44,19 @@ $(document).ready(function() {
 			alert(error);
 		}
 	})
+	
+	
+	$.ajax({
+		url : "gameRankAsGenre.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#gameRankingAsGenre').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
 ////
 	$.ajax({
 		url : "gameInterest.do",
