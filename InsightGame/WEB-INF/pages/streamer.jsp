@@ -30,11 +30,11 @@
 
 </head>
 <body>
-<!-- 	<div id="navigation"> -->
-<%-- 		<jsp:include page="../navigation.jsp" /> --%>
-<!-- 	</div> -->
-	
-	
+	<!-- 	<div id="navigation"> -->
+	<%-- 		<jsp:include page="../navigation.jsp" /> --%>
+	<!-- 	</div> -->
+
+
 	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
 
@@ -43,18 +43,20 @@
 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
 
 	</div>
-	
-	
+
+
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
 		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Streamer Issues Rank</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0"
+				style="font-size: 2rem;">Streamer Issues Rank</h2>
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
 				<div style="margin: 0 auto">
-					<jsp:include page="../contents/streamerRadarChart.jsp" />
+					<%-- 					<jsp:include page="../contents/streamerRadarChart.jsp" /> --%>
+					<jsp:include page="../contents/StreamerIssuesRank.jsp" />
 				</div>
 			</div>
 
@@ -63,7 +65,8 @@
 
 		<div class="container">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer Rank</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer
+				Rank</h2>
 			<div class="row">
 				<div style="margin: 0 auto">
 					<jsp:include page="../contents/streamerRank.jsp" />
@@ -93,12 +96,13 @@
 				<!-- 								</div> -->
 			</div>
 		</div>
-		
+
 
 		<section class="mb-0">
 		<div class="container">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">top games - streamer</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0"
+				style="font-size: 2rem;">top games - streamer</h2>
 			<div class="row">
 				<div id="streamerInterest" align="center" style="margin: 0 auto;">
 					<jsp:include page="../contents/streamerInterest.jsp" />
@@ -111,28 +115,28 @@
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
-			
+
 			<div class="row">
 
 				<div class="col-md-6">
 					<h3 class="text-center">스트리머 게시글 - 키워드별</h3>
 
 					<!-- 			<div id="issues"> -->
-<%-- 					<jsp:include page="gameInterest.do" /> --%>
+					<%-- 					<jsp:include page="gameInterest.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 
 				<div class="col-md-6">
-<!-- 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3> -->
+					<!-- 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3> -->
 
 
 
-<!-- 					<div id="streamerBoardNumAsTime"> -->
-<!-- 					<div class="streamerBoardNumAsTime"></div> -->
-<!-- 					</div> -->
+					<!-- 					<div id="streamerBoardNumAsTime"> -->
+					<!-- 					<div class="streamerBoardNumAsTime"></div> -->
+					<!-- 					</div> -->
 
 
-					
+
 
 				</div>
 
@@ -140,7 +144,7 @@
 					<h3 class="text-center">전체 게시글 - 키워드별</h3>
 
 					<!-- 			<div id="issues"> -->
-<%-- 					<jsp:include page="gameCalendar.do" /> --%>
+					<%-- 					<jsp:include page="gameCalendar.do" /> --%>
 					<!-- 								</div> -->
 				</div>
 
@@ -149,7 +153,7 @@
 
 
 					<!-- 			<div id="issues"> -->
-<%-- 					<jsp:include page="gameCalendar.do" /> --%>
+					<%-- 					<jsp:include page="gameCalendar.do" /> --%>
 					<!-- 								</div> -->
 
 					<div id="kkk"></div>
@@ -161,7 +165,8 @@
 		<section class="mb-0">
 		<div class="container">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">hot clip</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0"
+				style="font-size: 2rem;">hot clip</h2>
 			<div class="row">
 				<div style="margin: 0 auto">
 					<div id="hot"></div>

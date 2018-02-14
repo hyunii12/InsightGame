@@ -108,6 +108,14 @@ public class StreamerController {
 		return "contents/streamerInterest";
 	}
 	
+	
+	@RequestMapping("streamerIssuesRank.do")
+	public String streamerIssuesRank(Model model) {
+		System.out.println("스트리머 이슈스 랭크");
+		return "contents/StreamerIssuesRank";
+		
+	}
+	
 
 
 }
