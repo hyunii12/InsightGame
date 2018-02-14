@@ -333,14 +333,15 @@
 			<hr class="star-dark mb-5">
 			<div class="row">
 				<div class="col-md-6" style="margin: 0 auto;">
-					<h3 class="text-center">게임 순위 - 장르별</h3>
+					<h3 class="text-center">게임 순위 - 유형별</h3>
 				</div>
 					
 				<div id="gameRanking" style="margin: 0 auto;"></div>
 			</div>
 
 				<div class="col-md-6">
-					<h3 class="text-center">게임 순위 </h3>
+					<h3 class="text-center">게임 순위 - 장르별</h3>
+<!-- 					<div id="gameRankingAsGenre" style="margin: 0 auto;"></div> -->
 
 <!-- 					<div id="kkk"></div> -->
 
