@@ -151,7 +151,7 @@ table tr:nth-child(2n+1) {
 
 
 	<div class="table-users">
-		<div class="gameRankAsGenreheader">유형별 게임 순위</div>
+		<div class="gameRankAsGenreheader">장르별 게임 순위</div>
 
 
 <table class="gameRankAsGenre" cellspacing='0' style="width:1000px">
