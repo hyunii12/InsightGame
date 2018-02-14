@@ -334,13 +334,19 @@
 			<div class="row">
 
 				<div class="col-md-10">
+
+				<div class="col-md-6" style="margin: 0 auto;">
+
 					<h3 class="text-center">게임 순위 - 장르별</h3>
-	
-					<div id="gameRanking"></div>
+				</div>
+
 
 				</div>
 
-				</div>
+					
+				<div id="gameRanking" style="margin: 0 auto;"></div>
+			</div>
+
 
 				<div class="col-md-6">
 					<h3 class="text-center">게임 순위 </h3>

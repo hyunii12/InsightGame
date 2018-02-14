@@ -137,7 +137,7 @@ public class GameController {
 	}
 	
 	@RequestMapping("gameRankAsGenre.do")
-	public String gameRankAsGenre(Model model) {
+	public String gameRankAsGenre(Model model) {//
 		System.out.println("장르별 게임순위");
 		return "contents/gameRankAsGenre";
 	}
