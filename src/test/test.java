@@ -1,7 +1,6 @@
 package test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -14,9 +13,8 @@ import dao.IRbrankingDao;
 import dao.IScheduleDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
+import model.Clip;
 import model.Rbranking;
-import model.Tgd;
-import model.twgame;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -44,14 +42,14 @@ public class test {
 // }
  
  
-// @org.junit.Test
-// public void test3() {
-//  List<Clip> list = new ArrayList<Clip>(); 
-//  list=clipDao.selectcliplist("2018-02-05");
-//  for(Clip c: list) {
-//   System.out.println(c.toString());
-//  }
-// }
+ @org.junit.Test
+ public void test3() {
+  List<Clip> list = new ArrayList<Clip>(); 
+  list=clipDao.selectcliplist("2018-02-13");
+  for(Clip c: list) {
+   System.out.println(c.toString());
+  }
+ }
 
 // @org.junit.Test
 // public void test4() {
@@ -97,15 +95,15 @@ public class test {
 //}
  
  
-@org.junit.Test
-public void test8() {
-	List<Rbranking> list = new ArrayList<Rbranking>();
-	list=rbrankingDao.select3dsRanking("2018-02-12");
-
-	for(Rbranking rb: list) {
-		System.out.println(rb.toString());
-	}
-}
+//@org.junit.Test
+//public void test8() {
+//	List<Rbranking> list = new ArrayList<Rbranking>();
+//	list=rbrankingDao.select3dsRanking("2018-02-12");
+//
+//	for(Rbranking rb: list) {
+//		System.out.println(rb.toString());
+//	}
+//}
   
 
 }

@@ -55,7 +55,7 @@ public class GameController {
 	System.out.println("여기는 게임디테일");
 			return "pages/gameDetail";
 	}
-	//
+	////
 	@RequestMapping("gameInterest.do")
 	public String gameInterest(Model model) {
 		System.out.println("여기는 게임인터레스트");
@@ -67,7 +67,7 @@ public class GameController {
 		List<String> s = new ArrayList<String>();
 		
 		//최근 5일로 할지 결정
-		for(int i=1; i>=0; i--) {
+		for(int i=2; i>=0; i--) {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
@@ -110,7 +110,7 @@ public class GameController {
 //		System.out.println(nalza);
 //		for(Integer i: IRLlist) {
 //			System.out.println(i);
-//		}
+//		}//
 		
 		model.addAttribute("overlist",overlist);
 		model.addAttribute("Leaguelist",Leaguelist);
