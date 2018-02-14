@@ -158,11 +158,11 @@ table tr:nth-child(2n+1) {
 	<tr>
 		<tr>
 		<th scope="row">순위</th>
-		<th>FPS</th>
-		<th>MMORPG</th>
-		<th>액션</th>
-		<th>board_puzzle_music</th>
-		<th>스포츠</th>
+		<th>FPS/RTS/TPS</th>
+		<th>MO/MMORPG</th>
+		<th>액션/웹게임</th>
+		<th>뮤직/퍼즐/보드</th>
+		<th>스포츠/슈팅/레이싱</th>
 	</tr>
 	    
 	<tr>
