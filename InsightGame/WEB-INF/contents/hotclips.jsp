@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>핫클립 재생~</title>
+<title>핫클립 재생</title>
 </head>
 <body>
 
