@@ -57,7 +57,7 @@ $(document).ready(function() {
 			alert(error);
 		}
 	})
-//////
+
 	$.ajax({
 		url : "gameInterest.do",
 		type : "get",

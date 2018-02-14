@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.IClipDao">
 
 	<select id="selectcliplist" parameterType="String" resultType="clip">
-		select *from hotclip where cp_create = #{cp_create} order by rand() limit 10;
+		select *from hotclip where cp_view >2000 order by rand();
 	</select>
 	
 </mapper>

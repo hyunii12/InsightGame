@@ -123,7 +123,7 @@
 				</div>
 
 				<div class="col-md-6">
-					<h3 class="text-center">스트리머 게시글 - 시간대별</h3>
+<!-- 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3> -->
 
 
 
@@ -145,7 +145,7 @@
 				</div>
 
 				<div class="col-md-6">
-					<h3 class="text-center">전체 게시글 - 시간대별</h3>
+					<h3 class="text-center">전체 게시글 - 일별</h3>
 
 
 					<!-- 			<div id="issues"> -->

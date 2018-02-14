@@ -42,14 +42,14 @@ public class test {
 // }
  
  
- @org.junit.Test
- public void test3() {
-  List<Clip> list = new ArrayList<Clip>(); 
-  list=clipDao.selectcliplist("2018-02-13");
-  for(Clip c: list) {
-   System.out.println(c.toString());
-  }
- }
+// @org.junit.Test
+// public void test3() {
+//  List<Clip> list = new ArrayList<Clip>(); 
+//  list=clipDao.selectcliplist("2018-02-13");
+//  for(Clip c: list) {
+//   System.out.println(c.toString());
+//  }
+// }
 
 // @org.junit.Test
 // public void test4() {

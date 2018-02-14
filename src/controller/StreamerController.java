@@ -54,10 +54,11 @@ public class StreamerController {
 	@RequestMapping("hotClip.do")
 	public String hotClip(Model model) {
 		System.out.println("여기는 핫클립");
+		
 		List<Clip> list = clipService.getcliplist();
 		
 		for(Clip c: list) {
-			System.out.println(c.toString());
+			System.out.println(c.getCp_view());
 		}
 		
 		model.addAttribute("cliplist", list);

@@ -6,15 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>핫클립 재생~</title>
+<title>핫클립 재생</title>
 </head>
 <body>
 
 	<table>
-		<c:forEach items="${cliplist}" var="list" begin="0" end="3"
+		<c:forEach items="${cliplist}" var="list" begin="0" end="4"
 			varStatus="status">
-<%-- 			<td><img src="${list.cp_img}" width="200px" height="150px" style="padding-left: 35px"><br><a href="${list.cp_url}" style="padding-left: 35px">${list.cp_title}</a><br><a href="${list.cp_url}" style="padding-left: 35px">${list.cp_display}&nbsp; 조회수 : ${list.cp_view}<br><a href="${list.cp_url}" style="padding-left: 35px">${list.cp_game}</a></td> --%>
-				<td><img src="${list.cp_img}" width="200px" height="150px" style="padding-left: 35px"><br><a href="${list.cp_url}" style="padding-left: 35px">${list.cp_title}</a><br><a href="${list.cp_url}" style="padding-left: 35px">${list.cp_game}</a><br><a href="${list.cp_url}" style="padding-left: 35px">${list.cp_display}</td>
+			<td><a href ="${list.cp_url}"><img src="${list.cp_img}" width="200px" height="150px" style="padding-left: 5px"></a><br>${list.cp_title}<br>${list.cp_display}&nbsp; 조회수 : ${list.cp_view}<br>${list.cp_game}</td>
 		</c:forEach>
 	</table>
 

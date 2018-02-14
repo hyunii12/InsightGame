@@ -20,7 +20,7 @@
 </head>
 
 <body>
-	<div style="width:500px">
+	<div style="width:600px">
 		<canvas id="chart1"></canvas>
 	</div>
  	
@@ -72,7 +72,7 @@
 			data: {
 				labels: labels,
 				datasets: [{
-					label: "스트리머 게시판 게시글 차트",
+					label: "전체 게시판 게시글수 차트",
 					data: data,
 					type: 'line',
 					pointRadius: 0,

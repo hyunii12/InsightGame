@@ -154,32 +154,22 @@ table.gameRankAsGenre tr:nth-child(2n+1) {
 	
 	<table class="gameRankAsGenre" cellspacing='0'>
 		<tr>
-			<tr>
-			<th scope="row">순위</th>
-			<th>FPS</th>
-			<th>MMORPG</th>
-			<th>액션</th>
-			<th>board_puzzle_music</th>
-			<th>스포츠</th>
-		</tr>
-		    
-		<tr>
-			<th scope="row">1</th>
-			<td>${fpsrank[0].name}</td>
-			<td>${mmorpgrank[0].name}</td>
-			<td>${actionrank[0].name}</td>
-			<td>${board_puzzle_musicrank[0].name}</td>
-			<td>${sportrank[0].name}</td>
-		</tr>
-		
-		<tr>
-			<th scope="row">2</th>
-			<td>${fpsrank[1].name}</td>
-			<td>${mmorpgrank[1].name}</td>
-			<td>${actionrank[1].name}</td>
-			<td>${board_puzzle_musicrank[1].name}</td>
-			<td>${sportrank[1].name}</td>
-		</tr>
+		<th scope="row">순위</th>
+		<th>FPS/RTS/TPS</th>
+		<th>MO/MMORPG</th>
+		<th>액션/웹게임</th>
+		<th>뮤직/퍼즐/보드</th>
+		<th>스포츠/슈팅/레이싱</th>
+	</tr>
+	    
+	<tr>
+		<th scope="row">1</th>
+		<td>${fpsrank[0].name}</td>
+		<td>${mmorpgrank[0].name}</td>
+		<td>${actionrank[0].name}</td>
+		<td>${board_puzzle_musicrank[0].name}</td>
+		<td>${sportrank[0].name}</td>
+	</tr>
 	
 		<tr>
 			<th scope="row">3</th>
