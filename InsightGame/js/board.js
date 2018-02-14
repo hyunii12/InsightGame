@@ -54,16 +54,6 @@ $(document).ready(function(){
 	$('#writeBtn').on('click', function(){
 		var content = $('#writeContent').val();
 		
-		
-//		
-//		$(function(){
-//			if (content.length === 0){
-//				alert('글 써라')
-//			}else if(window.sessionStorage ==null){
-//				alert('로그인 해라')
-//			}
-//		})
-//		
 		$.ajax({
 			url: "write.do", 
 			type: "post",
@@ -74,9 +64,12 @@ $(document).ready(function(){
 			}, 
 			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 			success: function(data){
-				//alert(data.msg)
-	        	if(data.msg == true){
-		        	location.reload();
+	        	if(data.result > 0){
+	        		alert(data.msg)
+		        	location.reload()
+	        	}else{
+	        		alert(data.msg)
+	        		location.reload()
 	        	}
 	    	},
 	    	error:function(request,status,error){
@@ -232,7 +225,7 @@ function modifyBtn(bId){
 		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;">'
 					+'<span style="color: gray; margin: 0 auto;">['+header+']</span>'
 					+'<span class="modifyCounter" style="position: absolute; border-radius: 0.5em; padding: 0 .5em 0 .5em; font-size: 0.75em; margin-left: 46.77%; margin-top:6.4%; z-index:960;">###</span>'
-					+'<textarea id="re_content" class="form-control modifyLimit" rows="3" style="width:98%; margin-left:6px; margin-right:6px;" onkeydown="JavaScript:Enter_Check2();">'+content+'</textarea>'
+					+'<textarea id="re_content" class="form-control modifyLimit" rows="3" style="width:98%; max-height: 78px; margin-left:6px; margin-right:6px;" onkeydown="JavaScript:Enter_Check2();">'+content+'</textarea>'
 					+'<button type="button" id="submitBtn1" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px; margin-top: 4px; margin-left: 84.5%;">수정</button>'
 					+'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()" style="margin-top: 4px;">취소</button>'
 					+'</td>');

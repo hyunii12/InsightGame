@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="js/billboard.js"></script>
@@ -11,8 +11,20 @@
 <title></title>//
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
-	$(document).ready(
-			function() {
+   $(document).ready(
+         function() {
+
+            var overlist = "${overlist}"
+            var Leaguelist = "${Leaguelist}"
+            var Heartlist = "${Heartlist}"
+            var Fortnitelist = "${Fortnitelist}"
+            var Dotalist = "${Dotalist}"
+            var BATTLElist = "${BATTLElist}"
+            var wowlist = "${wowlist}"
+            var gtalist = "${gtalist}"
+            var ctlist = "${ctlist}"
+            var IRLlist = "${IRLlist}"
+
 
 				var overlist = "${overlist}"
 				var Leaguelist = "${Leaguelist}"
@@ -25,6 +37,26 @@
 				var ctlist = "${ctlist}"
 				var IRLlist = "${IRLlist}"
 
+
+            var overlist2 = JSON.parse(overlist);
+            var Leaguelist2 = JSON.parse(Leaguelist);
+            var Heartlist2 = JSON.parse(Heartlist);
+            var Fortnitelist2 = JSON.parse(Fortnitelist);
+            var Dotalist2 = JSON.parse(Dotalist);
+            var BATTLElist2 = JSON.parse(BATTLElist);
+            var wowlist2 = JSON.parse(wowlist);
+            var gtalist2 = JSON.parse(gtalist);
+            var ctlist2 = JSON.parse(ctlist);
+            var IRLlist2 = JSON.parse(IRLlist);
+
+            
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 01; //January is 0!
+            var yyyy = today.getFullYear();
+
+            var minusdd = today.getDate() - 01;
+
 				var overlist2 = JSON.parse(overlist);
 				var Leaguelist2 = JSON.parse(Leaguelist);
 				var Heartlist2 = JSON.parse(Heartlist);
@@ -36,6 +68,13 @@
 				var ctlist2 = JSON.parse(ctlist);
 				var IRLlist2 = JSON.parse(IRLlist);
 
+            if (mm < 10) {
+               mm = '0' + mm
+            }
+
+//             today = yyyy + '-' + mm + '-' + dd
+            yesterday = yyyy + '-' + mm + '-' + minusdd
+          
 				var today = new Date();
 				var dd = today.getDate();
 				var mm = today.getMonth() + 01; //January is 0!
@@ -83,6 +122,6 @@
 
 </head>
 <body>
-	<div id="TimeseriesChart"></div>
+   <div id="TimeseriesChart"></div>
 </body>
 </html>

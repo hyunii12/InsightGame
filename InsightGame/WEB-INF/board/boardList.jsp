@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,7 +14,8 @@
 			<c:forEach items="${boardList }" var="list">
 				<c:if test="${list.groupLevel eq 0 }">
 					<tr>
-						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">${list.writer}</td>
+						<td name="bId" value="${list.bId }"style="text-align: left; padding-bottom: 1px; padding-left: 1px; font-weight:bold">
+						<c:set var="writer" value="${fn:split(list.writer,'@')[0]}" />${writer}</td>
 						<td	style="text-align: right; padding-bottom: 1px; padding-right: 2px; vertical-align: middle;">
 							<div class="btn-group dropright">
 								<a data-toggle="dropdown" aria-haspopup="true"aria-expanded="false"><img src="img/dotdot.png"></a>

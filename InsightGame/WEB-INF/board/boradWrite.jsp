@@ -39,7 +39,7 @@
 	</div>
 	<div class="input-group" style="margin-bottom: 0; margin-top: 3.5px;">
 		<textarea id="writeContent" class="form-control writeLimit" rows="3"
-			placeholder="댓글을 입력해 주세요" style="height: 86px;"></textarea>
+			placeholder="댓글을 입력해 주세요" style="max-height: 78px;"></textarea>
 		<div class="input-group-btn">
 			<button type="button" id="writeBtn" class="btn btn-default">등록</button>
 		</div>
