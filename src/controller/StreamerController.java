@@ -55,10 +55,15 @@ public class StreamerController {
 	public String hotClip(Model model) {
 		System.out.println("여기는 핫클립");
 		List<Clip> list = clipService.getcliplist();
-	
-		model.addAttribute("cliplist", list);
+		
+		for(Clip c: list) {
+			System.out.println(c.toString());
+		}
+		
+//		model.addAttribute("cliplist", list);
 
-		return "contents/hotclips";
+		return null;
+//		return "contents/hotclips";
 	}
 
 

@@ -50,8 +50,19 @@ $(document).ready(function() {
 		type : "get",
 		dataType : "html",
 		success : function(data) {
-			alert("ttttttttttt")
 			$('#GI').html(data)
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
+	
+	$.ajax({
+		url : "hotClip.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#hot').html(data)
 		},
 		error : function(xhar, status, error) {
 			alert(error);

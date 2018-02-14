@@ -30,9 +30,21 @@
 
 </head>
 <body>
+<!-- 	<div id="navigation"> -->
+<%-- 		<jsp:include page="../navigation.jsp" /> --%>
+<!-- 	</div> -->
+	
+	
 	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
+
+		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
+
+		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
+
 	</div>
+	
+	
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
@@ -128,7 +140,7 @@
 					</div>
 
 
-					<div id="issues"></div>
+					
 
 				</div>
 
@@ -143,9 +155,7 @@
 				<div class="col-md-6">
 					<h3 class="text-center">전체 게시글 - 시간대별</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameCalendar.do" />
-					<!-- 								</div> -->
+					<div id="kkk"></div>
 				</div>
 			</div>
 		</div>
@@ -157,12 +167,8 @@
 			<h2 class="text-center text-uppercase text-white">핫 클립</h2>
 			<hr class="star-light mb-5">
 			<div class="row">
-								<h3 class="text-center text-white" style="margin: 0 auto;">전체 스트리머</h3>
 				<div style="margin: 0 auto">
-					<jsp:include page="../contents/hotclips.jsp" >
-						<jsp:param value="${cliplist}" name="name"/>
-					
-					</jsp:include>
+					<div id="hot"></div>
 				</div>
 			</div>
 		</div>
