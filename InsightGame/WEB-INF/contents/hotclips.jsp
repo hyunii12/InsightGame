@@ -11,9 +11,9 @@
 <body>
 
 	<table>
-		<c:forEach items="${cliplist}" var="list" begin="0" end="3"
+		<c:forEach items="${cliplist}" var="list" begin="0" end="4"
 			varStatus="status">
-			<td><a href ="${list.cp_url}"><img src="${list.cp_img}" width="200px" height="150px" style="padding-left: 35px"></a><br>${list.cp_title}<br>${list.cp_display}&nbsp; 조회수 : ${list.cp_view}<br>${list.cp_game}</td>
+			<td><a href ="${list.cp_url}"><img src="${list.cp_img}" width="200px" height="150px" style="padding-left: 5px"></a><br>${list.cp_title}<br>${list.cp_display}&nbsp; 조회수 : ${list.cp_view}<br>${list.cp_game}</td>
 		</c:forEach>
 	</table>
 
