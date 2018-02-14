@@ -319,32 +319,14 @@
 		<div class="container1">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - platform</h2>
-			<div class="row">
-
-				<div class="col-md-6" style="margin: 0 auto;">
-					<h3 class="text-center">게임 순위 - 유형별</h3>
-
-
-				<div class="col-md-10">
-
-				<div class="col-md-6" style="margin: 0 auto;">
-
-					<h3 class="text-center">게임 순위 - 장르별</h3>
-				</div>
-
-
-				</div>
-
-
 				<div id="gameRanking" style="margin: 0 auto;"></div>
-			</div>
 		</div>
 		
 		<section class="mb-0">
 			<div class="container">
 				<hr class="star-dark mb-5">
 				<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - </h2>
-		
+		</div>
 		</section>
 
 

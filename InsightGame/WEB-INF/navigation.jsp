@@ -152,7 +152,7 @@
 		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
 			style="color: white; font-weight: bold;">GAME</a>
 	</div>
-	<div style="position: fixed; right: 45.5%; top: 100px; z-index: 1039;">
+	<div style="position: fixed; right: 44.3%; top: 100px; z-index: 1039;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
 			style="color: white; font-weight: bold;">STREAMER</a>
 	</div>
