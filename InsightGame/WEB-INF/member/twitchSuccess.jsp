@@ -29,8 +29,6 @@
 	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
 	rel="stylesheet" type="text/css">
 
-
-
 <!-- Plugin CSS -->
 <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"
 	type="text/css">
@@ -42,13 +40,8 @@
 
 <body>
 
-<div id="navigation">
+	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
-	</div>
-	
-	<div style="margin-top: 15%;">
-		<h3>인사이트 게임 Twitch Login 성공입니다<br>1초후 메인페이지로 이동</h3><br>
-		
 	</div>
 	
 </body>

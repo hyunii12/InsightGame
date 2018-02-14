@@ -261,7 +261,7 @@
 							</div>
 
 							<div class="tab-pane container" id="faq-cat-3">
-								<div class="panel-heading" style="box-sizing: border-box;">
+								<div class="panel-heading" style="box-sizing: unset;">
 
 									<jsp:include page="contents/calendar.jsp" />
 
@@ -308,7 +308,7 @@
 		<div class="container">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">change top games - view</h2>
-				<div id="GI"></div>
+				<div id="GI" style="margin: 0 auto; width: 85%;"></div>
 			<!-- 			<div style="margin: 0 auto; width: 80%;"> -->
 <%-- 								<jsp:include page="contents/gameInterest.jsp" /> --%>
 <!-- 			</div> -->
@@ -325,7 +325,7 @@
 		<section class="mb-0">
 			<div class="container">
 				<hr class="star-dark mb-5">
-				<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - </h2>
+				<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - genre</h2>
 				<div id="gameRankingAsGenre" style="margin: 0 auto;"></div>
 		</div>
 		</section>

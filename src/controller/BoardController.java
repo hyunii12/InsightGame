@@ -101,8 +101,6 @@ public class BoardController {
 			board.setContent(content);
 			board.setWriter(boardWriter);
 			int result = boardService.writeBoard(board, 0);
-			String msg = "글 작성 완료.";
-			results.put("msg", msg);
 			results.put("result", result);
 			return results;
 		}else {
@@ -137,7 +135,6 @@ public class BoardController {
 		int newBId = boardService.writeBoard(board, parentId);
 		if (newBId > 0) {
 			// 작성 성공
-			result.put("msg", true);
 			result.put("new", newBId);
 		} else
 			result.put("msg", false);
@@ -164,9 +161,7 @@ public class BoardController {
 		if (writer.equals(boardWriter)) {
 			board.setContent(content);
 			int result = boardService.modifyBoard(board);
-			String msg = "글 수정 완료.";
 			results.put("result", result);
-			results.put("msg", msg);
 			return results;
 		} else {
 			int result = 0;
@@ -196,9 +191,7 @@ public class BoardController {
 		if (writer.equals(boardWriter)) {
 			boardService.removeBoard(Integer.parseInt(bId));
 			int result = boardService.modifyBoard(board);
-			String msg = "글삭제 완료.";
 			HashMap<String, Object> results = new HashMap<>();
-			results.put("msg", msg);
 			results.put("result", result);
 			return results;
 		} else {

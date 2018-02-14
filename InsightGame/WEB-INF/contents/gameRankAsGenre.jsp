@@ -29,36 +29,36 @@ div.table-users {
   width: 1000px;
 }
 
-table {
+table.gameRankAsGenre {
   width: 100%;
 }
-table td, table th {
+table.gameRankAsGenre td, table th {
   color: #2b686e;
   padding: 10px;
 }
-table td {
+table.gameRankAsGenre td {
   text-align: center;
   vertical-align: middle;
 }
-table td:last-child {
+table.gameRankAsGenre td:last-child {
   font-size: 0.95em;
   line-height: 1.4;
   text-align: center;
 }
-table th {
+table.gameRankAsGenre th {
   background-color: #daeff1;
   font-weight: 300;
   text-align: center;
 }
-table tr:nth-child(2n) {
+table.gameRankAsGenre tr:nth-child(2n) {
   background-color: white;
 }
-table tr:nth-child(2n+1) {
+table.gameRankAsGenre tr:nth-child(2n+1) {
   background-color: #edf7f8;
 }
 
 @media screen and (max-width: 700px) {
-  table, tr, td {
+  table.gameRankAsGenre, tr, td {
     display: block;
   }
 
@@ -150,68 +150,66 @@ table tr:nth-child(2n+1) {
 <body>
 
 
-	<div class="table-users">
-		<div class="gameRankAsGenreheader">장르별 게임 순위</div>
-
-
-<table class="gameRankAsGenre" cellspacing='0' style="width:1000px">
-	<tr>
+	<div class="table-users" style="width:940px">
+	
+	<table class="gameRankAsGenre" cellspacing='0'>
 		<tr>
-		<th scope="row">순위</th>
-		<th>FPS</th>
-		<th>MMORPG</th>
-		<th>액션</th>
-		<th>board_puzzle_music</th>
-		<th>스포츠</th>
-	</tr>
-	    
-	<tr>
-		<th scope="row">1</th>
-		<td>${fpsrank[0].name}</td>
-		<td>${mmorpgrank[0].name}</td>
-		<td>${actionrank[0].name}</td>
-		<td>${board_puzzle_musicrank[0].name}</td>
-		<td>${sportrank[0].name}</td>
-	</tr>
+			<tr>
+			<th scope="row">순위</th>
+			<th>FPS</th>
+			<th>MMORPG</th>
+			<th>액션</th>
+			<th>board_puzzle_music</th>
+			<th>스포츠</th>
+		</tr>
+		    
+		<tr>
+			<th scope="row">1</th>
+			<td>${fpsrank[0].name}</td>
+			<td>${mmorpgrank[0].name}</td>
+			<td>${actionrank[0].name}</td>
+			<td>${board_puzzle_musicrank[0].name}</td>
+			<td>${sportrank[0].name}</td>
+		</tr>
+		
+		<tr>
+			<th scope="row">2</th>
+			<td>${fpsrank[1].name}</td>
+			<td>${mmorpgrank[1].name}</td>
+			<td>${actionrank[1].name}</td>
+			<td>${board_puzzle_musicrank[1].name}</td>
+			<td>${sportrank[1].name}</td>
+		</tr>
 	
-	<tr>
-		<th scope="row">2</th>
-		<td>${fpsrank[1].name}</td>
-		<td>${mmorpgrank[1].name}</td>
-		<td>${actionrank[1].name}</td>
-		<td>${board_puzzle_musicrank[1].name}</td>
-		<td>${sportrank[1].name}</td>
-	</tr>
-
-	<tr>
-		<th scope="row">3</th>
-		<td>${fpsrank[2].name}</td>
-		<td>${mmorpgrank[2].name}</td>
-		<td>${actionrank[2].name}</td>
-		<td>${board_puzzle_musicrank[2].name}</td>
-		<td>${sportrank[2].name}</td>
-	</tr>
-	<tr>
-		<th scope="row">4</th>
-		<td>${fpsrank[3].name}</td>
-		<td>${mmorpgrank[3].name}</td>
-		<td>${actionrank[3].name}</td>
-		<td>${board_puzzle_musicrank[3].name}</td>
-		<td>${sportrank[3].name}</td>
-	</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td>${fpsrank[2].name}</td>
+			<td>${mmorpgrank[2].name}</td>
+			<td>${actionrank[2].name}</td>
+			<td>${board_puzzle_musicrank[2].name}</td>
+			<td>${sportrank[2].name}</td>
+		</tr>
+		<tr>
+			<th scope="row">4</th>
+			<td>${fpsrank[3].name}</td>
+			<td>${mmorpgrank[3].name}</td>
+			<td>${actionrank[3].name}</td>
+			<td>${board_puzzle_musicrank[3].name}</td>
+			<td>${sportrank[3].name}</td>
+		</tr>
+		
+	    <tr>
+			<th scope="row">5</th>
+			<td>${fpsrank[4].name}</td>
+			<td>${mmorpgrank[4].name}</td>
+			<td>${actionrank[4].name}</td>
+			<td>${board_puzzle_musicrank[4].name}</td>
+			<td>${sportrank[4].name}</td>
+		</tr>
 	
-    <tr>
-		<th scope="row">5</th>
-		<td>${fpsrank[4].name}</td>
-		<td>${mmorpgrank[4].name}</td>
-		<td>${actionrank[4].name}</td>
-		<td>${board_puzzle_musicrank[4].name}</td>
-		<td>${sportrank[4].name}</td>
-	</tr>
-
-</table>
-
-</div>
+	</table>
+	
+	</div>
 
 
 </body>

@@ -74,12 +74,13 @@
 					<form class="form-inline" role="search" id="navSearchFrm"
 						method="get" action="searchGame.do" style="margin: 0 auto;">
 						<input type="hidden" name="searchSelect">
-						<div class="input-group-prepend" id="headerDropbox"
-							style="position: relative;">
-							<button id="searchSelectBtn"
-								class="btn btn-secondary dropdown-toggle" type="button"
-								data-toggle="dropdown" aria-haspopup="true"
+						
+						<div class="input-group-prepend" id="headerDropbox"	style="position: relative;">
+						
+							<button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button"
+								data-toggle="dropdown"	 aria-haspopup="true"
 								aria-expanded="false" style="width: 118px;">게임　 　</button>
+								
 							<div class="dropdown-menu" style="z-index: 1053;">
 								<button class="dropdown-item" type="button" value="game"
 									onclick='setSearchHeader($(this).val())'>게임</button>
@@ -87,6 +88,7 @@
 									onclick='setSearchHeader($(this).val())'>스트리머</button>
 							</div>
 						</div>
+						
 						<input class="form-control mr-sm-2" type="text"
 							style="width: 247px; border: 0; margin-left: 3px"
 							placeholder="Search" name="search">

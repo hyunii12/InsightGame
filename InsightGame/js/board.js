@@ -65,7 +65,6 @@ $(document).ready(function(){
 			contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 			success: function(data){
 	        	if(data.result > 0){
-	        		alert(data.msg)
 		        	location.reload()
 	        	}else{
 	        		alert(data.msg)
@@ -192,8 +191,8 @@ function modifyBtn(bId){
 	var content = $('#trr_'+bId+' td').attr('content');
 	var modContent = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(1)")
 		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;">'
-					+'<span style="color: gray; margin: 0 auto;">['+header+']</span>'
-					+'<span class="modifyCounter" style="position: absolute; border-radius: 0.5em; padding: 0 .5em 0 .5em; font-size: 0.75em; margin-left: 46.77%; margin-top:6.4%; z-index:960;">###</span>'
+					+'<span style="color: gray;">['+header+']</span>'
+					+'<span class="modifyCounter" style="position: absolute; border-radius: 0.5em; padding: 0 .5em 0 .5em; font-size: 0.75em; margin-left: 46%; margin-top:6.4%; z-index:960;">###</span>'
 					+'<textarea id="re_content" class="form-control modifyLimit" rows="3" style="width:98%; max-height: 78px; margin-left:6px; margin-right:6px;" onkeydown="JavaScript:Enter_Check2();">'+content+'</textarea>'
 					+'<button type="button" id="submitBtn1" name="submitBtn" class="btn btn-secondary btn-sm" onclick="submitBtn('+bId+')" style="margin-right:5px; margin-top: 4px; margin-left: 84.5%;">수정</button>'
 					+'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()" style="margin-top: 4px;">취소</button>'
@@ -220,7 +219,6 @@ function submitBtn(bId){
 		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 		success: function(data){
 			if(data.result===1){
-				alert(data.msg)
 				location.reload()
 			}else{
 				alert(data.msg)
@@ -243,7 +241,6 @@ function deleteBtn(bId){
 		}, 
 		success: function(data){
 			if(data.result===1){
-				alert(data.msg)
 				location.reload()
 			}else{
 				alert(data.msg)

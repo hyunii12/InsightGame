@@ -36,7 +36,7 @@
         <div class="container" style="margin-top: 14%; width:60%;">
 <!-- 			<script src="js/board.js"></script> -->
 
-			<script src="js/board.js?v=asd131j"></script>
+			<script src="js/board.js?v=as34131j"></script>
 			<style>
 				#div_write{margin-left:10px;margin-right:10px}
 			</style>
