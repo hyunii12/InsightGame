@@ -174,6 +174,7 @@ table.gameRankAsType tr:nth-child(2n+1) {
 		<td style="width: 128px;">${xboxbrank[0].name}</td>
 		<td style="width: 128px;">${switchbrank[0].name}</td>
 		<td style="width: 128px;">${psvitabrank[0].name}</td>
+
 	</tr>
 	
 	<tr>

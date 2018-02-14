@@ -65,7 +65,6 @@ public class StreamerController {
 		return "contents/hotclips";
 	}
 
-
 	@RequestMapping("streamerBoardNumAsTime.do")//기존 버전
 	public String streamerBoardNumAsTime(Model model) {
 		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");

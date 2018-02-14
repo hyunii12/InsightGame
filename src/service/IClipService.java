@@ -8,4 +8,5 @@ public interface IClipService {
 
 	public List<Clip> getcliplist();
 	
+	
 }

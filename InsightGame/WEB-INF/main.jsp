@@ -25,7 +25,7 @@
 				<h3 class="text-center" style="margin: 0 auto;">issues.jsp</h3>
 			</div>
 			<div style="margin: 0 auto; width: 80%">
-<%-- 				<jsp:include page="contents/issues.jsp" /> --%>
+				<%-- 				<jsp:include page="contents/issues.jsp" /> --%>
 
 			</div>
 		</div>
@@ -35,43 +35,43 @@
 
 		<script type="text/javascript">
 			$(document)
-					.ready(
-							function() {
-								$('.collapse')
-										.on(
-												'show.bs.collapse',
-												function() {
-													var id = $(this).attr('id');
-													$('a[href="#' + id + '"]')
-															.closest(
-																	'.panel-heading')
-															.addClass(
-																	'active-faq');
-													$(
-															'a[href="#'
-																	+ id
-																	+ '"] .panel-title span')
-															.html(
-																	'<i class="glyphicon glyphicon-minus"></i>');
-												});
-								$('.collapse')
-										.on(
-												'hide.bs.collapse',
-												function() {
-													var id = $(this).attr('id');
-													$('a[href="#' + id + '"]')
-															.closest(
-																	'.panel-heading')
-															.removeClass(
-																	'active-faq');
-													$(
-															'a[href="#'
-																	+ id
-																	+ '"] .panel-title span')
-															.html(
-																	'<i class="glyphicon glyphicon-plus"></i>');
-												});
-							});
+				.ready(
+					function() {
+						$('.collapse')
+							.on(
+								'show.bs.collapse',
+								function() {
+									var id = $(this).attr('id');
+									$('a[href="#' + id + '"]')
+										.closest(
+											'.panel-heading')
+										.addClass(
+											'active-faq');
+									$(
+										'a[href="#'
+										+ id
+										+ '"] .panel-title span')
+										.html(
+											'<i class="glyphicon glyphicon-minus"></i>');
+								});
+						$('.collapse')
+							.on(
+								'hide.bs.collapse',
+								function() {
+									var id = $(this).attr('id');
+									$('a[href="#' + id + '"]')
+										.closest(
+											'.panel-heading')
+										.removeClass(
+											'active-faq');
+									$(
+										'a[href="#'
+										+ id
+										+ '"] .panel-title span')
+										.html(
+											'<i class="glyphicon glyphicon-plus"></i>');
+								});
+					});
 		</script>
 
 		<div class="container">
@@ -319,17 +319,17 @@
 		<div class="container1">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - platform</h2>
-				<div id="gameRanking" style="margin: 0 auto;"></div>
+			<div id="gameRanking" style="margin: 0 auto;"></div>
 		</div>
 		
 		<section class="mb-0">
 			<div class="container">
 				<hr class="star-dark mb-5">
 				<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - </h2>
+				<div id="gameRankingAsGenre" style="margin: 0 auto;"></div>
 		</div>
 		</section>
-
-
+		
 <!-- 				<div id="kkk"></div> -->
 
 <!-- 					<div id="issues"> -->
@@ -346,7 +346,6 @@
 <%-- 						<jsp:include page="contents/gameRankAsCompany.jsp" /> --%>
 <!-- 					</div> -->
 <!-- 				</div> -->
-			
-		
+
 </body>
 </html>
