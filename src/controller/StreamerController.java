@@ -38,7 +38,7 @@ public class StreamerController {
 		System.out.println(searchWord);
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
 		System.out.println(streamer);
-		System.out.println(streamer.getStrTwitchUrl());
+		//System.out.println(streamer.getStrTwitchUrl());
 		model.addAttribute("searchWord", searchWord);
 		return "pages/searchStreamer";
 	}
@@ -58,13 +58,17 @@ public class StreamerController {
 	@RequestMapping("hotClip.do")
 	public String hotClip(Model model) {
 		System.out.println("여기는 핫클립");
+		
 		List<Clip> list = clipService.getcliplist();
-	
+		
+		for(Clip c: list) {
+			System.out.println(c.getCp_view());
+		}
+		
 		model.addAttribute("cliplist", list);
 
 		return "contents/hotclips";
 	}
-
 
 	@RequestMapping("streamerBoardNumAsTime.do")//기존 버전
 	public String streamerBoardNumAsTime(Model model) {
@@ -106,6 +110,14 @@ public class StreamerController {
 	public String streamerInterest(Model model) {
 		System.out.println("스트리머별 인기게임");		
 		return "contents/streamerInterest";
+	}
+	
+	
+	@RequestMapping("streamerIssuesRank.do")
+	public String streamerIssuesRank(Model model) {
+		System.out.println("스트리머 이슈스 랭크");
+		return "contents/StreamerIssuesRank";
+		
 	}
 	
 

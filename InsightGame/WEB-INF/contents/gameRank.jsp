@@ -59,6 +59,7 @@ table.gameRank {
 	-moz-box-shadow: 0 1px 2px #d1d1d1;
 	-webkit-box-shadow: 0 1px 2px #d1d1d1;
 	box-shadow: 0 1px 2px #d1d1d1;
+	width:820px;
 }
 
 table.gameRank th {
@@ -100,7 +101,7 @@ table.gameRank tr td:first-child {
 }
 
 table.gameRank tr td {
-	padding: 12px;
+	padding: 8px;
 	border-top: 1px solid #ffffff;
 	border-bottom: 1px solid #e0e0e0;
 	border-left: 1px solid #e0e0e0;

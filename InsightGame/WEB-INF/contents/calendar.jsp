@@ -34,7 +34,7 @@ function inputSchedule(result){
 <title></title>
 </head>
 <body>
-   <div id='calendar' style="background-color: white;"></div>
+   <div id='calendar' style="background-color: white; margin: 0 auto;" ></div>
    
 </body>
 </html> 

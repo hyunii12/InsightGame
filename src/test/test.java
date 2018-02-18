@@ -1,7 +1,6 @@
 package test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -15,11 +14,11 @@ import dao.IScheduleDao;
 import dao.IStreamerDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
+import model.Clip;
 import model.Rbranking;
 import model.Streamer;
 import model.Tgd;
 import model.twgame;
-
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/test/applicationContext.xml" })
@@ -58,7 +57,7 @@ System.out.println(list);
 // @org.junit.Test
 // public void test3() {
 //  List<Clip> list = new ArrayList<Clip>(); 
-//  list=clipDao.selectcliplist("2018-02-05");
+//  list=clipDao.selectcliplist("2018-02-13");
 //  for(Clip c: list) {
 //   System.out.println(c.toString());
 //  }

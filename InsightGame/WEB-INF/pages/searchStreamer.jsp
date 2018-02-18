@@ -28,8 +28,17 @@
 
 </head>
 <body>
-	<div id="navigation">
+<!-- 	<div id="navigation"> -->
+<%-- 		<jsp:include page="../navigation.jsp" /> --%>
+<!-- 	</div> -->
+
+<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
+
+		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
+
+		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
+
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
@@ -277,9 +286,9 @@
 				<div class="col-md-6">
 					<h3 class="text-center">111</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameInterest.do" />
-					<!-- 								</div> -->
+								<div id="kkk"></div>
+					
+					
 				</div>
 
 				<div class="col-md-6">

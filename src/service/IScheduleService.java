@@ -6,9 +6,7 @@ import model.Schedule;
 
 public interface IScheduleService {
 	
-	
 	public List<Schedule> getScheduleList();
 	public Schedule getSchedule(String scId);
-
 
 }

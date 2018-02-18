@@ -42,13 +42,8 @@
 
 <body>
 
-<div id="navigation">
+	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
-	</div>
-	
-	<div style="margin-top: 15%;">
-		<h3>${apiResult}<br>1초후 메인페이지로 이동</h3><br>
-		
 	</div>
 	
 </body>

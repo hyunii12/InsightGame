@@ -7,5 +7,6 @@ import model.Clip;
 
 public interface IClipDao {
 
-	public List<Clip> selectcliplist(String cp_create);
+//	public List<Clip> selectcliplist(String cp_create);
+	public List<Clip> selectcliplist();
 }

@@ -12,8 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import model.Game;
+import model.GenreRanking;
 import model.Rbranking;
 import model.twgame;
+import service.IGenrerankingService;
 import service.IRbrankingService;
 import service.ITgdService;
 import service.ITwgameService;
@@ -25,6 +28,8 @@ public class GameController {
 	ITwgameService twgameService;
 	@Autowired
 	IRbrankingService rbrankService;
+	@Autowired
+	IGenrerankingService genrerankService;
 	
 	
 	@RequestMapping("main.do")
@@ -49,9 +54,11 @@ public class GameController {
 	@RequestMapping("gameDetail.do")
 	public String gameDetail(Model model) {
 	System.out.println("여기는 게임디테일");
-			return "pages/gameDetail";
+		List<Game> gameInfo = new ArrayList<Game>();
+		model.addAttribute("gameInfo",gameInfo);
+		return "pages/gameDetail";
 	}
-	//
+	////
 	@RequestMapping("gameInterest.do")
 	public String gameInterest(Model model) {
 		System.out.println("여기는 게임인터레스트");
@@ -63,7 +70,7 @@ public class GameController {
 		List<String> s = new ArrayList<String>();
 		
 		//최근 5일로 할지 결정
-		for(int i=1; i>=0; i--) {
+		for(int i=2; i>=0; i--) {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
@@ -106,7 +113,7 @@ public class GameController {
 //		System.out.println(nalza);
 //		for(Integer i: IRLlist) {
 //			System.out.println(i);
-//		}
+//		}//
 		
 		model.addAttribute("overlist",overlist);
 		model.addAttribute("Leaguelist",Leaguelist);
@@ -130,15 +137,43 @@ public class GameController {
 	}
 
 	
-	@RequestMapping("gameRankAsCompany.do")
-	public String gameRankAsCompany(Model model) {
-		System.out.println("제작사 순위");
-		return "contents/gameRankAsCompany";
-	}
 	
 	@RequestMapping("gameRankAsGenre.do")
-	public String gameRankAsGenre(Model model) {
+	public String gameRankAsGenre(Model model) {//
+
 		System.out.println("장르별 게임순위");
+		System.out.println("//////////////////////////////////////////////////////////////");
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String today = now.format(formatter);
+		
+		
+		List<GenreRanking> fpsrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> mmorpgrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> actionrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> board_puzzle_musicrank = new ArrayList<GenreRanking>();
+		List<GenreRanking> sportrank = new ArrayList<GenreRanking>();
+		
+		fpsrank=genrerankService.getfpsList(today);
+		mmorpgrank=genrerankService.getmmorpgList(today);
+		actionrank=genrerankService.getactionList(today);
+		board_puzzle_musicrank=genrerankService.getboard_puzzle_musicList(today);
+		sportrank=genrerankService.getsportList(today);
+		
+		System.out.println(fpsrank.size());
+		System.out.println(mmorpgrank.size());
+		System.out.println(actionrank.size());
+		System.out.println(board_puzzle_musicrank.size());
+		System.out.println(sportrank.size());
+		
+		
+		model.addAttribute("fpsrank",fpsrank);
+		model.addAttribute("mmorpgrank",mmorpgrank);
+		model.addAttribute("actionrank",actionrank);
+		model.addAttribute("board_puzzle_musicrank",board_puzzle_musicrank);
+		model.addAttribute("sportrank",sportrank);
+
+		
 		return "contents/gameRankAsGenre";
 	}
 	

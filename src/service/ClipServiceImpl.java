@@ -20,13 +20,13 @@ public class ClipServiceImpl implements IClipService{
 	@Override
 	public List<Clip> getcliplist() {
 		
-		LocalDateTime now = LocalDateTime.now();
-		LocalDateTime yesterday = now.minusDays(1);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//		String formatDateTime = now.format(formatter);
-		String formatDateTime = yesterday.format(formatter);
+//		LocalDateTime now = LocalDateTime.now();
+//		LocalDateTime yesterday = now.minusDays(1);
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		String formatDateTime = yesterday.format(formatter);
 		
-		return clipDao.selectcliplist(formatDateTime);
+		return clipDao.selectcliplist();
+		
 	}
 	
 }
