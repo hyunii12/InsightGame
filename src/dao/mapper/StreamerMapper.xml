@@ -3,34 +3,34 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="dao.IStremaerDao">
+<mapper namespace="dao.IStreamerDao">
 	<resultMap type="streamer" id="streamerMap">
 		<id column="si_id" property="siId"/>
-		<result column="si_name" property="strName"/>
 		<result column="si_twitch_url" property="strTwitchUrl"/>
 		<result column="si_tgd_url" property="strTgdUrl"/>
 		<result column="si_picture" property="strPicture"/>
+		<result column="si_name" property="strName" />
 		<result column="si_game_category" property="strGameCategory"/>
 	</resultMap>
 	
 	<insert id="insertStreamer"	parameterType="streamer" useGeneratedKeys="true" keyProperty="siId">
 		INSERT INTO s_info 
-			(si_id, si_name, si_twitch_url, si_tgd_url, si_picture, si_game_category)
+			(si_id, si_twitch_url, si_tgd_url, si_picture, si_name, si_game_category)
 		VALUES(0, 
-			#{strName}, 
 			#{strTwitchUrl}, 
 			#{strTgdUrl}, 
-			#{strPicture}, 
+			#{strPicture},
+			#{strName}, 
 			#{strGameCategory}
 		) 
 		
 	</insert>
 	<update id="updateStreamerInfo" parameterType="streamer">
 		UPDATE s_info SET 
-			si_name = #{strName},
 			si_twitch_url = #{strTwitchUrl}, 
 			si_tgd_url = #{strTgdUrl}, 
-			si_picture = #{strPicture}, 
+			si_picture = #{strPicture},
+			si_name = #{strName}, 
 			si_game_category = #{strGameCategory}
 		WHERE si_id = #{siId}
 	</update>
@@ -39,25 +39,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE * FROM s_info WHERE si_id = #{siId}
 	</delete>
 	
-	<select id="selectStreamerInfoBysiId" parameterType="java.lang.Integer"	resultMap="streamerMap">
+	<select id="selectStreamerInfoBySiId" parameterType="java.lang.Integer"	resultMap="streamerMap">
 		SELECT 
 			siId,
-			strName,
 			strTwitchUrl,
 			strTgdUrl,
 			strPicture,
+			strName,
 			strGameCategory
 		FROM s_info WHERE si_id = #{siId}
 	</select>
 	<select id="selectStreamerInfoList" resultType="java.lang.Integer">
 		SELECT 
 			siId,
-			strName,
 			strTwitchUrl,
 			strTgdUrl,
 			strPicture,
+			strName,
 			strGameCategory
 		FROM s_info
+	</select>
+	
+	<select id="selectStreamerInfoByStrName" parameterType="java.lang."  resultType="streamer">
+		SELECT * FROM s_info WHERE si_name = #{si_name}
 	</select>
 
 </mapper>

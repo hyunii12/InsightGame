@@ -12,9 +12,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import dao.IClipDao;
 import dao.IRbrankingDao;
 import dao.IScheduleDao;
+import dao.IStreamerDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
 import model.Rbranking;
+import model.Streamer;
 import model.Tgd;
 import model.twgame;
 
@@ -33,6 +35,15 @@ public class test {
  @Autowired
  public IRbrankingDao rbrankingDao;
  
+ @Autowired
+ public IStreamerDao sDao;
+ 
+@org.junit.Test
+public void test2() {
+Streamer list = new Streamer(); 
+list=sDao.selectStreamerInfoByStrName("따효니");
+System.out.println(list);
+}
 
 // @org.junit.Test
 // public void test2() {
@@ -97,15 +108,15 @@ public class test {
 //}
  
  
-@org.junit.Test
-public void test8() {
-	List<Rbranking> list = new ArrayList<Rbranking>();
-	list=rbrankingDao.select3dsRanking("2018-02-12");
-
-	for(Rbranking rb: list) {
-		System.out.println(rb.toString());
-	}
-}
-  
+//@org.junit.Test
+//public void test8() {
+//	List<Rbranking> list = new ArrayList<Rbranking>();
+//	list=rbrankingDao.select3dsRanking("2018-02-12");
+//
+//	for(Rbranking rb: list) {
+//		System.out.println(rb.toString());
+//	}
+//}
+//  
 
 }

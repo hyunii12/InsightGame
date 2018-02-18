@@ -2,8 +2,6 @@ package controller;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import model.Clip;
-import model.Schedule;
+import model.Streamer;
 import service.IClipService;
+import service.IStreamerService;
 import service.ITgdService;
 
 @Controller
@@ -24,6 +22,8 @@ public class StreamerController {
 	IClipService clipService;
 	@Autowired
 	ITgdService tgdService;
+	@Autowired
+	IStreamerService streamerService;
 
 	@RequestMapping("InsightStreamer.do")
 	public String streamer(Model model) {
@@ -33,9 +33,13 @@ public class StreamerController {
 
 	@RequestMapping("searchStreamer.do")
 	public String searchStreamer(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect,
-			@RequestParam(name = "search", defaultValue = "") String search) {
+			@RequestParam(name = "search", defaultValue = "") String searchWord) {
 		System.out.println("여기는 서치스트리머");
-		model.addAttribute("what", search);
+		System.out.println(searchWord);
+		Streamer streamer = streamerService.getStreamerByName(searchWord);
+		System.out.println(streamer);
+		System.out.println(streamer.getStrTwitchUrl());
+		model.addAttribute("searchWord", searchWord);
 		return "pages/searchStreamer";
 	}
 
