@@ -1,70 +1,34 @@
 package service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 import com.github.scribejava.core.builder.ServiceBuilder;
 import com.github.scribejava.core.model.OAuth2AccessToken;
-import com.github.scribejava.core.model.OAuthRequest;
-import com.github.scribejava.core.model.Response;
-import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
 import model.TwitchLoginApi;
 
 public class TwitchLoginService {
 	
-	private final static String CLIENT_ID = "ghty8lutmj1064oembb9g8195fr9eg";
-	private final static String CLIENT_SECRET = "ebtd2umkpkyi2e5vy3cb09d5xmx8gy";
+	private final static String CLIENT_ID = "4jsekeumop20mr3dgphok2axptw6j5";
+	private final static String CLIENT_SECRET = "xvme9rkwsqzj3e1j5u0lk0c254seca";
 	private final static String REDIRECT_URI = "http://localhost:8080/InsightGame/twitchCallback.do";
-	private final static String SESSION_STATE = "oauth_state";
-//	private final static String PROFILE_API_URL = "";
-	
-	/* 네아로 인증  URL 생성  Method */
-	public String getAuthorizationUrl(HttpSession session) {
-		
-		/* 세션 유효성 검증을 위하여 난수를 생성 */
-		String state = generateRandomString();
-		/* 생성한 난수 값을 session에 저장 */
-		setSession(session,state);
-
-
-		/* Scribe에서 제공하는 인증 URL 생성 기능을 이용하여 네아로 인증 URL 생성 */
-		OAuth20Service oauthService = new ServiceBuilder()
-				.apiKey(CLIENT_ID)
-				.apiSecret(CLIENT_SECRET)
-				.callback(REDIRECT_URI)
-				.state("RANDOM_STRING")
-				.build(TwitchLoginApi.instance());
-
-		return oauthService.getAuthorizationUrl();
-	}
-	
-	/* 네아로 Callback 처리 및  AccessToken 획득 Method */
-	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state) throws IOException{
-		
-		/* Callback으로 전달받은 세선검증용 난수값과 세션에 저장되어있는 값이 일치하는지 확인 */
-		String sessionState = getSession(session);
-		if(StringUtils.equals(sessionState, state)){
-		
-			OAuth20Service oauthService = new ServiceBuilder()
-					.apiKey(CLIENT_ID)
-					.apiSecret(CLIENT_SECRET)
-					.callback(REDIRECT_URI)
-					.state(state)
-					.build(TwitchLoginApi.instance());
-					
-			/* Scribe에서 제공하는 AccessToken 획득 기능으로 네아로 Access Token을 획득 */
-			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
-			return accessToken;
-		}
-		return null;
-	}
+	private final static String SCOPE = "user_read";
 	
 	/* 세션 유효성 검증을 위한 난수 생성기 */
 	private String generateRandomString() {
@@ -73,27 +37,84 @@ public class TwitchLoginService {
 	
 	/* http session에 데이터 저장 */
 	private void setSession(HttpSession session,String state){
-		session.setAttribute(SESSION_STATE, state);		
+		session.setAttribute("state", state);
 	}
 
 	/* http session에서 데이터 가져오기 */	
 	private String getSession(HttpSession session){
-		return (String) session.getAttribute(SESSION_STATE);
+		return (String) session.getAttribute("state");
 	}
 	
-	/* Access Token을 이용하여 네이버 사용자 프로필 API를 호출 */
-//	public String getUserProfile(OAuth2AccessToken oauthToken) throws IOException{
-//
-//		OAuth20Service oauthService =new ServiceBuilder()
-//    			.apiKey(CLIENT_ID)
-//    			.apiSecret(CLIENT_SECRET)
-//    			.callback(REDIRECT_URI).build(TwitchLoginApi.instance());
-//    	
-//    		OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL, oauthService);
-//		oauthService.signRequest(oauthToken, request);
-//		Response response = request.send();
-//		return response.getBody();
+	/* 네아로 인증  URL 생성  Method */
+	public String getAuthorizationUrl(HttpSession session) {
+		
+		String state = generateRandomString();
+		setSession(session,state);
+		
+		OAuth20Service oauthService = new ServiceBuilder()
+				.apiKey(CLIENT_ID)
+				.apiSecret(CLIENT_SECRET)
+				.callback(REDIRECT_URI)
+				.scope("user_read")
+				.state(state)
+				.build(TwitchLoginApi.instance());
+		return oauthService.getAuthorizationUrl();
+	}
+	
+	/* 네아로 Callback 처리 및  AccessToken 획득 Method */
+	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state) throws IOException{
+		
+		OAuth20Service oauthService = new ServiceBuilder()
+				.apiKey(CLIENT_ID)
+				.apiSecret(CLIENT_SECRET)
+				.callback(REDIRECT_URI)
+				.scope("user_read")
+				.state(state)
+				.build(TwitchLoginApi.instance());
+		
+		OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
+		return accessToken;
+	}
+	
+//	public String getUserProfile(OAuth2AccessToken oauthToken, String scope) {
+//		
+//		String url = "https://api.twitch.tv/kraken/user?"+;
+//		Response response = url.
+//		
+//		return null;
 //	}
 	
+	public String getUserProfile(OAuth2AccessToken oauthToken) throws IOException{
+		
+		String url ="https://api.twitch.tv/kraken/user";
+		
+		//String USER_AGENT = "Mozila/5.0";
+	        
+	        //http client 생성
+	        CloseableHttpClient httpClient = HttpClients.createDefault();
+	        
+	        //get 메서드와 URL 설정
+	        HttpGet httpGet = new HttpGet(url);
+	        
+	        //agent 정보 설정
+	        //httpGet.addHeader("User-Agent", USER_AGENT);
+	        httpGet.addHeader("Content-type", "application/json");
+	        httpGet.addHeader("Client-ID","4jsekeumop20mr3dgphok2axptw6j5");
+	        httpGet.addHeader("Authorization", "OAuth "+oauthToken.getAccessToken());
+	        
+	        //get 요청
+	        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
+	        
+	        //System.out.println("GET Response Status");
+	        //System.out.println(httpResponse.getStatusLine().getStatusCode());
+	        String json = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+	        
+	        //System.out.println(json);
+	        
+	        httpClient.close();
+		
+		return json;
 
+	}
+	
 }

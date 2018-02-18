@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IGenreRankingDao">
+
+	<select id="selectfpsRanking" resultType="genreranking" >
+		select * from chart_FPS where day=#{day}
+	</select>
+	<select id="selectmmorpgRanking" resultType="genreranking" >
+		select * from chart_MMORPG where day=#{day}
+	</select>
+	<select id="selectactionRanking" resultType="genreranking" >
+		select * from chart_action where day=#{day}
+	</select>
+	<select id="selectboard_puzzle_musicRanking" resultType="genreranking" >
+		select * from chart_board_puzzle_music where day=#{day}
+	</select>
+	<select id="selectsportRanking" resultType="genreranking" >
+		select * from chart_sport where day=#{day}
+	</select>
+
+</mapper>

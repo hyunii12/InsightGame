@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +10,31 @@
 </head>
 <body>
 
-<button type="button" onclick="location.href='https://clips.twitch.tv/SuccessfulUnsightlyRedpandaSSSsss' ">클릭</button>      
-
+	<div>
+	<table style="margin-top: 30px; margin-bottom: 4px;">
+		<c:forEach items="${cliplist}" var="list" begin="0" end="4"	varStatus="status">
+			<td style="vertical-align:top; width: 202px; max-width:202px;">
+			<a href ="${list.cp_url}">
+			<img src="${list.cp_img}" width="195px" height="150px" style="border-radius: 8px; padding-left: 2.5px; padding-right: 2.5px;"></a>
+<%-- 			<br>${list.cp_title} --%>
+<%-- 			<br>조회수 : ${list.cp_view} --%>
+<%-- 			<br>${list.cp_display} --%>
+<%-- 			<br>${list.cp_game}</td> --%>
+		</c:forEach>
+	</table>
+	</div>
+	
+	<div style="position: relative;">
+	<table style="margin: 0;">
+		<c:forEach items="${cliplist}" var="list" begin="0" end="4"	varStatus="status">
+		<td style="padding-left: 11px; padding-right: 11px; padding-top:0px; vertical-align:top; width: 202px; max-width: 202px;">
+			<a href ="${list.cp_url}" style="text-decoration:none">
+			<span style="color: black; font-size: 14px;">${list.cp_title}</span></a><br>
+			<span style="color: gray; font-size: 14px;">${list.cp_game}</span><br>
+			<span style="color: purple; font-size: 14px; font-weight:bold">${list.cp_display}</span>
+			</td>
+		</c:forEach>
+	</table>
+	</div>
 </body>
 </html>

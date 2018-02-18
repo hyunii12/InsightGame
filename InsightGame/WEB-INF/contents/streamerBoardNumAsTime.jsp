@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,10 +20,10 @@
 </head>
 
 <body>
-	<div style="width:1000px">
+	<div style="width:600px">
 		<canvas id="chart1"></canvas>
 	</div>
-	
+ 	
 	<script>
 		function randomNumber(min, max) {
 			return Math.random() * (max - min) + min;
@@ -37,17 +39,29 @@
 				y: close
 			};
 		}
+		
+ 		var dateFormat = 'MMMM DD YYYY';
+ 		
+  		var chDate = '${d}'; //여기서 January dd yyyy를 받음
+		  		
+		var date = moment(chDate, dateFormat);//여기 위에 chDate를 넣고
+		
+		var tg='${tdglist}';
+	
+		var d=tg;
+		var d2=JSON.parse(tg);
 
-		var dateFormat = 'MMMM DD YYYY';
-		var date = moment('December 01 2017', dateFormat);
-		var data = [randomBar(date, 30)];
+		var data = d2;//이거가 데이터 넣는거
+	
+
 		var labels = [date];
-		while (data.length < 58) {
-			date = date.clone().add(1, 'd');
-			if (date.isoWeekday() <= 5) {
+		while (data.length < 26) {
+			date = date.clone().add(1, 'day');
+			
+ 			if (date.isoWeekday() <= 6) {
 				data.push(randomBar(date, data[data.length - 1].y));
 				labels.push(date);
-			}
+ 			}
 		}
 
 		var ctx = document.getElementById("chart1").getContext("2d");
@@ -58,7 +72,7 @@
 			data: {
 				labels: labels,
 				datasets: [{
-					label: "스트리머 게시판 게시글 차트",
+					label: "전체 게시판 게시글수 차트",
 					data: data,
 					type: 'line',
 					pointRadius: 0,
@@ -72,6 +86,11 @@
 					xAxes: [{
 						type: 'time',
 						distribution: 'series',
+						 time: {
+			                    displayFormats: {
+			                    	week: 'll'
+			                    }
+			                },					
 						ticks: {
 							source: 'labels'
 						}

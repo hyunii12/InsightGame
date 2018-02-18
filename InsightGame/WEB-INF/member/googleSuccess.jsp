@@ -46,10 +46,5 @@
 		<jsp:include page="../navigation.jsp" />
 	</div>
 	
-	<div style="margin-top: 15%;">
-		<h3>인사이트 게임 Google Login 성공입니다<br>1초후 메인페이지로 이동</h3><br>
-		
-	</div>
-	
 </body>
 </html>

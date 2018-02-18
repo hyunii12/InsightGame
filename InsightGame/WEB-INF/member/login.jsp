@@ -25,6 +25,9 @@
 <!-- Custom styles for this template -->
 <link href="css/freelancer.min.css" rel="stylesheet">
 
+<!-- Twitch login logo -->
+<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+
 </head>
 <body>
 	<div id="wrap">
@@ -39,14 +42,10 @@
 			<div class="container" style="display: inline-block;">
 				<a href="${naverurl}"><img width="126" height="75"
 					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
-				<!-- 			<a href="joinForm.do">회원가입</a> -->
-				<!-- 				<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code -->
-				<!-- 				&client_id=ghty8lutmj1064oembb9g8195fr9eg&redirect_uri=http://localhost:8080/InsightGame/callback.do&client_secret=nlquky5njenvf5snprt1zy88og7gvk"> -->
-				<!-- 				Connect With Twitch!</a><br> -->
-				<a href="${twitchurl}"><img width="126" height="75"
-					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
-				<a href="${googleurl}"><img width="126" height="75"
-					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
+				<a href="${twitchurl}">
+				<img width="126" height="75" src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" /></a><br>
+				<a href="${googleurl}">
+				<img width="126" height="75" src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
 			</div>
 		</div>
 	</div>
