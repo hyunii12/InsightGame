@@ -68,7 +68,7 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer
 				Rank</h2>
 			<div class="row">
-				<div style="margin: 0 auto">
+				<div style="margin: 0 auto; width: 75%;">
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
 
