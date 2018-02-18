@@ -9,12 +9,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="gi_title" property="title"/>
 		<result column="gi_platform" property="platform"/>
 		<result column="gi_genre" property="genre"/>
-		<result column="gi_release" property="release"/>
-		<result column="gi_age" property="age"/>
 		<result column="gi_production" property="production"/>
+		<result column="gi_publisher" property="publisher"/>
+		<result column="gi_age" property="age"/>
+		<result column="gi_release" property="release"/>
 		<result column="gi_picture" property="picture"/>
 		<result column="gi_site_url" property="siteUrl"/>
-		<result column="gi_score" property="score"/>
 	</resultMap>
 	<insert id="insertGameInfo"	parameterType="game" useGeneratedKeys="true" keyProperty="giId">
 		INSERT INTO g_info 

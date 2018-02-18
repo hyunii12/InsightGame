@@ -16,6 +16,7 @@ import model.Game;
 import model.GenreRanking;
 import model.Rbranking;
 import model.twgame;
+import service.IGameService;
 import service.IGenrerankingService;
 import service.IRbrankingService;
 import service.ITgdService;
@@ -30,6 +31,8 @@ public class GameController {
 	IRbrankingService rbrankService;
 	@Autowired
 	IGenrerankingService genrerankService;
+	@Autowired
+	IGameService gameService;
 	
 	
 	@RequestMapping("main.do")
@@ -45,9 +48,11 @@ public class GameController {
 
 	@RequestMapping("searchGame.do")
 	public String searchGame(Model model, @RequestParam(name="searchSelect", required=true)String searchSelect,
-			@RequestParam(name="search", defaultValue="") String search) {
+			@RequestParam(name="search", defaultValue="") String searchWord) {
 		System.out.println("여기는 서치게임");
-		model.addAttribute("what", search);
+		Game game = gameService.selectGameInfo(searchWord);
+		System.out.println(game);
+		model.addAttribute("searchWord", searchWord);
 		return "pages/searchGame";
 	}
 	

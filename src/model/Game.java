@@ -7,12 +7,12 @@ public class Game {
 	private String title;
 	private String platform;
 	private String genre;
-	private Date release;
-	private int age;
 	private String production;
+	private String publisher;
+	private int age;
+	private Date release;
 	private String picture;
 	private String siteUrl;
-	private int score;
 	public int getGiId() {
 		return giId;
 	}
@@ -37,11 +37,17 @@ public class Game {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public Date getRelease() {
-		return release;
+	public String getProduction() {
+		return production;
 	}
-	public void setRelease(Date release) {
-		this.release = release;
+	public void setProduction(String production) {
+		this.production = production;
+	}
+	public String getPublisher() {
+		return publisher;
+	}
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 	public int getAge() {
 		return age;
@@ -49,11 +55,11 @@ public class Game {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String getProduction() {
-		return production;
+	public Date getRelease() {
+		return release;
 	}
-	public void setProduction(String production) {
-		this.production = production;
+	public void setRelease(Date release) {
+		this.release = release;
 	}
 	public String getPicture() {
 		return picture;
@@ -67,17 +73,13 @@ public class Game {
 	public void setSiteUrl(String siteUrl) {
 		this.siteUrl = siteUrl;
 	}
-	public int getScore() {
-		return score;
-	}
-	public void setScore(int score) {
-		this.score = score;
-	}
+	
 	@Override
 	public String toString() {
-		return "Game [giId=" + giId + ", title=" + title + ", platform=" + platform + ", genre=" + genre + ", release="
-				+ release + ", age=" + age + ", production=" + production + ", picture=" + picture + ", siteUrl="
-				+ siteUrl + ", score=" + score + "]";
+		return "Game [giId=" + giId + ", title=" + title + ", platform=" + platform + ", genre=" + genre
+				+ ", production=" + production + ", publisher=" + publisher + ", age=" + age + ", release=" + release
+				+ ", picture=" + picture + ", siteUrl=" + siteUrl + "]";
 	}
+	
 	
 }

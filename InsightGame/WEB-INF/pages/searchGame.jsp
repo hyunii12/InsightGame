@@ -38,7 +38,7 @@
 		<div class="container">
 			<h2 class="text-center text-uppercase">gameInformation.jsp</h2>
 			<h2 class="text-center text-uppercase text-secondary">
-				검색키워드:${what }</h2>
+				검색키워드:${searchWord }</h2>
 			<h3 class="text-center text-uppercase text-secondary">게임 상세정보:
 				${gameInfo.title }</h3>
 
