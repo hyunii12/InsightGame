@@ -43,34 +43,52 @@
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
-		<div class="container">
-			<h2 class="text-center text-uppercase text-white">streamerInformation.jsp</h2>
-			<h2 class="text-center text-uppercase text-secondary">검색키워드: ${what }</h2>
-			<hr class="star-light mb-5">
-			<div class="row">
-				<a href="gameDetail.jsp"><h3 class="text-center text-white"
-						style="margin: 0 auto;">gameDetail.jsp</h3></a>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameIssues.do" /> --%>
-				<!-- 			</div> -->
+		<section class="mb-0">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">streamer info</h2>
+			
+			<div style="display: flex">
+				<div style="margin-left: 15%;">
+
+				</div>
+
+				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%;">
+					<table id="boardTable" class="table" align="center" style="margin: 0 auto; margin-top: 4%;">
+						<tr style="text-align: left;">
+							<td rowspan="4" style="border-top: 0; vertical-align: middle;"><img src="${streamerInfo.strPicture}" style="border-radius: 8px;"></td>
+							<td style="text-align: left; border-top: 0; padding-top: 18px; min-width: 300px;">
+							<span style="color: navy; font-size: 2rem; line-height: 35px; display:inline-block;'">
+							<b>${streamerInfo.strName }<br>(${streamerInfo.siId })</b></span>
+							<a href="${streamerInfo.strTwitchUrl }">
+							<img src="img/tw_logo.png" style="width: 32px; height: 32px; margin-left: 0px; margin-bottom: 65px; display: inline-block;"></a>
+							</td>
+						</tr>
+						<tr>
+							<td style="border-top: 0;"><img src="img/worldwide.png" style="margin-left: 1px; margin-right: 8px; width:22px; height: 22px;"><span style="color: grey">Korea</span></td>
+						</tr>
+						<tr>
+							<td style="border-top: 0;"><img src="img/gamecontroller.png" style="margin-right: 7px;"><span style="color: grey">${streamerInfo.strGameCategory }</span></td>
+						</tr>
+						<tr>
+							<td style="border-top: 0; padding-bottom: 18px;"><a href="${streamerInfo.strTgdUrl }" style="text-decoration:none"><img src="img/tgd_logo.png" style="width: 27px; height: 27px;">
+							<span style="color: purple; font-size: 0.9rem;">트게더</span></a></td>
+						</tr>
+					</table>
+				</div>
 			</div>
-
-		</div>
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
 			<hr class="star-dark mb-5">
-
+			<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
 		</div>
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary mb-0">
+		<section class="mb-0">
 		<div class="container">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase">스트리머 게임 정보</h2>
 			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
 <style>
@@ -276,11 +294,12 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio">
 		<div class="container1">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
-			<hr class="star-dark mb-5">
+			
 			<div class="row">
 
 				<div class="col-md-6">
@@ -319,10 +338,11 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">핫클립</h2>
-			<hr class="star-light mb-5">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
+			hot clip</h2>
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
 				

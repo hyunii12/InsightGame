@@ -6,7 +6,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>핫클립 재생</title>
+<title>hot clip</title>
+<style type="text/css">
+	.ellip {
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+</style>
 </head>
 <body>
 
@@ -27,11 +34,11 @@
 	<div style="position: relative;">
 	<table style="margin: 0;">
 		<c:forEach items="${cliplist}" var="list" begin="0" end="4"	varStatus="status">
-		<td style="padding-left: 11px; padding-right: 11px; padding-top:0px; vertical-align:top; width: 202px; max-width: 202px;">
-			<a href ="${list.cp_url}" style="text-decoration:none">
-			<span style="color: black; font-size: 14px;">${list.cp_title}</span></a><br>
-			<span style="color: gray; font-size: 14px;">${list.cp_game}</span><br>
-			<span style="color: purple; font-size: 14px; font-weight:bold">${list.cp_display}</span>
+			<td class="ellip" style="padding-left: 11px; padding-right: 11px; padding-top:0px; vertical-align:top; width: 202px; max-width: 202px;">
+				<a href ="${list.cp_url}" style="text-decoration:none">
+					<span style="color: black; font-size: 14px;">${list.cp_title}</span></a><br>
+					<span style="color: gray; font-size: 14px;">${list.cp_game}</span><br>
+					<span style="color: purple; font-size: 14px; font-weight:bold">${list.cp_display}</span>
 			</td>
 		</c:forEach>
 	</table>

@@ -34,6 +34,7 @@ Number.prototype.zf = function(len){return this.toString().zf(len);};
 // event script
 $(document).ready(function(){
 	page = 1;
+		
 	$("#writeContent").keydown(function (key) {
         if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
         	$('#writeBtn').click();   	
@@ -50,7 +51,7 @@ $(document).ready(function(){
 		if(!$(this).find('td[name="header"]'))
 			$(this).css('background', 'lightgray')
 	})
-	
+		
 	$('#writeBtn').on('click', function(){
 		var content = $('#writeContent').val();
 		
@@ -81,10 +82,14 @@ $(document).ready(function(){
 	// 더보기 버튼 
 	$('#getListBtn').on('click', function(){
 		page += 1;
+		var ajax_last_num = 0
+		var current_ajax_num = ajax_last_num;
+
 		$.ajax({
 			url: "getList.do", 
 			dataType: "json",
 			data: "page="+page, 
+	
 			success: function(data){
 				var boardList = data.boardList;
 				$.each(boardList, function(index, item){
@@ -162,6 +167,12 @@ function setHeader(val){
 }
 
 function modifyBtn(bId){
+	var targetTr = $('#tr_'+bId);
+	var writer = $('#trr_'+bId+' td').attr('writer');
+	var header = $('#trr_'+bId+' td').attr('header');
+	var content = $('#trr_'+bId+' td').attr('content');
+	
+	if(writer == session_id)	{
 	$(function() {
 	    $('.modifyLimit').keyup(function (e){
 	        var content = $(this).val();
@@ -183,12 +194,7 @@ function modifyBtn(bId){
 	        	$('.modifyCounter').css({'background': 'white', 'color': 'black'});
 	    });
 	});
-	
 
-	
-	var targetTr = $('#tr_'+bId);
-	var header = $('#trr_'+bId+' td').attr('header');
-	var content = $('#trr_'+bId+' td').attr('content');
 	var modContent = $("#boardTable tr[id=trr_"+bId+"] td:nth-of-type(1)")
 		.replaceWith('<td colspan="2" style="border-top:0px; text-align: left; vertical-align: middle; padding-left: 1px; padding-top:0px; padding-bottom: 0px; padding-right: 8px;">'
 					+'<span style="color: gray;">['+header+']</span>'
@@ -205,9 +211,17 @@ function modifyBtn(bId){
 //			'<button type="button" name="cancelBtn" class="btn btn-secondary btn-sm" onclick="location.reload()">취소</button>'+
 //			'</td>'
 //			});
+	}
+	
+	else{
+		alert("자신이 작성한 글만 수정 가능합니다")
+		
+	}
 }
+
 function submitBtn(bId){
 	var content = $('#re_content').val()
+	
 	$.ajax({
 		url: "modify.do", 
 		type: "post",
@@ -218,32 +232,9 @@ function submitBtn(bId){
 		}, 
 		contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
 		success: function(data){
-			if(data.result===1){
+			if(data.result != 0){
 				location.reload()
 			}else{
-				alert(data.msg)
-				location.reload()
-			}
-		},
-		error:function(request,status,error){
-		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		}
-	});
-}
-
-function deleteBtn(bId){
-	$.ajax({
-		url: "delete.do", 
-		type: "post",
-		dataType: "json",
-		data:{	
-			"bId" : bId,
-		}, 
-		success: function(data){
-			if(data.result===1){
-				location.reload()
-			}else{
-				alert(data.msg)
 				location.reload()
 			}
 		},
@@ -264,13 +255,14 @@ function getCommentList(bId, targetTr){
 				$.each(list, function(index, item) {
 					var cmt_bId = item.bId;
 					var cmt_content = item.content;
+					var cmt_writer2 = item.writer;
 					var cmt_writer1 = item.writer.split('@');
 					var cmt_writer = cmt_writer1[0];
 					var cmt_regDate = new Date(item.regDate).format("yyyy-MM-dd&nbsp;(HH:mm:ss)")
 					var cmt_groupId = item.groupId;
 					var tr = $('<tr>').attr('id', 'cmts_tr_'+cmt_bId).addClass('tr_cmts_'+bId).insertAfter(targetTr)
 					var td1 = $('<td>')
-						.attr('bId', cmt_bId)
+						.attr('bId', cmt_bId).attr('writerc', cmt_writer2)
 						.css({"text-align": 'left', 'padding-bottom': '1px', 'padding-left': '.75rem', 'padding-right': '5px', 'width': '170px', 'style': 'table-layout:fixed;' })
 						.html('<b>└　'+cmt_writer+'</b>').appendTo(tr)
 						var td2 = $('<td>').css({'text-align':'left', 'padding-left':'2px'})
@@ -299,6 +291,35 @@ function getCommentList(bId, targetTr){
 		}
 	})
 }
+
+function deleteBtn(bId){
+	$.ajax({
+		url: "delete.do", 
+		type: "post",
+		dataType: "json",
+		data:{	
+			"bId" : bId
+		}, 
+		success: function(data){
+			if(data.result != 0){
+				alert('삭제되었습니다')
+				location.reload()
+			}
+//			if(writer != session_id){
+//				alert("자신이 작성한 글만 삭제 가능합니다")
+//			}
+			else{
+        		alert(data.msg)
+				location.reload()
+			}
+		},
+		error:function(request,status,error){
+		    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+
+}
+
 function commentBtn(bId){
 	$(function() {
 	    $('.commentLimit').keyup(function (e){

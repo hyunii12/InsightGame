@@ -64,7 +64,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-		id="mainNav" style="padding-bottom: 1.5%; ">
+		id="mainNav" style="padding-bottom: 1.5%; height: 108px;">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 			Game</a>
@@ -150,17 +150,17 @@
 	</nav>
 
 
-	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 1028;">
+	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 21%; padding-bottom: 1%; z-index: 1029;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
 			style="color: white; font-weight: bold;">GAME</a>
 	</div>
-	<div style="position: fixed; right: 44.3%; top: 100px; z-index: 1039;">
+	<div style="position: fixed; left: 46.5%; top: 100px; z-index: 1039;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
-			style="color: white; font-weight: bold;">STREAMER</a>
+			style="color: white; font-weight: bold; margin: 0;">STREAMER</a>
 	</div>
-	<div style="position: fixed; left: 73%; top: 100px; z-index: 1030;">
+	<div style="position: fixed; left: 75%; top: 100px; z-index: 1034;">
 		<a class="navbar-brand js-scroll-trigger" href="board.do"
-			style="color: white; font-weight: bold;">BOARD</a>
+			style="color: white; font-weight: bold; margin: 0;">BOARD</a>
 	</div>
 
 </body>
