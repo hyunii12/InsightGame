@@ -38,9 +38,10 @@
 	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
 
-		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
+<!-- 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script> -->
+		<script type="text/javascript" src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjklj"></script>
 
-		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
+<!-- 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script> -->
 
 	</div>
 
@@ -68,7 +69,10 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer
 				Rank</h2>
 			<div class="row">
-				<div style="margin: 0 auto">
+
+			<div id="#streamer_rank"></div>
+
+				<div style="margin: 0 auto; width: 75%;">
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
 
@@ -94,6 +98,7 @@
 				<!-- 								<div id="issues"> -->
 				<%-- 									<jsp:include page="gameCalendar.do" /> --%>
 				<!-- 								</div> -->
+
 			</div>
 		</div>
 
@@ -104,12 +109,16 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0"
 				style="font-size: 2rem;">top games - streamer</h2>
 			<div class="row">
-				<div id="streamerInterest" align="center" style="margin: 0 auto;">
-					<jsp:include page="../contents/streamerInterest.jsp" />
-				</div>
+<!-- 				<div id="streamerInterest" align="center" style="margin: 0 auto;"> -->
+<%-- 					<jsp:include page="../contents/streamerInterest.jsp" /> --%>
+<!-- 				</div> -->
+
+				<div id="streamer_top" style="margin: 0 auto;"></div>
 			</div>
 		</div>
 		</section>
+		
+
 
 		<div class="container1">
 			<hr class="star-dark mb-5">
