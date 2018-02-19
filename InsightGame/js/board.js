@@ -387,6 +387,7 @@ function writeBtn_comment(bId, header){
 				targetTr.find('button[name=commentBtn]').attr('value', parseInt(cmts)+1);
 				commentBtn(bId);
 				commentBtn(bId);
+				alert(data.msg)
 			}
 		},
 		error:function(request,status,error){

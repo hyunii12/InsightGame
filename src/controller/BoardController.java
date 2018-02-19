@@ -103,10 +103,10 @@ public class BoardController {
 			int result = boardService.writeBoard(board, 0);
 			results.put("result", result);
 			return results;
-		}else {
+		} else {
 			String msg = "로그인 하세요.";
-			results.put("msg",msg);
-			results.put("result",0);
+			results.put("msg", msg);
+			results.put("result", 0);
 			return results;
 		}
 	}
@@ -120,24 +120,27 @@ public class BoardController {
 			throws UnsupportedEncodingException {
 		HashMap<String, Object> result = new HashMap<>();
 		// System.out.println(header+":::::::::"+content);
-
 		HttpSession session = request.getSession();
 		String boardWriter = (String) session.getAttribute("user_id");
 		// String[] test = boardWriter.split("@");
 		// writer = test[0];
-
-		int parentId = Integer.parseInt(parentBId);
-		Board board = new Board();
-		board.setHeader(header);
-		board.setContent(content);
-		board.setWriter(boardWriter);
-		// System.out.println(board);
-		int newBId = boardService.writeBoard(board, parentId);
-		if (newBId > 0) {
-			// 작성 성공
-			result.put("new", newBId);
-		} else
-			result.put("msg", false);
+		if(boardWriter != null) {
+			int parentId = Integer.parseInt(parentBId);
+			Board board = new Board();
+			board.setHeader(header);
+			board.setContent(content);
+			board.setWriter(boardWriter);
+			// System.out.println(board);
+			int newBId = boardService.writeBoard(board, parentId);
+			if (newBId > 0) {
+				// 작성 성공
+				result.put("msg", "댓글 작성 완료");
+			} else {
+				result.put("msg", "댓글 작성 실패");
+			}
+		}else {
+			result.put("msg", "로그인 하세요.");
+		}
 		return result;
 	}
 
