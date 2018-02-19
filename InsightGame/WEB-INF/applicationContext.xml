@@ -51,6 +51,10 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="mapperInterface" value="dao.IGenreRankingDao" />
 	</bean>
+	<bean id="streamerpopDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		<property name="mapperInterface" value="dao.IStreamerpopDao"/>
+	</bean>
 
 	<context:component-scan base-package="service" />
 

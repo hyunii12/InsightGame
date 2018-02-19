@@ -13,7 +13,7 @@ $(document).ready(function() {
 				json.start = item.scStartDate;
 				json.end = item.scEndDate;
 				result.push(json);
-			});
+			})
 			inputSchedule(result);
 		},
 		error : function(xhar, status, error) {
@@ -63,7 +63,7 @@ $(document).ready(function() {
 		type : "get",
 		dataType : "html",
 		success : function(data) {
-			$('#GI').html(data)
+			$('#GI').html(data);
 		},
 		error : function(xhar, status, error) {
 			alert(error);
@@ -75,7 +75,31 @@ $(document).ready(function() {
 		type : "get",
 		dataType : "html",
 		success : function(data) {
-			$('#hot').html(data)
+			$('#hot').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
+	
+		$.ajax({
+		url : "streamerInterest.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#streamer_top').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
+	
+	$.ajax({
+		url : "streamerRank.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#streamer_rank').html(data);
 		},
 		error : function(xhar, status, error) {
 			alert(error);

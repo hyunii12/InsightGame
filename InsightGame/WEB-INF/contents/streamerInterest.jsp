@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -165,62 +167,59 @@ table tr:nth-child(2n+1) {
 		<table class="streamerinterest">
 			<tr>
 				<th scope="row">스트리머</th>
-				<td>스트리머1</td>
-				<td>스트리머2</td>
-				<td>스트리머3</td>
-				<td>스트리머4</td>
-				<td>스트리머5</td>
+				<td>풍월량</td>
+				<td>서새봄냥</td>
+				<td>김도</td>
+				<td>웁</td>
+				<td>다주</td>
 			</tr>
 
 			<tr>
 				<th scope="row">1</th>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
+				<td>${pungname[0]}</td>
+				<td>${bomungname[0]}</td>
+				<td>${kimname[0]}</td>
+				<td>${woopname[0]}</td>
+				<td>${dazuname[0]}</td>
 
 			</tr>
 			<tr>
 				<th scope="row">2</th>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
+				<td>${pungname[1]}</td>
+				<td>${bomungname[1]}</td>
+				<td>${kimname[1]}</td>
+				<td>${woopname[1]}</td>
+				<td>${dazuname[1]}</td>
 			</tr>
 
 			<tr>
 				<th scope="row">3</th>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
+				<td>${pungname[2]}</td>
+				<td>${bomungname[2]}</td>
+				<td>${kimname[2]}</td>
+				<td>${woopname[2]}</td>
+				<td>${dazuname[2]}</td>
 			</tr>
 
 			<tr>
 				<th scope="row">4</th>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
+				<td>${pungname[3]}</td>
+				<td>${bomungname[3]}</td>
+				<td>${kimname[3]}</td>
+				<td>${woopname[3]}</td>
+				<td>${dazuname[3]}</td>
 
 			</tr>
 			<tr>
 				<th scope="row">5</th>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
-				<td>게임</td>
+				<td>${pungname[4]}</td>
+				<td>${bomungname[4]}</td>
+				<td>${kimname[4]}</td>
+				<td>${woopname[4]}</td>
+				<td>${dazuname[4]}</td>
 			</tr>
-
 
 		</table>
 	</div>
-
-
 </body>
 </html>
