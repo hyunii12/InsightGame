@@ -21,6 +21,10 @@ circle {
 	
 		var width = 960,
 			height = 500,
+	
+		var width = 500,
+			height = 300,
+
 			padding = 1.5, // separation between same-color nodes
 			clusterPadding = 6, // separation between different-color nodes
 			maxRadius = 12;

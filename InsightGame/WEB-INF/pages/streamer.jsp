@@ -96,12 +96,13 @@
 			<hr class="star-dark mb-5">
 
 			<div class="row">
+				
 				<div class="col-md-6">
 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
 
-					<!-- 			<div id="issues"> -->
-					<%-- 					<jsp:include page="gameCalendar.do" /> --%>
-					<!-- 								</div> -->
+								<div style="width:75%; margin: 0 auto;">
+										<div><jsp:include page="../contents/streamerBoardKeyword.jsp" /></div>
+													</div>
 				</div>
 
 				<div class="col-md-6">
@@ -110,6 +111,8 @@
 						<div id="kkk"></div>
 					</div>
 				</div>
+				
+				
 			</div>
 		</div>
 

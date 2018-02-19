@@ -72,24 +72,6 @@
 							<td>${gameInfo.release }</td>
 						</tr>
 
-
-						<!-- 					<tbody> -->
-						<%-- 						<c:forEach items="" var="list"> --%>
-						<%-- 											<tr style="cursor: pointer" onclick="alert(${list.bId})"> --%>
-						<!-- 							<tr style="cursor: pointer"> -->
-						<!-- 								<td>1</td> -->
-						<!-- 								<td>2</td> -->
-						<!-- 								<td>3</td> -->
-						<!-- 								<td>4</td> -->
-						<!-- 								<td>5</td> -->
-						<!-- 								<td> -->
-						<!-- 									<button class="btn btn-info">수정</button> -->
-						<!-- 									<button class="btn btn-danger">삭제</button> -->
-						<!-- 								</td> -->
-						<!-- 							</tr> -->
-						<%-- 						</c:forEach> --%>
-						<!-- 					</tbody> -->
-
 					</table>
 
 				</div>
@@ -115,9 +97,6 @@
 			<h3 class="text-center" style="margin: 0 auto;">news.jsp</h3>
 			<h3 class="text-center" style="margin: 0 auto;">gameWalkthrough.jsp</h3>
 			<h3 class="text-center" style="margin: 0 auto;">gameRecommend.jsp</h3>
-			<!-- 			<div id="issues"> -->
-			<%-- 				<jsp:include page="gameInterest.do" /> --%>
-			<!-- 			</div> -->
 		</div>
 	</div>
 

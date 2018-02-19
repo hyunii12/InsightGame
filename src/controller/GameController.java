@@ -53,7 +53,6 @@ public class GameController {
 		System.out.println("여기는 서치게임");
 		Game game = gameService.selectGameInfo(searchWord);
 		System.out.println(game);
-		model.addAttribute("gameInfo", game);
 		return "pages/searchGame";
 	}
 	
