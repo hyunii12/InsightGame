@@ -7,31 +7,19 @@
 <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <style type="text/css">
+
 #chartContainer1 {
-	position: relative;
-	height: 370px;
-	width: 600px;
+
 }
 
 #chartContainer2 {
-	position: relative;
-	height: 370px;
-	width: 600px;
-	left: 580px;
-	top: -375px;
+
 }
 #chartContainer3 {
-	position: relative;
-	height: 370px;
-	width: 600px;
-	left: 580px;
-	top: -150px;
+
 }
 #chartContainer4 {
-	position: relative;
-	height: 370px;
-	width: 600px;
-	bottom: 900px;
+
 }
 
 </style>
@@ -136,7 +124,6 @@ chart2.render();
 chart3.render();
 chart4.render();
 
-
 // var sum = 0;
 // for( var i = 0; i < chart1.options.data[0].dataPoints.length; i++ ) {
 //     sum += chart1.options.data[0].dataPoints[i].y;
@@ -149,12 +136,9 @@ chart4.render();
 </script>
 </head>
 <body>
-
-	<div id="chartContainer1"></div>
-	<div id="chartContainer2"></div>
-	<div id="chartContainer3"></div>
-	<div id="chartContainer3"></div>
-	<div id="chartContainer4"></div>
-
+		<div id="chartContainer1" style="height: 370px;	width: 400px; display: inline-block;"></div>
+		<div id="chartContainer2" style="height: 370px;	width: 400px; display: inline-block;"></div>
+		<div id="chartContainer3" style="height: 370px;	width: 400px; display: inline-block;"></div>
+		<div id="chartContainer4" style="height: 370px;	width: 400px; display: inline-block;"></div>
 </body>
 </html>

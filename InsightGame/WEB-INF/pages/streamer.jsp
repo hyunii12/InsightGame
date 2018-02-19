@@ -56,7 +56,7 @@
 				style="font-size: 2rem;">Streamer Issues Rank</h2>
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
-				<div style="margin: 0 auto">
+				<div style="width:75%; margin: 0 auto;">
 					<%-- 					<jsp:include page="../contents/streamerRadarChart.jsp" /> --%>
 					<jsp:include page="../contents/StreamerIssuesRank.jsp" />
 				</div>
@@ -65,24 +65,14 @@
 		</div>
 		</section>
 
-		<section class="mb-0">
 		<div class="container">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Streamer
 				Rank</h2>
-			<div class="row">
-
-
-				<div id="streamer_rank"></div>
-
-			<div id="streamer_rank"></div>
-
-				<div>
+				<div id="streamer_rank" style="text-align: center;">
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
-			</div>
 		</div>
-		</section>
 
 
 		<section class="mb-0">
