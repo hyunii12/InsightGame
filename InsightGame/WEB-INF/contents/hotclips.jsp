@@ -23,10 +23,6 @@
 			<td style="vertical-align:top; width: 202px; max-width:202px;">
 			<a href ="${list.cp_url}">
 			<img src="${list.cp_img}" width="195px" height="150px" style="border-radius: 8px; padding-left: 2.5px; padding-right: 2.5px;"></a>
-<%-- 			<br>${list.cp_title} --%>
-<%-- 			<br>조회수 : ${list.cp_view} --%>
-<%-- 			<br>${list.cp_display} --%>
-<%-- 			<br>${list.cp_game}</td> --%>
 		</c:forEach>
 	</table>
 	</div>

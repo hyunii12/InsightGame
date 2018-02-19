@@ -336,7 +336,7 @@
 			hot clip</h2>
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
-
+				<jsp:include page="hotclips2.jsp" />
 			</div>
 		</div>
 		</section>

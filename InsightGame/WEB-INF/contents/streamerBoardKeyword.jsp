@@ -9,6 +9,7 @@
 	<script>
 		var width = 500,
 			height = 300,
+
 			padding = 1.5, // separation between same-color nodes
 			clusterPadding = 6, // separation between different-color nodes
 			maxRadius = 12;
@@ -18,7 +19,7 @@
 	
 	
 	
-		d3.text("data/word_groups.csv", function(error, text) {
+		d3.text("data/news.txt", function(error, text) {
 			if (error)
 				throw error;
 			var colNames = "text,size,group\n" + text;
@@ -82,8 +83,7 @@
 				});
 	
 	
-	
-	
+		
 			function create_nodes(data, node_counter) {
 				var i = cs.indexOf(data[node_counter].group),
 					r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
@@ -97,8 +97,7 @@
 				if (!clusters[i] || (r > clusters[i].radius))
 					clusters[i] = d;
 				return d;
-			}
-			;
+			};
 	
 	
 	

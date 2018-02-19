@@ -28,5 +28,12 @@ public class ClipServiceImpl implements IClipService{
 		return clipDao.selectcliplist();
 		
 	}
+
+
+	@Override
+	public List<Clip> getstreamerclip(String cp_display) {
+		
+		return clipDao.selectstreamerclip(cp_display);
+	}
 	
 }
