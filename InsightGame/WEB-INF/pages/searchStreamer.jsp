@@ -50,9 +50,6 @@
 			<div class="row">
 				<a href="gameDetail.jsp">
 				<h3 class="text-center" style="margin: 0 auto;">gameDetail.jsp</h3></a>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameIssues.do" /> --%>
-				<!-- 			</div> -->
 			</div>
 
 		</div>
