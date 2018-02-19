@@ -11,31 +11,14 @@
 #chartContainer1 {
 
 }
-
 #chartContainer2 {
 
 }
 #chartContainer3 {
-<<<<<<< HEAD
 
-=======
-	position: relative;
-	height: 370px;
-	width: 600px;
-	left: 580px;
-	top: -300px;
-	bottom: 700px;
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame
 }
 #chartContainer4 {
-<<<<<<< HEAD
 
-=======
-	position: relative;
-	height: 370px;
-	width: 600px;
-	bottom: 700px;
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame
 }
 
 </style>
