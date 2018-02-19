@@ -125,14 +125,10 @@
 	font-weight: normal;
 }
 </style>
-
-				<div class="row">
-					<div class="col-md-12 col-md-offset-3"
-						style="margin-left: auto; margin-right: auto;">
-						<!-- Nav tabs category -->
-						<ul class="nav nav-tabs faq-cat-tabs nav-pills">
-							<li class="nav-item"><a class="nav-link active"
-								href="#faq-cat-1" role="tab" data-toggle="tab">통계</a></li>
+		<div class="row">
+			<div class="col-md-12 col-md-offset-3" style="margin-left: auto; margin-right: auto;">
+				<ul class="nav nav-tabs faq-cat-tabs nav-pills">
+					<li class="nav-item"><a class="nav-link active" href="#faq-cat-1" role="tab" data-toggle="tab">통계</a></li>
 							<li class="nav-item"><a href="#faq-cat-2" class="nav-link"
 								role="tab" data-toggle="tab">뉴스</a></li>
 							<li class="nav-item"><a href="#faq-cat-3" class="nav-link"
@@ -293,9 +289,8 @@
 		</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
 		<section class="portfolio">
-		<div class="container1">
+		<div class="container1" style="margin-left: 9.8%; margin-right: 9.8%;">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
@@ -304,10 +299,7 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">111</h3>
-
-								<div id="kkk"></div>
-					
-					
+						<div id="kkk"></div>
 				</div>
 
 				<div class="col-md-6">
@@ -337,7 +329,6 @@
 		</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
 		<section class="mb-0">
 		<div class="container">
 			<hr class="star-dark mb-5">
@@ -345,10 +336,7 @@
 			hot clip</h2>
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
-				
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameInterest.do" /> --%>
-				<!-- 			</div> -->
+
 			</div>
 		</div>
 		</section>
