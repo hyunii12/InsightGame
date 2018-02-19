@@ -29,11 +29,10 @@
 	top: -100px;
 }
 #chartContainer4 {
-	position: absolute;
+	position: relative;
 	height: 370px;
 	width: 600px;
-	right: 750px
-	bottom: 10px;
+	bottom: 900px;
 }
 
 </style>
