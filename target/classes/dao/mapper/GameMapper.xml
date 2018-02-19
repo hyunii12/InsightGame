@@ -51,22 +51,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectGameInfo" parameterType="java.lang.String" resultMap="gameMap">
 		SELECT gi_title, gi_platform, gi_genre, gi_release, gi_age, gi_production, gi_picture, gi_site_url, gi_publisher FROM g_info WHERE gi_title = #{title}
 
-<!-- 		SELECT  -->
-<!-- 			giId, -->
-<!-- 			title, -->
-<!-- 			platform, -->
-<!-- 			genre, -->
-<!-- 			release, -->
-<!-- 			age, -->
-<!-- 			production, -->
-<!-- 			picture, -->
-<!-- 			siteUrl, -->
-<!-- 			publisher -->
-<!-- 		FROM g_info  -->
-<!-- 		WHERE 1=1  -->
-<!-- 			<if test="giID != null"> AND gi_id = #{giId} </if> -->
-<!-- 			<if test="title != null"> AND gi_title = #{title} </if> -->
-
 	</select>
 	<select id="selectGameInfoList" resultType="java.lang.Integer">
 		SELECT 
