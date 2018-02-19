@@ -91,14 +91,8 @@ public class StreamerController {
 			double time1 = (cnt1[i] * 10) / (double) 60;
 			double time1_1 = Math.round(time1 * 100d) / 100d;
 
-//			System.out.println(cnt1[i]+ " " +titlelist1.get(i).toString());
-			// System.out.println((cnt1[i]*10)/(double)60+ " "
-			// +titlelist1.get(i).toString());
-//			System.out.println(time1_1+ " " +titlelist1.get(i).toString());
-
 			map1.put(time1_1, titlelist1.get(i).toString());
 		}
-		// System.out.println("--------------------------------------------------");
 		TreeMap<Double, String> sortmap1 = new TreeMap<Double, String>(map1);
 
 		Iterator<Double> iteratorKey1 = sortmap1.descendingKeySet().iterator();
