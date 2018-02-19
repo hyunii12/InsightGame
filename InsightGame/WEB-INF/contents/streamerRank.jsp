@@ -11,29 +11,27 @@
 	position: relative;
 	height: 370px;
 	width: 600px;
-	right: -100px;
 }
 
 #chartContainer2 {
 	position: relative;
 	height: 370px;
 	width: 600px;
-	left: 750px;
+	left: 580px;
 	top: -375px;
 }
 #chartContainer3 {
 	position: relative;
 	height: 370px;
 	width: 600px;
-	left: 750px;
-	top: -100px;
+	left: 580px;
+	top: -150px;
 }
 #chartContainer4 {
-	position: absolute;
+	position: relative;
 	height: 370px;
 	width: 600px;
-	right: 750px
-	bottom: 10px;
+	bottom: 900px;
 }
 
 </style>
