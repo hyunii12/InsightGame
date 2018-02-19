@@ -43,9 +43,9 @@
 				<a href="${naverurl}"><img width="126" height="75"
 					src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
 				<a href="${twitchurl}">
-				<img width="126" height="75" src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" /></a><br>
+				<img width="126" height="75" src="http://cphoto.asiae.co.kr/listimglink/6/2015100308414452504_1.jpg" /></a><br>
 				<a href="${googleurl}">
-				<img width="126" height="75" src="${pageContext.request.contextPath}/img/naverlogin.PNG" /></a><br>
+				<img width="126" height="75" src="http://cfile10.uf.tistory.com/image/2710E53756D6D0601C650D" /></a><br>
 			</div>
 		</div>
 	</div>
