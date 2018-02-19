@@ -46,14 +46,40 @@
 		<section class="bg-primary text-white mb-0" id="about">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">streamerInformation.jsp</h2>
-			<h2 class="text-center text-uppercase text-secondary">검색키워드: ${what }</h2>
+			<h2 class="text-center text-uppercase text-secondary">스트리머 정보: ${streamerInfo.strName}</h2>
 			<hr class="star-light mb-5">
-			<div class="row">
-				<a href="gameDetail.jsp"><h3 class="text-center text-white"
-						style="margin: 0 auto;">gameDetail.jsp</h3></a>
-				<!-- 			<div id="issues"> -->
-				<%-- 				<jsp:include page="gameIssues.do" /> --%>
-				<!-- 			</div> -->
+			<div style="display: flex">
+				<div style="margin-left: 15%;">
+					<a href="#"><img src="${streamerInfo.strPicture}" style="width: 240px;"></a>
+				</div>
+
+				<div style="width: 45%; margin-left: 30px;">
+					<table id="boardTable" class="table" align="center">
+						<tr>
+							<td>스트리머 이름</td>
+							<td>${streamerInfo.strName }</td>
+						</tr>
+						<tr>
+							<td>트위치 주소</td>
+							<td><a href="${streamerInfo.strTwitchUrl }">${streamerInfo.strName}의 트위치 채널로 이동</a></td>
+						</tr>
+						<tr>
+							<td>트게더 주소</td>
+							<td><a href="${streamerInfo.strTgdUrl }">${streamerInfo.strName}의 트게더 페이지로 이동 </a></td>
+						</tr>
+						<tr>
+							<td>대표 게임</td>
+							<td>${streamerInfo.strGameCategory }</td>
+						</tr>
+						<tr>
+							<td>트위치 아이디</td>
+							<td>${streamerInfo.siId }</td>
+						</tr>
+
+					</table>
+
+				</div>
+
 			</div>
 
 		</div>

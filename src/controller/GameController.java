@@ -16,6 +16,7 @@ import model.Game;
 import model.GenreRanking;
 import model.Rbranking;
 import model.twgame;
+import service.IGameService;
 import service.IGenrerankingService;
 import service.IRbrankingService;
 import service.ITgdService;
@@ -30,6 +31,8 @@ public class GameController {
 	IRbrankingService rbrankService;
 	@Autowired
 	IGenrerankingService genrerankService;
+	@Autowired
+	IGameService gameService;
 	
 	
 	@RequestMapping("main.do")
@@ -46,9 +49,11 @@ public class GameController {
 
 	@RequestMapping("searchGame.do")
 	public String searchGame(Model model, @RequestParam(name="searchSelect", required=true)String searchSelect,
-			@RequestParam(name="search", defaultValue="") String search) {
+			@RequestParam(name="search", defaultValue="") String searchWord) {
 		System.out.println("여기는 서치게임");
-		model.addAttribute("what", search);
+		Game game = gameService.selectGameInfo(searchWord);
+		System.out.println(game);
+		model.addAttribute("gameInfo", game);
 		return "pages/searchGame";
 	}
 	
@@ -75,7 +80,7 @@ public class GameController {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
-			System.out.println(formatDateTime);
+			//System.out.println(formatDateTime);
 						
 			s.add(formatDateTime);			
 		}
@@ -161,12 +166,12 @@ public class GameController {
 		board_puzzle_musicrank=genrerankService.getboard_puzzle_musicList(today);
 		sportrank=genrerankService.getsportList(today);
 		
-		System.out.println(fpsrank.size());
-		System.out.println(mmorpgrank.size());
-		System.out.println(actionrank.size());
-		System.out.println(board_puzzle_musicrank.size());
-		System.out.println(sportrank.size());
-		
+//		System.out.println(fpsrank.size());
+//		System.out.println(mmorpgrank.size());
+//		System.out.println(actionrank.size());
+//		System.out.println(board_puzzle_musicrank.size());
+//		System.out.println(sportrank.size());
+//		
 		
 		model.addAttribute("fpsrank",fpsrank);
 		model.addAttribute("mmorpgrank",mmorpgrank);
@@ -204,13 +209,13 @@ public class GameController {
 		switchbrank=rbrankService.getswitchList(today);
 		xboxbrank=rbrankService.getxboxList(today);
 		
-		System.out.println(dsrank.size());
-		System.out.println(mobilebrank.size());
-		System.out.println(pcbrank.size());
-		System.out.println(ps4brank.size());
-		System.out.println(psvitabrank.size());
-		System.out.println(switchbrank.size());
-		System.out.println(xboxbrank.size());
+//		System.out.println(dsrank.size());
+//		System.out.println(mobilebrank.size());
+//		System.out.println(pcbrank.size());
+//		System.out.println(ps4brank.size());
+//		System.out.println(psvitabrank.size());
+//		System.out.println(switchbrank.size());
+//		System.out.println(xboxbrank.size());
 		
 		
 //		dsrank=rbrankService.get3dsList();
