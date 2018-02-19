@@ -48,7 +48,6 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
 	}]
 });
 
-
 var chart2 = new CanvasJS.Chart("chartContainer2",
 		{
 	animationEnabled: true,
