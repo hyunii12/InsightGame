@@ -148,16 +148,16 @@ table.gameRankAsGenre tr:nth-child(2n+1) {
 
 		<table class="gameRankAsGenre" cellspacing='0'>
 			<tr>
-				<th scope="row">¼øÀ§</th>
-				<th>FPS/RTS/TPS</th>
-				<th>MO/MMORPG</th>
-				<th>¾×¼Ç/À¥°ÔÀÓ</th>
-				<th>¹ÂÁ÷/ÆÛÁñ/º¸µå</th>
-				<th>½ºÆ÷Ã÷/½´ÆÃ/·¹ÀÌ½Ì</th>
+				<th scope="row" style="font-weight:bold">¼øÀ§</th>
+				<th style="font-weight:bold">FPS/RTS/TPS</th>
+				<th style="font-weight:bold">MO/MMORPG</th>
+				<th style="font-weight:bold">¾×¼Ç/À¥°ÔÀÓ</th>
+				<th style="font-weight:bold">¹ÂÁ÷/ÆÛÁñ/º¸µå</th>
+				<th style="font-weight:bold">½ºÆ÷Ã÷/½´ÆÃ/·¹ÀÌ½Ì</th>
 			</tr>
 
 			<tr>
-				<th scope="row">1</th>
+				<th scope="row" style="font-weight:bold">1</th>
 				<td>${fpsrank[0].name}</td>
 				<td>${mmorpgrank[0].name}</td>
 				<td>${actionrank[0].name}</td>
@@ -166,7 +166,7 @@ table.gameRankAsGenre tr:nth-child(2n+1) {
 			</tr>
 
 			<tr>
-				<th scope="row">2</th>
+				<th scope="row" style="font-weight:bold">2</th>
 				<td>${fpsrank[1].name}</td>
 				<td>${mmorpgrank[1].name}</td>
 				<td>${actionrank[1].name}</td>
@@ -176,7 +176,7 @@ table.gameRankAsGenre tr:nth-child(2n+1) {
 
 
 			<tr>
-				<th scope="row">3</th>
+				<th scope="row" style="font-weight:bold">3</th>
 				<td>${fpsrank[2].name}</td>
 				<td>${mmorpgrank[2].name}</td>
 				<td>${actionrank[2].name}</td>
@@ -184,7 +184,7 @@ table.gameRankAsGenre tr:nth-child(2n+1) {
 				<td>${sportrank[2].name}</td>
 			</tr>
 			<tr>
-				<th scope="row">4</th>
+				<th scope="row" style="font-weight:bold">4</th>
 				<td>${fpsrank[3].name}</td>
 				<td>${mmorpgrank[3].name}</td>
 				<td>${actionrank[3].name}</td>
@@ -193,7 +193,7 @@ table.gameRankAsGenre tr:nth-child(2n+1) {
 			</tr>
 
 			<tr>
-				<th scope="row">5</th>
+				<th scope="row" style="font-weight:bold">5</th>
 				<td>${fpsrank[4].name}</td>
 				<td>${mmorpgrank[4].name}</td>
 				<td>${actionrank[4].name}</td>

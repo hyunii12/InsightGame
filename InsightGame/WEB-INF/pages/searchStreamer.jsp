@@ -51,8 +51,8 @@
 
 				</div>
 
-				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%;">
-					<table id="boardTable" class="table" align="center" style="margin: 0 auto; margin-top: 4%;">
+				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%; margin-top: 2%;">
+					<table id="boardTable" class="table" align="center" style="margin: 0 auto;">
 						<tr style="text-align: left;">
 							<td rowspan="4" style="border-top: 0; vertical-align: middle;"><img src="${streamerInfo.strPicture}" style="border-radius: 8px;"></td>
 							<td style="text-align: left; border-top: 0; padding-top: 18px; min-width: 300px;">
