@@ -100,7 +100,7 @@
 		</div>
 		</section>
 		
-		<div class="container1">
+		<div class="container1" style="padding-bottom: 96px;">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">유형별 게임 인기 변화</h2>
 			<div id="" style="margin: 0 auto;"></div>

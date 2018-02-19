@@ -43,14 +43,13 @@
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">streamerInformation.jsp</h2>
 			<h2 class="text-center text-uppercase text-secondary">검색키워드: ${what }</h2>
-			<hr class="star-light mb-5">
 			<div class="row">
-				<a href="gameDetail.jsp"><h3 class="text-center text-white"
-						style="margin: 0 auto;">gameDetail.jsp</h3></a>
+				<a href="gameDetail.jsp">
+				<h3 class="text-center" style="margin: 0 auto;">gameDetail.jsp</h3></a>
 				<!-- 			<div id="issues"> -->
 				<%-- 				<jsp:include page="gameIssues.do" /> --%>
 				<!-- 			</div> -->
@@ -60,17 +59,17 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
 			<hr class="star-dark mb-5">
-
+			<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
 		</div>
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary mb-0">
+		<section class="mb-0">
 		<div class="container">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase">스트리머 게임 정보</h2>
 			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
 <style>
@@ -276,11 +275,12 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio">
 		<div class="container1">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
-			<hr class="star-dark mb-5">
+			
 			<div class="row">
 
 				<div class="col-md-6">
@@ -319,10 +319,11 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">핫클립</h2>
-			<hr class="star-light mb-5">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
+			hot clip</h2>
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
 				
