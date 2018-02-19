@@ -6,5 +6,6 @@ import model.Tgd;
 
 public interface ITgdDao {
 	public List<Tgd> selecttgdlist(String d);
-//	public List<HashMap<String, Object>> getList_tgdCnts();
+	public Tgd hottgdlist();
+
 }

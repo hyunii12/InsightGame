@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import model.Clip;
 import model.Streamer;
 import model.StreamerPopularity;
+import model.Tgd;
 import service.IClipService;
 import service.IStreamerService;
 import service.IStreamerpopService;
@@ -273,6 +274,14 @@ public class StreamerController {
 		model.addAttribute("cliplist", list);
 
 		return "contents/hotclips";
+	}
+	
+	@RequestMapping("hotTgd.do")
+	public String hotTgd(Model model) {
+		System.out.println("여기는 핫트게더");
+		Tgd tgd = tgdService.hottgd();
+		model.addAttribute("tgdlist", tgd);
+		return "contents/hottgd";
 	}
 
 	@RequestMapping("streamerBoardNumAsTime.do") // 기존 버전

@@ -49,7 +49,7 @@
 
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
-		<!-- Portfolio Grid Section -->
+
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0"
@@ -68,7 +68,7 @@
 		<div class="container">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
-			Streamer Rank</h2>
+			top streamers</h2>
 				<div id="streamer_rank" style="text-align: center;">
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
@@ -122,14 +122,13 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0"
 				style="font-size: 2rem;">hot clip</h2>
 			<div class="row">
-				<div style="margin: 0 auto">
+				<div style="margin: 0 auto;">
 					<div id="hot"></div>
 				</div>
 			</div>
 		</div>
 		</section>
-
+	
 	</div>
-
 </body>
 </html>

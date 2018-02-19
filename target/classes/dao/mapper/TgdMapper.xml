@@ -8,8 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selecttgdlist" parameterType="String" resultType="tgd" >
 		select * from board_tgd where tg_date = #{tg_date}
 	</select>
-<!-- 	<select id="getList_tgdCnts" resultType="java.util.HashMap"> -->
-<!-- 		SELECT * FROM tgdCnts WHERE date > CURDATE() - INTERVAL 16 DAY ORDER BY date; -->
-<!-- 	</select> -->
 
+	<select id="hottgdlist" parameterType="String" resultType="tgd" >
+		SELECT * FROM board_tgd WHERE tg_date = CURDATE() -INTERVAL 1 DAY ORDER BY tg_view DESC LIMIT 5;
+	</select>
 </mapper>

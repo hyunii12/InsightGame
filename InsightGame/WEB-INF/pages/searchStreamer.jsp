@@ -42,7 +42,7 @@
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
-		<!-- Portfolio Grid Section -->
+
 		<section class="mb-0">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">streamer info</h2>
 			
@@ -77,7 +77,6 @@
 			</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
 		<section class="portfolio">
 		<div class="container">
 			<hr class="star-dark mb-5">
@@ -328,16 +327,16 @@
 			</div>
 		</div>
 		</section>
-
 		<section class="mb-0">
-		<div class="container">
-			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
-			hot clip</h2>
-			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
-				<jsp:include page="hotclips2.jsp" />
-			</div>
+			<div class="container">
+				<hr class="star-dark mb-5">
+				<h2 class="text-center text-uppercase text-secondary mb-0"
+				style="font-size: 2rem;">hot clip - ${streamerInfo.strName }</h2>
+				<div class="row">
+					<div style="margin: 0 auto;">
+						<jsp:include page="hotclips2.jsp" />
+					</div>
+				</div>
 		</div>
 		</section>
 	</div>
