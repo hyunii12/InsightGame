@@ -12,38 +12,47 @@
 		<property name="username" value="root"/>
 		<property name="password" value="bigdata"/>
 	</bean>
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="model"/>
-		<property name="mapperLocations" value="classpath*:dao/mapper/**/*.xml"/>
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="typeAliasesPackage" value="model" />
+		<property name="mapperLocations" value="classpath*:dao/mapper/**/*.xml" />
 	</bean>
 	<bean id="boardDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.IBoardDao"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IBoardDao" />
 	</bean>
 	<bean id="memberDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.IMemberDao"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IMemberDao" />
 	</bean>
 	<bean id="schduleDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.IScheduleDao"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IScheduleDao" />
 	</bean>
 	<bean id="clipDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.IClipDao"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IClipDao" />
 	</bean>
 	<bean id="tgdDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.ITgdDao"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.ITgdDao" />
 	</bean>
 	<bean id="twgameDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.ITwgameDao"/>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.ITwgameDao" />
 	</bean>
 	<bean id="rbrankingDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IRbrankingDao" />
+	</bean>
+	
+	<bean id="genrerankingDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IGenreRankingDao" />
+	</bean>
+	<bean id="streamerpopDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.IRbrankingDao"/>
+		<property name="mapperInterface" value="dao.IStreamerpopDao"/>
 	</bean>
 
 	<context:component-scan base-package="service"/>

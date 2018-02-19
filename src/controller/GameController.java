@@ -42,6 +42,7 @@ public class GameController {
 		return "redirect:main.do";
 
 	}
+	
 
 	@RequestMapping("searchGame.do")
 	public String searchGame(Model model, @RequestParam(name="searchSelect", required=true)String searchSelect,
@@ -69,8 +70,8 @@ public class GameController {
 		
 		List<String> s = new ArrayList<String>();
 		
-		//최근 5일로 할지 결정
-		for(int i=2; i>=0; i--) {
+		//최근 6일로 할지 결정
+		for(int i=5; i>=0; i--) {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
