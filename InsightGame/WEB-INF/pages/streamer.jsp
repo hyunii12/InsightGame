@@ -69,17 +69,14 @@
 		<div class="container">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Streamer
-				Rank</h2>
+				Rank</h2><br>
 			<div class="row">
 
+			<div id="streamer_rank"><jsp:include page="../contents/streamerRank.jsp" /></div>
 
-				<div id="streamer_rank"></div>
-
-			<div id="streamer_rank"></div>
-
-				<div>
-					<jsp:include page="../contents/streamerRank.jsp" />
-				</div>
+<!-- 				<div> -->
+<%-- 					<jsp:include page="../contents/streamerRank.jsp" /> --%>
+<!-- 				</div> -->
 			</div>
 		</div>
 		</section>

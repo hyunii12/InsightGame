@@ -25,13 +25,14 @@
 	height: 370px;
 	width: 600px;
 	left: 580px;
-	top: -150px;
+	top: -300px;
+	bottom: 700px;
 }
 #chartContainer4 {
 	position: relative;
 	height: 370px;
 	width: 600px;
-	bottom: 900px;
+	bottom: 700px;
 }
 
 </style>
@@ -152,7 +153,6 @@ chart4.render();
 
 	<div id="chartContainer1"></div>
 	<div id="chartContainer2"></div>
-	<div id="chartContainer3"></div>
 	<div id="chartContainer3"></div>
 	<div id="chartContainer4"></div>
 
