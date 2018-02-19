@@ -43,60 +43,30 @@
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">streamerInformation.jsp</h2>
 			<h2 class="text-center text-uppercase text-secondary">스트리머 정보: ${streamerInfo.strName}</h2>
-			<hr class="star-light mb-5">
-			<div style="display: flex">
-				<div style="margin-left: 15%;">
-					<a href="#"><img src="${streamerInfo.strPicture}" style="width: 240px;"></a>
-				</div>
-
-				<div style="width: 45%; margin-left: 30px;">
-					<table id="boardTable" class="table" align="center">
-						<tr>
-							<td>스트리머 이름</td>
-							<td>${streamerInfo.strName }</td>
-						</tr>
-						<tr>
-							<td>트위치 주소</td>
-							<td><a href="${streamerInfo.strTwitchUrl }">${streamerInfo.strName}의 트위치 채널로 이동</a></td>
-						</tr>
-						<tr>
-							<td>트게더 주소</td>
-							<td><a href="${streamerInfo.strTgdUrl }">${streamerInfo.strName}의 트게더 페이지로 이동 </a></td>
-						</tr>
-						<tr>
-							<td>대표 게임</td>
-							<td>${streamerInfo.strGameCategory }</td>
-						</tr>
-						<tr>
-							<td>트위치 아이디</td>
-							<td>${streamerInfo.siId }</td>
-						</tr>
-
-					</table>
-
-				</div>
-
+			<div class="row">
+				<a href="gameDetail.jsp">
+				<h3 class="text-center" style="margin: 0 auto;">gameDetail.jsp</h3></a>
 			</div>
 
 		</div>
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
 			<hr class="star-dark mb-5">
-
+			<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
 		</div>
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary mb-0">
+		<section class="mb-0">
 		<div class="container">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase">스트리머 게임 정보</h2>
 			<div style="position: relative; left: 0px; width: 75%; padding-top: 30px; margin-left: auto; margin-right: auto;">
 <style>
@@ -302,11 +272,12 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio">
 		<div class="container1">
+			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
-			<hr class="star-dark mb-5">
+			
 			<div class="row">
 
 				<div class="col-md-6">
@@ -345,10 +316,11 @@
 		</section>
 
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
+		<section class="mb-0">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-white">핫클립</h2>
-			<hr class="star-light mb-5">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
+			hot clip</h2>
 			<div class="row">
 				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
 				

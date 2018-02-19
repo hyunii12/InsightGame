@@ -150,7 +150,7 @@
 	</nav>
 
 
-	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 25%; padding-bottom: 1%; z-index: 1029;">
+	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 21%; padding-bottom: 1%; z-index: 1029;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
 			style="color: white; font-weight: bold;">GAME</a>
 	</div>

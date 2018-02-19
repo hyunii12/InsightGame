@@ -27,7 +27,7 @@
 						</td>
 					</tr>
 					<tr id="trr_${list.bId }">
-						<td colspan="2" name="header" header="${list.header }" content="${list.content }" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px;">
+						<td colspan="2" name="header" writer="${list.writer }" header="${list.header }" content="${list.content }" style="text-align:left; padding-top: 0px; padding-bottom: 0px; padding-left: 1px; padding-right: 8px; border-top:0px;">
 						<span style="color: gray">[${list.header }]</span> ${list.content}</td>	
 					</tr>
 					<tr>

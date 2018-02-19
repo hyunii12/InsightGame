@@ -26,17 +26,19 @@
 <!-- Custom styles for this template -->
 <link href="css/freelancer.min.css" rel="stylesheet">
 </head>
+<script type="text/javascript">
+	var session_id = "<%=session.getAttribute("user_id") %>"
+</script>
 <body>
 
         <div id="navigation" style="z-index: 2;">
             <jsp:include page="../navigation.jsp" />
         </div>
 
-
         <div class="container" style="margin-top: 14%; width:60%;">
 <!-- 			<script src="js/board.js"></script> -->
 
-			<script src="js/board.js?v=as34131j"></script>
+			<script src="js/board.js?v=as3131j"></script>
 			<style>
 				#div_write{margin-left:10px;margin-right:10px}
 			</style>
