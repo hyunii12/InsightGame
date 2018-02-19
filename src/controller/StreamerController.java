@@ -212,16 +212,25 @@ public class StreamerController {
 		return "contents/streamerBoardNumAsTime";
 
 	}
-
+	
+	@RequestMapping("streamerIssuesRank.do")
+	public String streamerIssuesRank(Model model) {
+		System.out.println("스트리머 이슈스 랭크");
+		return "contents/StreamerIssuesRank";
+		
+	}
+	
+	
 	@RequestMapping("streamerInterest.do")
 	public String streamerInterest(Model model) {
+
 		System.out.println("스트리머별 인기게임");
 		// ---------------------------풍월량--------------------------------------------------------스트리머별로
 		// 코드는 동일(refactorizing 필요)
 		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
 		List<String> titlelist = new ArrayList<String>();
 		HashMap<Integer, String> map = new HashMap();
-
+		
 		List<Integer> list_1 = new ArrayList<Integer>();
 		List<String> list_2 = new ArrayList<String>();
 

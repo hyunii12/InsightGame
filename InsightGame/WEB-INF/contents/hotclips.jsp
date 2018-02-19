@@ -10,14 +10,31 @@
 </head>
 <body>
 
-	<table>
-		<c:forEach items="${cliplist}" var="list" begin="0" end="3"
-			varStatus="status">
-			<td><a href ="${list.cp_url}"><img src="${list.cp_img}" width="200px" height="150px" style="padding-left: 35px"></a><br>${list.cp_title}<br>${list.cp_display}&nbsp; 조회수 : ${list.cp_view}<br>${list.cp_game}</td>
+	<div>
+	<table style="margin-top: 30px; margin-bottom: 4px;">
+		<c:forEach items="${cliplist}" var="list" begin="0" end="4"	varStatus="status">
+			<td style="vertical-align:top; width: 202px; max-width:202px;">
+			<a href ="${list.cp_url}">
+			<img src="${list.cp_img}" width="195px" height="150px" style="border-radius: 8px; padding-left: 2.5px; padding-right: 2.5px;"></a>
+<%-- 			<br>${list.cp_title} --%>
+<%-- 			<br>조회수 : ${list.cp_view} --%>
+<%-- 			<br>${list.cp_display} --%>
+<%-- 			<br>${list.cp_game}</td> --%>
 		</c:forEach>
 	</table>
-
-
-
+	</div>
+	
+	<div style="position: relative;">
+	<table style="margin: 0;">
+		<c:forEach items="${cliplist}" var="list" begin="0" end="4"	varStatus="status">
+		<td style="padding-left: 11px; padding-right: 11px; padding-top:0px; vertical-align:top; width: 202px; max-width: 202px;">
+			<a href ="${list.cp_url}" style="text-decoration:none">
+			<span style="color: black; font-size: 14px;">${list.cp_title}</span></a><br>
+			<span style="color: gray; font-size: 14px;">${list.cp_game}</span><br>
+			<span style="color: purple; font-size: 14px; font-weight:bold">${list.cp_display}</span>
+			</td>
+		</c:forEach>
+	</table>
+	</div>
 </body>
 </html>

@@ -6,11 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dao.ITgdDao">
 
 	<select id="selecttgdlist" parameterType="String" resultType="tgd" >
-		select *from board_tgd where tg_date = #{tg_date}
+		select * from board_tgd where tg_date = #{tg_date}
 	</select>
-
-<!-- 	<select id="selecttgdlist" resultType="tgd" > -->
-<!-- 		select *from board_tgd -->
+<!-- 	<select id="getList_tgdCnts" resultType="java.util.HashMap"> -->
+<!-- 		SELECT * FROM tgdCnts WHERE date > CURDATE() - INTERVAL 16 DAY ORDER BY date; -->
 <!-- 	</select> -->
 
 </mapper>

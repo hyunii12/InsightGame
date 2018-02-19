@@ -64,7 +64,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase"
-		id="mainNav" style="padding-bottom: 1.5%; ">
+		id="mainNav" style="padding-bottom: 1.5%; height: 108px;">
 	<div class="container">
 		<a class="navbar-brand js-scroll-trigger" href="main.do">Insight
 			Game</a>
@@ -74,12 +74,13 @@
 					<form class="form-inline" role="search" id="navSearchFrm"
 						method="get" action="searchGame.do" style="margin: 0 auto;">
 						<input type="hidden" name="searchSelect">
-						<div class="input-group-prepend" id="headerDropbox"
-							style="position: relative;">
-							<button id="searchSelectBtn"
-								class="btn btn-secondary dropdown-toggle" type="button"
-								data-toggle="dropdown" aria-haspopup="true"
+						
+						<div class="input-group-prepend" id="headerDropbox"	style="position: relative;">
+						
+							<button id="searchSelectBtn" class="btn btn-secondary dropdown-toggle" type="button"
+								data-toggle="dropdown"	 aria-haspopup="true"
 								aria-expanded="false" style="width: 118px;">게임　 　</button>
+								
 							<div class="dropdown-menu" style="z-index: 1053;">
 								<button class="dropdown-item" type="button" value="game"
 									onclick='setSearchHeader($(this).val())'>게임</button>
@@ -87,6 +88,7 @@
 									onclick='setSearchHeader($(this).val())'>스트리머</button>
 							</div>
 						</div>
+						
 						<input class="form-control mr-sm-2" type="text"
 							style="width: 247px; border: 0; margin-left: 3px"
 							placeholder="Search" name="search">
@@ -148,17 +150,17 @@
 	</nav>
 
 
-	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 22%; padding-bottom: 1%; z-index: 1028;">
+	<div class="bg-secondary" style="position: fixed; left: 0px; top: 100px; width: 100%; padding-left: 25%; padding-bottom: 1%; z-index: 1029;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightGame.do"
 			style="color: white; font-weight: bold;">GAME</a>
 	</div>
-	<div style="position: fixed; right: 44.3%; top: 100px; z-index: 1039;">
+	<div style="position: fixed; left: 46.5%; top: 100px; z-index: 1039;">
 		<a class="navbar-brand js-scroll-trigger" href="InsightStreamer.do"
-			style="color: white; font-weight: bold;">STREAMER</a>
+			style="color: white; font-weight: bold; margin: 0;">STREAMER</a>
 	</div>
-	<div style="position: fixed; left: 73%; top: 100px; z-index: 1030;">
+	<div style="position: fixed; left: 75%; top: 100px; z-index: 1034;">
 		<a class="navbar-brand js-scroll-trigger" href="board.do"
-			style="color: white; font-weight: bold;">BOARD</a>
+			style="color: white; font-weight: bold; margin: 0;">BOARD</a>
 	</div>
 
 </body>
