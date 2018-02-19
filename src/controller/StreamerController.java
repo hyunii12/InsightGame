@@ -81,7 +81,6 @@ public class StreamerController {
 			}
 		}
 		
-
 		for (int i = 0; i < cnt1.length; i++) {
 			double time1 = (cnt1[i] * 10) / (double) 60;
 			double time1_1 = Math.round(time1 * 100d) / 100d;
@@ -102,7 +101,7 @@ public class StreamerController {
 
 			Double key1 = iteratorKey1.next();
 
-//			System.out.println(key1 + "," + sortmap1.get(key1));
+			System.out.println(key1 + "," + sortmap1.get(key1));
 			list1_1.add(key1);
 			list1_2.add(sortmap1.get(key1));
 		}
@@ -132,14 +131,9 @@ public class StreamerController {
 			double time2 = (cnt2[i] * 10) / (double) 60;
 			double time2_1 = Math.round(time2 * 100d) / 100d;
 
-//			System.out.println(cnt1[i]+ " " +titlelist1.get(i).toString());
-			// System.out.println((cnt1[i]*10)/(double)60+ " "
-			// +titlelist1.get(i).toString());
-//			System.out.println(time1_1+ " " +titlelist1.get(i).toString());
-
 			map2.put(time2_1, titlelist2.get(i).toString());
 		}
-		// System.out.println("--------------------------------------------------");
+
 		TreeMap<Double, String> sortmap2 = new TreeMap<Double, String>(map2);
 
 		Iterator<Double> iteratorKey2 = sortmap2.descendingKeySet().iterator();
@@ -147,17 +141,114 @@ public class StreamerController {
 		while (iteratorKey2.hasNext()) {
 
 			Double key2 = iteratorKey2.next();
-
-			System.out.println(key2 + "," + sortmap2.get(key2));
+			
+			System.out.println("웁"+key2 + "," + sortmap2.get(key2));
 			list2_1.add(key2);
 			list2_2.add(sortmap2.get(key2));
 		}
-		// -------------------------------------모델------------------------------------------------
+//----------------------------------------------------------------------------------------
+//------------------------------------------서새봄냥------------------------------------------
+		
+		List<StreamerPopularity> Streamer3 = new ArrayList<StreamerPopularity>();
+		List<String> titlelist3 = new ArrayList<String>();
+		HashMap<Double, String> map3 = new HashMap();
+
+		List<Double> list3_1 = new ArrayList<Double>();
+		List<String> list3_2 = new ArrayList<String>();
+
+		Streamer3 = streamerpopService.getstreamerDaypop("서새봄냥");
+		titlelist3 = streamerpopService.getDaytitle("서새봄냥");
+
+		int[] cnt3 = new int[titlelist3.size()];
+
+		for (StreamerPopularity s : Streamer3) {
+			for (int i = 0; i < titlelist3.size(); i++) {
+				if (s.getTitle().equals(titlelist3.get(i))) {
+					cnt3[i]++;
+				}
+			}
+		}
+
+		for (int i = 0; i < cnt3.length; i++) {
+			double time3 = (cnt3[i] * 10) / (double) 60;
+			double time3_1 = Math.round(time3 * 100d) / 100d;
+
+			map3.put(time3_1, titlelist3.get(i).toString());
+		}
+
+		TreeMap<Double, String> sortmap3 = new TreeMap<Double, String>(map3);
+
+		Iterator<Double> iteratorKey3 = sortmap3.descendingKeySet().iterator();
+
+		while (iteratorKey3.hasNext()) {
+
+			Double key3 = iteratorKey3.next();
+			
+			System.out.println("서새봄냥"+key3 + "," + sortmap3.get(key3));
+			list3_1.add(key3);
+			list3_2.add(sortmap3.get(key3));
+		}
+				
+		
+//----------------------------------------------------------------------------------------
+//------------------------------------------김도------------------------------------------
+		
+				List<StreamerPopularity> Streamer4 = new ArrayList<StreamerPopularity>();
+				List<String> titlelist4 = new ArrayList<String>();
+				HashMap<Double, String> map4 = new HashMap();
+
+				List<Double> list4_1 = new ArrayList<Double>();
+				List<String> list4_2 = new ArrayList<String>();
+
+				Streamer4 = streamerpopService.getstreamerDaypop("김도");
+				titlelist4 = streamerpopService.getDaytitle("김도");
+
+				int[] cnt4 = new int[titlelist4.size()];
+
+				for (StreamerPopularity s : Streamer4) {
+					for (int i = 0; i < titlelist4.size(); i++) {
+						if (s.getTitle().equals(titlelist4.get(i))) {
+							cnt4[i]++;
+						}
+					}
+				}
+
+				for (int i = 0; i < cnt4.length; i++) {
+					double time4 = (cnt4[i] * 10) / (double) 60;
+					double time4_1 = Math.round(time4 * 100d) / 100d;
+
+					map4.put(time4_1, titlelist4.get(i).toString());
+				}
+
+				TreeMap<Double, String> sortmap4 = new TreeMap<Double, String>(map4);
+
+				Iterator<Double> iteratorKey4 = sortmap4.descendingKeySet().iterator();
+
+				while (iteratorKey4.hasNext()) {
+
+					Double key4 = iteratorKey4.next();
+					
+					System.out.println("김도"+key4 + "," + sortmap4.get(key4));
+					list4_1.add(key4);
+					list4_2.add(sortmap4.get(key4));
+				}
+						
+				
+//----------------------------------------------------------------------------------------			
+// -------------------------------------모델------------------------------------------------
+		
+				
 		model.addAttribute("pungtime", list1_1);
 		model.addAttribute("pungname", list1_2);
 		
 		model.addAttribute("wooptime", list2_1);
 		model.addAttribute("woopname", list2_2);
+		
+		model.addAttribute("seotime", list3_1);
+		model.addAttribute("seoname", list3_2);
+		
+		model.addAttribute("kimtime", list4_1);
+		model.addAttribute("kimname", list4_2);
 
 		return "contents/streamerRank";
 	}

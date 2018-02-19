@@ -52,15 +52,15 @@ public class test {
 //--------------------------------------------------
 		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
 		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("sname","풍월량");
-		map.put("day","2018-02-17");
+		map.put("sname","김도");
+		map.put("day","2018-02-16");
 		list = streamerpopDao.selectDaystreamerpop(map);
 		System.out.println(list.size());
 		
 		List<String> list1 = new ArrayList<String>();
 		HashMap<String, String> map2 = new HashMap<String, String>();
-		map2.put("sname","풍월량");
-		map2.put("day","2018-02-17");
+		map2.put("sname","김도");
+		map2.put("day","2018-02-16");
 		list1 = streamerpopDao.selectdaytitle(map2);
 		for(String s: list1) {
 			System.out.println(s);

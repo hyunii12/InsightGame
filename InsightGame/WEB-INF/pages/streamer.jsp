@@ -70,7 +70,7 @@
 				Rank</h2>
 			<div class="row">
 
-			<div id="#streamer_rank"></div>
+			<div id="streamer_rank"></div>
 
 				<div style="margin: 0 auto; width: 75%;">
 					<jsp:include page="../contents/streamerRank.jsp" />
