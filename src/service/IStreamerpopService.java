@@ -10,4 +10,5 @@ public interface IStreamerpopService {
 	public List<StreamerPopularity> getstreamerDaypop(String sname);
 	public List<String> getDaytitle(String sname);
 	
+	
 }

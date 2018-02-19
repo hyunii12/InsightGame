@@ -80,6 +80,7 @@ public class StreamerController {
 				}
 			}
 		}
+		
 
 		for (int i = 0; i < cnt1.length; i++) {
 			double time1 = (cnt1[i] * 10) / (double) 60;

@@ -20,4 +20,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT DISTINCT title From streamer_popularity where sname=#{sname} and day like CONCAT(#{day},'%')
 	</select>
 	
+	
 </mapper>

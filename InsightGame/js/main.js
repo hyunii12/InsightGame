@@ -20,6 +20,7 @@ $(document).ready(function() {
 			alert(error);
 		}
 	})
+	
 
 	$.ajax({
 		url : "streamerBoardNumAsTime.do",

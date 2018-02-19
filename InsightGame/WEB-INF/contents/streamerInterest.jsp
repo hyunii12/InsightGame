@@ -21,7 +21,6 @@ div.streamerheader {
 }
 
 
-
 div.table-users {
   border: 1px solid #327a81;
   border-radius: 10px;

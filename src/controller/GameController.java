@@ -42,6 +42,7 @@ public class GameController {
 		return "redirect:main.do";
 
 	}
+	
 
 	@RequestMapping("searchGame.do")
 	public String searchGame(Model model, @RequestParam(name="searchSelect", required=true)String searchSelect,
