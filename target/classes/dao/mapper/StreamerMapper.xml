@@ -60,8 +60,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM s_info
 	</select>
 	
-	<select id="selectStreamerInfoByStrName" parameterType="java.lang."  resultType="streamer">
-		SELECT * FROM s_info WHERE si_name = #{si_name}
+	<select id="selectStreamerInfoByStrName" parameterType="java.lang.String"  resultMap="streamerMap">
+		SELECT si_id, si_twitch_url, si_tgd_url, si_picture, si_name, si_game_category FROM s_info WHERE si_name = #{strName}
 	</select>
 
 </mapper>

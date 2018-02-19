@@ -9,12 +9,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import dao.IClipDao;
+import dao.IGameDao;
 import dao.IRbrankingDao;
 import dao.IScheduleDao;
 import dao.IStreamerDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
 import model.Clip;
+import model.Game;
 import model.Rbranking;
 import model.Streamer;
 import model.Tgd;
@@ -33,9 +35,18 @@ public class test {
  public ITwgameDao twgameDao;
  @Autowired
  public IRbrankingDao rbrankingDao;
+ @Autowired
+ public IGameDao gDao;
  
  @Autowired
  public IStreamerDao sDao;
+
+// @org.junit.Test
+// public void test2() {
+// Game list = new Game(); 
+// list=gDao.selectGameInfo("하스스톤");
+// System.out.println(list);
+// } 
  
 @org.junit.Test
 public void test2() {

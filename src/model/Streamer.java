@@ -2,17 +2,17 @@ package model;
 
 public class Streamer {
 	
-	private String si_id;
+	private String siId;
 	private String strTwitchUrl;
 	private String strTgdUrl;
 	private String strPicture;
-	private String si_name;
+	private String strName;
 	private String strGameCategory;
-	public String getSi_id() {
-		return si_id;
+	public String getSiId() {
+		return siId;
 	}
-	public void setSi_id(String si_id) {
-		this.si_id = si_id;
+	public void setSiId(String siId) {
+		this.siId = siId;
 	}
 	public String getStrTwitchUrl() {
 		return strTwitchUrl;
@@ -32,11 +32,11 @@ public class Streamer {
 	public void setStrPicture(String strPicture) {
 		this.strPicture = strPicture;
 	}
-	public String getSi_name() {
-		return si_name;
+	public String getStrName() {
+		return strName;
 	}
-	public void setSi_name(String si_name) {
-		this.si_name = si_name;
+	public void setStrName(String strName) {
+		this.strName = strName;
 	}
 	public String getStrGameCategory() {
 		return strGameCategory;
@@ -44,7 +44,9 @@ public class Streamer {
 	public void setStrGameCategory(String strGameCategory) {
 		this.strGameCategory = strGameCategory;
 	}
-	
-	
-
+	@Override
+	public String toString() {
+		return "Streamer [siId=" + siId + ", strTwitchUrl=" + strTwitchUrl + ", strTgdUrl=" + strTgdUrl
+				+ ", strPicture=" + strPicture + ", strName=" + strName + ", strGameCategory=" + strGameCategory + "]";
+	}
 }

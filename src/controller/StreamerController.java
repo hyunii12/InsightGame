@@ -35,11 +35,9 @@ public class StreamerController {
 	public String searchStreamer(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect,
 			@RequestParam(name = "search", defaultValue = "") String searchWord) {
 		System.out.println("여기는 서치스트리머");
-		System.out.println(searchWord);
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
 		System.out.println(streamer);
-		//System.out.println(streamer.getStrTwitchUrl());
-		model.addAttribute("searchWord", searchWord);
+		model.addAttribute("streamer", streamer);
 		return "pages/searchStreamer";
 	}
 
@@ -62,7 +60,7 @@ public class StreamerController {
 		List<Clip> list = clipService.getcliplist();
 		
 		for(Clip c: list) {
-			System.out.println(c.getCp_view());
+			//System.out.println(c.getCp_view());
 		}
 		
 		model.addAttribute("cliplist", list);

@@ -18,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	<insert id="insertGameInfo"	parameterType="game" useGeneratedKeys="true" keyProperty="giId">
 		INSERT INTO g_info 
-			(gi_id, gi_title, gi_platform, gi_genre, gi_release, gi_age, gi_production, gi_picture, gi_site_url, gi_score)
+			(gi_id, gi_title, gi_platform, gi_genre, gi_release, gi_age, gi_production, gi_picture, gi_site_url, gi_publisher)
 		VALUES(0, 
 			#{title}, 
 			#{platform}, 
@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{production}, 
 			#{picture}, 
 			#{siteUrl}, 
-			#{score}
+			#{publisher}
 		) 
 	</insert>
 	<update id="updateGameInfo" parameterType="game">
@@ -41,15 +41,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			gi_production = #{production}, 
 			gi_picture = #{picture}, 
 			gi_site_url = #{siteUrl}, 
-			gi_score = #{score}
+			gi_publisher = #{publisher}
 		WHERE gi_id = #{giId}
 	</update>
 	<delete id="deleteGameInfo" parameterType="java.lang.Integer">
 		DELETE * FROM g_info WHERE gi_id = #{giId}
 	</delete>
 	
-	<select id="selectGameInfo" parameterType="java.lang.Integer" resultMap="gameMap">
-		SELECT * FROM g_info WHERE gi_title = #{title}
+	<select id="selectGameInfo" parameterType="java.lang.String" resultMap="gameMap">
+		SELECT gi_title, gi_platform, gi_genre, gi_release, gi_age, gi_production, gi_picture, gi_site_url, gi_publisher FROM g_info WHERE gi_title = #{title}
 
 <!-- 		SELECT  -->
 <!-- 			giId, -->
@@ -61,7 +61,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 			production, -->
 <!-- 			picture, -->
 <!-- 			siteUrl, -->
-<!-- 			score -->
+<!-- 			publisher -->
 <!-- 		FROM g_info  -->
 <!-- 		WHERE 1=1  -->
 <!-- 			<if test="giID != null"> AND gi_id = #{giId} </if> -->
@@ -79,7 +79,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			production,
 			picture,
 			siteUrl,
-			score
+			publisher
 		FROM g_info
 	</select>
 </mapper>
