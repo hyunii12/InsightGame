@@ -11,7 +11,7 @@
 	position: relative;
 	height: 370px;
 	width: 600px;
-	right: -100px
+	right: -100px;
 }
 #chartContainer2 {
 	position: relative;
@@ -42,8 +42,9 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
 		dataPoints: [
 			{ y: ${wooptime[0]}, label: "${woopname[0]}" },
 			{ y: ${wooptime[1]}, label: "${woopname[1]}" },
-			{ y: ${wooptime[2]}, label: "${woopname[2]}" },
-			{ y: ${wooptime[3]}, label: "${woopname[3]}"}			
+			{ y: ${wooptime[2]}, label: "${woopname[2]}" }
+// 			,
+// 			{ y: ${wooptime[3]}, label: "${woopname[3]}"}			
 		]
 	}]
 });
