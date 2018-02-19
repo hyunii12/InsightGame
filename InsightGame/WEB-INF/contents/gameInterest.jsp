@@ -25,19 +25,6 @@
             var ctlist = "${ctlist}"
             var IRLlist = "${IRLlist}"
 
-
-				var overlist = "${overlist}"
-				var Leaguelist = "${Leaguelist}"
-				var Heartlist = "${Heartlist}"
-				var Fortnitelist = "${Fortnitelist}"
-				var Dotalist = "${Dotalist}"
-				var BATTLElist = "${BATTLElist}"
-				var wowlist = "${wowlist}"
-				var gtalist = "${gtalist}"
-				var ctlist = "${ctlist}"
-				var IRLlist = "${IRLlist}"
-
-
             var overlist2 = JSON.parse(overlist);
             var Leaguelist2 = JSON.parse(Leaguelist);
             var Heartlist2 = JSON.parse(Heartlist);
@@ -57,18 +44,7 @@
 
             var minusdd = today.getDate() - 01;
 
-				var overlist2 = JSON.parse(overlist);
-				var Leaguelist2 = JSON.parse(Leaguelist);
-				var Heartlist2 = JSON.parse(Heartlist);
-				var Fortnitelist2 = JSON.parse(Fortnitelist);
-				var Dotalist2 = JSON.parse(Dotalist);
-				var BATTLElist2 = JSON.parse(BATTLElist);
-				var wowlist2 = JSON.parse(wowlist);
-				var gtalist2 = JSON.parse(gtalist);
-				var ctlist2 = JSON.parse(ctlist);
-				var IRLlist2 = JSON.parse(IRLlist);
-
-            if (mm < 10) {
+		    if (mm < 10) {
                mm = '0' + mm
             }
 

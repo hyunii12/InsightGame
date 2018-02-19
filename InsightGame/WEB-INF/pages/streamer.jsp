@@ -72,7 +72,10 @@
 				Rank</h2>
 			<div class="row">
 
+
 				<div id="streamer_rank"></div>
+
+			<div id="streamer_rank"></div>
 
 				<div>
 					<jsp:include page="../contents/streamerRank.jsp" />

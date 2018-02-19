@@ -78,6 +78,26 @@ public class test {
 //		}
 //		System.out.println(cnt);
 //--------------------------------------------------
+//	@org.junit.Test
+//	public void test00() {
+//		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put("sname","김도");
+//		map.put("day","2018-02-16");
+//		list = streamerpopDao.selectDaystreamerpop(map);
+//		System.out.println(list.size());
+//		
+//		List<String> list1 = new ArrayList<String>();
+//		HashMap<String, String> map2 = new HashMap<String, String>();
+//		map2.put("sname","김도");
+//		map2.put("day","2018-02-16");
+//		list1 = streamerpopDao.selectdaytitle(map2);
+//		for(String s: list1) {
+//			System.out.println(s);
+//		}
+//		
+//	}
+
 //		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
 //		HashMap<String, String> map = new HashMap<String, String>();
 //		map.put("sname","풍월량");
