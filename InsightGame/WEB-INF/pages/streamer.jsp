@@ -67,8 +67,8 @@
 
 		<div class="container">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Streamer
-				Rank</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
+			Streamer Rank</h2>
 				<div id="streamer_rank" style="text-align: center;">
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
@@ -94,32 +94,11 @@
 
 		<div class="container1">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
-				4개</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0">차트
+				2개</h2>
 
 			<div class="row">
 
-				<div class="col-md-6">
-					<h3 class="text-center">스트리머 게시글 - 키워드별</h3>
-
-					<!-- 			<div id="issues"> -->
-					<%-- 					<jsp:include page="gameInterest.do" /> --%>
-					<!-- 								</div> -->
-				</div>
-
-				<div class="col-md-6">
-					<!-- 					<h3 class="text-center">스트리머 게시글 - 시간대별</h3> -->
-
-
-
-					<!-- 					<div id="streamerBoardNumAsTime"> -->
-					<!-- 					<div class="streamerBoardNumAsTime"></div> -->
-					<!-- 					</div> -->
-
-
-
-
-				</div>
 
 				<div class="col-md-6">
 					<h3 class="text-center">전체 게시글 - 키워드별</h3>

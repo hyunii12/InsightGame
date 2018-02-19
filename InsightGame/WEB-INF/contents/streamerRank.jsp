@@ -16,10 +16,26 @@
 
 }
 #chartContainer3 {
+<<<<<<< HEAD
 
+=======
+	position: relative;
+	height: 370px;
+	width: 600px;
+	left: 580px;
+	top: -300px;
+	bottom: 700px;
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame
 }
 #chartContainer4 {
+<<<<<<< HEAD
 
+=======
+	position: relative;
+	height: 370px;
+	width: 600px;
+	bottom: 700px;
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame
 }
 
 </style>
@@ -136,9 +152,11 @@ chart4.render();
 </script>
 </head>
 <body>
+
 		<div id="chartContainer1" style="height: 370px;	width: 400px; display: inline-block;"></div>
 		<div id="chartContainer2" style="height: 370px;	width: 400px; display: inline-block;"></div>
 		<div id="chartContainer3" style="height: 370px;	width: 400px; display: inline-block;"></div>
 		<div id="chartContainer4" style="height: 370px;	width: 400px; display: inline-block;"></div>
+
 </body>
 </html>
