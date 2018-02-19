@@ -53,7 +53,7 @@ public class StreamerController {
 		System.out.println("여기는 서치스트리머");
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
 		System.out.println(streamer);
-		model.addAttribute("streamer", streamer);
+		model.addAttribute("streamerInfo", streamer);
 		return "pages/searchStreamer";
 	}
 
