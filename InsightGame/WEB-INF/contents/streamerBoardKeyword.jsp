@@ -19,9 +19,6 @@ circle {
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<script>
 	
-	
-	
-	
 		var width = 960,
 			height = 500,
 			padding = 1.5, // separation between same-color nodes
@@ -33,7 +30,7 @@ circle {
 	
 	
 	
-		d3.text("data/word_groups.csv", function(error, text) {
+		d3.text("data/news.txt", function(error, text) {
 			if (error)
 				throw error;
 			var colNames = "text,size,group\n" + text;
@@ -97,8 +94,7 @@ circle {
 				});
 	
 	
-	
-	
+		
 			function create_nodes(data, node_counter) {
 				var i = cs.indexOf(data[node_counter].group),
 					r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
@@ -112,8 +108,7 @@ circle {
 				if (!clusters[i] || (r > clusters[i].radius))
 					clusters[i] = d;
 				return d;
-			}
-			;
+			};
 	
 	
 	

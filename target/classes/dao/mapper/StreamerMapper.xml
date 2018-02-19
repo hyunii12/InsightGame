@@ -63,5 +63,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectStreamerInfoByStrName" parameterType="java.lang.String"  resultMap="streamerMap">
 		SELECT si_id, si_twitch_url, si_tgd_url, si_picture, si_name, si_game_category FROM s_info WHERE si_name = #{strName}
 	</select>
-
+	
+	<select id="selectstreamerclip" parameterType="String" resultType="clip">
+		select *from hotclip where cp_display=#{cp_display} order by rand();
+	</select>
+	
+	<select id="selectstreamerlist" parameterType="java.util.HashMap" resultType="tgd" >
+		select * from board_tgd where tg_date = #{tg_date} and tg_name=#{tg_name}
+	</select>
+	
 </mapper>
