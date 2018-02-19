@@ -113,11 +113,12 @@
 <%-- 					<jsp:include page="../contents/streamerInterest.jsp" /> --%>
 <!-- 				</div> -->
 
-				<div id="streamer_top"></div>
+				<div id="streamer_top" style="margin: 0 auto;"></div>
 			</div>
 		</div>
 		</section>
 		
+
 
 		<div class="container1">
 			<hr class="star-dark mb-5">
