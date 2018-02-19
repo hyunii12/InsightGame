@@ -43,46 +43,38 @@
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
-		<section class="bg-primary text-white mb-0" id="about">
-		<div class="container">
-			<h2 class="text-center text-uppercase text-white">streamerInformation.jsp</h2>
-			<h2 class="text-center text-uppercase text-secondary">스트리머 정보: ${streamerInfo.strName}</h2>
-			<hr class="star-light mb-5">
+		<section class="mb-0">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">streamer info</h2>
+			
 			<div style="display: flex">
 				<div style="margin-left: 15%;">
-					<a href="#"><img src="${streamerInfo.strPicture}" style="width: 240px;"></a>
+
 				</div>
 
-				<div style="width: 45%; margin-left: 30px;">
-					<table id="boardTable" class="table" align="center">
-						<tr>
-							<td>스트리머 이름</td>
-							<td>${streamerInfo.strName }</td>
+				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%;">
+					<table id="boardTable" class="table" align="center" style="margin: 0 auto; margin-top: 4%;">
+						<tr style="text-align: left;">
+							<td rowspan="4" style="border-top: 0; vertical-align: middle;"><img src="${streamerInfo.strPicture}" style="border-radius: 8px;"></td>
+							<td style="text-align: left; border-top: 0; padding-top: 18px; min-width: 300px;">
+							<span style="color: navy; font-size: 2rem; line-height: 35px; display:inline-block;'">
+							<b>${streamerInfo.strName }<br>(${streamerInfo.siId })</b></span>
+							<a href="${streamerInfo.strTwitchUrl }">
+							<img src="img/tw_logo.png" style="width: 32px; height: 32px; margin-left: 0px; margin-bottom: 65px; display: inline-block;"></a>
+							</td>
 						</tr>
 						<tr>
-							<td>트위치 주소</td>
-							<td><a href="${streamerInfo.strTwitchUrl }">${streamerInfo.strName}의 트위치 채널로 이동</a></td>
+							<td style="border-top: 0;"><img src="img/worldwide.png" style="margin-left: 1px; margin-right: 8px; width:22px; height: 22px;"><span style="color: grey">Korea</span></td>
 						</tr>
 						<tr>
-							<td>트게더 주소</td>
-							<td><a href="${streamerInfo.strTgdUrl }">${streamerInfo.strName}의 트게더 페이지로 이동 </a></td>
+							<td style="border-top: 0;"><img src="img/gamecontroller.png" style="margin-right: 7px;"><span style="color: grey">${streamerInfo.strGameCategory }</span></td>
 						</tr>
 						<tr>
-							<td>대표 게임</td>
-							<td>${streamerInfo.strGameCategory }</td>
+							<td style="border-top: 0; padding-bottom: 18px;"><a href="${streamerInfo.strTgdUrl }" style="text-decoration:none"><img src="img/tgd_logo.png" style="width: 27px; height: 27px;">
+							<span style="color: purple; font-size: 0.9rem;">트게더</span></a></td>
 						</tr>
-						<tr>
-							<td>트위치 아이디</td>
-							<td>${streamerInfo.siId }</td>
-						</tr>
-
 					</table>
-
 				</div>
-
 			</div>
-
-		</div>
 		</section>
 
 		<!-- Portfolio Grid Section -->

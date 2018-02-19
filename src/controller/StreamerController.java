@@ -540,5 +540,13 @@ public class StreamerController {
 		return "contents/streamerInterest";
 
 	}
+	
+	
+	@RequestMapping("streamerBoardKeyword.do")
+	public String streamerBoardKeyword(Model model) {
+		System.out.println("스트리머 보드 키워드 버블차트");
+		return "contents/streamerBoardKeyword";
+		
+	}
 
 }

@@ -20,7 +20,7 @@
 </head>
 
 <body>
-	<div style="width:600px">
+	<div>
 		<canvas id="chart1"></canvas>
 	</div>
  	

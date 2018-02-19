@@ -92,16 +92,12 @@
 
 
 
-		<div class="container1">
+		<div class="container1" style="margin-left: 9.8%; margin-right: 9.8%;">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0">차트
-				2개</h2>
 
 			<div class="row">
-
-
 				<div class="col-md-6">
-					<h3 class="text-center">전체 게시글 - 키워드별</h3>
+					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
 
 					<!-- 			<div id="issues"> -->
 					<%-- 					<jsp:include page="gameCalendar.do" /> --%>
@@ -109,15 +105,10 @@
 				</div>
 
 				<div class="col-md-6">
-					<h3 class="text-center">전체 게시글 - 일별</h3>
-
-
-					<!-- 			<div id="issues"> -->
-					<%-- 					<jsp:include page="gameCalendar.do" /> --%>
-					<!-- 								</div> -->
-
-					<div id="kkk"></div>
-
+					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - daily</h3>
+					<div>
+						<div id="kkk"></div>
+					</div>
 				</div>
 			</div>
 		</div>
