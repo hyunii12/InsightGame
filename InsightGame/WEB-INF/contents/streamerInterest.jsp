@@ -10,7 +10,6 @@
 </head>
 <style rel="stylesheet">
 
-
 div.streamerheader {
   background-color: #327a81;
   color: white;
