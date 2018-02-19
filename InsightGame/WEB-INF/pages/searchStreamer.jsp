@@ -46,7 +46,7 @@
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-white">streamerInformation.jsp</h2>
-			<h2 class="text-center text-uppercase text-secondary">검색키워드: ${what }</h2>
+			<h2 class="text-center text-uppercase text-secondary">스트리머 정보: ${streamerInfo.strName}</h2>
 			<div class="row">
 				<a href="gameDetail.jsp">
 				<h3 class="text-center" style="margin: 0 auto;">gameDetail.jsp</h3></a>

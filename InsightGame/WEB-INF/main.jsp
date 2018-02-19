@@ -105,6 +105,7 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">유형별 게임 인기 변화</h2>
 			<div id="" style="margin: 0 auto;"></div>
 		</div>
+
 		
 <!-- 				<div id="kkk"></div> -->
 

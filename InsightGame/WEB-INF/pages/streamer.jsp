@@ -38,9 +38,11 @@
 	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
 
-		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
+		<!-- 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script> -->
+		<script type="text/javascript"
+			src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjklj"></script>
 
-		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
+		<!-- 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script> -->
 
 	</div>
 
@@ -63,39 +65,24 @@
 		</div>
 		</section>
 
+		<section class="mb-0">
 		<div class="container">
 			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0">Streamer
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Streamer
 				Rank</h2>
 			<div class="row">
-				<div style="margin: 0 auto; width: 75%;">
+
+
+				<div id="streamer_rank"></div>
+
+			<div id="streamer_rank"></div>
+
+				<div>
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
-
-				<!-- 				<div class="col-md-6 col-lg-4"> -->
-				<!-- 					<h3 class="text-center">옵션1. 시간</h3> -->
-				<!-- 					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a> -->
-				<!-- 								<div id="issues"> -->
-				<%-- 									<jsp:include page="gameInterest.do" /> --%>
-				<!-- 								</div> -->
-				<!-- 				</div> -->
-
-				<!-- 				<div class="col-md-6 col-lg-4"> -->
-				<!-- 					<h3 class="text-center">옵션2. 팔로우</h3> -->
-				<!-- 					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a> -->
-				<!-- 								<div id="issues"> -->
-				<%-- 									<jsp:include page="gameNews.do" /> --%>
-				<!-- 								</div> -->
-				<!-- 				</div> -->
-
-				<!-- 				<div class="col-md-6 col-lg-4"> -->
-				<!-- 					<h3 class="text-center">옵션3. IRL/방송 시간</h3> -->
-				<!-- 					<a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1"></a> -->
-				<!-- 								<div id="issues"> -->
-				<%-- 									<jsp:include page="gameCalendar.do" /> --%>
-				<!-- 								</div> -->
 			</div>
 		</div>
+		</section>
 
 
 		<section class="mb-0">
@@ -104,12 +91,16 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0"
 				style="font-size: 2rem;">top games - streamer</h2>
 			<div class="row">
-				<div id="streamerInterest" align="center" style="margin: 0 auto;">
-					<jsp:include page="../contents/streamerInterest.jsp" />
-				</div>
+				<!-- 				<div id="streamerInterest" align="center" style="margin: 0 auto;"> -->
+				<%-- 					<jsp:include page="../contents/streamerInterest.jsp" /> --%>
+				<!-- 				</div> -->
+
+				<div id="streamer_top" style="margin: 0 auto;"></div>
 			</div>
 		</div>
 		</section>
+
+
 
 		<div class="container1">
 			<hr class="star-dark mb-5">

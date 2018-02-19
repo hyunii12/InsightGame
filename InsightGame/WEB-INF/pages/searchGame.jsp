@@ -37,14 +37,12 @@
 
 		<div class="container">
 			<h2 class="text-center text-uppercase">gameInformation.jsp</h2>
-			<h2 class="text-center text-uppercase text-secondary">
-				검색키워드:${what }</h2>
 			<h3 class="text-center text-uppercase text-secondary">게임 상세정보:
 				${gameInfo.title }</h3>
 
 			<div style="display: flex">
 				<div style="margin-left: 15%;">
-					<a href="#"><img src="img/gameimg1.jpg" style="width: 240px;"></a>
+					<a href="#"><img src="${gameInfo.picture}" style="width: 240px;"></a>
 				</div>
 
 				<div style="width: 45%; margin-left: 30px;">
