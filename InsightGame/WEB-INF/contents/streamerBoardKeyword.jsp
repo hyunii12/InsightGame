@@ -5,8 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-
-
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <style type="text/css">
 text {
 	font: 10px sans-serif;
@@ -17,11 +16,9 @@ circle {
 	stroke-width: 1;
 }
 </style>
+
 <body>
-	<script src="https://d3js.org/d3.v3.min.js"></script>
-	 
-	
-	<script>
+<script>
 
 		var width = 1000,
 			height = 600,
@@ -114,8 +111,7 @@ circle {
 					clusters[i] = d;
 				return d;
 			};
-	
-	
+		
 	
 			function tick(e) {
 				node.each(cluster(10 * e.alpha * e.alpha))
@@ -182,7 +178,20 @@ circle {
 			return false;
 		};
 </script>
+<<<<<<< HEAD
+<style type="text/css">
+text {
+	font: 10px sans-serif;
+}
+
+circle {
+	stroke: #565352;
+	stroke-width: 1;
+}
+</style><body>
+
 <body>
+
 
 </body>
 </html>
