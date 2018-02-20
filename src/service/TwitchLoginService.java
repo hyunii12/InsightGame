@@ -25,9 +25,9 @@ import model.TwitchLoginApi;
 
 public class TwitchLoginService {
 	
-	private final static String CLIENT_ID = "4jsekeumop20mr3dgphok2axptw6j5";
-	private final static String CLIENT_SECRET = "xvme9rkwsqzj3e1j5u0lk0c254seca";
-	private final static String REDIRECT_URI = "http://localhost:8080/InsightGame/twitchCallback.do";
+	private final static String CLIENT_ID = "ghty8lutmj1064oembb9g8195fr9eg";
+	private final static String CLIENT_SECRET = "v70oetl5h6qale0y55bi24idouidt8";
+	private final static String REDIRECT_URI = "http://70.12.111.55:8080/InsightGame/twitchCallback.do";
 	private final static String SCOPE = "user_read";
 	
 	/* 세션 유효성 검증을 위한 난수 생성기 */

@@ -20,8 +20,8 @@ import model.NaverLoginApi;
 public class NaverLoginService {
 	
 	private final static String CLIENT_ID = "awgAoMxjvMg28N00x8PQ";
-	private final static String CLIENT_SECRET = "Y9uB_t8lqt";
-	private final static String REDIRECT_URI = "http://localhost:8080/InsightGame/naverCallback.do";
+	private final static String CLIENT_SECRET = "dRlAbcgifp";
+	private final static String REDIRECT_URI = "http://70.12.111.55:8080/InsightGame/naverCallback.do";
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
 	
 	/* 세션 유효성 검증을 위한 난수 생성기 */

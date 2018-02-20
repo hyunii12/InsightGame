@@ -13,7 +13,7 @@
 	charset="utf-8"></script>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<meta http-equiv="refresh" content="1;url=http://localhost:8080/InsightGame/" />
+<meta http-equiv="refresh" content="1;url=http://70.12.111.55:8080/InsightGame/" />
 
 
 
