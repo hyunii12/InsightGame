@@ -32,17 +32,17 @@ $(document).ready(function() {
 		}
 	})
 	
-	$.ajax({
-		url : "gameIssuesChart.do",
-		type : "get",
-		dataType : "html",
-		success : function(data) {
-			$('#div_gameIssuesRank_chart').html(data);
-		},
-		error : function(xhar, status, error) {
-//			alert(error);
-		}
-	})
+//	$.ajax({
+//		url : "gameIssuesChart.do",
+//		type : "get",
+//		dataType : "html",
+//		success : function(data) {
+//			$('#div_gameIssuesRank_chart').html(data);
+//		},
+//		error : function(xhar, status, error) {
+////			alert(error);
+//		}
+//	})
 	
 	$.ajax({
 		url : "streamerBoardNumAsTime.do",

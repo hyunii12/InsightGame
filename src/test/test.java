@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -52,15 +53,30 @@ public class test {
 	@Autowired
 	public IStreamerDao sDao;
 
+//	@org.junit.Test
+//	public void test11() {
+//
+//		List<streamerFollower> fo = new ArrayList<streamerFollower>();
+//		fo = sfDao.streamerfowday("풍월량");
+//		for (streamerFollower s : fo) {
+//			System.out.println(s.toString());
+//		}
+//
+//	}
 	@org.junit.Test
-	public void test11() {
-
-		List<streamerFollower> fo = new ArrayList<streamerFollower>();
-		fo = sfDao.streamerfowday("풍월량");
-		for (streamerFollower s : fo) {
-			System.out.println(s.toString());
+	public void testasdfasdf() {
+		
+		List<HashMap<String, Object>> list = gameIssuesDao.selectTop10WithInterval();
+		List<HashMap<String, Object>> day1 = new ArrayList<>();
+		List<HashMap<String, Object>> day2 = new ArrayList<>();
+		List<HashMap<String, Object>> day3 = new ArrayList<>();
+		List<HashMap<String, Object>> day4 = new ArrayList<>();
+		List<HashMap<String, Object>> day5 = new ArrayList<>();
+		for(int i=0; i < 10; i++) {
+			System.out.println(list.get(i));
+//			day1.put(list.get(i));
 		}
-
+		
 	}
 
 	// @org.junit.Test

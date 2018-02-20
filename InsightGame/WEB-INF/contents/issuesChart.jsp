@@ -9,39 +9,75 @@
 	<title>Game Issue Rank</title>
 </head>
 <body>
-	<div id="div_gameIssuesRank_chart"  style="width: 940px">
+	<div id="div_gameIssuesRank_chart"  style="margin: 0 auto; width: 85%;">
 		<script type="text/javascript">
 		$(function(){
+			var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 01; //January is 0!
+            var yyyy = today.getFullYear();
+
+            var minusdd = today.getDate() - 01;
+
+		    if (mm < 10) {
+               mm = '0' + mm
+            }
+
+//             today = yyyy + '-' + mm + '-' + dd
+//             yesterday = yyyy + '-' + mm + '-' + minusdd
+          
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth() + 01; //January is 0!
+				var yyyy = today.getFullYear();
+
+				var minusdd = today.getDate() - 01;
+				var minusdd2 = today.getDate() - 02;
+				var minusdd3 = today.getDate() - 03;
+				var minusdd4 = today.getDate() - 04;
+				var minusdd5 = today.getDate() - 05;
+				
+
+				if (mm < 10) {
+					mm = '0' + mm
+				}
+
+// 				today = yyyy + '-' + mm + '-' + dd
+				yesterday = yyyy + '-' + mm + '-' + minusdd
+				TDA = yyyy + '-' + mm + '-' + minusdd2
+				TDA3 = yyyy + '-' + mm + '-' + minusdd3
+				TDA4 = yyyy + '-' + mm + '-' + minusdd4
+				TDA5 = yyyy + '-' + mm + '-' + minusdd5
+
+			var chart = bb.generate({
+				  data: {
+					    x: "x",
+					    columns: [
+					    [ "x", TDA5,TDA4,TDA3,TDA,yesterday,today],
+						["data1", 30, 200, 100, 400, 150, 250],
+						["data2", 130, 340, 200, 500, 250, 350]
+					    ]
+					  },
+					  axis: {
+					    x: {
+					      type: "timeseries",
+					      tick: {
+					        format: "%Y-%m-%d"
+					      }
+					    }
+					  },
+					  bindto: "#gameIssues_TimeseriesChart"
+					});
+			
+				setTimeout(function() {
+					chart.load({
+						columns: [
+							['data3', 400, 500, 450, 700, 600, 500]
+						]
+					});
+				}, 1000);
 			
 		});
-		var dd = {
-			  data: {
-			    x: "x",
-			    columns: [
-				["x", "2013-01-01", "2013-01-02", "2013-01-03", "2013-01-04", "2013-01-05", "2013-01-06"],
-				["data1", 30, 200, 100, 400, 150, 250],
-				["data2", 130, 340, 200, 500, 250, 350]
-			    ]
-			  },
-			  axis: {
-			    x: {
-			      type: "timeseries",
-			      tick: {
-			        format: "%Y-%m-%d"
-			      }
-			    }
-			  },
-			  bindto: "#gameIssues_TimeseriesChart"
-			}
-		var chart = bb.generate(dd);
-		
-			setTimeout(function() {
-				chart.load({
-					columns: [
-						['data3', 400, 500, 450, 700, 600, 500]
-					]
-				});
-			}, 1000);
 		</script>
 		<div id="gameIssues_TimeseriesChart"></div>		
 	</div>
