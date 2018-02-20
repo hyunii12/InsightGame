@@ -590,23 +590,5 @@ public class StreamerController {
 		return "contents/streamerBoardKeyword";
 		
 	}
-
-//	@RequestMapping("searchStreamer.do")
-//	public String streamerhotClip(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect, @RequestParam(name = "search", defaultValue = "") String searchWord) {
-//		System.out.println("여기는 스트리머 핫클립");
-//
-//		List<Clip> list = clipService.getstreamerclip(searchWord);
-//		
-//		System.out.println("......................................."+list.size());
-//		
-////		for (Clip c : list) {
-////			System.out.println(c.getCp_view());
-////		}
-//
-////		model.addAttribute("streamerclip", list);
-//
-//		return null;
-////		return "contents/hotclips";
-//	}
 	
 }
