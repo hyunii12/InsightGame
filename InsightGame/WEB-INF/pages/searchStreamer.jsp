@@ -100,9 +100,13 @@
 						<jsp:include page="streamercount.jsp" />					
 				</div>
 
-				<div class="col-md-6">
-					<h3 class="text-center">222</h3>
 
+				<div class="col-md-6">
+					<h3 class="text-center">444</h3>
+
+					<div style="margin: 0 auto;">
+						<jsp:include page="streamerfow.jsp" />
+					</div>
 				</div>
 
 			</div>
