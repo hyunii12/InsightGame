@@ -47,7 +47,7 @@ public class StreamerController {
 	public String searchStreamer(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect,
 			@RequestParam(name = "search", defaultValue = "") String searchWord) {
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
-		
+		System.out.println(streamer);
 		List<Clip> streamerclip = streamerService.getstreamerclip(searchWord);
 
 		List<Integer> streamercount=streamerService.getstreamergraph(searchWord);

@@ -16,66 +16,60 @@
             var dd = today.getDate();
             var mm = today.getMonth() + 01; //January is 0!
             var yyyy = today.getFullYear();
-
             var minusdd = today.getDate() - 01;
-
-		    if (mm < 10) {
-               mm = '0' + mm
-            }
-
+		    if (mm < 10) {mm = '0' + mm}
 //             today = yyyy + '-' + mm + '-' + dd
 //             yesterday = yyyy + '-' + mm + '-' + minusdd
-          
-				var today = new Date();
-				var dd = today.getDate();
-				var mm = today.getMonth() + 01; //January is 0!
-				var yyyy = today.getFullYear();
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth() + 01; //January is 0!
+			var yyyy = today.getFullYear();
 
-				var minusdd = today.getDate() - 01;
-				var minusdd2 = today.getDate() - 02;
-				var minusdd3 = today.getDate() - 03;
-				var minusdd4 = today.getDate() - 04;
-				var minusdd5 = today.getDate() - 05;
+			if (mm < 10) {mm = '0' + mm}
+			var minusdd = today.getDate() - 01;
+			var minusdd2 = today.getDate() - 02;
+			var minusdd3 = today.getDate() - 03;
+			var minusdd4 = today.getDate() - 04;
+			var minusdd5 = today.getDate() - 05;
+
+// 			today = yyyy + '-' + mm + '-' + dd
+			yesterday = yyyy + '-' + mm + '-' + minusdd
+			TDA = yyyy + '-' + mm + '-' + minusdd2
+			TDA3 = yyyy + '-' + mm + '-' + minusdd3
+			TDA4 = yyyy + '-' + mm + '-' + minusdd4
+			TDA5 = yyyy + '-' + mm + '-' + minusdd5
+			if('${start}' == "main"){
+				var chart = bb.generate({
+					  data: {
+						    x: "x",
+						    columns: [
+						    [ "x", TDA5,TDA4,TDA3,TDA,yesterday,today],
+							["data1", 30, 200, 100, 400, 150, 250],
+							["data2", 130, 340, 200, 500, 250, 350]
+						    ]
+						  },
+						  axis: {
+						    x: {
+						      type: "timeseries",
+						      tick: {
+						        format: "%Y-%m-%d"
+						      }
+						    }
+						  },
+						  bindto: "#gameIssues_TimeseriesChart"
+						});
 				
-
-				if (mm < 10) {
-					mm = '0' + mm
-				}
-
-// 				today = yyyy + '-' + mm + '-' + dd
-				yesterday = yyyy + '-' + mm + '-' + minusdd
-				TDA = yyyy + '-' + mm + '-' + minusdd2
-				TDA3 = yyyy + '-' + mm + '-' + minusdd3
-				TDA4 = yyyy + '-' + mm + '-' + minusdd4
-				TDA5 = yyyy + '-' + mm + '-' + minusdd5
-
-			var chart = bb.generate({
-				  data: {
-					    x: "x",
-					    columns: [
-					    [ "x", TDA5,TDA4,TDA3,TDA,yesterday,today],
-						["data1", 30, 200, 100, 400, 150, 250],
-						["data2", 130, 340, 200, 500, 250, 350]
-					    ]
-					  },
-					  axis: {
-					    x: {
-					      type: "timeseries",
-					      tick: {
-					        format: "%Y-%m-%d"
-					      }
-					    }
-					  },
-					  bindto: "#gameIssues_TimeseriesChart"
-					});
-			
-				setTimeout(function() {
-					chart.load({
-						columns: [
-							['data3', 400, 500, 450, 700, 600, 500]
-						]
-					});
-				}, 1000);
+					setTimeout(function() {
+						chart.load({
+							columns: [
+								['data3', 400, 500, 450, 700, 600, 500]
+							]
+						});
+					}, 1000);
+			}
+			else if('${start}' == "searchGame"){
+				
+			}
 			
 		});
 		</script>

@@ -19,23 +19,29 @@ public class gameIssuesService implements IGameIssuesService{
 		List<HashMap<String, Object>> results = gameIssuesDao.selectTop20Today();
 		return results;
 	}
-	
 	@Override
-	public List<HashMap<String, Object>> getAllGameIssuesListInterval(String date) {
+	public HashMap<String, Object> getTopGamesIssuesList() {
 		// TODO Auto-generated method stub
-		List<HashMap<String, Object>> list = gameIssuesDao.selectTop10WithInterval();
-		List<HashMap<String, Object>> onedaylist = null;
-		List<HashMap<String, Object>> listBydate = new ArrayList<>();
-		for(int j=0; j < 5; j++) {
-			onedaylist = new ArrayList<>();
-			for(int i=10*j; i < 10*(1+j); i++) {
-				((HashMap<String,Object>) onedaylist).put("issuesRank_"+i, list.get(i));
-			}
-			((HashMap<String,Object>) listBydate).put("DAY"+j, onedaylist);
+//		List<String> topGames = new ArrayList<>(); 
+		HashMap<String, Object> issueScores = new HashMap<>();
+		for(HashMap<String, Object> game : getGameIssuesListToday()) {
+			List<HashMap<String, Double>> temp = getGameIssuesListByTitle(game.get("title").toString());
+			issueScores.put(game.get("title").toString(), temp);
 		}
-		
-		return listBydate;
+		return issueScores;
 	}
+	@Override
+	public List<HashMap<String, Double>> getGameIssuesListByTitle(String title) {
+		// TODO Auto-generated method stub
+//		List<HashMap<String, Double>> scoreByDate = new ArrayList<>();
+//		for(String title: topGames) {
+//			for(HashMap<String, Double> data : gameIssuesDao.selectListByTitle(title)) {
+//				scoreByDate.add()
+//			}
+//		}
+		return gameIssuesDao.selectListByTitle(title);
+	}
+	
 
 
 }

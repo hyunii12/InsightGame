@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="js/billboard.js"></script>
@@ -46,11 +45,10 @@
                  bindto: "#RotateXAxisTickText"
                });            
          });      
+
 </script>
 </head>
 <body>
-
    <div id="RotateXAxisTickText"></div>
-
 </body>
 </html>

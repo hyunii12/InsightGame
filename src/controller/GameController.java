@@ -12,17 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import dao.IBoardDao;
-import dao.IGameIssuesDao;
 import model.Game;
 import model.GenreRanking;
 import model.Rbranking;
-import model.twgame;
 import service.IGameIssuesService;
 import service.IGameService;
 import service.IGenrerankingService;
 import service.IRbrankingService;
-import service.ITgdService;
 import service.ITwgameService;
 
 @Controller
@@ -151,10 +147,21 @@ public class GameController {
 		model.addAttribute("view", "table");
 		return "contents/issuesTable";
 	}
-	@RequestMapping("gameIssuesChart.do")
-	public String gameIssuesChart(Model model) {
-		return "contents/issuesChart";
-	}
+	
+//	@RequestMapping("gameIssuesChart.do")
+//	public String gameIssuesChart(Model model, @RequestParam(name="game", defaultValue="")String game) {
+//		if(game != "") {
+//			List<HashMap<String, Double>> list = gameIssuesService.getGameIssuesListByTitle(game);
+//			model.addAttribute("issuesList", list);
+//			model.addAttribute("start", "searchGame");
+//		}
+//		else {
+//			HashMap<String, Object> list = gameIssuesService.getTopGamesIssuesList();
+//			model.addAttribute("issuesList", list);
+//			model.addAttribute("start", "main");
+//		}
+//		return "contents/issuesChart";
+//	}
 
 	
 	@RequestMapping("gameRankAsGenre.do")

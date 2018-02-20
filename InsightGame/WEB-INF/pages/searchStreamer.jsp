@@ -51,7 +51,7 @@
 				<div style="margin-left: 15%;">
 
 				</div>
-
+			
 				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%; margin-top: 2%;">
 					<table id="boardTable" class="table" align="center" style="margin: 0 auto;">
 						<tr style="text-align: left;">
