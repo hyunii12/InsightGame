@@ -298,14 +298,13 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">111</h3>
-<<<<<<< HEAD
+
 
 						<jsp:include page="streamercount.jsp" />
 					
 					
-=======
-						<div id="kkk"></div>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
+					<div id="kkk"></div>
+
 				</div>
 
 				<div class="col-md-6">
