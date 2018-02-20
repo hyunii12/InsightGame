@@ -35,11 +35,8 @@
 			<jsp:include page="../navigation.jsp" />
 		</div>
 		<div style="margin-top: 15%; text-align: center;">
-			<!-- 			<a href="login.do">로그인</a><br> -->
-
-			<!-- 네이버 로그인 화면으로 이동 시키는 URL -->
-			<!-- 네이버 로그인 화면에서 ID, PW를 올바르게 입력하면 callback 메소드 실행 요청 -->
-			<div class="container" style="display: inline-block; margin-top: 4.5%;">
+			<div style="display: inline-block; margin-top: 3.5%;">
+				<div style="height: 500px; width: 500px; border:3px solid #2c3e50; margin: 0 auto; padding-top: 20px; border-radius: 8px;">
 				<span style="font-size: 1.5rem; color: #2c3e50; font-weight: bold;">Insight Game 로그인</span><br>
 				<a href="${naverurl}">
 				<img src="${pageContext.request.contextPath}/img/login_naver.png" style="margin-top: 55px; padding-bottom: 10px; width: 343px;"/></a><br>
@@ -47,6 +44,7 @@
 				<img src="${pageContext.request.contextPath}/img/login_twitch.png" style="padding-bottom: 20.5px; width: 344px;"/></a><br>
 				<a href="${googleurl}">
 				<img src="${pageContext.request.contextPath}/img/login_google.png" style="width: 321px;" /></a><br>
+				</div>
 			</div>
 		</div>
 	</div>

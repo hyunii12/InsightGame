@@ -102,8 +102,8 @@
 
 
 				<div class="col-md-6">
-					<h3 class="text-center">444</h3>
-
+					<h3 class="text-center text-uppercase text-secondary mb-0">
+					change followers - ${streamerInfo.strName }</h3>
 					<div style="margin: 0 auto;">
 						<jsp:include page="streamerfow.jsp" />
 					</div>
