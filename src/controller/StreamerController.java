@@ -18,7 +18,9 @@ import model.Clip;
 import model.Streamer;
 import model.StreamerPopularity;
 import model.Tgd;
+import model.streamerFollower;
 import service.IClipService;
+import service.ISFService;
 import service.IStreamerService;
 import service.IStreamerpopService;
 import service.ITgdService;
@@ -33,6 +35,8 @@ public class StreamerController {
 	IStreamerService streamerService;
 	@Autowired
 	IStreamerpopService streamerpopService;
+	@Autowired
+	ISFService sfService;
 
 	@RequestMapping("InsightStreamer.do")
 	public String streamer(Model model) {
@@ -50,6 +54,8 @@ public class StreamerController {
 		List<Clip> streamerclip = streamerService.getstreamerclip(searchWord);
 
 		List<Integer> streamercount=streamerService.getstreamergraph(searchWord);
+		
+		List<streamerFollower> streamerfow=sfService.getstreamerfowday(searchWord);
 		
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime end = now.minusDays(14);
@@ -77,6 +83,7 @@ public class StreamerController {
 		model.addAttribute("streamerInfo", streamer);
 		model.addAttribute("streamerclip", streamerclip);
 		model.addAttribute("streamercount", streamercount);
+		model.addAttribute("streamerfow",streamerfow);
 		
 		return "pages/searchStreamer";
 	}
@@ -338,7 +345,69 @@ public class StreamerController {
 	
 	@RequestMapping("streamerIssuesRank.do")
 	public String streamerIssuesRank(Model model) {
+
 		System.out.println("스트리머 이슈스 랭크");
+		
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String nalza = now.format(formatter); 
+		
+		List<String> s = new ArrayList<String>();
+		
+		//최근 6일로 할지 결정
+		for(int i=1; i>=0; i--) {
+		
+			LocalDateTime end = now.minusDays(i); //minusDays(i);
+			String formatDateTime = end.format(formatter);
+			//System.out.println(formatDateTime);
+						
+			s.add(formatDateTime);			
+		}
+		
+		System.out.println(s);
+		
+		List<Integer> hanryang1125list = new ArrayList<Integer>();
+		List<Integer> saddummylist = new ArrayList<Integer>();
+		List<Integer> dingceptionlist =new ArrayList<Integer>();
+		List<Integer> gabrielcrolist = new ArrayList<Integer>();
+		List<Integer> woowakgoodlist = new ArrayList<Integer>();
+		List<Integer> ddahyonilist = new ArrayList<Integer>();
+		List<Integer> kimdoelist = new ArrayList<Integer>();
+		List<Integer> zilionerlist = new ArrayList<Integer>();
+		List<Integer> gmdkdslalist = new ArrayList<Integer>();
+		List<Integer> wpghd321list = new ArrayList<Integer>();
+		
+		
+		
+		for(int j=0; j<s.size();j++) {
+			
+			hanryang1125list.add(sfService.getstreamertoview("풍월량", s.get(j)));
+			saddummylist.add(sfService.getstreamertoview("서새봄냥", s.get(j)));
+			dingceptionlist.add(sfService.getstreamertoview("딩셉션", s.get(j)));
+			gabrielcrolist.add(sfService.getstreamertoview("가브리엘", s.get(j)));
+			woowakgoodlist.add(sfService.getstreamertoview("우왁굳", s.get(j)));
+			ddahyonilist.add(sfService.getstreamertoview("따효니", s.get(j)));
+			kimdoelist.add(sfService.getstreamertoview("김도", s.get(j)));
+			zilionerlist.add(sfService.getstreamertoview("침착맨", s.get(j)));
+			gmdkdslalist.add(sfService.getstreamertoview("흐앙님", s.get(j)));
+			wpghd321list.add(sfService.getstreamertoview("ryujehong", s.get(j)));
+	
+		}
+		
+		model.addAttribute("hanryang1125list",hanryang1125list);
+		model.addAttribute("saddummylist",saddummylist);
+		model.addAttribute("dingceptionlist",dingceptionlist);
+		model.addAttribute("gabrielcrolist",gabrielcrolist);
+		model.addAttribute("woowakgoodlist",woowakgoodlist);
+		model.addAttribute("ddahyonilist",ddahyonilist);
+		model.addAttribute("kimdoelist",kimdoelist);
+		model.addAttribute("zilionerlist",zilionerlist);
+		model.addAttribute("gmdkdslalist",gmdkdslalist);
+		model.addAttribute("wpghd321list",wpghd321list);
+		
+		
+
+//		System.out.println("스트리머 이슈스 랭크");
 		return "contents/StreamerIssuesRank";
 	}
 	

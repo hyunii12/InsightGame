@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	var result = new Array();
 	$.ajax({
 		url : "gameCalendar.do",
@@ -17,11 +16,34 @@ $(document).ready(function() {
 			inputSchedule(result);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
-
+	$.ajax({
+		url : "gameIssuesTable.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#div_gameIssuesRank_table').html(data);
+		},
+		error : function(xhar, status, error) {
+//			alert(error);
+		}
+	})
+	
+	$.ajax({
+		url : "gameIssuesChart.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#div_gameIssuesRank_chart').html(data);
+		},
+		error : function(xhar, status, error) {
+//			alert(error);
+		}
+	})
+	
 	$.ajax({
 		url : "streamerBoardNumAsTime.do",
 		type : "get",
@@ -30,7 +52,7 @@ $(document).ready(function() {
 			$('#kkk').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 
@@ -42,7 +64,7 @@ $(document).ready(function() {
 			$('#gameRanking').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -55,7 +77,7 @@ $(document).ready(function() {
 			$('#gameRankingAsGenre').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 
@@ -67,7 +89,7 @@ $(document).ready(function() {
 			$('#GI').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -79,7 +101,7 @@ $(document).ready(function() {
 			$('#hot').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -91,7 +113,7 @@ $(document).ready(function() {
 			$('#streamer_top').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -103,7 +125,33 @@ $(document).ready(function() {
 			$('#streamer_rank').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
+		}
+	})
+	
+	
+	$.ajax({
+		url : "streamerBoardKeyword.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#streamerBoardKeyword').html(data);
+		},
+		error : function(xhar, status, error) {
+//			alert(error);
+		}
+	})
+	
+	
+	$.ajax({
+		url : "streamerIssuesRank.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#SI').html(data);
+		},
+		error : function(xhar, status, error) {
+//			alert(error);
 		}
 	})
 	

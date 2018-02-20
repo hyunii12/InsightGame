@@ -38,11 +38,8 @@
 	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
 
-		<!-- 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script> -->
 		<script type="text/javascript"
 			src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjkljklkl"></script>
-
-		<!-- 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script> -->
 
 	</div>
 
@@ -53,12 +50,18 @@
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0"
-				style="font-size: 2rem;">Streamer Issues Rank</h2>
+				style="font-size: 2rem;">change top streamer - followers</h2>
 			<div class="row">
+<<<<<<< HEAD
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
 			    <div style="width:75%; margin: 0 auto;">
 					<jsp:include page="../contents/StreamerIssuesRank.jsp" />
 				</div> 
+=======
+				<div style="width:75%; margin: 0 auto;">
+					<div id="SI"></div>
+				</div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 			</div>
 
 		</div>
@@ -99,9 +102,10 @@
 				<div class="col-md-6">
 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
 
-					<div style="margin: 0 auto;">
-						<jsp:include page="../contents/streamerBoardKeyword.jsp" />
-					</div>
+<!-- 					<div style="margin: 0 auto;"> -->
+<%-- 						<jsp:include page="../contents/streamerBoardKeyword.jsp" /> --%>
+<!-- 					</div> -->
+
 				</div>
 
 				<div class="col-md-6">
@@ -110,8 +114,6 @@
 						<div id="kkk"></div>
 					</div>
 				</div>
-				
-				
 			</div>
 		</div>
 

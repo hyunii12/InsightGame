@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.ISFDao">
+
+	<select id="streamertoview" parameterType="hashmap" resultType="Integer">
+		select str_followers_num from FollowersNum where str_name=#{name} and
+		str_date=#{day}
+	</select>
+
+	<select id="streamerfowday" parameterType="String" resultType="streamerFollower">
+		select *from FollowersNum where str_name=#{str_name}
+	</select>
+
+</mapper>

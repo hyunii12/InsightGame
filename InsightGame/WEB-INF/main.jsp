@@ -13,20 +13,15 @@
 
 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
 
-		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
-
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Game Issues Rank</h2>
-			<div class="row">
-				<h3 class="text-center" style="margin: 0 auto;">issues.jsp</h3>
-			</div>
-			<div style="margin: 0 auto; width: 80%">
-				<%-- 				<jsp:include page="contents/issues.jsp" /> --%>
 
+			<div style="margin: 0 auto; width: 80%">
+				<jsp:include page="contents/issuesTable.jsp" />
 			</div>
 		</div>
 
@@ -83,7 +78,16 @@
 <%-- 								<jsp:include page="contents/gameInterest.jsp" /> --%>
 <!-- 			</div> -->
 		</div>
+		
+		<div class="container">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">changes top games - issue </h2>
+			<div style="margin: 0 auto; margin-top: 30px; width: 60%">
+				<jsp:include page="contents/issuesChart.jsp" />
+			</div>
 
+		</div>
+		
 		</section>
 
 		<div class="container1">
@@ -96,33 +100,9 @@
 			<div class="container">
 				<hr class="star-dark mb-5">
 				<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game rank - genre</h2>
-				<div id="gameRankingAsGenre" style="margin: 0 auto;"></div>
+				<div id="gameRankingAsGenre" style="margin: 0 auto; width: 77%;"></div>
 		</div>
 		</section>
 		
-<!-- 		<div class="container1" style="padding-bottom: 96px;"> -->
-<!-- 			<hr class="star-dark mb-5"> -->
-<!-- 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">유형별 게임 인기 변화</h2> -->
-<!-- 			<div id="" style="margin: 0 auto;"></div> -->
-<!-- 		</div> -->
-
-		
-<!-- 				<div id="kkk"></div> -->
-
-<!-- 					<div id="issues"> -->
-<%-- 						<jsp:include page="contents/gameRankAsGenre.jsp" /> --%>
-<!-- 					</div> -->
-<!-- 				</div> -->
-<!-- 					<div id="issues"> -->
-<%-- 						<jsp:include page="contents/gameRank.jsp" /> --%>
-<!-- 					</div> -->
-
-<!-- 				<div class="col-md-6"> -->
-<!-- 					<h3 class="text-center">제작사 순위</h3> -->
-<!-- 					<div id="issues"> -->
-<%-- 						<jsp:include page="contents/gameRankAsCompany.jsp" /> --%>
-<!-- 					</div> -->
-<!-- 				</div> -->
-
 </body>
 </html>
