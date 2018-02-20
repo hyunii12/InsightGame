@@ -56,8 +56,22 @@ public class GameController {
 		System.out.println("여기는 서치게임");
 		Game game = gameService.selectGameInfo(searchWord);
 		model.addAttribute("gameInfo", game);
-		System.out.println(game);
+		
+		List<Game> titleList = new ArrayList<>();
+		titleList = gameService.selectGameTitleList();
+		List<String> titleListResult = new ArrayList<>();
+		for(Game g : titleList) {
+			titleListResult.add(g.getTitle());
+		}
+		System.out.println("게임제목");
+		System.out.println(titleListResult);
+		model.addAttribute("gameTitle", titleListResult);
 		return "pages/searchGame";
+	}
+	
+	@RequestMapping("gameRecommend.do")
+	public String gameRecommend(Model model) {
+		return "contents/gameRecommned";
 	}
 	
 	@RequestMapping("gameDetail.do")

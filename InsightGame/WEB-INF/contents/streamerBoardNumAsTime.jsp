@@ -72,7 +72,7 @@
 			data: {
 				labels: labels,
 				datasets: [{
-					label: "전체 게시판 게시글수 차트",
+					label: "트게더 모든 게시글 수",
 					data: data,
 					type: 'line',
 					pointRadius: 0,

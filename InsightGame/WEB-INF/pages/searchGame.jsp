@@ -97,7 +97,7 @@
 
 	<div class="container">
 		<h2 class="text-center text-uppercase">검색 게임 정보</h2>
-
+		<jsp:include page="../contents/gameRecommend.jsp"></jsp:include>
 		<div class="row">
 			<h3 class="text-center" style="margin: 0 auto;">gameInterest.jsp</h3>
 			<h3 class="text-center" style="margin: 0 auto;">news.jsp</h3>

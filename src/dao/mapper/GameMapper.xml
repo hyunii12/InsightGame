@@ -52,18 +52,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT gi_title, gi_platform, gi_genre, gi_release, gi_age, gi_production, gi_picture, gi_site_url, gi_publisher FROM g_info WHERE gi_title = #{title}
 
 	</select>
-	<select id="selectGameInfoList" resultType="java.lang.Integer">
+	<select id="selectGameInfoList" resultMap="gameMap">
 		SELECT 
-			giId,
-			title,
-			platform,
-			genre,
-			release,
-			age,
-			production,
-			picture,
-			siteUrl,
-			publisher
-		FROM g_info
+			gi_title
+		FROM g_info order by rand() limit 5;
 	</select>
 </mapper>
