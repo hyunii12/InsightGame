@@ -155,18 +155,18 @@ table.gameRankAsType tr:nth-child(2n+1) {
 		
 <table class="gameRankAsType" cellspacing='0' style="font-size: 0.9rem">
 	<tr>
-		<th scope="row">순위</th>
-		<th>온라인<br>(PC)</th>
-		<th>모바일</th>
-		<th>닌텐도<br>(DS)</th>
-		<th>플레이스테이션<br>(PS4)</th>
-		<th>xBox</th>
-		<th>닌텐도<br>(Switch)</th>
-		<th>플레이스테이션<br>(PSvita)</th>
+		<th scope="row" style="font-weight:bold">순위</th>
+		<th style="font-weight:bold">온라인<br>(PC)</th>
+		<th style="font-weight:bold">모바일</th>
+		<th style="font-weight:bold">닌텐도<br>(DS)</th>
+		<th style="font-weight:bold">플레이스테이션<br>(PS4)</th>
+		<th style="font-weight:bold">xBox</th>
+		<th style="font-weight:bold">닌텐도<br>(Switch)</th>
+		<th style="font-weight:bold">플레이스테이션<br>(PSvita)</th>
 	</tr>
     
 	<tr>
-		<th scope="row">1</th>
+		<th scope="row" style="font-weight:bold">1</th>
 		<td style="width: 128px;">${pcbrank[0].name}</td>
 		<td style="width: 128px;">${mobilebrank[0].name}</td>
 		<td style="width: 128px;">${dsrank[0].name}</td>
@@ -178,7 +178,7 @@ table.gameRankAsType tr:nth-child(2n+1) {
 	</tr>
 	
 	<tr>
-		<th scope="row">2</th>
+		<th scope="row" style="font-weight:bold">2</th>
 		<td>${pcbrank[1].name}</td>
 		<td>${mobilebrank[1].name}</td>
 		<td>${dsrank[1].name}</td>
@@ -189,7 +189,7 @@ table.gameRankAsType tr:nth-child(2n+1) {
 	</tr>
 
 	<tr>
-		<th scope="row">3</th>
+		<th scope="row" style="font-weight:bold">3</th>
 		<td>${pcbrank[2].name}</td>
 		<td>${mobilebrank[2].name}</td>
 		<td>${dsrank[2].name}</td>
@@ -199,7 +199,7 @@ table.gameRankAsType tr:nth-child(2n+1) {
 		<td>${psvitabrank[2].name}</td>
 	</tr>
 	<tr>
-		<th scope="row">4</th>
+		<th scope="row" style="font-weight:bold">4</th>
 		<td>${pcbrank[3].name}</td>
 		<td>${mobilebrank[3].name}</td>
 		<td>${dsrank[3].name}</td>
@@ -210,7 +210,7 @@ table.gameRankAsType tr:nth-child(2n+1) {
 	</tr>
 	
     <tr>
-		<th scope="row">5</th>
+		<th scope="row" style="font-weight:bold">5</th>
 		<td>${pcbrank[4].name}</td>
 		<td>${mobilebrank[4].name}</td>
 		<td>${dsrank[4].name}</td>

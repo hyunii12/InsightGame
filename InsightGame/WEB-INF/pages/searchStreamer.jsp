@@ -42,7 +42,7 @@
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
-		<!-- Portfolio Grid Section -->
+
 		<section class="mb-0">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">streamer info</h2>
 			
@@ -51,8 +51,8 @@
 
 				</div>
 
-				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%;">
-					<table id="boardTable" class="table" align="center" style="margin: 0 auto; margin-top: 4%;">
+				<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%; margin-top: 2%;">
+					<table id="boardTable" class="table" align="center" style="margin: 0 auto;">
 						<tr style="text-align: left;">
 							<td rowspan="4" style="border-top: 0; vertical-align: middle;"><img src="${streamerInfo.strPicture}" style="border-radius: 8px;"></td>
 							<td style="text-align: left; border-top: 0; padding-top: 18px; min-width: 300px;">
@@ -77,7 +77,6 @@
 			</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
 		<section class="portfolio">
 		<div class="container">
 			<hr class="star-dark mb-5">
@@ -125,14 +124,10 @@
 	font-weight: normal;
 }
 </style>
-
-				<div class="row">
-					<div class="col-md-12 col-md-offset-3"
-						style="margin-left: auto; margin-right: auto;">
-						<!-- Nav tabs category -->
-						<ul class="nav nav-tabs faq-cat-tabs nav-pills">
-							<li class="nav-item"><a class="nav-link active"
-								href="#faq-cat-1" role="tab" data-toggle="tab">통계</a></li>
+		<div class="row">
+			<div class="col-md-12 col-md-offset-3" style="margin-left: auto; margin-right: auto;">
+				<ul class="nav nav-tabs faq-cat-tabs nav-pills">
+					<li class="nav-item"><a class="nav-link active" href="#faq-cat-1" role="tab" data-toggle="tab">통계</a></li>
 							<li class="nav-item"><a href="#faq-cat-2" class="nav-link"
 								role="tab" data-toggle="tab">뉴스</a></li>
 							<li class="nav-item"><a href="#faq-cat-3" class="nav-link"
@@ -293,9 +288,8 @@
 		</div>
 		</section>
 
-		<!-- Portfolio Grid Section -->
 		<section class="portfolio">
-		<div class="container1">
+		<div class="container1" style="margin-left: 9.8%; margin-right: 9.8%;">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0">그래프
 				4개</h2>
@@ -304,10 +298,14 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">111</h3>
+<<<<<<< HEAD
 
 						<jsp:include page="streamercount.jsp" />
 					
 					
+=======
+						<div id="kkk"></div>
+>>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 				</div>
 
 				<div class="col-md-6">
@@ -336,20 +334,16 @@
 			</div>
 		</div>
 		</section>
-
-		<!-- Portfolio Grid Section -->
 		<section class="mb-0">
-		<div class="container">
-			<hr class="star-dark mb-5">
-			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
-			hot clip</h2>
-			<div class="row">
-				<h3 class="text-center text-white" style="margin: 0 auto;">hotclips.jsp</h3>
-				
-				<jsp:include page="hotclips2.jsp" />
-				
-				
-			</div>
+			<div class="container">
+				<hr class="star-dark mb-5">
+				<h2 class="text-center text-uppercase text-secondary mb-0"
+				style="font-size: 2rem;">hot clip - ${streamerInfo.strName }</h2>
+				<div class="row">
+					<div style="margin: 0 auto;">
+						<jsp:include page="hotclips2.jsp" />
+					</div>
+				</div>
 		</div>
 		</section>
 	</div>

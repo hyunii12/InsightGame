@@ -5,23 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<style type="text/css">
-text {
-	font: 10px sans-serif;
-}
-
-circle {
-	stroke: #565352;
-	stroke-width: 1;
-}
-</style>
-<body>
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<script>
-	
-		var width = 960,
-			height = 500,
-	
 		var width = 500,
 			height = 300,
 
@@ -180,6 +165,18 @@ circle {
 			}
 			return false;
 		};
-	</script>
+</script>
+<style type="text/css">
+text {
+	font: 10px sans-serif;
+}
+
+circle {
+	stroke: #565352;
+	stroke-width: 1;
+}
+</style>
+<body>
+
 </body>
 </html>
