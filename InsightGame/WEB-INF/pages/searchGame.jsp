@@ -89,59 +89,60 @@
 
 
 	<div class="container">
-		<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
-		<hr class="star-dark mb-5">
+		<h2 class="text-center text-uppercase text-secondary mb-0">issuesChart.jsp</h2>
+		
 
 	</div>
 
-
+	<section class="mb-0">
 	<div class="container">
-		<h2 class="text-center text-uppercase text-secondary mb-0">game Recommend</h2>
+		<hr class="star-dark mb-5">
+		<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game Recommend</h2>
 		<jsp:include page="../contents/gameRecommend.jsp"></jsp:include>
 		<div class="row">
-			<h3 class="text-center" style="margin: 0 auto;">gameInterest.jsp</h3>
+<!-- 			<h3 class="text-center" style="margin: 0 auto;">gameInterest.jsp</h3> -->
 		</div>
 	</div>
-
+	</section>
 	<!-- Portfolio Grid Section -->
-	<div class="container1">
-		<h2 class="text-center text-uppercase text-secondary mb-0">그래프 4개</h2>
-		<hr class="star-dark mb-5">
-		<div class="row">
+<!-- 	<div class="container1"> -->
+<!-- 		<h2 class="text-center text-uppercase text-secondary mb-0">그래프 4개</h2> -->
+<!-- 		<hr class="star-dark mb-5"> -->
+<!-- 		<div class="row"> -->
 
-			<div class="col-md-6">
-				<h3 class="text-center">111</h3>
+<!-- 			<div class="col-md-6"> -->
+<!-- 				<h3 class="text-center">111</h3> -->
 
 				<!-- 			<div id="issues"> -->
 <%-- 				<jsp:include page="gameInterest.do" /> --%>
 				<!-- 								</div> -->
-			</div>
+<!-- 			</div> -->
 
-			<div class="col-md-6">
-				<h3 class="text-center">222</h3>
+<!-- 			<div class="col-md-6"> -->
+<!-- 				<h3 class="text-center">222</h3> -->
 
 				<!-- 			<div id="issues"> -->
 <%-- 				<jsp:include page="gameNews.do" /> --%>
 				<!-- 								</div> -->
-			</div>
+<!-- 			</div> -->
 
-			<div class="col-md-6">
-				<h3 class="text-center">333</h3>
-
-				<!-- 			<div id="issues"> -->
-<%-- 				<jsp:include page="gameCalendar.do" /> --%>
-				<!-- 								</div> -->
-			</div>
-
-			<div class="col-md-6">
-				<h3 class="text-center">444</h3>
+<!-- 			<div class="col-md-6"> -->
+<!-- 				<h3 class="text-center">333</h3> -->
 
 				<!-- 			<div id="issues"> -->
 <%-- 				<jsp:include page="gameCalendar.do" /> --%>
 				<!-- 								</div> -->
-			</div>
-		</div>
-	</div>
+<!-- 			</div> -->
+
+<!-- 			<div class="col-md-6"> -->
+<!-- 				<h3 class="text-center">444</h3> -->
+
+				<!-- 			<div id="issues"> -->
+<%-- 				<jsp:include page="gameCalendar.do" /> --%>
+				<!-- 								</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 
 
 </body>

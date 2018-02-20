@@ -20,7 +20,7 @@
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Game Issues Rank</h2>
 
-			<div style="margin: 0 auto; width: 80%">
+			<div style="margin: 0 auto; width: 60%">
 				<jsp:include page="contents/issuesTable.jsp" />
 			</div>
 		</div>

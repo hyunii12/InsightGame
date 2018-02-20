@@ -141,22 +141,21 @@ tr {
 </style>
 </head>
 <body>
-	<div id="div_gameIssuesRank_table" class="table-users"
-		style="width: 940px">
+	<div id="div_gameIssuesRank_table" class="table-users"style="width: 940px">
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0"
-					class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			</ol>
+<!-- 			<ol class="carousel-indicators"> -->
+<!-- 				<li data-target="#carouselExampleIndicators" data-slide-to="0" -->
+<!-- 					class="active"></li> -->
+<!-- 				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li> -->
+<!-- 			</ol> -->
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<!-- 					<img class="d-block w-100" src="..." alt="First slide"> -->
 					<table class="gameIssuesRank" cellspacing='0'>
 						<thead>
 							<tr>
-								<th colspan="2" scope="row" style="font-weight: bold">GAME ISSUE RANK(1~10)</th>
+								<th colspan="2" scope="row" style="font-weight: bold">¿ÃΩ¥ ∑©≈∑ (1¿ß ~ 10¿ß)</th>
 								<!-- 				<th style="font-weight:bold">«√∑ß∆˚</th> -->
 								<!-- 				<th style="font-weight:bold">¿Â∏£</th> -->
 							</tr>
@@ -179,7 +178,7 @@ tr {
 					<table class="gameIssuesRank" cellspacing='0'>
 						<thead>
 							<tr>
-								<th colspan="2" scope="row" style="font-weight: bold">GAME ISSUE RANK(11~20)</th>
+								<th colspan="2" scope="row" style="font-weight: bold">¿ÃΩ¥ ∑©≈∑ (11¿ß ~ 20¿ß)</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -194,13 +193,13 @@ tr {
 					</table>
 				</div>
 			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators"
-				role="button" data-slide="prev"> <span
-				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-				class="sr-only">Previous</span>
-			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+<!-- 			<a class="carousel-control-prev" href="#carouselExampleIndicators" -->
+<!-- 				role="button" data-slide="prev"> <span -->
+<!-- 				class="carousel-control-prev-icon" aria-hidden="true"></span> <span -->
+<!-- 				class="sr-only">Previous</span></a> -->
+			<a class="carousel-control-next" href="#carouselExampleIndicators"
 				role="button" data-slide="next"> <span
-				class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="carousel-control-next-icon" aria-hidden="true" style="margin-bottom: 440px;"></span> <span
 				class="sr-only">Next</span>
 			</a>
 		</div>
