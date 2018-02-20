@@ -139,9 +139,9 @@ public class GameController {
 	}
 	
 	
-	@RequestMapping("gameIssues.do")
-	public String gameIssues(Model model) {
-		System.out.println("여기는 게임이슈스");
+	@RequestMapping("gameIssuesTable.do")
+	public String gameIssuesTable(Model model) {
+		System.out.println("여기는 게임이슈스 [table]");
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String today = now.format(formatter);
@@ -156,11 +156,30 @@ public class GameController {
 		}
 		else
 			model.addAttribute("result", false);
-		model.addAttribute("stage", 1);
-		return "contents/issues";
+		model.addAttribute("view", "table");
+		return "contents/issuesTable";
+	}
+	@RequestMapping("gameIssuesChart.do")
+	public String gameIssuesChart(Model model) {
+		System.out.println("여기는 게임이슈스 [chart]");
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String today = now.format(formatter);
+		
+//		dao: gameIssuesDao
+		List<HashMap<String, Object>> list = new ArrayList<>();
+		list = gameIssuesService.getAllGameIssuesList();
+		if(list.size() > 1) {
+			System.out.println("오늘자 이슈리스트 개수: "+list.size());
+			model.addAttribute("result", true);
+			model.addAttribute("todayIssuesList", list);
+		}
+		else
+			model.addAttribute("result", false);
+		model.addAttribute("view", "chart");
+		return "contents/issuesChart";
 	}
 
-	
 	
 	@RequestMapping("gameRankAsGenre.do")
 	public String gameRankAsGenre(Model model) {//
