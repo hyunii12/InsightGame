@@ -6,8 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>유형별게임순위</title>
 <style rel="stylesheet">
-
-
 div.gameRankAsTypeheader {
   background-color: #327a81;
   color: white;
@@ -20,7 +18,7 @@ div.gameRankAsTypeheader {
 
 
 div.table-users {
-  border: 1px solid #327a81;
+/*   border: 1px solid #327a81; */
   border-radius: 10px;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
   max-width: calc(100% - 2em);
@@ -151,79 +149,79 @@ table.gameRankAsType tr:nth-child(2n+1) {
 <body>
 
 
-	<div class="table-users" style="width:940px">
+<div class="table-users" style="width:940px">
 		
-<table class="gameRankAsType" cellspacing='0' style="font-size: 0.9rem">
-	<tr>
-		<th scope="row" style="font-weight:bold">순위</th>
-		<th style="font-weight:bold">온라인<br>(PC)</th>
-		<th style="font-weight:bold">모바일</th>
-		<th style="font-weight:bold">플레이스테이션<br>(PS4)</th>
-		<th style="font-weight:bold">플레이스테이션<br>(PSvita)</th>
-		<th style="font-weight:bold">xBox</th>
-		<th style="font-weight:bold">닌텐도<br>(Switch)</th>
-		<th style="font-weight:bold">닌텐도<br>(DS)</th>
-
-	</tr>
-    
-	<tr>
-		<th scope="row" style="font-weight:bold">1</th>
-		<td style="width: 128px;">${pcbrank[0].name}</td>
-		<td style="width: 128px;">${mobilebrank[0].name}</td>
-		<td style="width: 128px;">${ps4brank[0].name}</td>
-		<td style="width: 128px;">${psvitabrank[0].name}</td>
-		<td style="width: 128px;">${xboxbrank[0].name}</td>
-		<td style="width: 128px;">${switchbrank[0].name}</td>
-		<td style="width: 128px;">${dsrank[0].name}</td>
-
-	</tr>
+	<table class="gameRankAsType" cellspacing='0' style="font-size: 0.9rem">
+		<tr>
+			<th scope="row" style="font-weight:bold">순위</th>
+			<th style="font-weight:bold">온라인<br>(PC)</th>
+			<th style="font-weight:bold">모바일</th>
+			<th style="font-weight:bold">플레이스테이션<br>(PS4)</th>
+			<th style="font-weight:bold">플레이스테이션<br>(PSvita)</th>
+			<th style="font-weight:bold">xBox</th>
+			<th style="font-weight:bold">닌텐도<br>(Switch)</th>
+			<th style="font-weight:bold">닌텐도<br>(DS)</th>
 	
-	<tr>
-		<th scope="row" style="font-weight:bold">2</th>
-		<td>${pcbrank[1].name}</td>
-		<td>${mobilebrank[1].name}</td>
-		<td>${ps4brank[1].name}</td>
-		<td>${psvitabrank[1].name}</td>
-		<td>${xboxbrank[1].name}</td>
-		<td>${switchbrank[1].name}</td>
-		<td>${dsrank[1].name}</td>
-		
-	</tr>
-
-	<tr>
-		<th scope="row" style="font-weight:bold">3</th>
-		<td>${pcbrank[2].name}</td>
-		<td>${mobilebrank[2].name}</td>
-		<td>${ps4brank[2].name}</td>
-		<td>${psvitabrank[2].name}</td>
-		<td>${xboxbrank[2].name}</td>
-		<td>${switchbrank[2].name}</td>
-		<td>${dsrank[2].name}</td>
-		
-	</tr>
-	<tr>
-		<th scope="row" style="font-weight:bold">4</th>
-		<td>${pcbrank[3].name}</td>
-		<td>${mobilebrank[3].name}</td>
-		<td>${ps4brank[3].name}</td>
-		<td>${psvitabrank[3].name}</td>
-		<td>${xboxbrank[3].name}</td>
-		<td>${switchbrank[3].name}</td>
-		<td>${dsrank[3].name}</td>		
-	</tr>
+		</tr>
+	    
+		<tr>
+			<th scope="row" style="font-weight:bold">1</th>
+			<td style="width: 128px;">${pcbrank[0].name}</td>
+			<td style="width: 128px;">${mobilebrank[0].name}</td>
+			<td style="width: 128px;">${ps4brank[0].name}</td>
+			<td style="width: 128px;">${psvitabrank[0].name}</td>
+			<td style="width: 128px;">${xboxbrank[0].name}</td>
+			<td style="width: 128px;">${switchbrank[0].name}</td>
+			<td style="width: 128px;">${dsrank[0].name}</td>
 	
-    <tr>
-		<th scope="row" style="font-weight:bold">5</th>
-		<td>${pcbrank[4].name}</td>
-		<td>${mobilebrank[4].name}</td>
-		<td>${ps4brank[4].name}</td>
-		<td>${psvitabrank[4].name}</td>
-		<td>${xboxbrank[4].name}</td>
-		<td>${switchbrank[4].name}</td>
-		<td>${dsrank[4].name}</td>
-	</tr>
-
-</table>
+		</tr>
+		
+		<tr>
+			<th scope="row" style="font-weight:bold">2</th>
+			<td>${pcbrank[1].name}</td>
+			<td>${mobilebrank[1].name}</td>
+			<td>${ps4brank[1].name}</td>
+			<td>${psvitabrank[1].name}</td>
+			<td>${xboxbrank[1].name}</td>
+			<td>${switchbrank[1].name}</td>
+			<td>${dsrank[1].name}</td>
+			
+		</tr>
+	
+		<tr>
+			<th scope="row" style="font-weight:bold">3</th>
+			<td>${pcbrank[2].name}</td>
+			<td>${mobilebrank[2].name}</td>
+			<td>${ps4brank[2].name}</td>
+			<td>${psvitabrank[2].name}</td>
+			<td>${xboxbrank[2].name}</td>
+			<td>${switchbrank[2].name}</td>
+			<td>${dsrank[2].name}</td>
+			
+		</tr>
+		<tr>
+			<th scope="row" style="font-weight:bold">4</th>
+			<td>${pcbrank[3].name}</td>
+			<td>${mobilebrank[3].name}</td>
+			<td>${ps4brank[3].name}</td>
+			<td>${psvitabrank[3].name}</td>
+			<td>${xboxbrank[3].name}</td>
+			<td>${switchbrank[3].name}</td>
+			<td>${dsrank[3].name}</td>		
+		</tr>
+		
+	    <tr>
+			<th scope="row" style="font-weight:bold">5</th>
+			<td>${pcbrank[4].name}</td>
+			<td>${mobilebrank[4].name}</td>
+			<td>${ps4brank[4].name}</td>
+			<td>${psvitabrank[4].name}</td>
+			<td>${xboxbrank[4].name}</td>
+			<td>${switchbrank[4].name}</td>
+			<td>${dsrank[4].name}</td>
+		</tr>
+	
+	</table>
 
 </div>
 
