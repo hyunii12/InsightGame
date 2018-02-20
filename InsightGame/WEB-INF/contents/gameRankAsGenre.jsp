@@ -16,7 +16,7 @@ div.gameRankAsGenreheader {
 }
 
 div.table-users {
-	border: 1px solid #327a81;
+/* 	border: 1px solid #327a81; */
 	border-radius: 10px;
 	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
 	max-width: calc(100% - 2em);
