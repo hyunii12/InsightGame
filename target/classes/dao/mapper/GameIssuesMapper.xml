@@ -10,14 +10,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY a.date DESC, a.score DESC;
 		]]> 
 	</select>
-	<select id="selectByDate" parameterType="java.lang.Object" resultType="java.util.HashMap">
+	<select id="selectWithInterval" resultType="java.util.HashMap">
 		 
 		SELECT a.title, a.score, a.date FROM game_issues AS a 
-		WHERE 
-			<choose>
-				<when test="param != null">a.date = ＃{param}</when>
-				<otherwise>a.date = CURDATE() - 1</otherwise>
-			</choose>
+		WHERE a.date = CURDATE() - 1
+<!-- 			<choose> -->
+<!-- 				<when test="param != null">a.date = ＃{param}</when> -->
+<!-- 				<otherwise>a.date = CURDATE() - 1</otherwise> -->
+<!-- 			</choose> -->
 			<![CDATA[
 			AND (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 15
 			]]> 
