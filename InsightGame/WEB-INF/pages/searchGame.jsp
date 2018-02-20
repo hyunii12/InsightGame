@@ -89,7 +89,7 @@
 
 
 	<div class="container">
-		<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
+		<h2 class="text-center text-uppercase text-secondary mb-0">issuesChart.jsp</h2>
 		
 
 	</div>

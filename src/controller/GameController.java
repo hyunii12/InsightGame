@@ -147,10 +147,21 @@ public class GameController {
 		model.addAttribute("view", "table");
 		return "contents/issuesTable";
 	}
-	@RequestMapping("gameIssuesChart.do")
-	public String gameIssuesChart(Model model) {
-		return "contents/issuesChart";
-	}
+	
+//	@RequestMapping("gameIssuesChart.do")
+//	public String gameIssuesChart(Model model, @RequestParam(name="game", defaultValue="")String game) {
+//		if(game != "") {
+//			List<HashMap<String, Double>> list = gameIssuesService.getGameIssuesListByTitle(game);
+//			model.addAttribute("issuesList", list);
+//			model.addAttribute("start", "searchGame");
+//		}
+//		else {
+//			HashMap<String, Object> list = gameIssuesService.getTopGamesIssuesList();
+//			model.addAttribute("issuesList", list);
+//			model.addAttribute("start", "main");
+//		}
+//		return "contents/issuesChart";
+//	}
 
 	
 	@RequestMapping("gameRankAsGenre.do")
