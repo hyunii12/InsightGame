@@ -21,7 +21,7 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">Game Issues Rank</h2>
 
 			<div style="margin: 0 auto; width: 80%">
-				<jsp:include page="contents/issues.jsp" />
+				<jsp:include page="contents/issuesTable.jsp" />
 			</div>
 		</div>
 
@@ -78,7 +78,16 @@
 <%-- 								<jsp:include page="contents/gameInterest.jsp" /> --%>
 <!-- 			</div> -->
 		</div>
+		
+		<div class="container">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">changes top games - issue </h2>
+			<div style="margin: 0 auto; margin-top: 30px; width: 60%">
+				<jsp:include page="contents/issuesChart.jsp" />
+			</div>
 
+		</div>
+		
 		</section>
 
 		<div class="container1">
