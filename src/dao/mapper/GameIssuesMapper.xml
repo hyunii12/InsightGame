@@ -10,7 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY a.date DESC, a.score DESC;
 		]]> 
 	</select>
-	<select id="selectWithInterval" resultType="java.util.HashMap">
+	<select id="selectTop10WithInterval" resultType="java.util.HashMap">
+		 
+		SELECT a.title, a.score, a.date FROM game_issues AS a 
+		WHERE a.date >= CURDATE() - 5
+			<![CDATA[
+			AND (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 10
+			]]> 
+		ORDER BY a.date DESC, a.score DESC; 
+	</select>
+	<select id="selectTop20Today" resultType="java.util.HashMap">
 		 
 		SELECT a.title, a.score, a.date FROM game_issues AS a 
 		WHERE a.date = CURDATE() - 1

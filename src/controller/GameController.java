@@ -56,8 +56,22 @@ public class GameController {
 		System.out.println("여기는 서치게임");
 		Game game = gameService.selectGameInfo(searchWord);
 		model.addAttribute("gameInfo", game);
-		System.out.println(game);
+		
+		List<Game> titleList = new ArrayList<>();
+		titleList = gameService.selectGameTitleList();
+		List<String> titleListResult = new ArrayList<>();
+		for(Game g : titleList) {
+			titleListResult.add(g.getTitle());
+		}
+		System.out.println("게임제목");
+		System.out.println(titleListResult);
+		model.addAttribute("gameTitle", titleListResult);
 		return "pages/searchGame";
+	}
+	
+	@RequestMapping("gameRecommend.do")
+	public String gameRecommend(Model model) {
+		return "contents/gameRecommned";
 	}
 	
 	@RequestMapping("gameDetail.do")
@@ -102,7 +116,6 @@ public class GameController {
 		List<Integer> IRLlist = new ArrayList<Integer>();
 		
 		
-		
 		for(int j=0; j<s.size();j++) {
 				
 			overlist.add(twgameService.getgametoview("Overwatch",s.get(j)));
@@ -139,16 +152,13 @@ public class GameController {
 	}
 	
 	
-	@RequestMapping("gameIssues.do")
-	public String gameIssues(Model model) {
-		System.out.println("여기는 게임이슈스");
-		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String today = now.format(formatter);
+	@RequestMapping("gameIssuesTable.do")
+	public String gameIssuesTable(Model model) {
+		System.out.println("여기는 게임이슈스 [table]");
 		
 //		dao: gameIssuesDao
 		List<HashMap<String, Object>> list = new ArrayList<>();
-		list = gameIssuesService.getGameIssuesListWithInterval(today);
+		list = gameIssuesService.getGameIssuesListToday();
 		if(list.size() > 1) {
 			System.out.println("오늘자 이슈리스트 개수: "+list.size());
 			model.addAttribute("result", true);
@@ -156,11 +166,93 @@ public class GameController {
 		}
 		else
 			model.addAttribute("result", false);
-		model.addAttribute("stage", 1);
-		return "contents/issues";
+		model.addAttribute("view", "table");
+		return "contents/issuesTable";
+	}
+	@RequestMapping("gameIssuesChart.do")
+	public String gameIssuesChart(Model model) {
+		System.out.println("여기는 게임이슈스 [chart]");
+//		LocalDateTime now = LocalDateTime.now();
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		String today = now.format(formatter);
+//		
+////		dao: gameIssuesDao
+//		List<HashMap<String, Object>> list = new ArrayList<>();
+//		list = gameIssuesService.getAllGameIssuesListInterval(today);
+//		if(list.size() > 1) {
+//			System.out.println("오늘자 이슈리스트 개수: "+list.size());
+//			model.addAttribute("result", true);
+//			model.addAttribute("todayIssuesList", list);
+//		}
+//		else
+//			model.addAttribute("result", false);
+//		model.addAttribute("view", "chart");
+		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//		LocalDateTime now = LocalDateTime.now();
+//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//		String nalza = now.format(formatter); 
+//		
+//		List<String> s = new ArrayList<String>();
+//		
+//		//최근 6일로 할지 결정
+//		for(int i=5; i>=0; i--) {
+//		
+//			LocalDateTime end = now.minusDays(i); //minusDays(i);
+//			String formatDateTime = end.format(formatter);
+//			//System.out.println(formatDateTime);
+//						
+//			s.add(formatDateTime);			
+//		}
+//		
+//		System.out.println(s);
+//		
+//		List<Integer> overlist = new ArrayList<Integer>();
+//		List<Integer> Leaguelist = new ArrayList<Integer>();
+//		List<Integer> Heartlist =new ArrayList<Integer>();
+//		List<Integer> Fortnitelist = new ArrayList<Integer>();
+//		List<Integer> Dotalist = new ArrayList<Integer>();
+//		List<Integer> BATTLElist = new ArrayList<Integer>();
+//		List<Integer> wowlist = new ArrayList<Integer>();
+//		List<Integer> gtalist = new ArrayList<Integer>();
+//		List<Integer> ctlist = new ArrayList<Integer>();
+//		List<Integer> IRLlist = new ArrayList<Integer>();
+//		
+//		
+//		for(int j=0; j<s.size();j++) {
+//				
+//			overlist.add(twgameService.getgametoview("Overwatch",s.get(j)));
+//			Leaguelist.add(twgameService.getgametoview("League of Legends",s.get(j)));
+//			Heartlist.add(twgameService.getgametoview("Hearthstone",s.get(j)));
+//			Fortnitelist.add(twgameService.getgametoview("Fortnite",s.get(j)));
+//			Dotalist.add(twgameService.getgametoview("Dota 2",s.get(j)));
+//			BATTLElist.add(twgameService.getgametoview("PLAYERUNKNOWN'S BATTLEGROUNDS",s.get(j)));
+//			wowlist.add(twgameService.getgametoview("World of Warcraft",s.get(j)));
+//			gtalist.add(twgameService.getgametoview("Grand Theft Auto V",s.get(j)));
+//			ctlist.add(twgameService.getgametoview("Counter-Strike: Global Offensive",s.get(j)));
+//			IRLlist.add(twgameService.getgametoview("IRL",s.get(j)));
+//	
+//		}
+//		
+////확인용
+////		System.out.println(nalza);
+////		for(Integer i: IRLlist) {
+////			System.out.println(i);
+////		}//
+//		
+//		model.addAttribute("overlist",overlist);
+//		model.addAttribute("Leaguelist",Leaguelist);
+//		model.addAttribute("Heartlist",Heartlist);
+//		model.addAttribute("Fortnitelist",Fortnitelist);
+//		model.addAttribute("Dotalist",Dotalist);
+//		model.addAttribute("BATTLElist",BATTLElist);
+//		model.addAttribute("wowlist",wowlist);
+//		model.addAttribute("gtalist",gtalist);
+//		model.addAttribute("ctlist",ctlist);
+//		model.addAttribute("IRLlist",IRLlist);
+		return "contents/issuesChart";
 	}
 
-	
 	
 	@RequestMapping("gameRankAsGenre.do")
 	public String gameRankAsGenre(Model model) {//

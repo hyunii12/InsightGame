@@ -16,21 +16,34 @@ $(document).ready(function() {
 			inputSchedule(result);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
 	$.ajax({
-		url : "gameIssues.do",
+		url : "gameIssuesTable.do",
 		type : "get",
 		dataType : "html",
 		success : function(data) {
-			$('#div_gameIssuesRank').html(data);
+			$('#div_gameIssuesRank_table').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
+	
+//	$.ajax({
+//		url : "gameIssuesChart.do",
+//		type : "get",
+//		dataType : "html",
+//		success : function(data) {
+//			$('#div_gameIssuesRank_chart').html(data);
+//		},
+//		error : function(xhar, status, error) {
+////			alert(error);
+//		}
+//	})
+	
 	$.ajax({
 		url : "streamerBoardNumAsTime.do",
 		type : "get",
@@ -39,7 +52,7 @@ $(document).ready(function() {
 			$('#kkk').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 
@@ -51,7 +64,7 @@ $(document).ready(function() {
 			$('#gameRanking').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -64,7 +77,7 @@ $(document).ready(function() {
 			$('#gameRankingAsGenre').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 
@@ -76,7 +89,7 @@ $(document).ready(function() {
 			$('#GI').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -88,7 +101,7 @@ $(document).ready(function() {
 			$('#hot').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -100,7 +113,7 @@ $(document).ready(function() {
 			$('#streamer_top').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -112,7 +125,7 @@ $(document).ready(function() {
 			$('#streamer_rank').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -125,7 +138,7 @@ $(document).ready(function() {
 			$('#streamerBoardKeyword').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
 	
@@ -138,8 +151,9 @@ $(document).ready(function() {
 			$('#SI').html(data);
 		},
 		error : function(xhar, status, error) {
-			alert(error);
+//			alert(error);
 		}
 	})
+	
 
 });

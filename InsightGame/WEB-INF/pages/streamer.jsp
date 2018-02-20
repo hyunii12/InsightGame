@@ -39,8 +39,8 @@
 		<jsp:include page="../navigation.jsp" />
 
 		<script type="text/javascript"
-			src="js/main.js?v=lSSSSddSSffj">
-		</script>
+			src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjkljklkl"></script>
+
 	</div>
 
 
@@ -50,7 +50,7 @@
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0"
-				style="font-size: 2rem;">Streamer Followers Rank</h2>
+				style="font-size: 2rem;">change top streamer - followers</h2>
 			<div class="row">
 				<div style="width:75%; margin: 0 auto;">
 					<div id="SI"></div>
