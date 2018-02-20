@@ -23,8 +23,7 @@
 				<h3 class="text-center" style="margin: 0 auto;">issues.jsp</h3>
 			</div>
 			<div style="margin: 0 auto; width: 80%">
-				<%-- 				<jsp:include page="contents/issues.jsp" /> --%>
-
+				<jsp:include page="contents/issues.jsp" />
 			</div>
 		</div>
 

@@ -302,6 +302,7 @@ public class test {
 	// }
 	// }
 
+
 	// @org.junit.Test
 	// public void test8() {
 	// List<Rbranking> list = new ArrayList<Rbranking>();
@@ -338,6 +339,42 @@ public class test {
 	// }
 	// }
 	// }
+
+//	@org.junit.Test
+//	public void test8() {
+//		List<Rbranking> list = new ArrayList<Rbranking>();
+//		list = rbrankingDao.select3dsRanking("2018-02-12");
+//
+//		for (Rbranking rb : list) {
+//			System.out.println(rb.toString());
+//		}
+//	}
+//	@org.junit.Test
+//	public void test9() {
+//		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+//		list = gameIssuesDao.selectAll();
+//		if(list != null) {
+//			System.out.println("있어");
+//			for (HashMap<String, Object> rb : list) {
+//					System.out.println(rb.toString());
+//			}
+//		}
+//	}
+//	@org.junit.Test
+//	public void testdd() throws ParseException {
+//		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+//		String dateStr = "2018-02-16";
+//		Date date = new SimpleDateFormat("yyyy-mm-dd").parse(dateStr);
+//		list = gameIssuesDao.selectWithInterval();
+//		if(list != null) {
+//			System.out.println("있어");
+//			for (HashMap<String, Object> rb : list) {
+////				if(rb.get("date").equals("2018-02-17"))
+//				System.out.println(rb.get("title"));
+//			}
+//		}
+//	}
+
 	// @org.junit.Test
 	// public void test8() {
 	// List<Rbranking> list = new ArrayList<Rbranking>();

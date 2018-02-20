@@ -25,16 +25,16 @@ $(document).ready(
                  var gmdkdslalist = "${gmdkdslalist}"
                  var wpghd321list = "${wpghd321list}"
 
-                 var hanryang1125list2 = JSON.parse(overlist);
-                 var saddummylist2 = JSON.parse(Leaguelist);
-                 var dingceptionlist2 = JSON.parse(Heartlist);
-                 var gabrielcrolist2 = JSON.parse(Fortnitelist);
-                 var woowakgoodlist2 = JSON.parse(Dotalist);
-                 var ddahyonilist2 = JSON.parse(BATTLElist);
-                 var kimdoelist2 = JSON.parse(wowlist);
-                 var zilionerlist2 = JSON.parse(gtalist);
-                 var gmdkdslalist2 = JSON.parse(ctlist);
-                 var wpghd321list2 = JSON.parse(IRLlist);
+                 var hanryang1125list2 = JSON.parse(hanryang1125list);
+                 var saddummylist2 = JSON.parse(saddummylist);
+                 var dingceptionlist2 = JSON.parse(dingceptionlist);
+                 var gabrielcrolist2 = JSON.parse(gabrielcrolist);
+                 var woowakgoodlist2 = JSON.parse(woowakgoodlist);
+                 var ddahyonilist2 = JSON.parse(ddahyonilist);
+                 var kimdoelist2 = JSON.parse(kimdoelist);
+                 var zilionerlist2 = JSON.parse(zilionerlist);
+                 var gmdkdslalist2 = JSON.parse(gmdkdslalist);
+                 var wpghd321list2 = JSON.parse(wpghd321list);
 
                  
                  var today = new Date();

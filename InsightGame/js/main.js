@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 	var result = new Array();
 	$.ajax({
 		url : "gameCalendar.do",
@@ -21,7 +20,17 @@ $(document).ready(function() {
 		}
 	})
 	
-
+	$.ajax({
+		url : "gameIssues.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#div_gameIssuesRank').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
 	$.ajax({
 		url : "streamerBoardNumAsTime.do",
 		type : "get",

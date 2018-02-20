@@ -363,7 +363,7 @@ public class StreamerController {
 		List<String> s = new ArrayList<String>();
 		
 		//최근 6일로 할지 결정
-		for(int i=5; i>=0; i--) {
+		for(int i=1; i>=0; i--) {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
