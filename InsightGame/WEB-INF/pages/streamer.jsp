@@ -39,7 +39,7 @@
 		<jsp:include page="../navigation.jsp" />
 
 		<script type="text/javascript"
-			src="js/main.js?v=lSSSSSSffj">
+			src="js/main.js?v=lSSSSddSSffj">
 		</script>
 	</div>
 
@@ -55,7 +55,7 @@
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
 				<div style="width:75%; margin: 0 auto;">
 					<%-- 					<jsp:include page="../contents/streamerRadarChart.jsp" /> --%>
-					<jsp:include page="../contents/StreamerIssuesRank.jsp" />
+					<div id="SI"></div>
 				</div>
 			</div>
 

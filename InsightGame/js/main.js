@@ -119,5 +119,18 @@ $(document).ready(function() {
 			alert(error);
 		}
 	})
+	
+	
+	$.ajax({
+		url : "streamerIssuesRank.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#SI').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
 
 });
