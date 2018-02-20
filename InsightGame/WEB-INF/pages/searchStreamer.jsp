@@ -298,7 +298,11 @@
 
 				<div class="col-md-6">
 					<h3 class="text-center">111</h3>
-						<div id="kkk"></div>
+
+
+						<jsp:include page="streamercount.jsp" />
+					
+					
 				</div>
 
 				<div class="col-md-6">

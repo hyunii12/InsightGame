@@ -112,8 +112,8 @@
 	<% } else { %>
 				<div id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item mx-0 mx-lg-1"><a href="logout.do"><img
-								src="img/logout.png"></a></li>
+						<li class="nav-item mx-0 mx-lg-1"><a href="logout.do">
+							<img src="img/logout-1.png" style="width: 64px; height: 51px;"></a></li>
 					</ul>
 				</div>
 	<%  } %>

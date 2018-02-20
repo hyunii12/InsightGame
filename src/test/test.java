@@ -167,7 +167,7 @@ public class test {
 	// for(HashMap<String, Object> tw: list) {
 	// System.out.println(tw.toString());
 	// }
-	// }
+	//// }
 
 	// @org.junit.Test
 	// public void test8() {
@@ -418,6 +418,25 @@ public class test {
 //			System.out.println(c.toString());
 //		}	
 //	}
+
+////	
+	@org.junit.Test
+	public void test10() {
+
+		List<Tgd> list =new ArrayList<Tgd>();
+		
+		 HashMap<String, String> map = new HashMap<String, String>();
+		
+		 map.put("tg_name", "풍월량");
+		 map.put("tg_date", "2018-02-01");
+			
+		list = sDao.selectstreamerlist(map);
+		System.out.println(list.size());
+		for(Tgd t : list) {
+			System.out.println(t.toString());
+		}	
+	}
+
 	
 //	@org.junit.Test
 //	public void test10() {
@@ -435,7 +454,6 @@ public class test {
 //			System.out.println(t.toString());
 //		}	
 //	}
-	
 	
 
 }
