@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import model.Clip;
 import model.Streamer;
 import model.StreamerPopularity;
+import model.Tgd;
 import service.IClipService;
 import service.IStreamerService;
 import service.IStreamerpopService;
@@ -53,7 +54,14 @@ public class StreamerController {
 		System.out.println("여기는 서치스트리머");
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
 		System.out.println(streamer);
+		
+		
+		List<Clip> streamerclip = streamerService.getstreamerclip(searchWord);
+		
 		model.addAttribute("streamerInfo", streamer);
+		model.addAttribute("streamerclip", streamerclip);
+				
+		
 		return "pages/searchStreamer";
 	}
 
@@ -101,7 +109,7 @@ public class StreamerController {
 
 			Double key1 = iteratorKey1.next();
 
-			System.out.println(key1 + "," + sortmap1.get(key1));
+//			System.out.println(key1 + "," + sortmap1.get(key1));
 			list1_1.add(key1);
 			list1_2.add(sortmap1.get(key1));
 		}
@@ -184,7 +192,7 @@ public class StreamerController {
 
 			Double key3 = iteratorKey3.next();
 			
-			System.out.println("서새봄냥"+key3 + "," + sortmap3.get(key3));
+//			System.out.println("서새봄냥"+key3 + "," + sortmap3.get(key3));
 			list3_1.add(key3);
 			list3_2.add(sortmap3.get(key3));
 		}
@@ -228,7 +236,7 @@ public class StreamerController {
 
 					Double key4 = iteratorKey4.next();
 					
-					System.out.println("김도"+key4 + "," + sortmap4.get(key4));
+//					System.out.println("김도"+key4 + "," + sortmap4.get(key4));
 					list4_1.add(key4);
 					list4_2.add(sortmap4.get(key4));
 				}
@@ -259,13 +267,21 @@ public class StreamerController {
 
 		List<Clip> list = clipService.getcliplist();
 		
-		for (Clip c : list) {
-			System.out.println(c.getCp_view());
-		}
+//		for (Clip c : list) {
+//			System.out.println(c.getCp_view());
+//		}
 
 		model.addAttribute("cliplist", list);
 
 		return "contents/hotclips";
+	}
+	
+	@RequestMapping("hotTgd.do")
+	public String hotTgd(Model model) {
+		System.out.println("여기는 핫트게더");
+		Tgd tgd = tgdService.hottgd();
+		model.addAttribute("tgdlist", tgd);
+		return "contents/hottgd";
 	}
 
 	@RequestMapping("streamerBoardNumAsTime.do") // 기존 버전
@@ -306,7 +322,7 @@ public class StreamerController {
 	
 	@RequestMapping("streamerIssuesRank.do")
 	public String streamerIssuesRank(Model model) {
-		System.out.println("스트리머 이슈스 랭크");
+//		System.out.println("스트리머 이슈스 랭크");
 		return "contents/StreamerIssuesRank";
 		
 	}
@@ -473,7 +489,7 @@ public class StreamerController {
 
 			Integer key4 = iteratorKey4.next();
 
-			System.out.println(key4 + "," + sortmap4.get(key4));
+//			System.out.println(key4 + "," + sortmap4.get(key4));
 			list4_1.add(key4);
 			list4_2.add(sortmap4.get(key4));
 		}
@@ -514,7 +530,7 @@ public class StreamerController {
 
 			Integer key5 = iteratorKey5.next();
 
-			System.out.println(key5 + "," + sortmap5.get(key5));
+//			System.out.println(key5 + "," + sortmap5.get(key5));
 			list5_1.add(key5);
 			list5_2.add(sortmap5.get(key5));
 		}
@@ -549,4 +565,22 @@ public class StreamerController {
 		
 	}
 
+//	@RequestMapping("searchStreamer.do")
+//	public String streamerhotClip(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect, @RequestParam(name = "search", defaultValue = "") String searchWord) {
+//		System.out.println("여기는 스트리머 핫클립");
+//
+//		List<Clip> list = clipService.getstreamerclip(searchWord);
+//		
+//		System.out.println("......................................."+list.size());
+//		
+////		for (Clip c : list) {
+////			System.out.println(c.getCp_view());
+////		}
+//
+////		model.addAttribute("streamerclip", list);
+//
+//		return null;
+////		return "contents/hotclips";
+//	}
+	
 }

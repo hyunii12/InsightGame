@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import dao.IClipDao;
 import dao.ITgdDao;
 import model.Clip;
+import model.Game;
+import model.Tgd;
 
 
 @Service("tgdService")
@@ -21,12 +23,8 @@ public class TgdServiceImpl implements ITgdService{
 	
 	@Override
 	public List<Integer> gettgdlist() {
-		
-
 		List<Integer> s = new ArrayList<Integer>();
-		
 		for(int i=14; i>1; i--) {
-		
 			LocalDateTime now = LocalDateTime.now();
 			LocalDateTime end = now.minusDays(i);
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -36,10 +34,12 @@ public class TgdServiceImpl implements ITgdService{
 			int t=tgdDao.selecttgdlist(formatDateTime).size();
 			s.add(t);			
 		}
-		
-		
 		return s;
 	}
 	
+	@Override
+	public Tgd hottgd() {
+		return tgdDao.hottgdlist();
+	}
 }
 

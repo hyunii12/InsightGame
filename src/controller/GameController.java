@@ -55,6 +55,7 @@ public class GameController {
 			@RequestParam(name="search", defaultValue="") String searchWord) {
 		System.out.println("여기는 서치게임");
 		Game game = gameService.selectGameInfo(searchWord);
+		model.addAttribute("gameInfo", game);
 		System.out.println(game);
 		return "pages/searchGame";
 	}

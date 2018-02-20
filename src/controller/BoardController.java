@@ -103,10 +103,10 @@ public class BoardController {
 			int result = boardService.writeBoard(board, 0);
 			results.put("result", result);
 			return results;
-		}else {
+		} else {
 			String msg = "로그인 하세요.";
-			results.put("msg",msg);
-			results.put("result",0);
+			results.put("msg", msg);
+			results.put("result", 0);
 			return results;
 		}
 	}
@@ -125,20 +125,24 @@ public class BoardController {
 		String boardWriter = (String) session.getAttribute("user_id");
 		// String[] test = boardWriter.split("@");
 		// writer = test[0];
+		if (boardWriter.equals("null")) {
+			return null;
+		} else {
 
-		int parentId = Integer.parseInt(parentBId);
-		Board board = new Board();
-		board.setHeader(header);
-		board.setContent(content);
-		board.setWriter(boardWriter);
-		// System.out.println(board);
-		int newBId = boardService.writeBoard(board, parentId);
-		if (newBId > 0) {
-			// 작성 성공
-			result.put("new", newBId);
-		} else
-			result.put("msg", false);
-		return result;
+			int parentId = Integer.parseInt(parentBId);
+			Board board = new Board();
+			board.setHeader(header);
+			board.setContent(content);
+			board.setWriter(boardWriter);
+			// System.out.println(board);
+			int newBId = boardService.writeBoard(board, parentId);
+			if (newBId > 0) {
+				// 작성 성공
+				result.put("new", newBId);
+			} else
+				result.put("msg", false);
+			return result;
+		}
 	}
 
 	@RequestMapping("modify.do")
