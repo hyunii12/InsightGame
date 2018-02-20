@@ -10,6 +10,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY a.date DESC, a.score DESC;
 		]]> 
 	</select>
+	<select id="selectListByTitle" parameterType="java.util.lang" resultType="java.util.HashMap">
+		SELECT date, score FROM game_issues WHERE title = #{title} and date >= CURDATE() - 5 ORDER BY date DESC;
+	</select>
 	<select id="selectTop10WithInterval" resultType="java.util.HashMap">
 		 
 		SELECT a.title, a.score, a.date FROM game_issues AS a 

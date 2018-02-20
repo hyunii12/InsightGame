@@ -141,8 +141,7 @@ tr {
 </style>
 </head>
 <body>
-	<div id="div_gameIssuesRank_table" class="table-users"
-		style="width: 940px">
+	<div id="div_gameIssuesRank_table" class="table-users"style="width: 940px">
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-ride="carousel">
 			<ol class="carousel-indicators">

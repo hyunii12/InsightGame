@@ -156,10 +156,9 @@ public class GameController {
 	public String gameIssuesTable(Model model) {
 		System.out.println("여기는 게임이슈스 [table]");
 		
-//		dao: gameIssuesDao
 		List<HashMap<String, Object>> list = new ArrayList<>();
 		list = gameIssuesService.getGameIssuesListToday();
-		if(list.size() > 1) {
+		if(list.size() > 1) { 
 			System.out.println("오늘자 이슈리스트 개수: "+list.size());
 			model.addAttribute("result", true);
 			model.addAttribute("todayIssuesList", list);
@@ -169,9 +168,9 @@ public class GameController {
 		model.addAttribute("view", "table");
 		return "contents/issuesTable";
 	}
-	@RequestMapping("gameIssuesChart.do")
-	public String gameIssuesChart(Model model) {
-		System.out.println("여기는 게임이슈스 [chart]");
+//	@RequestMapping("gameIssuesChart.do")
+//	public String gameIssuesChart(Model model) {
+//		System.out.println("여기는 게임이슈스 [chart]");
 //		LocalDateTime now = LocalDateTime.now();
 //		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 //		String today = now.format(formatter);
@@ -250,8 +249,8 @@ public class GameController {
 //		model.addAttribute("gtalist",gtalist);
 //		model.addAttribute("ctlist",ctlist);
 //		model.addAttribute("IRLlist",IRLlist);
-		return "contents/issuesChart";
-	}
+//		return "contents/issuesChart";
+//	}
 
 	
 	@RequestMapping("gameRankAsGenre.do")
