@@ -156,6 +156,7 @@ public class GameController {
 		}
 		else
 			model.addAttribute("result", false);
+		model.addAttribute("stage", 1);
 		return "contents/issues";
 	}
 

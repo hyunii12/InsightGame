@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectAll" resultType="java.util.HashMap">
 		<![CDATA[ 
 		SELECT a.title, a.score, a.date FROM game_issues AS a 
-		WHERE (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 15
+		WHERE (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 20
 		ORDER BY a.date DESC, a.score DESC;
 		]]> 
 	</select>
@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 				<otherwise>a.date = CURDATE() - 1</otherwise> -->
 <!-- 			</choose> -->
 			<![CDATA[
-			AND (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 15
+			AND (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 20
 			]]> 
 		ORDER BY a.date DESC, a.score DESC; 
 		
