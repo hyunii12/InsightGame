@@ -324,9 +324,9 @@
 				<div class="col-md-6">
 					<h3 class="text-center">444</h3>
 
-					<!-- 			<div id="issues"> -->
-					<jsp:include page="gameCalendar.do" />
-					<!-- 								</div> -->
+					<div style="margin: 0 auto;">
+						<jsp:include page="streamerfow.jsp" />
+					</div>
 				</div>
 			</div>
 		</div>

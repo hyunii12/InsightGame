@@ -1,12 +1,7 @@
 package test;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +12,12 @@ import dao.IClipDao;
 import dao.IGameDao;
 import dao.IGameIssuesDao;
 import dao.IRbrankingDao;
+import dao.ISFDao;
 import dao.IScheduleDao;
 import dao.IStreamerDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
-import model.Tgd;
+import model.streamerFollower;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/test/applicationContext.xml" })
@@ -40,19 +36,32 @@ public class test {
 	public IGameDao gDao;
 	@Autowired
 	public IGameIssuesDao gameIssuesDao;
-//	@Autowired
-//	public IScheduleDao schduleDao;
-//	@Autowired
-//	public ITgdDao tgdDao;
-//	@Autowired
-//	public ITwgameDao twgameDao;
-//	@Autowired
-//	public IRbrankingDao rbrankingDao;
-//	@Autowired
-//	public IGameDao gDao;
-//
+	// @Autowired
+	// public IScheduleDao schduleDao;
+	// @Autowired
+	// public ITgdDao tgdDao;
+	// @Autowired
+	// public ITwgameDao twgameDao;
+	// @Autowired
+	// public IRbrankingDao rbrankingDao;
+	// @Autowired
+	// public IGameDao gDao;
+	@Autowired
+	public ISFDao sfDao;
+
 	@Autowired
 	public IStreamerDao sDao;
+
+	@org.junit.Test
+	public void test11() {
+
+		List<streamerFollower> fo = new ArrayList<streamerFollower>();
+		fo = sfDao.streamerfowday("풍월량");
+		for (streamerFollower s : fo) {
+			System.out.println(s.toString());
+		}
+
+	}
 
 	// @org.junit.Test
 	// public void test2() {
@@ -293,40 +302,42 @@ public class test {
 	// }
 	// }
 
-//	@org.junit.Test
-//	public void test8() {
-//		List<Rbranking> list = new ArrayList<Rbranking>();
-//		list = rbrankingDao.select3dsRanking("2018-02-12");
-//
-//		for (Rbranking rb : list) {
-//			System.out.println(rb.toString());
-//		}
-//	}
-//	@org.junit.Test
-//	public void test9() {
-//		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
-//		list = gameIssuesDao.selectAll();
-//		if(list != null) {
-//			System.out.println("있어");
-//			for (HashMap<String, Object> rb : list) {
-//					System.out.println(rb.toString());
-//			}
-//		}
-//	}
-//	@org.junit.Test
-//	public void testdd() throws ParseException {
-//		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
-//		String dateStr = "2018-02-16";
-//		Date date = new SimpleDateFormat("yyyy-mm-dd").parse(dateStr);
-//		list = gameIssuesDao.selectWithInterval();
-//		if(list != null) {
-//			System.out.println("있어");
-//			for (HashMap<String, Object> rb : list) {
-////				if(rb.get("date").equals("2018-02-17"))
-//				System.out.println(rb.toString());
-//			}
-//		}
-//	}
+	// @org.junit.Test
+	// public void test8() {
+	// List<Rbranking> list = new ArrayList<Rbranking>();
+	// list = rbrankingDao.select3dsRanking("2018-02-12");
+	//
+	// for (Rbranking rb : list) {
+	// System.out.println(rb.toString());
+	// }
+	// }
+	// @org.junit.Test
+	// public void test9() {
+	// List<HashMap<String, Object>> list = new ArrayList<HashMap<String,
+	// Object>>();
+	// list = gameIssuesDao.selectAll();
+	// if(list != null) {
+	// System.out.println("있어");
+	// for (HashMap<String, Object> rb : list) {
+	// System.out.println(rb.toString());
+	// }
+	// }
+	// }
+	// @org.junit.Test
+	// public void testdd() throws ParseException {
+	// List<HashMap<String, Object>> list = new ArrayList<HashMap<String,
+	// Object>>();
+	// String dateStr = "2018-02-16";
+	// Date date = new SimpleDateFormat("yyyy-mm-dd").parse(dateStr);
+	// list = gameIssuesDao.selectWithInterval();
+	// if(list != null) {
+	// System.out.println("있어");
+	// for (HashMap<String, Object> rb : list) {
+	//// if(rb.get("date").equals("2018-02-17"))
+	// System.out.println(rb.toString());
+	// }
+	// }
+	// }
 	// @org.junit.Test
 	// public void test8() {
 	// List<Rbranking> list = new ArrayList<Rbranking>();
@@ -346,14 +357,14 @@ public class test {
 	// }
 	// }
 
-//	 @org.junit.Test
-//	 public void test3() {
-//	 List<Clip> list = new ArrayList<Clip>();
-//	 list=clipDao.selectcliplist();
-//	 for(Clip c: list) {
-//	 System.out.println(c.toString());
-//	 }
-//	 }
+	// @org.junit.Test
+	// public void test3() {
+	// List<Clip> list = new ArrayList<Clip>();
+	// list=clipDao.selectcliplist();
+	// for(Clip c: list) {
+	// System.out.println(c.toString());
+	// }
+	// }
 
 	// @org.junit.Test
 	// public void test4() {
@@ -407,53 +418,51 @@ public class test {
 	// System.out.println(rb.toString());
 	// }
 	// }
-//
-//	
-//	@org.junit.Test
-//	public void test9() {
-//
-//		List<Clip> list =new ArrayList<Clip>();
-//		list = clipDao.selectstreamerclip("풍월량");
-//		for(Clip c : list) {
-//			System.out.println(c.toString());
-//		}	
-//	}
+	//
+	//
+	// @org.junit.Test
+	// public void test9() {
+	//
+	// List<Clip> list =new ArrayList<Clip>();
+	// list = clipDao.selectstreamerclip("풍월량");
+	// for(Clip c : list) {
+	// System.out.println(c.toString());
+	// }
+	// }
 
-////	
-	@org.junit.Test
-	public void test10() {
+	////
+	// @org.junit.Test
+	// public void test10() {
+	//
+	// List<Tgd> list =new ArrayList<Tgd>();
+	//
+	// HashMap<String, String> map = new HashMap<String, String>();
+	//
+	// map.put("tg_name", "풍월량");
+	// map.put("tg_date", "2018-02-01");
+	//
+	// list = sDao.selectstreamerlist(map);
+	// System.out.println(list.size());
+	// for(Tgd t : list) {
+	// System.out.println(t.toString());
+	// }
+	// }
 
-		List<Tgd> list =new ArrayList<Tgd>();
-		
-		 HashMap<String, String> map = new HashMap<String, String>();
-		
-		 map.put("tg_name", "풍월량");
-		 map.put("tg_date", "2018-02-01");
-			
-		list = sDao.selectstreamerlist(map);
-		System.out.println(list.size());
-		for(Tgd t : list) {
-			System.out.println(t.toString());
-		}	
-	}
-
-	
-//	@org.junit.Test
-//	public void test10() {
-//
-//		List<Tgd> list =new ArrayList<Tgd>();
-//		
-//		 HashMap<String, String> map = new HashMap<String, String>();
-//		
-//		 map.put("tg_name", "풍월량");
-//		 map.put("tg_date", "2018-02-01");
-//			
-//		list = sDao.selectstreamerlist(map);
-//		System.out.println(list.size());
-//		for(Tgd t : list) {
-//			System.out.println(t.toString());
-//		}	
-//	}
-	
+	// @org.junit.Test
+	// public void test10() {
+	//
+	// List<Tgd> list =new ArrayList<Tgd>();
+	//
+	// HashMap<String, String> map = new HashMap<String, String>();
+	//
+	// map.put("tg_name", "풍월량");
+	// map.put("tg_date", "2018-02-01");
+	//
+	// list = sDao.selectstreamerlist(map);
+	// System.out.println(list.size());
+	// for(Tgd t : list) {
+	// System.out.println(t.toString());
+	// }
+	// }
 
 }

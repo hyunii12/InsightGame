@@ -5,10 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="dao.ISFDao">
 
-
 	<select id="streamertoview" parameterType="hashmap" resultType="Integer">
-		select str_followers_num from FollowersNum where str_name=#{name} and str_date=#{day}
+		select str_followers_num from FollowersNum where str_name=#{name} and
+		str_date=#{day}
 	</select>
 
+	<select id="streamerfowday" parameterType="String" resultType="streamerFollower">
+		select *from FollowersNum where str_name=#{str_name}
+	</select>
 
 </mapper>
