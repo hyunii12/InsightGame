@@ -47,15 +47,6 @@
 		<property name="mapperInterface" value="dao.IRbrankingDao" />
 	</bean>
 	
-	<bean id="genrerankingDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-		<property name="mapperInterface" value="dao.IGenreRankingDao" />
-	</bean>
-	<bean id="streamerpopDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
-		<property name="mapperInterface" value="dao.IStreamerpopDao"/>
-	</bean>
-	
 	<bean id="streamerDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="mapperInterface" value="dao.IStreamerDao" />
@@ -64,11 +55,19 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="mapperInterface" value="dao.IGenreRankingDao" />
 	</bean>
-	
 	<bean id="gameDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="mapperInterface" value="dao.IGameDao" />
 	</bean>	
+	<bean id="streamerpopDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		<property name="mapperInterface" value="dao.IStreamerpopDao"/>
+	</bean>
+	
+	<bean id="followerNumDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+		<property name="mapperInterface" value="dao.IFollowerNumDao"/>
+	</bean>
 
 	<context:component-scan base-package="service" />
 

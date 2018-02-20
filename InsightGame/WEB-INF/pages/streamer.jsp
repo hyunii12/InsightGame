@@ -40,7 +40,7 @@
 
 		<!-- 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script> -->
 		<script type="text/javascript"
-			src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjklj"></script>
+			src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjkljklkl"></script>
 
 		<!-- 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script> -->
 
@@ -56,10 +56,10 @@
 				style="font-size: 2rem;">Streamer Issues Rank</h2>
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
-				<div style="width:75%; margin: 0 auto;">
-					<%-- 					<jsp:include page="../contents/streamerRadarChart.jsp" /> --%>
+			    <%-- <div style="width:75%; margin: 0 auto;">
 					<jsp:include page="../contents/StreamerIssuesRank.jsp" />
-				</div>
+				</div> --%>
+			    <div id="streamer_followerNum" style="margin: 0 auto;"></div>
 			</div>
 
 		</div>

@@ -106,5 +106,17 @@ $(document).ready(function() {
 			alert(error);
 		}
 	})
+	
+	$.ajax({
+		url : "streamerIssuesRank.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#streamer_followerNum').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
 
 });

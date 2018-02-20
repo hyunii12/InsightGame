@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import dao.IClipDao;
+import dao.IFollowerNumDao;
 import dao.IGameDao;
 import dao.IRbrankingDao;
 import dao.IScheduleDao;
@@ -18,6 +19,7 @@ import dao.IStreamerpopDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
 import model.Clip;
+import model.FollowerNum;
 import model.Game;
 import model.Rbranking;
 import model.Streamer;
@@ -43,11 +45,19 @@ public class test {
  
  @Autowired
  public IStreamerDao sDao;
+ @Autowired
+ public IFollowerNumDao follwerDao;
 
 // @org.junit.Test
 // public void test2() {
 // Game list = new Game(); 
 // list=gDao.selectGameInfo("하스스톤");
+// System.out.println(list);
+// }
+// @org.junit.Test
+// public void test2() {
+// FollowerNum list = new FollowerNum(); 
+// list=follwerDao.selectFollowerNum("looksam");
 // System.out.println(list);
 // } 
 // 

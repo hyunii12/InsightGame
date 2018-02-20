@@ -3,18 +3,10 @@ package controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,9 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import model.Clip;
+import model.FollowerNum;
 import model.Streamer;
 import model.StreamerPopularity;
+import service.FollowerNumServiceImpl;
 import service.IClipService;
+import service.IFollowerNumService;
 import service.IStreamerService;
 import service.IStreamerpopService;
 import service.ITgdService;
@@ -40,6 +35,8 @@ public class StreamerController {
 	IStreamerService streamerService;
 	@Autowired
 	IStreamerpopService streamerpopService;
+	@Autowired
+	IFollowerNumService follwerNumService;
 
 	@RequestMapping("InsightStreamer.do")
 	public String streamer(Model model) {
@@ -307,8 +304,10 @@ public class StreamerController {
 	@RequestMapping("streamerIssuesRank.do")
 	public String streamerIssuesRank(Model model) {
 		System.out.println("스트리머 이슈스 랭크");
+		System.out.println(follwerNumService.getStrNumInfo("looksam"));
+		FollowerNum FollowerNum = follwerNumService.getStrNumInfo("풍월량");
+		System.out.println(FollowerNum);
 		return "contents/StreamerIssuesRank";
-		
 	}
 	
 	
