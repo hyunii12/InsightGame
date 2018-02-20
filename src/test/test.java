@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -116,70 +117,21 @@ public class test {
 //		
 //	}
 
-// @org.junit.Test
-// public void test4() {
-//  List<Tgd> list = new ArrayList<Tgd>(); 
-//  list=tgdDao.selecttgdlist("2018-02-05");
-//  int cnt=0;
-//  for(Tgd t: list) {
-//	  cnt++;
-//  }
-//  System.out.println(cnt);
-// }
-// 
-// @org.junit.Test
-// public void test5() {
-//  List<twgame> list = new ArrayList<twgame>(); 
-//  list=twgameDao.selectAllgame();
-//  int cnt=0;
-//  for(twgame tw: list) {
-//	  System.out.println(tw.toString());
-//  }
-// }
- 
-// @org.junit.Test
-// public void test6() {
-// 	Integer list = 0;
-//    HashMap<String, String> map = new HashMap<String, String>();
-//    
-//    map.put("name", "Overwatch");
-//    map.put("day", "2018-02-12");
-//
-//    list=twgameDao.gametoview(map);
-//
-// }
- 
-//@org.junit.Test
-//public void test7() {
-//	List<HashMap<String, Object>> list= new ArrayList<HashMap<String, Object>>(); 
-//	list=twgameDao.selectgametoview("2018-02-08");
-//
-//for(HashMap<String, Object> tw: list) {
-//	  System.out.println(tw.toString());
-//}
-//}
- 
- 
-//@org.junit.Test
-//public void test8() {
-//	List<Rbranking> list = new ArrayList<Rbranking>();
-//	list=rbrankingDao.select3dsRanking("2018-02-12");
-//
-//	for(Rbranking rb: list) {
-//		System.out.println(rb.toString());
+//	@org.junit.Test
+//	public void testasdfasdf() {
+//		
+//		List<HashMap<String, Object>> list = gameIssuesDao.selectTop10WithInterval();
+//		List<HashMap<String, Object>> day1 = new ArrayList<>();
+//		List<HashMap<String, Object>> day2 = new ArrayList<>();
+//		List<HashMap<String, Object>> day3 = new ArrayList<>();
+//		List<HashMap<String, Object>> day4 = new ArrayList<>();
+//		List<HashMap<String, Object>> day5 = new ArrayList<>();
+//		for(int i=0; i < 10; i++) {
+//			System.out.println(list.get(i));
+////			day1.put(list.get(i));
+//		}
+//		
 //	}
-//}
-//  
-	@org.junit.Test
-	public void test11() {
-
-		List<streamerFollower> fo = new ArrayList<streamerFollower>();
-		fo = sfDao.streamerfowday("풍월량");
-		for (streamerFollower s : fo) {
-			System.out.println(s.toString());
-		}
-
-	}
 
 	// @org.junit.Test
 	// public void test2() {
