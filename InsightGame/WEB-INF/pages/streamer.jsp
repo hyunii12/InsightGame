@@ -50,11 +50,10 @@
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0"
-				style="font-size: 2rem;">Streamer Issues Rank</h2>
+				style="font-size: 2rem;">Streamer Followers Rank</h2>
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
 				<div style="width:75%; margin: 0 auto;">
-					<%-- 					<jsp:include page="../contents/streamerRadarChart.jsp" /> --%>
 					<div id="SI"></div>
 				</div>
 			</div>
