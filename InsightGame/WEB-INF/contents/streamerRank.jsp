@@ -43,8 +43,7 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
 		dataPoints: [
 			{ y: ${wooptime[0]}, label: "${woopname[0]}" },
 			{ y: ${wooptime[1]}, label: "${woopname[1]}" },
-			{ y: ${wooptime[2]}, label: "${woopname[2]}" },
-			{ y: ${wooptime[2]}, label: "${woopname[3]}" }
+			{ y: ${wooptime[2]}, label: "${woopname[2]}" }
 		]
 	}]
 });
@@ -66,7 +65,9 @@ var chart2 = new CanvasJS.Chart("chartContainer2",
 		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
 		dataPoints: [
 			{ y: ${pungtime[0]}, label: "${pungname[0]}" },
-			{ y: ${pungtime[1]}, label: "${pungname[1]}" }			
+			{ y: ${pungtime[1]}, label: "${pungname[1]}" },			
+			{ y: ${pungtime[2]}, label: "${pungname[2]}" },			
+			{ y: ${pungtime[3]}, label: "${pungname[3]}" }			
 						
 		]
 	}]
@@ -88,7 +89,8 @@ var chart3 = new CanvasJS.Chart("chartContainer3",
 		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
 		dataPoints: [
 			{ y: ${seotime[0]}, label: "${seoname[0]}" },
-			{ y: ${seotime[1]}, label: "${seoname[1]}" }			
+			{ y: ${seotime[1]}, label: "${seoname[1]}" },			
+			{ y: ${seotime[2]}, label: "${seoname[2]}" }			
 						
 		]
 	}]

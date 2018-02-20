@@ -80,9 +80,7 @@ public class StreamerController {
 		}
 
 		String d = month4 + " " + fourteen;
-
-		
-		
+	
 		model.addAttribute("d", d);
 		model.addAttribute("streamerInfo", streamer);
 		model.addAttribute("streamerclip", streamerclip);
@@ -135,7 +133,7 @@ public class StreamerController {
 
 			Double key1 = iteratorKey1.next();
 
-//			System.out.println(key1 + "," + sortmap1.get(key1));
+			System.out.println(key1 + "," + sortmap1.get(key1));
 			list1_1.add(key1);
 			list1_2.add(sortmap1.get(key1));
 		}
@@ -218,7 +216,7 @@ public class StreamerController {
 
 			Double key3 = iteratorKey3.next();
 			
-//			System.out.println("서새봄냥"+key3 + "," + sortmap3.get(key3));
+			System.out.println("서새봄냥"+key3 + "," + sortmap3.get(key3));
 			list3_1.add(key3);
 			list3_2.add(sortmap3.get(key3));
 		}
@@ -262,7 +260,7 @@ public class StreamerController {
 
 					Double key4 = iteratorKey4.next();
 					
-//					System.out.println("김도"+key4 + "," + sortmap4.get(key4));
+					System.out.println("김도"+key4 + "," + sortmap4.get(key4));
 					list4_1.add(key4);
 					list4_2.add(sortmap4.get(key4));
 				}
