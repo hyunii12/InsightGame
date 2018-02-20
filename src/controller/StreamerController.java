@@ -391,14 +391,14 @@ public class StreamerController {
 			
 			hanryang1125list.add(sfService.getstreamertoview("풍월량", s.get(j)));
 			saddummylist.add(sfService.getstreamertoview("서새봄냥", s.get(j)));
-			dingceptionlist.add(sfService.getstreamertoview("딩셉션", s.get(j)));
-			gabrielcrolist.add(sfService.getstreamertoview("가브리엘", s.get(j)));
-			woowakgoodlist.add(sfService.getstreamertoview("우왁굳", s.get(j)));
-			ddahyonilist.add(sfService.getstreamertoview("따효니", s.get(j)));
-			kimdoelist.add(sfService.getstreamertoview("김도", s.get(j)));
-			zilionerlist.add(sfService.getstreamertoview("침착맨", s.get(j)));
-			gmdkdslalist.add(sfService.getstreamertoview("흐앙님", s.get(j)));
-			wpghd321list.add(sfService.getstreamertoview("ryujehong", s.get(j)));
+			dingceptionlist.add(sfService.getstreamertoview("따효니", s.get(j)));
+			gabrielcrolist.add(sfService.getstreamertoview("머독", s.get(j)));
+			woowakgoodlist.add(sfService.getstreamertoview("러너", s.get(j)));
+			ddahyonilist.add(sfService.getstreamertoview("우왁굳", s.get(j)));
+			kimdoelist.add(sfService.getstreamertoview("룩삼", s.get(j)));
+			zilionerlist.add(sfService.getstreamertoview("소풍왔니", s.get(j)));
+			gmdkdslalist.add(sfService.getstreamertoview("똘킹", s.get(j)));
+			wpghd321list.add(sfService.getstreamertoview("윤루트", s.get(j)));
 	
 		}
 		

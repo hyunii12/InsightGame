@@ -82,14 +82,14 @@ $(document).ready(
     								[ "x", yesterday,today],
     								[ "풍월량", hanryang1125list2[0],hanryang1125list2[1]],
     								[ "서새봄냥", saddummylist2[0], saddummylist2[1]],
-    								[ "딩셉션", dingceptionlist2[0], dingceptionlist2[1]],
-    								[ "가브리엘", gabrielcrolist2[0], gabrielcrolist2[1]],
-    								[ "우왁굳", woowakgoodlist2[0], woowakgoodlist2[1]],
-    								[ "따효니", ddahyonilist2[0], ddahyonilist2[1]],
-    								[ "김도", kimdoelist2[0], kimdoelist2[1]],
-    								[ "침착맨", zilionerlist2[0], zilionerlist2[1]],
-    								[ "흐앙님", gmdkdslalist2[0], gmdkdslalist2[1]],						
-     								[ "ryujehong", wpghd321list2[0], wpghd321list2[1]] ]
+    								[ "따효니", dingceptionlist2[0], dingceptionlist2[1]],
+    								[ "머독", gabrielcrolist2[0], gabrielcrolist2[1]],
+    								[ "러너", woowakgoodlist2[0], woowakgoodlist2[1]],
+    								[ "우왁굳", ddahyonilist2[0], ddahyonilist2[1]],
+    								[ "룩삼", kimdoelist2[0], kimdoelist2[1]],
+    								[ "소풍왔니", zilionerlist2[0], zilionerlist2[1]],
+    								[ "똘킹", gmdkdslalist2[0], gmdkdslalist2[1]],						
+     								[ "윤루트", wpghd321list2[0], wpghd321list2[1]] ]
     					},
     					axis : {
     						x : {
