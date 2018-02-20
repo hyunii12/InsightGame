@@ -15,12 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import model.Clip;
-import model.FollowerNum;
 import model.Streamer;
 import model.StreamerPopularity;
-import service.FollowerNumServiceImpl;
+import model.Tgd;
 import service.IClipService;
-import service.IFollowerNumService;
 import service.IStreamerService;
 import service.IStreamerpopService;
 import service.ITgdService;
@@ -35,8 +33,6 @@ public class StreamerController {
 	IStreamerService streamerService;
 	@Autowired
 	IStreamerpopService streamerpopService;
-	@Autowired
-	IFollowerNumService follwerNumService;
 
 	@RequestMapping("InsightStreamer.do")
 	public String streamer(Model model) {
@@ -50,7 +46,38 @@ public class StreamerController {
 		System.out.println("여기는 서치스트리머");
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
 		System.out.println(streamer);
+		
+		List<Clip> streamerclip = streamerService.getstreamerclip(searchWord);
+
+		List<Integer> streamercount=streamerService.getstreamergraph(searchWord);
+		
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime end = now.minusDays(14);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd yyyy");
+		DateTimeFormatter month = DateTimeFormatter.ofPattern("MM");
+
+		String fourteen = end.format(formatter);
+		String month2 = end.format(month);
+
+		int month3 = Integer.parseInt(month2);
+		String month4 = "";
+
+		switch (month3) {
+		case 01:
+			month4 = "January";
+			break;
+		case 02:
+			month4 = "February";
+			break;
+		}
+
+		String d = month4 + " " + fourteen;
+	
+		model.addAttribute("d", d);
 		model.addAttribute("streamerInfo", streamer);
+		model.addAttribute("streamerclip", streamerclip);
+		model.addAttribute("streamercount", streamercount);
+		
 		return "pages/searchStreamer";
 	}
 
@@ -256,13 +283,21 @@ public class StreamerController {
 
 		List<Clip> list = clipService.getcliplist();
 		
-		for (Clip c : list) {
-			System.out.println(c.getCp_view());
-		}
+//		for (Clip c : list) {
+//			System.out.println(c.getCp_view());
+//		}
 
 		model.addAttribute("cliplist", list);
 
 		return "contents/hotclips";
+	}
+	
+	@RequestMapping("hotTgd.do")
+	public String hotTgd(Model model) {
+		System.out.println("여기는 핫트게더");
+		Tgd tgd = tgdService.hottgd();
+		model.addAttribute("tgdlist", tgd);
+		return "contents/hottgd";
 	}
 
 	@RequestMapping("streamerBoardNumAsTime.do") // 기존 버전
@@ -304,9 +339,6 @@ public class StreamerController {
 	@RequestMapping("streamerIssuesRank.do")
 	public String streamerIssuesRank(Model model) {
 		System.out.println("스트리머 이슈스 랭크");
-		System.out.println(follwerNumService.getStrNumInfo("looksam"));
-		FollowerNum FollowerNum = follwerNumService.getStrNumInfo("풍월량");
-		System.out.println(FollowerNum);
 		return "contents/StreamerIssuesRank";
 	}
 	
@@ -472,7 +504,7 @@ public class StreamerController {
 
 			Integer key4 = iteratorKey4.next();
 
-			System.out.println(key4 + "," + sortmap4.get(key4));
+//			System.out.println(key4 + "," + sortmap4.get(key4));
 			list4_1.add(key4);
 			list4_2.add(sortmap4.get(key4));
 		}
@@ -513,7 +545,7 @@ public class StreamerController {
 
 			Integer key5 = iteratorKey5.next();
 
-			System.out.println(key5 + "," + sortmap5.get(key5));
+//			System.out.println(key5 + "," + sortmap5.get(key5));
 			list5_1.add(key5);
 			list5_2.add(sortmap5.get(key5));
 		}
@@ -547,5 +579,5 @@ public class StreamerController {
 		return "contents/streamerBoardKeyword";
 		
 	}
-
+	
 }

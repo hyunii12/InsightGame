@@ -49,17 +49,16 @@
 
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
-		<!-- Portfolio Grid Section -->
+
 		<section class="mb-0">
 		<div class="container">
 			<h2 class="text-center text-uppercase text-secondary mb-0"
 				style="font-size: 2rem;">Streamer Issues Rank</h2>
 			<div class="row">
 				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
-			    <%-- <div style="width:75%; margin: 0 auto;">
+			    <div style="width:75%; margin: 0 auto;">
 					<jsp:include page="../contents/StreamerIssuesRank.jsp" />
-				</div> --%>
-			    <div id="streamer_followerNum" style="margin: 0 auto;"></div>
+				</div> 
 			</div>
 
 		</div>
@@ -68,7 +67,7 @@
 		<div class="container">
 			<hr class="star-dark mb-5">
 			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">
-			Streamer Rank</h2>
+			top streamers</h2>
 				<div id="streamer_rank" style="text-align: center;">
 					<jsp:include page="../contents/streamerRank.jsp" />
 				</div>
@@ -96,12 +95,13 @@
 			<hr class="star-dark mb-5">
 
 			<div class="row">
+				
 				<div class="col-md-6">
 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
 
-					<!-- 			<div id="issues"> -->
-					<%-- 					<jsp:include page="gameCalendar.do" /> --%>
-					<!-- 								</div> -->
+					<div style="margin: 0 auto;">
+						<jsp:include page="../contents/streamerBoardKeyword.jsp" />
+					</div>
 				</div>
 
 				<div class="col-md-6">
@@ -110,6 +110,8 @@
 						<div id="kkk"></div>
 					</div>
 				</div>
+				
+				
 			</div>
 		</div>
 
@@ -119,14 +121,13 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0"
 				style="font-size: 2rem;">hot clip</h2>
 			<div class="row">
-				<div style="margin: 0 auto">
+				<div style="margin: 0 auto;">
 					<div id="hot"></div>
 				</div>
 			</div>
 		</div>
 		</section>
-
+	
 	</div>
-
 </body>
 </html>

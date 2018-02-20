@@ -5,25 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<style type="text/css">
-text {
-	font: 10px sans-serif;
-}
-
-circle {
-	stroke: #565352;
-	stroke-width: 1;
-}
-</style>
-<body>
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<script>
-	
-	
-	
-	
-		var width = 960,
-			height = 500,
+		var width = 500,
+			height = 300,
+
 			padding = 1.5, // separation between same-color nodes
 			clusterPadding = 6, // separation between different-color nodes
 			maxRadius = 12;
@@ -33,7 +19,7 @@ circle {
 	
 	
 	
-		d3.text("data/word_groups.csv", function(error, text) {
+		d3.text("data/news.txt", function(error, text) {
 			if (error)
 				throw error;
 			var colNames = "text,size,group\n" + text;
@@ -97,8 +83,7 @@ circle {
 				});
 	
 	
-	
-	
+		
 			function create_nodes(data, node_counter) {
 				var i = cs.indexOf(data[node_counter].group),
 					r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
@@ -112,8 +97,7 @@ circle {
 				if (!clusters[i] || (r > clusters[i].radius))
 					clusters[i] = d;
 				return d;
-			}
-			;
+			};
 	
 	
 	
@@ -181,6 +165,18 @@ circle {
 			}
 			return false;
 		};
-	</script>
+</script>
+<style type="text/css">
+text {
+	font: 10px sans-serif;
+}
+
+circle {
+	stroke: #565352;
+	stroke-width: 1;
+}
+</style>
+<body>
+
 </body>
 </html>

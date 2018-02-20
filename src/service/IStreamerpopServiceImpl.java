@@ -38,7 +38,7 @@ public class IStreamerpopServiceImpl implements IStreamerpopService{
 		HashMap<String, String> map = new HashMap<String, String>();
 
 		LocalDateTime now = LocalDateTime.now();
-		LocalDateTime end = now.minusDays(1);
+		LocalDateTime end = now.minusDays(2);
 		DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String today = now.format(fomatter);
 		String pr = end.format(fomatter);
@@ -56,7 +56,7 @@ public class IStreamerpopServiceImpl implements IStreamerpopService{
 		HashMap<String, String> map2 = new HashMap<String, String>();
 
 		LocalDateTime now = LocalDateTime.now();
-		LocalDateTime end = now.minusDays(1);
+		LocalDateTime end = now.minusDays(2);
 		DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String today = now.format(fomatter);
 		String pr = end.format(fomatter);

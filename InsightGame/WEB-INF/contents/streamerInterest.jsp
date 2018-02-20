@@ -153,16 +153,16 @@ table.streamerinterest td:first-child {
 		
 		<table class="streamerinterest">
 			<tr>
-				<th scope="row">스트리머</th>
-				<td>풍월량</td>
-				<td>서새봄냥</td>
-				<td>김도</td>
-				<td>웁</td>
-				<td>다주</td>
+				<th scope="row" style="font-weight:bold">스트리머</th>
+				<td style="font-weight:bold">풍월량</td>
+				<td style="font-weight:bold">서새봄냥</td>
+				<td style="font-weight:bold">김도</td>
+				<td style="font-weight:bold">웁</td>
+				<td style="font-weight:bold">다주</td>
 			</tr>
 
 			<tr>
-				<th scope="row">1</th>
+				<th scope="row" style="font-weight:bold">1</th>
 				<td>${pungname[0]}</td>
 				<td>${bomungname[0]}</td>
 				<td>${kimname[0]}</td>
@@ -171,7 +171,7 @@ table.streamerinterest td:first-child {
 
 			</tr>
 			<tr>
-				<th scope="row">2</th>
+				<th scope="row" style="font-weight:bold">2</th>
 				<td>${pungname[1]}</td>
 				<td>${bomungname[1]}</td>
 				<td>${kimname[1]}</td>
@@ -180,7 +180,7 @@ table.streamerinterest td:first-child {
 			</tr>
 
 			<tr>
-				<th scope="row">3</th>
+				<th scope="row" style="font-weight:bold">3</th>
 				<td>${pungname[2]}</td>
 				<td>${bomungname[2]}</td>
 				<td>${kimname[2]}</td>
@@ -189,7 +189,7 @@ table.streamerinterest td:first-child {
 			</tr>
 
 			<tr>
-				<th scope="row">4</th>
+				<th scope="row" style="font-weight:bold">4</th>
 				<td>${pungname[3]}</td>
 				<td>${bomungname[3]}</td>
 				<td>${kimname[3]}</td>
@@ -198,7 +198,7 @@ table.streamerinterest td:first-child {
 
 			</tr>
 			<tr>
-				<th scope="row">5</th>
+				<th scope="row" style="font-weight:bold">5</th>
 				<td>${pungname[4]}</td>
 				<td>${bomungname[4]}</td>
 				<td>${kimname[4]}</td>

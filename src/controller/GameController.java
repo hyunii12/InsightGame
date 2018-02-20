@@ -12,10 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import dao.IBoardDao;
+import dao.IGameIssuesDao;
 import model.Game;
 import model.GenreRanking;
 import model.Rbranking;
 import model.twgame;
+import service.IGameIssuesService;
 import service.IGameService;
 import service.IGenrerankingService;
 import service.IRbrankingService;
@@ -33,8 +36,8 @@ public class GameController {
 	IGenrerankingService genrerankService;
 	@Autowired
 	IGameService gameService;
-	
-	
+	@Autowired
+	IGameIssuesService gameIssuesService;
 	@RequestMapping("main.do")
 	public String main() {
 		return "main";
@@ -52,9 +55,23 @@ public class GameController {
 			@RequestParam(name="search", defaultValue="") String searchWord) {
 		System.out.println("여기는 서치게임");
 		Game game = gameService.selectGameInfo(searchWord);
-		System.out.println(game);
 		model.addAttribute("gameInfo", game);
+		
+		List<Game> titleList = new ArrayList<>();
+		titleList = gameService.selectGameTitleList();
+		List<String> titleListResult = new ArrayList<>();
+		for(Game g : titleList) {
+			titleListResult.add(g.getTitle());
+		}
+		System.out.println("게임제목");
+		System.out.println(titleListResult);
+		model.addAttribute("gameTitle", titleListResult);
 		return "pages/searchGame";
+	}
+	
+	@RequestMapping("gameRecommend.do")
+	public String gameRecommend(Model model) {
+		return "contents/gameRecommned";
 	}
 	
 	@RequestMapping("gameDetail.do")
@@ -139,6 +156,20 @@ public class GameController {
 	@RequestMapping("gameIssues.do")
 	public String gameIssues(Model model) {
 		System.out.println("여기는 게임이슈스");
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String today = now.format(formatter);
+		
+//		dao: gameIssuesDao
+		List<HashMap<String, Object>> list = new ArrayList<>();
+		list = gameIssuesService.getGameIssuesListWithInterval(today);
+		if(list.size() > 1) {
+			System.out.println("오늘자 이슈리스트 개수: "+list.size());
+			model.addAttribute("result", true);
+			model.addAttribute("todayIssuesList", list);
+		}
+		else
+			model.addAttribute("result", false);
 		return "contents/issues";
 	}
 

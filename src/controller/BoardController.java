@@ -142,6 +142,7 @@ public class BoardController {
 			result.put("msg", "로그인 하세요.");
 		}
 		return result;
+		
 	}
 
 	@RequestMapping("modify.do")

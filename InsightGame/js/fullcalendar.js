@@ -7198,7 +7198,7 @@ var DayGrid = /** @class */ (function (_super) {
         var title = this.getCellDate(row, col).format(this.opt('dayPopoverFormat'));
         var content = $('<div class="fc-header ' + theme.getClass('popoverHeader') + '">' +
             '<span class="fc-close ' + theme.getIconClass('close') + '"></span>' +
-            '<span class="fc-title">' +
+            '<span class="fc-title" style="color: white">' +
             util_1.htmlEscape(title) +
             '</span>' +
             '<div class="fc-clear"/>' +
@@ -13803,7 +13803,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
                     '</div>' :
                 '') +
             (eventDef.title ?
-                '<div class="fc-title">' +
+                '<div class="fc-title" style="color: white">' +
                     util_1.htmlEscape(eventDef.title) +
                     '</div>' :
                 '') +
@@ -14446,7 +14446,7 @@ var DayGridEventRenderer = /** @class */ (function (_super) {
             }
         }
         titleHtml =
-            '<span class="fc-title">' +
+            '<span class="fc-title" style="color: white">' +
                 (util_1.htmlEscape(eventDef.title || '') || '&nbsp;') + // we always want one line of height
                 '</span>';
         return '<a class="' + classes.join(' ') + '"' +
