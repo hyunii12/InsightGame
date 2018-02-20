@@ -88,11 +88,11 @@
 		</div>
 
 
-	<div class="container">
-		<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2>
+<!-- 	<div class="container"> -->
+<!-- 		<h2 class="text-center text-uppercase text-secondary mb-0">issues.jsp</h2> -->
 		
 
-	</div>
+<!-- 	</div> -->
 
 	<section class="mb-0">
 	<div class="container">

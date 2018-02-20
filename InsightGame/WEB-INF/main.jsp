@@ -102,5 +102,11 @@
 		</div>
 		</section>
 		
+		<div class="container1" style="padding-bottom: 96px;">
+			<hr class="star-dark mb-5">
+			<h2 class="text-center text-uppercase text-secondary mb-0" style="font-size: 2rem;">game news - wordcount</h2>
+			<div style="margin-left: 27%;"><img src="img/news.jpg" style="margin: 0 auto;"></div>
+		</div>
+		
 </body>
 </html>

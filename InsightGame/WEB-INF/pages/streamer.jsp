@@ -96,16 +96,16 @@
 
 			<div class="row">
 				
-				<div class="col-md-6">
-					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3> -->
 
 <!-- 					<div style="margin: 0 auto;"> -->
 <%-- 						<jsp:include page="../contents/streamerBoardKeyword.jsp" /> --%>
 <!-- 					</div> -->
 
-				</div>
+<!-- 				</div> -->
 
-				<div class="col-md-6">
+				<div style="margin: 0 auto;">
 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - daily</h3>
 					<div>
 						<div id="kkk"></div>
