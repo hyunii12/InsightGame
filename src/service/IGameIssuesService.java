@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public interface IGameIssuesService {
-	public List<HashMap<String, Object>> getAllGameIssuesList();
-	public List<HashMap<String, Object>> getGameIssuesListWithInterval(String date);
+	public List<HashMap<String, Double>> getGameIssuesListByTitle(String title);
+	public List<HashMap<String, Object>> getGameIssuesListToday();
+	public HashMap<String, Object> getTopGamesIssuesList();
 }

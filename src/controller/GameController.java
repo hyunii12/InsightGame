@@ -12,17 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import dao.IBoardDao;
-import dao.IGameIssuesDao;
 import model.Game;
 import model.GenreRanking;
 import model.Rbranking;
-import model.twgame;
 import service.IGameIssuesService;
 import service.IGameService;
 import service.IGenrerankingService;
 import service.IRbrankingService;
-import service.ITgdService;
 import service.ITwgameService;
 
 @Controller
@@ -53,16 +49,26 @@ public class GameController {
 	@RequestMapping("searchGame.do")
 	public String searchGame(Model model, @RequestParam(name="searchSelect", required=true)String searchSelect,
 			@RequestParam(name="search", defaultValue="") String searchWord) {
-		System.out.println("여기는 서치게임");
 		Game game = gameService.selectGameInfo(searchWord);
 		model.addAttribute("gameInfo", game);
-		System.out.println(game);
+		
+		List<Game> titleList = new ArrayList<>();
+		titleList = gameService.selectGameTitleList();
+		List<String> titleListResult = new ArrayList<>();
+		for(Game g : titleList) {
+			titleListResult.add(g.getTitle());
+		}
+		model.addAttribute("gameTitle", titleListResult);
 		return "pages/searchGame";
+	}
+	
+	@RequestMapping("gameRecommend.do")
+	public String gameRecommend(Model model) {
+		return "contents/gameRecommned";
 	}
 	
 	@RequestMapping("gameDetail.do")
 	public String gameDetail(Model model) {
-	System.out.println("여기는 게임디테일");
 		List<Game> gameInfo = new ArrayList<Game>();
 		model.addAttribute("gameInfo",gameInfo);
 		return "pages/gameDetail";
@@ -70,7 +76,6 @@ public class GameController {
 	////
 	@RequestMapping("gameInterest.do")
 	public String gameInterest(Model model) {
-		System.out.println("여기는 게임인터레스트");
 			
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -83,12 +88,9 @@ public class GameController {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
-			//System.out.println(formatDateTime);
 						
 			s.add(formatDateTime);			
 		}
-		
-		System.out.println(s);
 		
 		List<Integer> overlist = new ArrayList<Integer>();
 		List<Integer> Leaguelist = new ArrayList<Integer>();
@@ -100,7 +102,6 @@ public class GameController {
 		List<Integer> gtalist = new ArrayList<Integer>();
 		List<Integer> ctlist = new ArrayList<Integer>();
 		List<Integer> IRLlist = new ArrayList<Integer>();
-		
 		
 		
 		for(int j=0; j<s.size();j++) {
@@ -118,12 +119,6 @@ public class GameController {
 	
 		}
 		
-//확인용
-//		System.out.println(nalza);
-//		for(Integer i: IRLlist) {
-//			System.out.println(i);
-//		}//
-		
 		model.addAttribute("overlist",overlist);
 		model.addAttribute("Leaguelist",Leaguelist);
 		model.addAttribute("Heartlist",Heartlist);
@@ -139,34 +134,28 @@ public class GameController {
 	}
 	
 	
-	@RequestMapping("gameIssues.do")
-	public String gameIssues(Model model) {
-		System.out.println("여기는 게임이슈스");
-		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String today = now.format(formatter);
-		
-//		dao: gameIssuesDao
+	@RequestMapping("gameIssuesTable.do")
+	public String gameIssuesTable(Model model) {
 		List<HashMap<String, Object>> list = new ArrayList<>();
-		list = gameIssuesService.getGameIssuesListWithInterval(today);
+		list = gameIssuesService.getGameIssuesListToday();
 		if(list.size() > 1) {
-			System.out.println("오늘자 이슈리스트 개수: "+list.size());
 			model.addAttribute("result", true);
 			model.addAttribute("todayIssuesList", list);
 		}
 		else
 			model.addAttribute("result", false);
-		model.addAttribute("stage", 1);
-		return "contents/issues";
+		model.addAttribute("view", "table");
+		return "contents/issuesTable";
+	}
+	@RequestMapping("gameIssuesChart.do")
+	public String gameIssuesChart(Model model) {
+		return "contents/issuesChart";
 	}
 
-	
 	
 	@RequestMapping("gameRankAsGenre.do")
 	public String gameRankAsGenre(Model model) {//
 
-		System.out.println("장르별 게임순위");
-		System.out.println("//////////////////////////////////////////////////////////////");
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String today = now.format(formatter);
@@ -184,12 +173,6 @@ public class GameController {
 		board_puzzle_musicrank=genrerankService.getboard_puzzle_musicList(today);
 		sportrank=genrerankService.getsportList(today);
 		
-//		System.out.println(fpsrank.size());
-//		System.out.println(mmorpgrank.size());
-//		System.out.println(actionrank.size());
-//		System.out.println(board_puzzle_musicrank.size());
-//		System.out.println(sportrank.size());
-//		
 		
 		model.addAttribute("fpsrank",fpsrank);
 		model.addAttribute("mmorpgrank",mmorpgrank);
@@ -204,8 +187,6 @@ public class GameController {
 	
 	@RequestMapping("gameRankAsType.do")
 	public String gameRankAsType(Model model) {
-		System.out.println("유형별 게임 순위");
-		System.out.println("//////////////////////////////////////////////////////////////");
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String today = now.format(formatter); 
@@ -227,20 +208,6 @@ public class GameController {
 		switchbrank=rbrankService.getswitchList(today);
 		xboxbrank=rbrankService.getxboxList(today);
 		
-//		System.out.println(dsrank.size());
-//		System.out.println(mobilebrank.size());
-//		System.out.println(pcbrank.size());
-//		System.out.println(ps4brank.size());
-//		System.out.println(psvitabrank.size());
-//		System.out.println(switchbrank.size());
-//		System.out.println(xboxbrank.size());
-		
-		
-//		dsrank=rbrankService.get3dsList();
-//		for(int i=0; i<dsrank.size();i++) {
-//			System.out.println(dsrank.get(i).getName());
-//		}
-		
 		model.addAttribute("dsrank",dsrank);
 		model.addAttribute("mobilebrank",mobilebrank);
 		model.addAttribute("pcbrank",pcbrank);
@@ -253,7 +220,6 @@ public class GameController {
 	}
 	@RequestMapping("gameRank.do")
 	public String gameRank(Model model) {
-		System.out.println("게임 순위");
 		return "contents/gameRank";
 
 	}

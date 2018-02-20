@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.runner.RunWith;
@@ -17,25 +18,34 @@ import dao.IScheduleDao;
 import dao.IStreamerDao;
 import dao.ITgdDao;
 import dao.ITwgameDao;
+import model.Clip;
+import model.Game;
+import model.Rbranking;
+import model.Streamer;
+import model.Tgd;
 import model.streamerFollower;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/test/applicationContext.xml" })
 public class test {
-	@Autowired
-	public IClipDao clipDao;
-	@Autowired
-	public IScheduleDao schduleDao;
-	@Autowired
-	public ITgdDao tgdDao;
-	@Autowired
-	public ITwgameDao twgameDao;
-	@Autowired
-	public IRbrankingDao rbrankingDao;
-	@Autowired
-	public IGameDao gDao;
+ @Autowired
+ public IClipDao clipDao;
+ @Autowired
+ public IScheduleDao schduleDao;
+ @Autowired
+ public ITgdDao tgdDao;
+ @Autowired
+ public ITwgameDao twgameDao;
+ @Autowired
+ public IRbrankingDao rbrankingDao;
+ @Autowired
+ public IGameDao gDao;
+ 
+ @Autowired
+ public IStreamerDao sDao;
 	@Autowired
 	public IGameIssuesDao gameIssuesDao;
+
 	// @Autowired
 	// public IScheduleDao schduleDao;
 	// @Autowired
@@ -49,19 +59,79 @@ public class test {
 	@Autowired
 	public ISFDao sfDao;
 
-	@Autowired
-	public IStreamerDao sDao;
+//	@org.junit.Test
+//	public void test0() {
+//		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
+//		List<String> list2 = new ArrayList<String>();
+//		list = streamerpopDao.selectAllstreamerpop("다주");
+//
+//		list2 = streamerpopDao.selectAlltitle("다주");
+//		int cnt=0;
+//		for (StreamerPopularity s : list) {
+//			System.out.println(s);
+//			if (s.getTitle().equals("IRL")) {
+////				System.out.println("IRL");
+//				cnt++;
+//			} else {
+//				System.out.println(s);
+//
+//			}
+//		}
+//		System.out.println(cnt);
+//--------------------------------------------------
+//	@org.junit.Test
+//	public void test00() {
+//		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put("sname","김도");
+//		map.put("day","2018-02-16");
+//		list = streamerpopDao.selectDaystreamerpop(map);
+//		System.out.println(list.size());
+//		
+//		List<String> list1 = new ArrayList<String>();
+//		HashMap<String, String> map2 = new HashMap<String, String>();
+//		map2.put("sname","김도");
+//		map2.put("day","2018-02-16");
+//		list1 = streamerpopDao.selectdaytitle(map2);
+//		for(String s: list1) {
+//			System.out.println(s);
+//		}
+//		
+//	}
 
-	@org.junit.Test
-	public void test11() {
+//		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
+//		HashMap<String, String> map = new HashMap<String, String>();
+//		map.put("sname","풍월량");
+//		map.put("day","2018-02-17");
+//		list = streamerpopDao.selectDaystreamerpop(map);
+//		System.out.println(list.size());
+//		
+//		List<String> list1 = new ArrayList<String>();
+//		HashMap<String, String> map2 = new HashMap<String, String>();
+//		map2.put("sname","풍월량");
+//		map2.put("day","2018-02-17");
+//		list1 = streamerpopDao.selectdaytitle(map2);
+//		for(String s: list1) {
+//			System.out.println(s);
+//		}
+//		
+//	}
 
-		List<streamerFollower> fo = new ArrayList<streamerFollower>();
-		fo = sfDao.streamerfowday("풍월량");
-		for (streamerFollower s : fo) {
-			System.out.println(s.toString());
-		}
-
-	}
+//	@org.junit.Test
+//	public void testasdfasdf() {
+//		
+//		List<HashMap<String, Object>> list = gameIssuesDao.selectTop10WithInterval();
+//		List<HashMap<String, Object>> day1 = new ArrayList<>();
+//		List<HashMap<String, Object>> day2 = new ArrayList<>();
+//		List<HashMap<String, Object>> day3 = new ArrayList<>();
+//		List<HashMap<String, Object>> day4 = new ArrayList<>();
+//		List<HashMap<String, Object>> day5 = new ArrayList<>();
+//		for(int i=0; i < 10; i++) {
+//			System.out.println(list.get(i));
+////			day1.put(list.get(i));
+//		}
+//		
+//	}
 
 	// @org.junit.Test
 	// public void test2() {

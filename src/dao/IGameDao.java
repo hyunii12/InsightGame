@@ -14,6 +14,6 @@ public interface IGameDao {
 	public int updateGameInfo(Game game);
 	public int deleteGameInfo(int giId);
 	public Game selectGameInfo(String title);
-	public List<HashMap<String, Object>> selectGameInfoList();
+	public List<Game> selectGameInfoList();
 	
 }

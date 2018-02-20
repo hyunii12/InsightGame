@@ -3,18 +3,10 @@ package controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,16 +40,13 @@ public class StreamerController {
 
 	@RequestMapping("InsightStreamer.do")
 	public String streamer(Model model) {
-		System.out.println("여기는 스트리머페이지");
 		return "pages/streamer";
 	}
 
 	@RequestMapping("searchStreamer.do")
 	public String searchStreamer(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect,
 			@RequestParam(name = "search", defaultValue = "") String searchWord) {
-		System.out.println("여기는 서치스트리머");
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
-		System.out.println(streamer);
 		
 		List<Clip> streamerclip = streamerService.getstreamerclip(searchWord);
 
@@ -98,13 +87,11 @@ public class StreamerController {
 
 	@RequestMapping("streamerRadar.do")
 	public String streamerRadar(Model model) {
-		System.out.println("스트리머 레이더차트");
 		return "contents/streamerRadarChart";
 	}
 
 	@RequestMapping("streamerRank.do")
 	public String streamerRank(Model model) {
-		System.out.println("시간,팔로우,IRL/방송시간 기준으로 스트리머 랭크");
 //-------------------------풍월량------------------------------------------------------------
 		List<StreamerPopularity> Streamer1 = new ArrayList<StreamerPopularity>();
 		List<String> titlelist1 = new ArrayList<String>();
@@ -140,7 +127,6 @@ public class StreamerController {
 
 			Double key1 = iteratorKey1.next();
 
-			System.out.println(key1 + "," + sortmap1.get(key1));
 			list1_1.add(key1);
 			list1_2.add(sortmap1.get(key1));
 		}
@@ -181,7 +167,6 @@ public class StreamerController {
 
 			Double key2 = iteratorKey2.next();
 			
-			System.out.println("웁"+key2 + "," + sortmap2.get(key2));
 			list2_1.add(key2);
 			list2_2.add(sortmap2.get(key2));
 		}
@@ -223,7 +208,6 @@ public class StreamerController {
 
 			Double key3 = iteratorKey3.next();
 			
-			System.out.println("서새봄냥"+key3 + "," + sortmap3.get(key3));
 			list3_1.add(key3);
 			list3_2.add(sortmap3.get(key3));
 		}
@@ -267,7 +251,6 @@ public class StreamerController {
 
 					Double key4 = iteratorKey4.next();
 					
-					System.out.println("김도"+key4 + "," + sortmap4.get(key4));
 					list4_1.add(key4);
 					list4_2.add(sortmap4.get(key4));
 				}
@@ -294,14 +277,9 @@ public class StreamerController {
 
 	@RequestMapping("hotClip.do")
 	public String hotClip(Model model) {
-		System.out.println("여기는 핫클립");
 
 		List<Clip> list = clipService.getcliplist();
 		
-//		for (Clip c : list) {
-//			System.out.println(c.getCp_view());
-//		}
-
 		model.addAttribute("cliplist", list);
 
 		return "contents/hotclips";
@@ -309,7 +287,6 @@ public class StreamerController {
 	
 	@RequestMapping("hotTgd.do")
 	public String hotTgd(Model model) {
-		System.out.println("여기는 핫트게더");
 		Tgd tgd = tgdService.hottgd();
 		model.addAttribute("tgdlist", tgd);
 		return "contents/hottgd";
@@ -317,8 +294,6 @@ public class StreamerController {
 
 	@RequestMapping("streamerBoardNumAsTime.do") // 기존 버전
 	public String streamerBoardNumAsTime(Model model) {
-		System.out.println("시간에 따른 전체게시판/스트리머게시판 게시글 수");
-
 		List<Integer> list = tgdService.gettgdlist();
 
 		LocalDateTime now = LocalDateTime.now();
@@ -353,8 +328,6 @@ public class StreamerController {
 	
 	@RequestMapping("streamerIssuesRank.do")
 	public String streamerIssuesRank(Model model) {
-
-		System.out.println("스트리머 이슈스 랭크");
 		
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -367,12 +340,9 @@ public class StreamerController {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);
-			//System.out.println(formatDateTime);
 						
 			s.add(formatDateTime);			
 		}
-		
-		System.out.println(s);
 		
 		List<Integer> hanryang1125list = new ArrayList<Integer>();
 		List<Integer> saddummylist = new ArrayList<Integer>();
@@ -391,14 +361,14 @@ public class StreamerController {
 			
 			hanryang1125list.add(sfService.getstreamertoview("풍월량", s.get(j)));
 			saddummylist.add(sfService.getstreamertoview("서새봄냥", s.get(j)));
-			dingceptionlist.add(sfService.getstreamertoview("딩셉션", s.get(j)));
-			gabrielcrolist.add(sfService.getstreamertoview("가브리엘", s.get(j)));
-			woowakgoodlist.add(sfService.getstreamertoview("우왁굳", s.get(j)));
-			ddahyonilist.add(sfService.getstreamertoview("따효니", s.get(j)));
-			kimdoelist.add(sfService.getstreamertoview("김도", s.get(j)));
-			zilionerlist.add(sfService.getstreamertoview("침착맨", s.get(j)));
-			gmdkdslalist.add(sfService.getstreamertoview("흐앙님", s.get(j)));
-			wpghd321list.add(sfService.getstreamertoview("ryujehong", s.get(j)));
+			dingceptionlist.add(sfService.getstreamertoview("따효니", s.get(j)));
+			gabrielcrolist.add(sfService.getstreamertoview("머독", s.get(j)));
+			woowakgoodlist.add(sfService.getstreamertoview("러너", s.get(j)));
+			ddahyonilist.add(sfService.getstreamertoview("우왁굳", s.get(j)));
+			kimdoelist.add(sfService.getstreamertoview("룩삼", s.get(j)));
+			zilionerlist.add(sfService.getstreamertoview("소풍왔니", s.get(j)));
+			gmdkdslalist.add(sfService.getstreamertoview("똘킹", s.get(j)));
+			wpghd321list.add(sfService.getstreamertoview("윤루트", s.get(j)));
 	
 		}
 		
@@ -413,18 +383,13 @@ public class StreamerController {
 		model.addAttribute("gmdkdslalist",gmdkdslalist);
 		model.addAttribute("wpghd321list",wpghd321list);
 		
-		
-
-//		System.out.println("스트리머 이슈스 랭크");
 		return "contents/StreamerIssuesRank";
-		
 	}
 	
 	
 	@RequestMapping("streamerInterest.do")
 	public String streamerInterest(Model model) {
 
-		System.out.println("스트리머별 인기게임");
 		// ---------------------------풍월량--------------------------------------------------------스트리머별로
 		// 코드는 동일(refactorizing 필요)
 		List<StreamerPopularity> list = new ArrayList<StreamerPopularity>();
@@ -448,11 +413,9 @@ public class StreamerController {
 		}
 
 		for (int i = 0; i < cnt.length; i++) {
-			// System.out.println(cnt[i]+ " " +titlelist.get(i).toString());
 			map.put(cnt[i], titlelist.get(i).toString());
 
 		}
-		// System.out.println("--------------------------------------------------");
 		TreeMap<Integer, String> sortmap = new TreeMap<Integer, String>(map);
 
 		Iterator<Integer> iteratorKey = sortmap.descendingKeySet().iterator();
@@ -461,7 +424,6 @@ public class StreamerController {
 
 			Integer key = iteratorKey.next();
 
-			// System.out.println(key + "," + sortmap.get(key));
 			list_1.add(key);
 			list_2.add(sortmap.get(key));
 		}
@@ -488,10 +450,8 @@ public class StreamerController {
 		}
 
 		for (int i = 0; i < cnt2.length; i++) {
-			// System.out.println(cnt2[i]+ " " +titlelist2.get(i).toString());
 			map2.put(cnt2[i], titlelist2.get(i).toString());
 		}
-		// System.out.println("--------------------------------------------------");
 		TreeMap<Integer, String> sortmap2 = new TreeMap<Integer, String>(map2);
 
 		Iterator<Integer> iteratorKey2 = sortmap2.descendingKeySet().iterator();
@@ -500,7 +460,6 @@ public class StreamerController {
 
 			Integer key2 = iteratorKey2.next();
 
-			// System.out.println(key2 + "," + sortmap2.get(key2));
 			list2_1.add(key2);
 			list2_2.add(sortmap2.get(key2));
 		}
@@ -528,7 +487,6 @@ public class StreamerController {
 		}
 
 		for (int i = 0; i < cnt3.length; i++) {
-			// System.out.println(cnt2[i]+ " " +titlelist2.get(i).toString());
 			map3.put(cnt3[i], titlelist3.get(i).toString());
 
 		}
@@ -541,7 +499,6 @@ public class StreamerController {
 
 			Integer key3 = iteratorKey3.next();
 
-			// System.out.println(key3 + "," + sortmap3.get(key3));
 			list3_1.add(key3);
 			list3_2.add(sortmap3.get(key3));
 		}
@@ -569,7 +526,6 @@ public class StreamerController {
 		}
 
 		for (int i = 0; i < cnt4.length; i++) {
-			System.out.println(cnt4[i] + " " + titlelist4.get(i).toString());
 			map4.put(cnt4[i], titlelist4.get(i).toString());
 
 		}
@@ -582,7 +538,6 @@ public class StreamerController {
 
 			Integer key4 = iteratorKey4.next();
 
-//			System.out.println(key4 + "," + sortmap4.get(key4));
 			list4_1.add(key4);
 			list4_2.add(sortmap4.get(key4));
 		}
@@ -610,7 +565,6 @@ public class StreamerController {
 		}
 
 		for (int i = 0; i < cnt5.length; i++) {
-			System.out.println(cnt5[i] + " " + titlelist5.get(i).toString());
 			map5.put(cnt5[i], titlelist5.get(i).toString());
 
 		}
@@ -623,7 +577,6 @@ public class StreamerController {
 
 			Integer key5 = iteratorKey5.next();
 
-//			System.out.println(key5 + "," + sortmap5.get(key5));
 			list5_1.add(key5);
 			list5_2.add(sortmap5.get(key5));
 		}
@@ -653,7 +606,6 @@ public class StreamerController {
 	
 	@RequestMapping("streamerBoardKeyword.do")
 	public String streamerBoardKeyword(Model model) {
-		System.out.println("스트리머 보드 키워드 버블차트");
 		return "contents/streamerBoardKeyword";
 		
 	}

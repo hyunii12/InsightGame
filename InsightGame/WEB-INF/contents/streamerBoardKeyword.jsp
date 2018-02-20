@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -21,8 +20,8 @@ circle {
 <body>
 <script>
 
-		var width = 500,
-			height = 300,
+		var width = 1000,
+			height = 600,
 
 			padding = 1.5, // separation between same-color nodes
 			clusterPadding = 6, // separation between different-color nodes
@@ -112,8 +111,7 @@ circle {
 					clusters[i] = d;
 				return d;
 			};
-	
-	
+		
 	
 			function tick(e) {
 				node.each(cluster(10 * e.alpha * e.alpha))
@@ -180,6 +178,7 @@ circle {
 			return false;
 		};
 </script>
+<<<<<<< HEAD
 <style type="text/css">
 text {
 	font: 10px sans-serif;
@@ -190,6 +189,9 @@ circle {
 	stroke-width: 1;
 }
 </style><body>
+
+<body>
+
 
 </body>
 </html>
