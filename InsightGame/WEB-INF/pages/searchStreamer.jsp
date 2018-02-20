@@ -33,13 +33,8 @@
 <%-- 		<jsp:include page="../navigation.jsp" /> --%>
 <!-- 	</div> -->
 
-<div id="navigation">
+	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
-
-		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
-
-		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
-
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">
@@ -72,10 +67,9 @@
 						<tr>
 							<td style="border-top: 0; padding-bottom: 18px;"><img src="img/like.png" style="width: 27px; height: 27px; margin-right: 8px;">
 							<span style="font-size: 0.9rem; margin-right: 140px; color: grey;">
-							<fmt:formatNumber value="${streamerfow[0].str_followers_num}" pattern="###,###,###"/>
-							</span>
+							<fmt:formatNumber value="${streamerfow[0].str_followers_num}" pattern="###,###"/></span>
 							<a href="${streamerInfo.strTgdUrl }" style="text-decoration:none">
-							<img src="img/tgd_logo.png" style="width: 27px; height: 27px;"></a>
+							<img src="img/tgd_logo.png" style="width: 27px; height: 27px;"/></a>
 							</td>
 						</tr>
 						
@@ -86,6 +80,7 @@
 					</table>
 				</div>
 			</div>
+			
 		</section>
 
 <!-- 		<div class="container"> -->
@@ -113,6 +108,7 @@
 			</div>
 		</div>
 		
+<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>	
 		<section class="mb-0">
 			<div>
 				<hr class="star-dark mb-5">
