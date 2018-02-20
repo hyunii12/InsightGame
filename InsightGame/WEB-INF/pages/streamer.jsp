@@ -52,7 +52,6 @@
 			<h2 class="text-center text-uppercase text-secondary mb-0"
 				style="font-size: 2rem;">Streamer Followers Rank</h2>
 			<div class="row">
-				<!-- 				<h3 class="text-center text-white" style="margin: 0 auto;">issues.jsp</h3> -->
 				<div style="width:75%; margin: 0 auto;">
 					<div id="SI"></div>
 				</div>
@@ -96,12 +95,9 @@
 				<div class="col-md-6">
 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
 
-								
-
-
-					<div style="margin: 0 auto;">
-						<jsp:include page="../contents/streamerBoardKeyword.jsp" />
-					</div>
+<!-- 					<div style="margin: 0 auto;"> -->
+<%-- 						<jsp:include page="../contents/streamerBoardKeyword.jsp" /> --%>
+<!-- 					</div> -->
 
 				</div>
 
@@ -111,8 +107,6 @@
 						<div id="kkk"></div>
 					</div>
 				</div>
-				
-				
 			</div>
 		</div>
 

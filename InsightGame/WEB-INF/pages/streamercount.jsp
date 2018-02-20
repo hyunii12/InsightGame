@@ -73,7 +73,7 @@ canvas {
 			data : {
 				labels : labels,
 				datasets : [ {
-					label : "스트리머 게시글 수",
+					label : "트게더 게시글 수",
 					data : data,
 					type : 'line',
 					pointRadius : 0,
