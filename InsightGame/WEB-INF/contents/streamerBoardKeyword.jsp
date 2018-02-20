@@ -6,8 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 
-
-
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <style type="text/css">
 text {
 	font: 10px sans-serif;
@@ -18,11 +17,9 @@ circle {
 	stroke-width: 1;
 }
 </style>
+
 <body>
-	<script src="https://d3js.org/d3.v3.min.js"></script>
-	 
-	
-	<script>
+<script>
 
 		var width = 500,
 			height = 300,
@@ -192,8 +189,7 @@ circle {
 	stroke: #565352;
 	stroke-width: 1;
 }
-</style>
-<body>
+</style><body>
 
 </body>
 </html>
