@@ -9,4 +9,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select *from hotclip where cp_view >2000 order by rand();
 	</select>
 	
+	<select id="selectstreamerclip" parameterType="String" resultType="clip">
+		select *from hotclip where cp_display=#{cp_display} order by rand();
+	</select>
+	
 </mapper>

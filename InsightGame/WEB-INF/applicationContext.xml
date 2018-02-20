@@ -9,7 +9,7 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.mariadb.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mariadb://70.12.111.82:3306/InsightGame?characterEncoding=euckr;useUnicode=true" />
+			value="jdbc:mariadb://70.12.111.82:3306/InsightGame?allowMultiQuaries=true;characterEncoding=euckr;useUnicode=true" />
 		<property name="username" value="root" />
 		<property name="password" value="bigdata" />
 	</bean>
@@ -63,11 +63,18 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 		<property name="mapperInterface" value="dao.IStreamerpopDao"/>
 	</bean>
+
 	
 	<bean id="sfDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="mapperInterface" value="dao.ISFDao" />
 	</bean>
+
+	<bean id="gameIssuesDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.IGameIssuesDao" />
+	</bean>	
+
 
 	<context:component-scan base-package="service" />
 

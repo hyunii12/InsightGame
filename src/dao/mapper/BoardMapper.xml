@@ -59,20 +59,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY b1.b_group_id DESC, b1.b_group_seq ASC
 		LIMIT #{skip}, #{count};
 	</select>
-<!-- 		SELECT 	b_id, -->
-<!-- 				b_game_header, -->
-<!-- 				b_writer, -->
-<!-- 				b_reg_date, -->
-<!-- 				b_content, -->
-<!-- 				b_group_id, -->
-<!-- 				b_group_seq, -->
-<!-- 				b_group_lv -->
-<!-- 		FROM board WHERE 1=1 -->
-<!-- 			<if test="header != NULL"> -->
-<!-- 				AND b_game_header = #{header} -->
-<!-- 			</if>  -->
-<!-- 		ORDER BY b_group_id DESC, b_group_seq ASC -->
-<!-- 		LIMIT #{skip}, #{count} -->
 	
 	<select id="getBoardCount" resultType="java.lang.Integer">
 		SELECT count(*) FROM board 

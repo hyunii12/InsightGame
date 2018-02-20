@@ -35,51 +35,57 @@
 	<div id="InsightGame" style="margin-top: 15.6%; overflow: hidden;">
 		<!-- Portfolio Grid Section -->
 
-		<div class="container">
-			<h2 class="text-center text-uppercase">gameInformation.jsp</h2>
-			<h3 class="text-center text-uppercase text-secondary">게임 상세정보:
-				${gameInfo.title }</h3>
-
+		<div class="container" style="padding-bottom: 96px;">
+			<h2 class="text-center text-uppercase text-secondary mb-0">game info</h2>
 			<div style="display: flex">
-				<div style="margin-left: 15%;">
-					<a href="#"><img src="${gameInfo.picture}" style="width: 240px;"></a>
-				</div>
+			<div style="margin-left: 19%;"></div>
+			
 
-				<div style="width: 45%; margin-left: 30px;">
-					<table id="boardTable" class="table" align="center">
+			<div style="width: 45%; margin-right: 9.9%; margin-left: 9.9%; margin-top: 2%;">
+				<table id="boardTable" class="table" align="center" style="margin: 0 auto;">
 						<tr>
-							<td>게임명</td>
-							<td>${gameInfo.title }</td>
+						<td rowspan="6" style="max-width: 230px; width: 230px; border-top: 0; vertical-align: middle;">
+						<img src="${gameInfo.picture}" style="border-radius: 8px;"></td>
+							<td colspan="2" style="border-top: 0; padding-left: 27px; padding-bottom: 10px; vertical-align: middle;">
+							<b><span style="font-size: 1.2rem;">${gameInfo.title }</span></b></td>
 						</tr>
 						<tr>
-							<td>플랫폼</td>
-							<td>${gameInfo.platform }</td>
+							<td style="width: 103px; border-top: 0; padding-left: 27px; padding-bottom: 10px;">
+							<span style="color: grey">플랫폼</span></td>
+							<td style="border-top: 0; padding-bottom: 10px;">
+							<span style="color: grey">${gameInfo.platform }</span></td>
 						</tr>
 						<tr>
-							<td>장르</td>
-							<td>${gameInfo.genre }</td>
+							<td style="width: 103px; border-top: 0; padding-left: 27px; padding-bottom: 10px;">
+							<span style="color: grey">장르</span></td>
+							<td style="border-top: 0; padding-bottom: 10px;">
+							<span style="color: grey">${gameInfo.genre }</span></td>
 						</tr>
 						<tr>
-							<td>제작사</td>
-							<td>${gameInfo.production }</td>
+							<td style="width: 103px; border-top: 0; padding-left: 27px; padding-bottom: 10px;">
+							<span style="color: grey">제작사</span></td>
+							<td style="border-top: 0; padding-bottom: 10px;">
+							<span style="color: grey">${gameInfo.production }</span></td>
 						</tr>
 						<tr>
-							<td>이용등급</td>
-							<td>${gameInfo.age }</td>
+							<td style="width: 103px; border-top: 0; padding-left: 27px; padding-bottom: 10px;">
+							<span style="color: grey">이용등급</span></td>
+							<td style="border-top: 0; padding-bottom: 10px;">
+							<span style="color: grey">${gameInfo.age }</span></td>
 						</tr>
 						<tr>
-							<td>출시년도</td>
-							<td>${gameInfo.release }</td>
+							<td style="width: 103px; border-top: 0; padding-left: 27px; padding-bottom: 10px;">
+							<span style="color: grey">출시년도</span></td>
+							<td style="border-top: 0; padding-bottom: 10px;">
+							<span style="color: grey">${gameInfo.release }</span></td>
 						</tr>
 
 					</table>
 
 				</div>
-
 			</div>
-
+			</div>
 		</div>
-	</div>
 
 
 	<div class="container">
