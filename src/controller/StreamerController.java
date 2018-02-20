@@ -26,6 +26,7 @@ import model.Clip;
 import model.Streamer;
 import model.StreamerPopularity;
 import model.Tgd;
+import model.streamerFollower;
 import service.IClipService;
 import service.ISFService;
 import service.IStreamerService;
@@ -62,6 +63,8 @@ public class StreamerController {
 
 		List<Integer> streamercount=streamerService.getstreamergraph(searchWord);
 		
+		List<streamerFollower> streamerfow=sfService.getstreamerfowday(searchWord);
+		
 		LocalDateTime now = LocalDateTime.now();
 		LocalDateTime end = now.minusDays(14);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd yyyy");
@@ -88,6 +91,7 @@ public class StreamerController {
 		model.addAttribute("streamerInfo", streamer);
 		model.addAttribute("streamerclip", streamerclip);
 		model.addAttribute("streamercount", streamercount);
+		model.addAttribute("streamerfow",streamerfow);
 		
 		return "pages/searchStreamer";
 	}
@@ -359,7 +363,7 @@ public class StreamerController {
 		List<String> s = new ArrayList<String>();
 		
 		//최근 6일로 할지 결정
-		for(int i=5; i>=0; i--) {
+		for(int i=1; i>=0; i--) {
 		
 			LocalDateTime end = now.minusDays(i); //minusDays(i);
 			String formatDateTime = end.format(formatter);

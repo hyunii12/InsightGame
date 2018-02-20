@@ -63,6 +63,13 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 		<property name="mapperInterface" value="dao.IStreamerpopDao"/>
 	</bean>
+
+	
+	<bean id="sfDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="dao.ISFDao" />
+	</bean>
+
 	<bean id="gameIssuesDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 		<property name="mapperInterface" value="dao.IGameIssuesDao" />
@@ -70,5 +77,5 @@
 
 	<context:component-scan base-package="service" />
 
-
 </beans>
+
