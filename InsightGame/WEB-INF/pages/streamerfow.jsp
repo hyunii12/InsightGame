@@ -1,16 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-<<<<<<< HEAD
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-=======
-    pageEncoding="EUC-KR"%>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="js/billboard.js"></script>
 <link rel="stylesheet" href="css/billboard.css">
 <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
->>>>>>> branch 'master' of https://github.com/hyunii12/InsightGame.git
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
