@@ -13,8 +13,6 @@
 
 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script>
 
-		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script>
-
 	</div>
 
 	<div id="InsightGame" style="margin-top: 8.5%; overflow: hidden;">

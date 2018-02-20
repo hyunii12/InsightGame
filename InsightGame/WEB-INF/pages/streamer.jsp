@@ -38,12 +38,9 @@
 	<div id="navigation">
 		<jsp:include page="../navigation.jsp" />
 
-		<!-- 		<script type="text/javascript" src="js/main.js?v=lkdjflajelkafjklj"></script> -->
 		<script type="text/javascript"
-			src="js/main.js?v=lkdjflajesdfsdfdssfdsfsdffsfsdlkafjklj"></script>
-
-		<!-- 		<script type="text/javascript" src="js/main.js?v=21d3sf31j"></script> -->
-
+			src="js/main.js?v=lSSSSSSffj">
+		</script>
 	</div>
 
 
@@ -99,10 +96,11 @@
 				
 				<div class="col-md-6">
 					<h3 class="text-center text-uppercase text-secondary mb-0">total tgd post - keyword</h3>
-
-								<div style="width:75%; margin: 0 auto;">
-										<div><jsp:include page="../contents/streamerBoardKeyword.jsp" /></div>
-													</div>
+								<div>
+										<div id="streamerBoardKeyword">
+											<jsp:include page="../contents/streamerBoardKeyword.jsp"></jsp:include>
+										</div>
+								</div>
 				</div>
 
 				<div class="col-md-6">

@@ -106,5 +106,18 @@ $(document).ready(function() {
 			alert(error);
 		}
 	})
+	
+	
+	$.ajax({
+		url : "streamerBoardKeyword.do",
+		type : "get",
+		dataType : "html",
+		success : function(data) {
+			$('#streamerBoardKeyword').html(data);
+		},
+		error : function(xhar, status, error) {
+			alert(error);
+		}
+	})
 
 });
