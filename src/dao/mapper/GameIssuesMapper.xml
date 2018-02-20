@@ -3,8 +3,44 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.IGameIssuesDao">
-	<select id="selectAll">
-		SELECT * FROM game_issues WHERE date=#{DATE}
+	<select id="selectAll" resultType="java.util.HashMap">
+		<![CDATA[ 
+		SELECT a.title, a.score, a.date FROM game_issues AS a 
+		WHERE (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 15
+		ORDER BY a.date DESC, a.score DESC;
+		]]> 
 	</select>
-
+	<select id="selectWithInterval" resultType="java.util.HashMap">
+		 
+		SELECT a.title, a.score, a.date FROM game_issues AS a 
+		WHERE a.date = CURDATE() - 1
+<!-- 			<choose> -->
+<!-- 				<when test="param != null">a.date = ＃{param}</when> -->
+<!-- 				<otherwise>a.date = CURDATE() - 1</otherwise> -->
+<!-- 			</choose> -->
+			<![CDATA[
+			AND (SELECT COUNT(*) FROM game_issues AS b WHERE b.date = a.date AND b.score >= a.score) <= 15
+			]]> 
+		ORDER BY a.date DESC, a.score DESC; 
+		
+<!-- 		SELECT id, title, score, date, rank -->
+<!-- 		FROM ( -->
+<!-- 		   SELECT a.*,  -->
+<!-- 		           (CASE @vscore WHEN a.date THEN @rownum:=@rownum+1 ELSE @rownum:=1 END) rank, -->
+<!-- 		           (@vscore:=a.date) vscore -->
+<!-- 		   FROM game_issues a, (SELECT @vscore:='', @rownum:=0 FROM DUAL) b -->
+<!-- 		   WHERE -->
+<!-- 		   		<choose> -->
+<!-- 		   			<when test="date != null"> -->
+<!-- 		   				date = ${date} -->
+<!-- 		   			</when> -->
+<!-- 		   			<otherwise> -->
+<!-- 		   				date = CURDATE() - INTERVAL 2 day -->
+<!-- 		   			</otherwise> -->
+<!-- 		   		</choose> -->
+<!-- 		   ORDER BY a.date, a.score desc     -->
+<!-- 		) c -->
+<!-- 		WHERE rank <= 20; -->
+	</select>
+	
 </mapper>

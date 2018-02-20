@@ -55,12 +55,38 @@ public class StreamerController {
 		Streamer streamer = streamerService.getStreamerByName(searchWord);
 		System.out.println(streamer);
 		
-		
 		List<Clip> streamerclip = streamerService.getstreamerclip(searchWord);
+
+		List<Integer> streamercount=streamerService.getstreamergraph(searchWord);
 		
+		LocalDateTime now = LocalDateTime.now();
+		LocalDateTime end = now.minusDays(14);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd yyyy");
+		DateTimeFormatter month = DateTimeFormatter.ofPattern("MM");
+
+		String fourteen = end.format(formatter);
+		String month2 = end.format(month);
+
+		int month3 = Integer.parseInt(month2);
+		String month4 = "";
+
+		switch (month3) {
+		case 01:
+			month4 = "January";
+			break;
+		case 02:
+			month4 = "February";
+			break;
+		}
+
+		String d = month4 + " " + fourteen;
+
+		
+		
+		model.addAttribute("d", d);
 		model.addAttribute("streamerInfo", streamer);
 		model.addAttribute("streamerclip", streamerclip);
-				
+		model.addAttribute("streamercount", streamercount);
 		
 		return "pages/searchStreamer";
 	}
@@ -564,23 +590,5 @@ public class StreamerController {
 		return "contents/streamerBoardKeyword";
 		
 	}
-
-//	@RequestMapping("searchStreamer.do")
-//	public String streamerhotClip(Model model, @RequestParam(name = "searchSelect", required = true) String searchSelect, @RequestParam(name = "search", defaultValue = "") String searchWord) {
-//		System.out.println("여기는 스트리머 핫클립");
-//
-//		List<Clip> list = clipService.getstreamerclip(searchWord);
-//		
-//		System.out.println("......................................."+list.size());
-//		
-////		for (Clip c : list) {
-////			System.out.println(c.getCp_view());
-////		}
-//
-////		model.addAttribute("streamerclip", list);
-//
-//		return null;
-////		return "contents/hotclips";
-//	}
 	
 }
